@@ -14,6 +14,7 @@
 #include "utils.h"
 
 #include <errno.h>
+#include <limits.h>
 #include <stdbool.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -130,4 +131,47 @@ shell2pcre(const char *shell)
     snprintf(&pcre[k], 7, "(?!\n)$");
 
     return pcre;
+}
+
+unsigned long
+str2seconds(enum time_unit unit, const char *string)
+{
+    unsigned long delta;
+    char *endptr;
+
+    delta = strtoul(string, &endptr, 10);
+    if ((errno == ERANGE && delta == ULONG_MAX) || (errno != 0 && delta == 0))
+        return delta;
+    if (*endptr != '\0') {
+        errno = EINVAL;
+        return 0;
+    }
+
+    switch (unit) {
+    case TU_DAY:
+        if (ULONG_MAX / 86400 < delta) {
+            errno = ERANGE;
+            return ULONG_MAX;
+        }
+        delta *= 86400;
+        break;
+    case TU_HOUR:
+        if (ULONG_MAX / 3600 < delta) {
+            errno = ERANGE;
+            return ULONG_MAX;
+        }
+        delta *= 3600;
+        break;
+    case TU_MINUTE:
+        if (ULONG_MAX / 60 < delta) {
+            errno = ERANGE;
+            return ULONG_MAX;
+        }
+        delta *= 60;
+        break;
+    case TU_SECOND:
+        break;
+    }
+
+    return delta;
 }
