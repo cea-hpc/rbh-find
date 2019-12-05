@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "770fe912_95dadcdf",
+        "filename": "src/utils.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1010215
+      },
+      "writtenOn": "2019-12-05T09:49:53Z",
+      "side": 1,
+      "message": "Old code, we discussed this before and agreed to remove it. My bad.",
+      "parentUuid": "04daca81_003dd392",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 6
+      },
+      "revId": "7f48e11f89d1817b028152662808493cb166c3e6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "32dd4720_d3544751",
         "filename": "src/utils.c",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2019-12-05T09:44:23Z",
       "side": 1,
       "message": "No existing function to do this conversion?\nor it implies too heavy dependencies ?",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 38,
+        "endChar": 29
+      },
+      "revId": "7f48e11f89d1817b028152662808493cb166c3e6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9fd1bb3f_7ce469e8",
+        "filename": "src/utils.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1010215
+      },
+      "writtenOn": "2019-12-05T09:49:53Z",
+      "side": 1,
+      "message": "No prior art to my knowledge.",
+      "parentUuid": "32dd4720_d3544751",
       "range": {
         "startLine": 38,
         "startChar": 0,
