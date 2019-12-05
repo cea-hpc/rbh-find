@@ -25,6 +25,29 @@
     },
     {
       "key": {
+        "uuid": "dcdd8e3f_a71fa699",
+        "filename": "rbh-find.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 1010215
+      },
+      "writtenOn": "2019-12-05T16:27:15Z",
+      "side": 1,
+      "message": "(defect) this should be \"rbh_filter_free(filter);\"\n\nfound by the address sanitizer",
+      "range": {
+        "startLine": 202,
+        "startChar": 4,
+        "endLine": 202,
+        "endChar": 8
+      },
+      "revId": "7f48e11f89d1817b028152662808493cb166c3e6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "04daca81_003dd392",
         "filename": "src/utils.c",
         "patchSetId": 3
