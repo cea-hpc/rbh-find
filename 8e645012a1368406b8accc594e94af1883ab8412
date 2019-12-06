@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "bedc76e4_c440a587",
+        "filename": "rbh-find.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2019-12-06T14:45:05Z",
+      "side": 1,
+      "message": "I guess? :)",
+      "parentUuid": "ee0f3bff_2b99a432",
+      "range": {
+        "startLine": 182,
+        "startChar": 33,
+        "endLine": 182,
+        "endChar": 37
+      },
+      "revId": "8e645012a1368406b8accc594e94af1883ab8412",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "35690b21_c5ed4979",
         "filename": "rbh-find.c",
         "patchSetId": 4
@@ -60,6 +84,30 @@
       "side": 1,
       "message": "Your comment made me realise there probably was a bug (cf. the comment above).\n\nWhat would it look like?...\n\nswitch (token) {\ncase CLT_AND:\ncase CLT_OR:\n    switch (previous_token) {\n    case CLT_PREDICATE:\n    case CLT_PARENTHESIS_CLOSE:\n        break;\n    default:\n        error(EX_USAGE, 0, ...);\n    }\n\n    /* No further processing needed for CLT_AND */\n    if (token \u003d\u003d CLT_AND)\n        break;\n\n    /* The -o/-or operator is tricky to implement!\n    ...\n}\n\nI think this is reasonable.",
       "parentUuid": "35690b21_c5ed4979",
+      "range": {
+        "startLine": 180,
+        "startChar": 0,
+        "endLine": 188,
+        "endChar": 13
+      },
+      "revId": "8e645012a1368406b8accc594e94af1883ab8412",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0716d0ae_9b70fe4d",
+        "filename": "rbh-find.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2019-12-06T14:45:05Z",
+      "side": 1,
+      "message": "Yes something like that.",
+      "parentUuid": "3cba71a9_173e64b6",
       "range": {
         "startLine": 180,
         "startChar": 0,
@@ -124,6 +172,24 @@
       "side": 1,
       "message": "You should have a look at the next patch in the series (the one that actually implement parentheses support).\n\nWhat I mean by \"it must have seen a closing parenthese\" is \"it must have seen a closing parenthesis without a matching opening parenthesis (since the -o operator)\".\n\n                                   not this one\n                                   v\nrbh-find \\( -type f -o \\( -type d \\) \\) -name \u0027*.txt\u0027\n                                      ^\n                                      this one",
       "parentUuid": "e08d639c_7ba397ad",
+      "revId": "8e645012a1368406b8accc594e94af1883ab8412",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "86462c37_ab053c1d",
+        "filename": "rbh-find.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2019-12-06T14:45:05Z",
+      "side": 1,
+      "message": "ok, will see after the parenthesis code; this was weird because there is no other nested call now but that should help indeed.",
+      "parentUuid": "58e4e392_a732b971",
       "revId": "8e645012a1368406b8accc594e94af1883ab8412",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": true
