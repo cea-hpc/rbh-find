@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "ee0f3bff_2b99a432",
+        "filename": "rbh-find.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1010215
+      },
+      "writtenOn": "2019-12-06T14:25:41Z",
+      "side": 1,
+      "message": "(defect) this should be CLT_PARENTHESIS_CLOSE, shouldn\u0027t it?",
+      "range": {
+        "startLine": 182,
+        "startChar": 33,
+        "endLine": 182,
+        "endChar": 37
+      },
+      "revId": "8e645012a1368406b8accc594e94af1883ab8412",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "35690b21_c5ed4979",
         "filename": "rbh-find.c",
         "patchSetId": 4
@@ -18,6 +41,53 @@
         "startChar": 0,
         "endLine": 188,
         "endChar": 13
+      },
+      "revId": "8e645012a1368406b8accc594e94af1883ab8412",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3cba71a9_173e64b6",
+        "filename": "rbh-find.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 1010215
+      },
+      "writtenOn": "2019-12-06T14:25:41Z",
+      "side": 1,
+      "message": "Your comment made me realise there probably was a bug (cf. the comment above).\n\nWhat would it look like?...\n\nswitch (token) {\ncase CLT_AND:\ncase CLT_OR:\n    switch (previous_token) {\n    case CLT_PREDICATE:\n    case CLT_PARENTHESIS_CLOSE:\n        break;\n    default:\n        error(EX_USAGE, 0, ...);\n    }\n\n    /* No further processing needed for CLT_AND */\n    if (token \u003d\u003d CLT_AND)\n        break;\n\n    /* The -o/-or operator is tricky to implement!\n    ...\n}\n\nI think this is reasonable.",
+      "parentUuid": "35690b21_c5ed4979",
+      "range": {
+        "startLine": 180,
+        "startChar": 0,
+        "endLine": 188,
+        "endChar": 13
+      },
+      "revId": "8e645012a1368406b8accc594e94af1883ab8412",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3d53a22d_829f352b",
+        "filename": "rbh-find.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 1010215
+      },
+      "writtenOn": "2019-12-06T14:25:41Z",
+      "side": 1,
+      "message": "(typo) parenthesis",
+      "range": {
+        "startLine": 215,
+        "startChar": 15,
+        "endLine": 215,
+        "endChar": 25
       },
       "revId": "8e645012a1368406b8accc594e94af1883ab8412",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
@@ -42,6 +112,24 @@
     },
     {
       "key": {
+        "uuid": "58e4e392_a732b971",
+        "filename": "rbh-find.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 1010215
+      },
+      "writtenOn": "2019-12-06T14:25:41Z",
+      "side": 1,
+      "message": "You should have a look at the next patch in the series (the one that actually implement parentheses support).\n\nWhat I mean by \"it must have seen a closing parenthese\" is \"it must have seen a closing parenthesis without a matching opening parenthesis (since the -o operator)\".\n\n                                   not this one\n                                   v\nrbh-find \\( -type f -o \\( -type d \\) \\) -name \u0027*.txt\u0027\n                                      ^\n                                      this one",
+      "parentUuid": "e08d639c_7ba397ad",
+      "revId": "8e645012a1368406b8accc594e94af1883ab8412",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "95413435_e5f9b989",
         "filename": "rbh-find.c",
         "patchSetId": 4
@@ -53,6 +141,30 @@
       "writtenOn": "2019-12-06T12:40:28Z",
       "side": 1,
       "message": "(nitpick) trailing slash",
+      "range": {
+        "startLine": 219,
+        "startChar": 76,
+        "endLine": 219,
+        "endChar": 77
+      },
+      "revId": "8e645012a1368406b8accc594e94af1883ab8412",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a2881e14_63620c7f",
+        "filename": "rbh-find.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 1010215
+      },
+      "writtenOn": "2019-12-06T14:25:41Z",
+      "side": 1,
+      "message": "Will fix",
+      "parentUuid": "95413435_e5f9b989",
       "range": {
         "startLine": 219,
         "startChar": 76,
