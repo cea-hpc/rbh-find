@@ -16,6 +16,24 @@
       "revId": "f088933378858b7f2b47821d623a77badfa24d70",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a266e6ab_587ac8f9",
+        "filename": "rbh-find.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 1010215
+      },
+      "writtenOn": "2019-12-06T16:15:06Z",
+      "side": 1,
+      "message": "\"obvious\" might be a bit strong, \"easy to figure out\" maybe. The find() function returns nothing, which I use as a sign that it may not fail. The fact that it exits on error I consider an implementation detail. Do you find that odd/counterintuitive?",
+      "parentUuid": "ba7c1143_d7663add",
+      "revId": "f088933378858b7f2b47821d623a77badfa24d70",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
     }
   ]
 }
