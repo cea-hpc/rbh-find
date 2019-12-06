@@ -34,6 +34,24 @@
       "revId": "ce8695f3c43d40b79ff7ad7447d165bc49ece91e",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "41fdbc88_fe8a4964",
+        "filename": "rbh-find.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 358,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2019-12-06T18:09:10Z",
+      "side": 1,
+      "message": "ah, parse_action calls find() for actions; that\u0027s what I was missing. ok.",
+      "parentUuid": "83242d3b_cae9de05",
+      "revId": "ce8695f3c43d40b79ff7ad7447d165bc49ece91e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
     }
   ]
 }
