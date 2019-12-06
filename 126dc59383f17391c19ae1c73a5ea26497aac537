@@ -16,6 +16,24 @@
       "revId": "126dc59383f17391c19ae1c73a5ea26497aac537",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "accaf259_dd26197e",
+        "filename": "rbh-find.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 1010215
+      },
+      "writtenOn": "2019-12-06T15:48:56Z",
+      "side": 1,
+      "message": "There is a check after the call to \"parse_expression()\" under \"case CLT_PARENTHESIS_OPEN\":\n\nfilters[1] \u003d parse_expression(\u0026i, NULL);\nif (str2command_line_token(argv[i]) !\u003d CLT_PARENTHESIS_CLOSE)\n    error(EX_USAGE, 0,\n\t  \"invalid expression; I was expecting to find a \u0027)\u0027 somewhere but did not see one.\");\n\n... And I am realising that it will crash when reaching the end of the command line because argv[argc] is a buffer overflow.",
+      "parentUuid": "081f80a3_56e0fb20",
+      "revId": "126dc59383f17391c19ae1c73a5ea26497aac537",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
     }
   ]
 }
