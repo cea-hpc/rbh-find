@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8f485019_3c7d19bc",
+        "filename": "include/utils.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2019-12-06T12:27:53Z",
+      "side": 1,
+      "message": "I assume you tested newlines in filenames?",
+      "revId": "8573f173520997f535e13283367fe86d2dd86bb0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    }
+  ]
+}
