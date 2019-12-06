@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "35690b21_c5ed4979",
+        "filename": "rbh-find.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2019-12-06T12:40:28Z",
+      "side": 1,
+      "message": "(nitpick) Could be shared with AND somehow? E.g. both in same switch, then if (token !\u003d CLT_OR) break or imbricated switch?\nNot sure it\u0027s worth it",
+      "range": {
+        "startLine": 180,
+        "startChar": 0,
+        "endLine": 188,
+        "endChar": 13
+      },
+      "revId": "8e645012a1368406b8accc594e94af1883ab8412",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e08d639c_7ba397ad",
+        "filename": "rbh-find.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2019-12-06T12:40:28Z",
+      "side": 1,
+      "message": "That sounds weird: top parse_expression is only called once, right?\nThen `foo -o ( bar ) -o ( moo )` should not stop after the nested parse expression stops after `bar` here?\n\nActually I think the nested parse expression will continue until end of line so it\u0027s only a problem in the comment...",
+      "revId": "8e645012a1368406b8accc594e94af1883ab8412",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "95413435_e5f9b989",
+        "filename": "rbh-find.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2019-12-06T12:40:28Z",
+      "side": 1,
+      "message": "(nitpick) trailing slash",
+      "range": {
+        "startLine": 219,
+        "startChar": 76,
+        "endLine": 219,
+        "endChar": 77
+      },
+      "revId": "8e645012a1368406b8accc594e94af1883ab8412",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    }
+  ]
+}
