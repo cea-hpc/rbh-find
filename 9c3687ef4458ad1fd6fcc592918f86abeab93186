@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a695502a_00d08bc6",
+        "filename": "src/filters.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2019-12-06T16:19:40Z",
+      "side": 1,
+      "message": "equal would only works if you pass day as is: find -mtime 2 will find entries that are 2 days old, e.g. between $((24*3600)) and $((2*24*3600)) seconds old; not just exactly $((2*24*3600)) seconds old.\nYou\u0027d need to give a range and build a predicate with GREATER THAN x and LOWER THAN y",
+      "revId": "9c3687ef4458ad1fd6fcc592918f86abeab93186",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    }
+  ]
+}
