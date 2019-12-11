@@ -57,6 +57,24 @@
       "revId": "9c3687ef4458ad1fd6fcc592918f86abeab93186",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dab660ee_e28a2c2a",
+        "filename": "src/filters.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2019-12-11T10:00:20Z",
+      "side": 1,
+      "message": "self-correction: I got the range wrong, -mtime n will be between $((n*24*3600)) and $(((n+1)*24*3600)) ago\n(e.g. -mtime 0 will find files created today)\n\notoh this is really weird and -mmin seems to be the other way around, a file just created is found with find -mmin 1 and not find -mmin 0; this stuff is so weird...",
+      "parentUuid": "2b0ea174_09ad3cbf",
+      "revId": "9c3687ef4458ad1fd6fcc592918f86abeab93186",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
     }
   ]
 }
