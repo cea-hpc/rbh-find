@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "8d8808eb_af882ce6",
+        "filename": "include/utils.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1010215
+      },
+      "writtenOn": "2019-12-11T19:52:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bcb48a2b_e6e15458",
+      "range": {
+        "startLine": 41,
+        "startChar": 42,
+        "endLine": 41,
+        "endChar": 43
+      },
+      "revId": "9c3687ef4458ad1fd6fcc592918f86abeab93186",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a695502a_00d08bc6",
         "filename": "src/filters.c",
         "patchSetId": 6
@@ -168,6 +192,24 @@
       "side": 1,
       "message": "eeh? I\u0027d agree with both behaving the same but please go with either behaviour and not a new one? From my experience -[acm]time is most used so I\u0027d stick with what that does.\nAnd if we have any logging mecanism at all I would definitely print both edges for people to be able to debug something......... :D",
       "parentUuid": "a436e585_6b5661b8",
+      "revId": "9c3687ef4458ad1fd6fcc592918f86abeab93186",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "838f9a70_161d6871",
+        "filename": "src/filters.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1010215
+      },
+      "writtenOn": "2019-12-11T19:52:36Z",
+      "side": 1,
+      "message": "\u003e eeh? I\u0027d agree with both behaving the same but please go with either behaviour and not a new one? From my experience -[acm]time is most used so I\u0027d stick with what that does.\n\nDone (at least, I did something that I think looks like regular -atime)\n\n\u003e And if we have any logging mecanism at all I would definitely print both edges for people to be able to debug something......... :D\n\nNope, still no logging. \u003d) Sorry",
+      "parentUuid": "cac83943_926a9cb4",
       "revId": "9c3687ef4458ad1fd6fcc592918f86abeab93186",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": true
