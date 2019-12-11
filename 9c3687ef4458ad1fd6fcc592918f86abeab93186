@@ -114,6 +114,24 @@
     },
     {
       "key": {
+        "uuid": "a436e585_6b5661b8",
+        "filename": "src/filters.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1010215
+      },
+      "writtenOn": "2019-12-11T15:38:05Z",
+      "side": 1,
+      "message": "Took me quite a bit of time, but I think the result should be satisfying.\n\nFor the record, I broke compatibility with gnu-find here to do the thing that made most sense to me.\nThat is:\n\n -amin  n  files accessed between \"n - 0.5\" minutes ago and \"n + 0.5\" minutes ago\n -amin -n  files accessed n minutes ago or less\n -amin +n  files accessed n minutes ago or more\n\nThe same comparisons will apply to -[acm]time as well (replacing \"minutes\" with \"days\").",
+      "parentUuid": "5cf9cc59_97ca46f7",
+      "revId": "9c3687ef4458ad1fd6fcc592918f86abeab93186",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "987b93ea_a446c05f",
         "filename": "src/filters.c",
         "patchSetId": 6
