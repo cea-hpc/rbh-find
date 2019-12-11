@@ -75,6 +75,47 @@
       "revId": "9c3687ef4458ad1fd6fcc592918f86abeab93186",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "219c639c_965e64b2",
+        "filename": "src/filters.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1010215
+      },
+      "writtenOn": "2019-12-11T12:35:22Z",
+      "side": 1,
+      "message": "OK, so I had a few questions to try and clarify, but it turns out find\u0027s code is rather readable:\n\n/* pred_timewindow\n *\n * Returns true if THE_TIME is\n * COMP_GT: after the specified time\n * COMP_LT: before the specified time\n * COMP_EQ: after the specified time but by not more than WINDOW seconds.\n */\nstatic bool\npred_timewindow (struct timespec ts, struct predicate const *pred_ptr, int window)\n{\n  switch (pred_ptr-\u003eargs.reftime.kind)\n    {\n    case COMP_GT:\n      return compare_ts (ts, pred_ptr-\u003eargs.reftime.ts) \u003e 0;\n\n    case COMP_LT:\n      return compare_ts (ts, pred_ptr-\u003eargs.reftime.ts) \u003c 0;\n\n    case COMP_EQ:\n      {\n\t/* consider \"find . -mtime 0\".\n\t *\n\t * Here, the origin is exactly 86400 seconds before the start\n\t * of the program (since -daystart was not specified).   This\n\t * function will be called with window\u003d86400 and\n\t * pred_ptr-\u003eargs.reftime.ts as the origin.  Hence a file\n\t * created the instant the program starts will show a time\n\t * difference (value of delta) of 86400.   Similarly, a file\n\t * created exactly 24h ago would be the newest file which was\n\t * _not_ created today.   So, if delta is 0.0, the file\n\t * was not created today.  If the delta is 86400, the file\n\t * was created this instant.\n\t */\n\tdouble delta \u003d ts_difference (ts, pred_ptr-\u003eargs.reftime.ts);\n\treturn (delta \u003e 0.0 \u0026\u0026 delta \u003c\u003d window);\n      }\n    }\n  assert (0);\n  abort ();\n}\n\nbool\npred_amin (const char *pathname, struct stat *stat_buf, struct predicate *pred_ptr)\n{\n  (void) \u0026pathname;\n  return pred_timewindow (get_stat_atime(stat_buf), pred_ptr, 60);\n}",
+      "parentUuid": "dab660ee_e28a2c2a",
+      "revId": "9c3687ef4458ad1fd6fcc592918f86abeab93186",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "987b93ea_a446c05f",
+        "filename": "src/filters.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1010215
+      },
+      "writtenOn": "2019-12-11T12:35:22Z",
+      "side": 1,
+      "message": "(minor) should explain what it is that needs fixing\n\nHere it has to do with the mongo backend not handling the RBH_FVT_TIME filter value type correctly.\nThat explains why the following line is not:\n\n filter \u003d rbh_filter_compare_time_new(op, predicate2filter_field[predicate], then);\n\nMaybe it would be better to just fix the mongo backend and not work around it at all...",
+      "range": {
+        "startLine": 97,
+        "startChar": 7,
+        "endLine": 97,
+        "endChar": 12
+      },
+      "revId": "9c3687ef4458ad1fd6fcc592918f86abeab93186",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
     }
   ]
 }
