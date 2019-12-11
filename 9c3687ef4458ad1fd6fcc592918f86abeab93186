@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "bcb48a2b_e6e15458",
+        "filename": "include/utils.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2019-12-11T15:45:49Z",
+      "side": 1,
+      "message": "bump on this one (not done)",
+      "parentUuid": "b538d313_458fd434",
+      "range": {
+        "startLine": 41,
+        "startChar": 42,
+        "endLine": 41,
+        "endChar": 43
+      },
+      "revId": "9c3687ef4458ad1fd6fcc592918f86abeab93186",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a695502a_00d08bc6",
         "filename": "src/filters.c",
         "patchSetId": 6
@@ -126,6 +150,24 @@
       "side": 1,
       "message": "Took me quite a bit of time, but I think the result should be satisfying.\n\nFor the record, I broke compatibility with gnu-find here to do the thing that made most sense to me.\nThat is:\n\n -amin  n  files accessed between \"n - 0.5\" minutes ago and \"n + 0.5\" minutes ago\n -amin -n  files accessed n minutes ago or less\n -amin +n  files accessed n minutes ago or more\n\nThe same comparisons will apply to -[acm]time as well (replacing \"minutes\" with \"days\").",
       "parentUuid": "5cf9cc59_97ca46f7",
+      "revId": "9c3687ef4458ad1fd6fcc592918f86abeab93186",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cac83943_926a9cb4",
+        "filename": "src/filters.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2019-12-11T15:45:49Z",
+      "side": 1,
+      "message": "eeh? I\u0027d agree with both behaving the same but please go with either behaviour and not a new one? From my experience -[acm]time is most used so I\u0027d stick with what that does.\nAnd if we have any logging mecanism at all I would definitely print both edges for people to be able to debug something......... :D",
+      "parentUuid": "a436e585_6b5661b8",
       "revId": "9c3687ef4458ad1fd6fcc592918f86abeab93186",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": true
