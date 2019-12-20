@@ -1,0 +1,153 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3da3b3c7_43e4ba82",
+        "filename": "README.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1010215
+      },
+      "writtenOn": "2019-12-20T10:25:15Z",
+      "side": 1,
+      "message": "Then download",
+      "revId": "2b51881b1a7e81e8d990b328a6a7a58628790bad",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e8f5eafc_5b485a99",
+        "filename": "README.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1010215
+      },
+      "writtenOn": "2019-12-20T10:25:15Z",
+      "side": 1,
+      "message": "(typo) download",
+      "range": {
+        "startLine": 23,
+        "startChar": 2,
+        "endLine": 23,
+        "endChar": 3
+      },
+      "revId": "2b51881b1a7e81e8d990b328a6a7a58628790bad",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9d6d965e_3e574054",
+        "filename": "README.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1010215
+      },
+      "writtenOn": "2019-12-20T10:25:15Z",
+      "side": 1,
+      "message": "(typo) defined",
+      "range": {
+        "startLine": 57,
+        "startChar": 5,
+        "endLine": 57,
+        "endChar": 11
+      },
+      "revId": "2b51881b1a7e81e8d990b328a6a7a58628790bad",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "991103b5_caa6623a",
+        "filename": "README.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 1010215
+      },
+      "writtenOn": "2019-12-20T10:25:15Z",
+      "side": 1,
+      "message": "(style) trailing whitespace",
+      "range": {
+        "startLine": 174,
+        "startChar": 59,
+        "endLine": 174,
+        "endChar": 62
+      },
+      "revId": "2b51881b1a7e81e8d990b328a6a7a58628790bad",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d83dca45_68093fa0",
+        "filename": "README.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1010215
+      },
+      "writtenOn": "2019-12-20T10:25:15Z",
+      "side": 1,
+      "message": "(typo) reimplementing",
+      "range": {
+        "startLine": 182,
+        "startChar": 37,
+        "endLine": 182,
+        "endChar": 48
+      },
+      "revId": "2b51881b1a7e81e8d990b328a6a7a58628790bad",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "044decc5_83ce2844",
+        "filename": "README.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 1010215
+      },
+      "writtenOn": "2019-12-20T10:25:15Z",
+      "side": 1,
+      "message": "(typo) missing \"{}\" and \"\\;\"",
+      "range": {
+        "startLine": 223,
+        "startChar": 30,
+        "endLine": 223,
+        "endChar": 34
+      },
+      "revId": "2b51881b1a7e81e8d990b328a6a7a58628790bad",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d90a951f_9efd336a",
+        "filename": "README.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 1010215
+      },
+      "writtenOn": "2019-12-20T10:25:15Z",
+      "side": 1,
+      "message": "This is not the best example as grep -ql would do the job here. Maybe do something other than \u0027-print\u0027?",
+      "revId": "2b51881b1a7e81e8d990b328a6a7a58628790bad",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    }
+  ]
+}
