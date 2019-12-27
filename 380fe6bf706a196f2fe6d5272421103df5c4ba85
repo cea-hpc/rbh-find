@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "d926a9a3_2d99e49c",
+        "filename": "README.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1010215
+      },
+      "writtenOn": "2019-12-27T21:38:26Z",
+      "side": 1,
+      "message": "I am afraid that having both \"build\" and \"install\" on the same line might be confusing (someone could think that build refers to the verb \"build\" rather than the directory \"./build\").\n\nAlso, writing \"-C build \" twice takes more time that typing \"cd build\" once. \u003d)",
+      "parentUuid": "cbb04514_93f8da70",
+      "revId": "380fe6bf706a196f2fe6d5272421103df5c4ba85",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c79ac156_efa2aab9",
         "filename": "README.rst",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2019-12-27T13:47:15Z",
       "side": 1,
       "message": "Why WIP here? Is the doc in WIP, project in WIP? (it\u0027s clear enough if you read the whole text but better spell it out imo)",
+      "revId": "380fe6bf706a196f2fe6d5272421103df5c4ba85",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "14fc3d76_2f457671",
+        "filename": "README.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1010215
+      },
+      "writtenOn": "2019-12-27T21:38:26Z",
+      "side": 1,
+      "message": "I agree. I renamed it \"A work in progress\". I think this is enough to deduce that it is not the documentation that is a work in progress. Please advise.\n\nAnother option is \"Disclaimer: a work in progress\" (or something like that).",
+      "parentUuid": "c79ac156_efa2aab9",
       "revId": "380fe6bf706a196f2fe6d5272421103df5c4ba85",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": true
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "372f5dfa_6725d510",
+        "filename": "README.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1010215
+      },
+      "writtenOn": "2019-12-27T21:38:26Z",
+      "side": 1,
+      "message": "Without it, I feel like the previous sentences are left hanging.\n\nWhy does rbh-find use URIs instead paths? rbh-find queries rbh backends. backends use URIs. Hence rbh-find uses URIs.\n\nIt is like: A \u003d\u003e C? A\u003d\u003e B, B \u003d\u003e C.\nA \u003d\u003e C is trivial after that, but not explicitating it feels odd (to me).",
+      "parentUuid": "aed72b88_a1554c6f",
+      "revId": "380fe6bf706a196f2fe6d5272421103df5c4ba85",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6dc23775_667e15a5",
         "filename": "README.rst",
         "patchSetId": 3
@@ -67,6 +121,24 @@
       "revId": "380fe6bf706a196f2fe6d5272421103df5c4ba85",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "256a768d_961db234",
+        "filename": "README.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 1010215
+      },
+      "writtenOn": "2019-12-27T21:38:26Z",
+      "side": 1,
+      "message": "Good point.",
+      "parentUuid": "6dc23775_667e15a5",
+      "revId": "380fe6bf706a196f2fe6d5272421103df5c4ba85",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
     },
     {
       "key": {
@@ -86,6 +158,53 @@
         "startChar": 53,
         "endLine": 230,
         "endChar": 61
+      },
+      "revId": "380fe6bf706a196f2fe6d5272421103df5c4ba85",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8d32fc5d_a0d47915",
+        "filename": "README.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 1010215
+      },
+      "writtenOn": "2019-12-27T21:38:26Z",
+      "side": 1,
+      "message": "\u003e apparent is probably wrong here?\n\nIs it too French?\n\n---\n\n\"technical\" would be presumptuous of me (there might be one I do not see),\n\"logical\" could be interpreted as an insult to find\u0027s developers intelligence.\n\n\"obvious\" was another candidate, but I decided against it for the same reason as \"logical\".\n\n---\n\n\u003e \"This is an implementation choice\"\n\nThis prompted me to have a look at what POSIX says about -amin and -atime. Turns out -amin is not defined by POSIX. Still, I prefer not to write that it is a \"choice\" when it might just be a bug.",
+      "parentUuid": "190d8f3a_9913885a",
+      "range": {
+        "startLine": 230,
+        "startChar": 53,
+        "endLine": 230,
+        "endChar": 61
+      },
+      "revId": "380fe6bf706a196f2fe6d5272421103df5c4ba85",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "157eb643_492424b4",
+        "filename": "README.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 1010215
+      },
+      "writtenOn": "2019-12-27T21:38:26Z",
+      "side": 1,
+      "message": "(typo) borrows",
+      "range": {
+        "startLine": 232,
+        "startChar": 60,
+        "endLine": 232,
+        "endChar": 66
       },
       "revId": "380fe6bf706a196f2fe6d5272421103df5c4ba85",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
