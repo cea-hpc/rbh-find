@@ -107,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "2fdaa00f_5e6b452c",
+        "filename": "README.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2019-12-29T08:48:43Z",
+      "side": 1,
+      "message": "I just don\u0027t understand what one thing and another thing refer to here. We\u0027re in the paths vs URIs paragraph so I assume it means thus rbh-find uses uri?\nIf you want to spell it out, spell it out all the way.",
+      "parentUuid": "372f5dfa_6725d510",
+      "revId": "380fe6bf706a196f2fe6d5272421103df5c4ba85",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6dc23775_667e15a5",
         "filename": "README.rst",
         "patchSetId": 3
@@ -177,6 +195,30 @@
       "side": 1,
       "message": "\u003e apparent is probably wrong here?\n\nIs it too French?\n\n---\n\n\"technical\" would be presumptuous of me (there might be one I do not see),\n\"logical\" could be interpreted as an insult to find\u0027s developers intelligence.\n\n\"obvious\" was another candidate, but I decided against it for the same reason as \"logical\".\n\n---\n\n\u003e \"This is an implementation choice\"\n\nThis prompted me to have a look at what POSIX says about -amin and -atime. Turns out -amin is not defined by POSIX. Still, I prefer not to write that it is a \"choice\" when it might just be a bug.",
       "parentUuid": "190d8f3a_9913885a",
+      "range": {
+        "startLine": 230,
+        "startChar": 53,
+        "endLine": 230,
+        "endChar": 61
+      },
+      "revId": "380fe6bf706a196f2fe6d5272421103df5c4ba85",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3b7c1c1b_6501cd2d",
+        "filename": "README.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2019-12-29T08:48:43Z",
+      "side": 1,
+      "message": "apparent ~\u003d visible for me. Dictionary says \"clearly visible or understood; obvious.\" and \"seeming real or true, but not necessarily so.\"\n\nChoice doesn\u0027t feel worse to use even if it is a bug, it doesn\u0027t mean it\u0027s not subject to change. If you really have to be explicit, then \"This is an implementation choice because it was easier to code that way but could be subject to change if appropriate reasons are pushed forward\"... But all that is implicit to me, everything is subject to change if good reasons are given, you people write way too much.",
+      "parentUuid": "8d32fc5d_a0d47915",
       "range": {
         "startLine": 230,
         "startChar": 53,
