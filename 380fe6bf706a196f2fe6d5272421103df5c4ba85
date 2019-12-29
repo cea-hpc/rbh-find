@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "3c1f83c6_c0d83df0",
+        "filename": "README.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1010215
+      },
+      "writtenOn": "2019-12-29T11:54:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "75fa172f_23b1b23d",
+      "revId": "380fe6bf706a196f2fe6d5272421103df5c4ba85",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c79ac156_efa2aab9",
         "filename": "README.rst",
         "patchSetId": 3
@@ -140,6 +158,24 @@
       "revId": "380fe6bf706a196f2fe6d5272421103df5c4ba85",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9bee5d66_6704140c",
+        "filename": "README.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1010215
+      },
+      "writtenOn": "2019-12-29T11:54:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2fdaa00f_5e6b452c",
+      "revId": "380fe6bf706a196f2fe6d5272421103df5c4ba85",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
     },
     {
       "key": {
@@ -246,6 +282,30 @@
       "revId": "380fe6bf706a196f2fe6d5272421103df5c4ba85",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4efc39fd_9c8b043b",
+        "filename": "README.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 1010215
+      },
+      "writtenOn": "2019-12-29T11:54:56Z",
+      "side": 1,
+      "message": "Ack\n\nvisible is what I was going for. I just wanted to avoid writing \"I\", as in \"I don\u0027t know why it\u0027s like that\".",
+      "parentUuid": "3b7c1c1b_6501cd2d",
+      "range": {
+        "startLine": 230,
+        "startChar": 53,
+        "endLine": 230,
+        "endChar": 61
+      },
+      "revId": "380fe6bf706a196f2fe6d5272421103df5c4ba85",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
     },
     {
       "key": {
