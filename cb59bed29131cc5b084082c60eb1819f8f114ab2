@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "65f64dff_980ae770",
+        "filename": "README.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1003874
+      },
+      "writtenOn": "2020-01-03T08:10:09Z",
+      "side": 1,
+      "message": "(note) This is a build and installation from sources.\nMost admins will prefer to install an already built RPM.",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 12
+      },
+      "revId": "cb59bed29131cc5b084082c60eb1819f8f114ab2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    }
+  ]
+}
