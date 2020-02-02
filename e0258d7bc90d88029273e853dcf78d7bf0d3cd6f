@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "690af971_46cbed57",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2020-02-02T22:56:33Z",
+      "side": 1,
+      "message": "ah, commit message convention here too?\n\n\u0027destroy_backend: fix segfault on URI parse error\u0027 ? (not sure what to use on \u0027component\u0027 here, to be honest..)",
+      "revId": "e0258d7bc90d88029273e853dcf78d7bf0d3cd6f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "0b8ab38b_afe81a90",
         "filename": "rbh-find.c",
         "patchSetId": 1
