@@ -68,4 +68,13 @@ xtime2filter(enum predicate predicate, const char *days);
 struct rbh_filter *
 filetype2filter(const char *filetype);
 
+struct rbh_filter *
+filter_and(struct rbh_filter *left, struct rbh_filter *right);
+
+struct rbh_filter *
+filter_or(struct rbh_filter *left, struct rbh_filter *right);
+
+struct rbh_filter *
+filter_not(struct rbh_filter *filter);
+
 #endif
