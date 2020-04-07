@@ -22,6 +22,30 @@
       "revId": "44a8fb16be7812a0584068b25accd56488cdefde",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "765bf436_4521647c",
+        "filename": "src/filters.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 1010215
+      },
+      "writtenOn": "2020-04-07T18:23:24Z",
+      "side": 1,
+      "message": "The overhead is negligible, and without it, when linked against asan, the program will crash when it exits.\n\nIf this ever proves to be an issue, we can always compile it out with appropriately placed #if/#endif.",
+      "parentUuid": "ef3ad04c_00af44c3",
+      "range": {
+        "startLine": 217,
+        "startChar": 0,
+        "endLine": 235,
+        "endChar": 32
+      },
+      "revId": "44a8fb16be7812a0584068b25accd56488cdefde",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
     }
   ]
 }
