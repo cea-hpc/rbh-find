@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "a4a61188_e6bf6471",
+        "filename": "rbh-find.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1010215
+      },
+      "writtenOn": "2020-05-05T13:27:19Z",
+      "side": 1,
+      "message": "Programmatically, nothing prevents duplicate keys in struct rbh_value_map.\n\nBy skipping it I am hoping I will find another xattr named \"path\" that holds a string. Unlikely to happen, but then again, an xattr named \"path\" that is not a string is also unlikely to exist.",
+      "parentUuid": "c86c3462_e60fb02a",
+      "range": {
+        "startLine": 59,
+        "startChar": 12,
+        "endLine": 59,
+        "endChar": 55
+      },
+      "revId": "1b17ede27eb1e4cb3845fbffc9ce68982e1262d4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "7c178200_ca10c6c5",
         "filename": "rbh-find.c",
         "patchSetId": 3
