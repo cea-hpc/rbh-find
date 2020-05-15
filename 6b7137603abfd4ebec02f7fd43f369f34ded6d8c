@@ -81,6 +81,24 @@
       "revId": "6b7137603abfd4ebec02f7fd43f369f34ded6d8c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "47a30b98_9ab7c54a",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2020-05-15T14:51:47Z",
+      "side": 1,
+      "message": "problem is if `delta \u003e now + intmax`, which is possible with different signednes. Having the check protected from that, too.",
+      "parentUuid": "a5398d4b_88942ed7",
+      "revId": "6b7137603abfd4ebec02f7fd43f369f34ded6d8c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
     }
   ]
 }
