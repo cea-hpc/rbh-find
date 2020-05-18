@@ -117,6 +117,24 @@
       "revId": "6b7137603abfd4ebec02f7fd43f369f34ded6d8c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a56d63f8_d30f0546",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2020-05-18T16:05:29Z",
+      "side": 1,
+      "message": "\"When in doubt code same bugs as gnu find\". . . So I had a look and they use time_t... Well a timespec.\nThey actually support floating point values! Which we don\u0027t :p I didn\u0027t know!\n\nSo findutils pseudocode is:\n - xstrtod to convert string to float (double)\n - use modf to split fractional value\n - (assert fractional part was \u003c1)\n - perform operation (orig value - offset) on second\n - check for overflow on second and die\n - perform operation on nanosecond\n - check for overflow on ns and perform carry if required\n\nhttps://git.savannah.gnu.org/cgit/findutils.git/tree/find/parser.c#n3106\n\nI\u0027m not sure about the way they check overflow but I believe using timespec is the best way to go. Can be done in a separate patch though, that is no longer quite trivial, we can keep code this way and mark a todo...",
+      "parentUuid": "2258edaf_f30be125",
+      "revId": "6b7137603abfd4ebec02f7fd43f369f34ded6d8c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
     }
   ]
 }
