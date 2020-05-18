@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9b90c749_e46dedbf",
+        "filename": "rbh-find.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 1003874
+      },
+      "writtenOn": "2020-05-18T13:07:34Z",
+      "side": 1,
+      "message": "Does error() exit in all cases?\nI only read in man: \"If  status has a nonzero value, then error() calls exit(3) to terminate the program\"\nThis is not the case here, as the given status is 0.",
+      "range": {
+        "startLine": 244,
+        "startChar": 0,
+        "endLine": 245,
+        "endChar": 36
+      },
+      "revId": "9d44edf66cdca3e9439b340a475ed3bf963e304b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    }
+  ]
+}
