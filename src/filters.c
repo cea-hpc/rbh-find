@@ -12,7 +12,9 @@
 #include <assert.h>
 #include <errno.h>
 #include <error.h>
+#include <inttypes.h>
 #include <limits.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <sysexits.h>
 
@@ -36,6 +38,7 @@ static const struct rbh_filter_field predicate2filter_field[] = {
     [PRED_MMIN]     = { .fsentry = RBH_FP_STATX, .statx = STATX_MTIME, },
     [PRED_MTIME]    = { .fsentry = RBH_FP_STATX, .statx = STATX_MTIME, },
     [PRED_TYPE]     = { .fsentry = RBH_FP_STATX, .statx = STATX_TYPE },
+    [PRED_SIZE]     = { .fsentry = RBH_FP_STATX, .statx = STATX_SIZE },
 };
 
 struct rbh_filter *
@@ -63,16 +66,16 @@ shell_regex2filter(enum predicate predicate, const char *shell_regex,
 
 static struct rbh_filter *
 filter_uint64_range_new(const struct rbh_filter_field *field, uint64_t start,
-                        uint64_t end)
+                        int operator_start, uint64_t end, int operator_end)
 {
     struct rbh_filter *low, *high;
 
-    low = rbh_filter_compare_uint64_new(RBH_FOP_STRICTLY_GREATER, field, start);
+    low = rbh_filter_compare_uint64_new(operator_start, field, start);
     if (low == NULL)
         error_at_line(EXIT_FAILURE, errno, __FILE__, __LINE__,
                       "rbh_filter_compare_time");
 
-    high = rbh_filter_compare_uint64_new(RBH_FOP_STRICTLY_LOWER, field, end);
+    high = rbh_filter_compare_uint64_new(operator_end, field, end);
     if (high == NULL)
         error_at_line(EXIT_FAILURE, errno, __FILE__, __LINE__,
                       "rbh_filter_compare_time");
@@ -130,7 +133,8 @@ timedelta2filter(enum predicate predicate, enum time_unit unit,
         break;
     default:
         filter = filter_uint64_range_new(field, then - TIME_UNIT2SECONDS[unit],
-                                         then);
+                                         RBH_FOP_STRICTLY_GREATER, then,
+                                         RBH_FOP_STRICTLY_LOWER);
         if (filter == NULL)
             error_at_line(EXIT_FAILURE, errno, __FILE__, __LINE__,
                           "filter_time_range_new");
@@ -192,6 +196,91 @@ filetype2filter(const char *_filetype)
     filter = rbh_filter_compare_int32_new(RBH_FOP_EQUAL,
                                           &predicate2filter_field[PRED_TYPE],
                                           filetype);
+    if (filter == NULL)
+        error_at_line(EXIT_FAILURE, errno, __FILE__, __LINE__,
+                      "filter_compare_integer");
+
+    return filter;
+}
+
+struct rbh_filter *
+filesize2filter(const char *_filesize)
+{
+    struct rbh_filter *filter;
+    uint64_t unit_size;
+    uint64_t filesize;
+    int operator;
+    char *suffix;
+
+    switch (_filesize[0]) {
+    case '+':
+        _filesize++;
+        operator = RBH_FOP_STRICTLY_GREATER;
+        break;
+    case '-':
+        _filesize++;
+        operator = RBH_FOP_LOWER_OR_EQUAL;
+        break;
+    default:
+        operator = RBH_FOP_EQUAL;
+    }
+
+    filesize = strtoul(_filesize, &suffix, 10);
+    if (filesize == 0ULL)
+        error(EX_USAGE, 0,
+              "arguments to -size should start with at least one digit");
+    else if (errno == ERANGE && filesize == ULLONG_MAX)
+        error(EX_USAGE, 0, "invalid argument '%s': file size overflow",
+              _filesize);
+
+    if (suffix[0] == '\0') {
+        suffix[0] = 'b';
+        suffix[1] = '\0';
+    } else if (suffix[1] != '\0') {
+        error(EX_USAGE, 0,
+              "arguments to -size should contain only one letter, suffix: '%s'",
+              suffix);
+    }
+
+    switch (suffix[0]) {
+    case 'T':
+        unit_size = 1073741824000;
+        break;
+    case 'G':
+        unit_size = 1073741824;
+        break;
+    case 'M':
+        unit_size = 1048576;
+        break;
+    case 'k':
+        unit_size = 1024;
+        break;
+    case 'b':
+        unit_size = 512;
+        break;
+    case 'w':
+        unit_size = 2;
+        break;
+    case 'c':
+        break;
+    default:
+        error(EX_USAGE, 0, "unknown argument to -size: %s", suffix);
+    }
+
+    if (operator == RBH_FOP_EQUAL) {
+        uint64_t range_inf = (filesize - 1) * unit_size;
+        uint64_t range_sup = filesize * unit_size;
+
+        filter = filter_uint64_range_new(&predicate2filter_field[PRED_SIZE],
+                                         range_inf, RBH_FOP_STRICTLY_GREATER,
+                                         range_sup, RBH_FOP_LOWER_OR_EQUAL);
+    } else {
+	filesize = (filesize + (operator == RBH_FOP_STRICTLY_GREATER ? 0 : -1))
+                       * unit_size;
+        filter = rbh_filter_compare_uint64_new(operator,
+                     &predicate2filter_field[PRED_SIZE], filesize);
+    }
+
     if (filter == NULL)
         error_at_line(EXIT_FAILURE, errno, __FILE__, __LINE__,
                       "filter_compare_integer");
