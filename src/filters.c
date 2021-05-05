@@ -12,8 +12,10 @@
 #include <assert.h>
 #include <errno.h>
 #include <error.h>
+#include <inttypes.h>
 #include <limits.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include <sysexits.h>
 
 #include <sys/stat.h>
@@ -36,6 +38,7 @@ static const struct rbh_filter_field predicate2filter_field[] = {
     [PRED_MMIN]     = { .fsentry = RBH_FP_STATX, .statx = STATX_MTIME, },
     [PRED_MTIME]    = { .fsentry = RBH_FP_STATX, .statx = STATX_MTIME, },
     [PRED_TYPE]     = { .fsentry = RBH_FP_STATX, .statx = STATX_TYPE },
+    [PRED_SIZE]     = { .fsentry = RBH_FP_STATX, .statx = STATX_SIZE },
 };
 
 struct rbh_filter *
@@ -192,6 +195,80 @@ filetype2filter(const char *_filetype)
     filter = rbh_filter_compare_int32_new(RBH_FOP_EQUAL,
                                           &predicate2filter_field[PRED_TYPE],
                                           filetype);
+    if (filter == NULL)
+        error_at_line(EXIT_FAILURE, errno, __FILE__, __LINE__,
+                      "filter_compare_integer");
+
+    return filter;
+}
+
+struct rbh_filter *
+filesize2filter(const char *_filesize)
+{
+    struct rbh_filter *filter;
+    char suffix[3] = "\0";
+    uint64_t filesize;
+    int operator;
+    int n;
+
+    if (_filesize[0] == '\0')
+        error(EX_USAGE, 0, "arguments to -size should contain at least one "
+                           "digit");
+
+    switch (_filesize[0]) {
+    case '+':
+        _filesize++;
+        operator = RBH_FOP_STRICTLY_GREATER;
+        break;
+    case '-':
+        _filesize++;
+        operator = RBH_FOP_STRICTLY_LOWER;
+        break;
+    default:
+        operator = RBH_FOP_EQUAL;
+    }
+
+    n = sscanf(_filesize, "%" PRIu64 "%2s", &filesize, suffix);
+    if (n < 1)
+        error(EX_USAGE, 0, "arguments to -size should start with at least one "
+                           "digit");
+
+    if (suffix[0] == '\0') {
+        suffix[0] = 'b';
+        suffix[1] = '\0';
+    } else if (suffix[1] != '\0') {
+        error(EX_USAGE, 0, "arguments to -size should contain only one letter, "
+                           "suffix: '%s'", suffix);
+    }
+
+    switch (suffix[0]) {
+    case 'T':
+        filesize *= 1073741824000;
+        break;
+    case 'G':
+        filesize *= 1073741824;
+        break;
+    case 'M':
+        filesize *= 1048576;
+        break;
+    case 'k':
+        filesize *= 1024;
+        break;
+    case 'b':
+        filesize *= 512;
+        break;
+    case 'w':
+        filesize *= 2;
+        break;
+    case 'c':
+        break;
+    default:
+        error(EX_USAGE, 0, "unknown argument to -size: %s", suffix);
+    }
+
+    filter = rbh_filter_compare_uint64_new(operator,
+                                           &predicate2filter_field[PRED_SIZE],
+                                           filesize);
     if (filter == NULL)
         error_at_line(EXIT_FAILURE, errno, __FILE__, __LINE__,
                       "filter_compare_integer");
