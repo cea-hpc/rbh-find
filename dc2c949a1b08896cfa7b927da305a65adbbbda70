@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f9811431_1edba259",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-06-04T15:04:37Z",
+      "side": 1,
+      "message": "No because we can technically have a zero-length string ( \"\" ), so we must verify its length first.",
+      "parentUuid": "e207345f_48c409c3",
+      "range": {
+        "startLine": 214,
+        "startChar": 7,
+        "endLine": 214,
+        "endChar": 29
+      },
+      "revId": "dc2c949a1b08896cfa7b927da305a65adbbbda70",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e8f0d1de_13fde0ac",
         "filename": "src/filters.c",
         "patchSetId": 1
@@ -65,6 +89,54 @@
         "startChar": 8,
         "endLine": 231,
         "endChar": 14
+      },
+      "revId": "dc2c949a1b08896cfa7b927da305a65adbbbda70",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b131f84b_ac4254c6",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-06-04T15:04:37Z",
+      "side": 1,
+      "message": "We use sscanf because we can get both the size and the suffix at the same time. Moreover, we don\u0027t know the size of an unsigned long, as it can vary between systems, contrarily to PRIu64 which is always an unsigned int of 64 bits.",
+      "parentUuid": "0ce51a00_e7be7167",
+      "range": {
+        "startLine": 231,
+        "startChar": 8,
+        "endLine": 231,
+        "endChar": 14
+      },
+      "revId": "dc2c949a1b08896cfa7b927da305a65adbbbda70",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "15025eb9_d1d6b225",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-06-04T15:04:37Z",
+      "side": 1,
+      "message": "Using %s allows us to catch the whole string and properly manage it, as using %c on \"64bToto\" would left the \"Toto\" part aside, and we wouldn\u0027t be able to catch it otherwise.",
+      "parentUuid": "e8f0d1de_13fde0ac",
+      "range": {
+        "startLine": 231,
+        "startChar": 38,
+        "endLine": 231,
+        "endChar": 40
       },
       "revId": "dc2c949a1b08896cfa7b927da305a65adbbbda70",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
