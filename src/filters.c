@@ -13,8 +13,10 @@
 #include <errno.h>
 #include <error.h>
 #include <limits.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <sysexits.h>
+#include <ctype.h>
 
 #include <sys/stat.h>
 #ifndef HAVE_STATX
@@ -36,6 +38,7 @@ static const struct rbh_filter_field predicate2filter_field[] = {
     [PRED_MMIN]     = { .fsentry = RBH_FP_STATX, .statx = STATX_MTIME, },
     [PRED_MTIME]    = { .fsentry = RBH_FP_STATX, .statx = STATX_MTIME, },
     [PRED_TYPE]     = { .fsentry = RBH_FP_STATX, .statx = STATX_TYPE },
+    [PRED_PERM]     = { .fsentry = RBH_FP_STATX, .statx = STATX_MODE },
 };
 
 struct rbh_filter *
@@ -195,6 +198,262 @@ filetype2filter(const char *_filetype)
     if (filter == NULL)
         error_at_line(EXIT_FAILURE, errno, __FILE__, __LINE__,
                       "filter_compare_integer");
+
+    return filter;
+}
+
+static mode_t
+parse_symbolic_permissions(bool user, bool group, bool other,
+                           const char **input, mode_t mode)
+{
+    int who = (user || group || other);
+    int all = (user && group && other);
+    mode_t perm = 0;
+
+    while (true) {
+        switch (**input) {
+        case 'r':
+            perm |= user ? 0400 : 0;
+            perm |= group ? 0040 : 0;
+            perm |= other ? 0004 : 0;
+            perm |= who ? 0 : 0444;
+            break;
+        case 'w':
+            perm |= user ? 0200 : 0;
+            perm |= group ? 0020 : 0;
+            perm |= other ? 0002 : 0;
+            perm |= who ? 0 : 0222;
+            break;
+        case 'x':
+            perm |= user ? 0100 : 0;
+            perm |= group ? 0010 : 0;
+            perm |= other ? 0001 : 0;
+            perm |= who ? 0 : 0111;
+            break;
+        case 'X':
+            /* Adds execute permission to 'u', 'g' and/or 'o' if specified and
+             * either 'u', 'g' or 'o' already has execute permissions.
+             */
+            if ((mode & 0111) != 0) {
+                perm |= user ? 0100 : 0;
+                perm |= group ? 0010 : 0;
+                perm |= other ? 0001 : 0;
+            }
+            break;
+        case 's':
+            /* 's' is ignored if only 'o' is given, it's not an error */
+            if (other && !group && !user)
+                break;
+            perm |= user  ? S_ISUID : 0;
+            perm |= group ? S_ISGID : 0;
+            break;
+        case 't':
+            /* 't' should be used when 'o' or 'a' is given or who is empty */
+            perm |= (other || !who || all) ? S_ISVTX : 0;
+            break;
+        default:
+            return perm;
+            break;
+        }
+        (*input)++;
+    }
+}
+
+static mode_t
+parse_symbolic_copy_perm(bool user, bool group, bool other, const char **input,
+                         mode_t mode)
+{
+    mode_t previous_flags = 0;
+    mode_t perm = 0;
+
+    switch (**input) {
+    case 'u':
+        previous_flags = (mode & 0700);
+        perm |= user ? previous_flags : 0;
+        perm |= group ? (previous_flags >> 3) : 0;
+        perm |= other ? (previous_flags >> 6) : 0;
+        (*input)++;
+        break;
+    case 'g':
+        previous_flags = (mode & 0070);
+        perm |= user ? (previous_flags << 3) : 0;
+        perm |= group ? previous_flags : 0;
+        perm |= other ? (previous_flags >> 3) : 0;
+        (*input)++;
+        break;
+    case 'o':
+        previous_flags = (mode & 0007);
+        perm |= user ? (previous_flags << 6) : 0;
+        perm |= group ? (previous_flags << 3) : 0;
+        perm |= other ? previous_flags : 0;
+        (*input)++;
+        break;
+    default:
+        break;
+    }
+
+    return perm;
+}
+
+static void
+parse_symbolic_who(const char **input, bool *user, bool *group, bool *other)
+{
+
+    while (true) {
+        switch (**input) {
+        case 'u':
+            *user = true;
+            break;
+        case 'g':
+            *group = true;
+            break;
+        case 'o':
+            *other = true;
+            break;
+        case 'a':
+            *user = *group = *other = true;
+            break;
+        default:
+            return;
+        }
+        (*input)++;
+    }
+
+}
+
+static int
+parse_symbolic(const char *input, unsigned long *mode, const char **end)
+{
+    bool user, group, other;
+    mode_t perm;
+    char op;
+
+    user = group = other = false;
+    *end = input;
+    perm = 0;
+
+    parse_symbolic_who(&input, &user, &group, &other);
+
+    if (*input == '-' || *input == '+' || *input == '=')
+        op = *input++;
+    else
+        /* operation is required */
+        return -1;
+
+    /* get the flags in mode if 'u', 'o' and/or 'g' are used in the perm */
+    perm |= parse_symbolic_copy_perm(user, group, other, &input, *mode);
+
+    /* if 'u', 'g' or 'o' is used here,
+     * there must be the only character to parse.
+     */
+    if (perm != 0 && (*input != '\0' && *input != ','))
+        return -1;
+
+    /* parse perm's 'r', 'w', 'x', 's', 't' and 'X' flags */
+    perm |= parse_symbolic_permissions(user, group, other, &input, *mode);
+
+    switch (op) {
+    case '-':
+        /* remove the flags from mode */
+        *mode &= ~perm;
+        break;
+    case '+':
+        /* add the flags to mode */
+        *mode |= perm;
+        break;
+    case '=':
+        if (perm != 0)
+            /* set the flags of mode to perm */
+            *mode = perm;
+        break;
+    }
+
+    *end = input;
+    return 0;
+}
+
+static unsigned long
+symbolic_str2mode(const char *input)
+{
+    /* parse coma seperated list of symbolic representation */
+    unsigned long mode = 0;
+    const char *end = NULL;
+    int rc;
+
+    do {
+        rc = parse_symbolic(input, &mode, &end);
+        if (rc)
+            return ULONG_MAX;
+        input = end+1;
+    } while (*end == ',');
+
+    if (*end != '\0')
+        return ULONG_MAX;
+
+    return mode;
+}
+
+static unsigned long
+octal_str2mode(const char *input)
+{
+    unsigned long mode;
+    char *end;
+
+    mode = strtoul(input, &end, 8);
+    if (mode > 07777 || *end != '\0')
+        return ULONG_MAX;
+
+    return mode;
+}
+
+static unsigned long
+str2mode(const char *input)
+{
+    if (*input >= '0' && *input <= '7') {
+        return octal_str2mode(input);
+    } else if (*input == '8' || *input == '9') {
+        return ULONG_MAX;
+    } else {
+        return symbolic_str2mode(input);
+    }
+}
+
+struct rbh_filter *
+mode2filter(const char *_input)
+{
+    enum rbh_filter_operator operator;
+    struct rbh_filter *filter;
+    const char *input = _input;
+    unsigned long mode;
+
+    if (*input == '\0')
+        error(EX_USAGE, 0,
+              "arguments to -perm should contain at least one digit or a symbolic mode");
+
+    switch (*input) {
+    case '/':
+        operator = RBH_FOP_BITS_ANY_SET;
+        input++;
+        break;
+    case '-':
+        operator = RBH_FOP_BITS_ALL_SET;
+        input++;
+        break;
+    default:
+        operator = RBH_FOP_EQUAL;
+        break;
+    }
+
+    mode = str2mode(input);
+    if (mode > 07777)
+        error(EX_USAGE, 0, "invalid mode: %s", _input);
+
+    filter = rbh_filter_compare_uint32_new(operator,
+                                           &predicate2filter_field[PRED_PERM],
+                                           mode);
+    if (filter == NULL)
+        error_at_line(EXIT_FAILURE, errno, __FILE__, __LINE__,
+                      "filter_compare_uint32_new");
 
     return filter;
 }
