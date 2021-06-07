@@ -48,3 +48,5 @@ executable(
 	include_directories: include_dirs,
 	install: true,
 )
+
+subdir('tests')
