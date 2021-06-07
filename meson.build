@@ -27,6 +27,8 @@ have_statx = cc.has_function('statx', args: '-D_GNU_SOURCE',
 			     prefix: '#include <sys/stat.h>')
 conf_data.set('HAVE_STATX', have_statx)
 
+add_project_arguments('-Wno-pedantic', language : 'c')
+
 configure_file(input: 'config.h.in', output: 'config.h',
 	       configuration: conf_data)
 add_project_arguments(['-DHAVE_CONFIG_H',], language: 'c')
