@@ -1,0 +1,307 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cfa2feba_40cd2a5e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-06-10T22:46:15Z",
+      "side": 1,
+      "message": "(style) Is it just me or are you commit messages wrapped at like 50 chars?\n\nIt\u0027s actually fine to go up to 72 on the commit message itself.\n\nSome projects enforce shorter titles, but I don\u0027t feel too bad going over 65 chars when required.\n\nI noticed the same thing on Yoann\u0027s patches.",
+      "revId": "97b79885539344ed4a967cffe636255637fa9539",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ba419f73_4079d101",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-06-10T22:46:15Z",
+      "side": 1,
+      "message": "(nit++) gnu-find calls those \"predicates\" rather than options\n\nThat\u0027s really not important, but I think I used it in a few places in the project, feel free to use it, or not.",
+      "range": {
+        "startLine": 7,
+        "startChar": 21,
+        "endLine": 7,
+        "endChar": 27
+      },
+      "revId": "97b79885539344ed4a967cffe636255637fa9539",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "40f42f67_c705cfa7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-06-10T22:46:15Z",
+      "side": 1,
+      "message": "(minor) Could you also add that the option is deprecated by gnu-find so that it\u0027s clear that we are not leaving anything on the table here.",
+      "revId": "97b79885539344ed4a967cffe636255637fa9539",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "59879ad4_640428cc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-06-10T22:46:15Z",
+      "side": 1,
+      "message": "I haven\u0027t reviewed everything because it\u0027s getting too late to keep going, I\u0027ll try to finish it during the weekend.",
+      "revId": "97b79885539344ed4a967cffe636255637fa9539",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a8f51336_f703cb3b",
+        "filename": "include/filters.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-06-10T22:46:15Z",
+      "side": 1,
+      "message": "(style) we don\u0027t use typing suffix in general in rbh-v4 (ie. hungarian notation).",
+      "range": {
+        "startLine": 79,
+        "startChar": 24,
+        "endLine": 79,
+        "endChar": 31
+      },
+      "revId": "97b79885539344ed4a967cffe636255637fa9539",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "64328667_abeebcbb",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-06-10T22:46:15Z",
+      "side": 1,
+      "message": "(major) the function is too long",
+      "revId": "97b79885539344ed4a967cffe636255637fa9539",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d82cb91b_2ba2d63d",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-06-10T22:46:15Z",
+      "side": 1,
+      "message": "(nit) stx_mode is a __u16 in statx\u0027s man page, which tells me that a uint16_t would also be fine here. Or you could use mode_t 😊",
+      "range": {
+        "startLine": 210,
+        "startChar": 4,
+        "endLine": 210,
+        "endChar": 12
+      },
+      "revId": "97b79885539344ed4a967cffe636255637fa9539",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f26c3d80_054e173d",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-06-10T22:46:15Z",
+      "side": 1,
+      "message": "(minor) I am not a fan of this `loop` variable. You should be able to get rid of it if you extract the switch statements into dedicated functions.\n\nAlso in this case, I would prefer a boolean.",
+      "range": {
+        "startLine": 213,
+        "startChar": 8,
+        "endLine": 213,
+        "endChar": 12
+      },
+      "revId": "97b79885539344ed4a967cffe636255637fa9539",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d72f39b5_2aa17940",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-06-10T22:46:15Z",
+      "side": 1,
+      "message": "(minor) I think it would be useful leave a comment to explain how umask gets mixed into this. I mean, I can try to guess, but I\u0027d rather have the explanation from the person who wrote the code firsthand.",
+      "revId": "97b79885539344ed4a967cffe636255637fa9539",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fc90e9a9_6f3d6521",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-06-10T22:46:15Z",
+      "side": 1,
+      "message": "(minor) meh...\n\nThe man page for umask(2) says that you can get the value from /proc/self/status, but it sounds like a lot of work for not a lot of gain.\n\nYou could also do some complicated stuff to fork the current process, but I am not quite sure if that\u0027d be any better.\n\nOne way that would be a little bit safer and not too much work would be to use a destructor to make sure the umask is properly reset unless the process is SIGKILL-ed. You would probably want to use a constructor to get the initial value as well.",
+      "range": {
+        "startLine": 250,
+        "startChar": 8,
+        "endLine": 252,
+        "endChar": 26
+      },
+      "revId": "97b79885539344ed4a967cffe636255637fa9539",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "df0fb9da_7d18b381",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-06-10T22:46:15Z",
+      "side": 1,
+      "message": "(style) I am not sold on the benefit of vertically aligning the \u0027?\u0027 operator. Especially if you don\u0027t also vertically align the \u0027:\u0027 operator.",
+      "range": {
+        "startLine": 265,
+        "startChar": 22,
+        "endLine": 265,
+        "endChar": 23
+      },
+      "revId": "97b79885539344ed4a967cffe636255637fa9539",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5ff3fde8_b6f5e985",
+        "filename": "tests/test_perm.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-06-10T22:46:15Z",
+      "side": 1,
+      "message": "(style) Could you rename the file to use \u0027.bash\u0027 as the extension. Makes it clear that this isn\u0027t just a shell script and makes it legitimate to use bash-isms.",
+      "revId": "97b79885539344ed4a967cffe636255637fa9539",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "594a418e_5f066df5",
+        "filename": "tests/test_perm.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-06-10T22:46:15Z",
+      "side": 1,
+      "message": "(minor) I recently discovered, at a cost, that \"/usr/bin/env bash\" makes for a better shebang, because of things like software collections on Centos or things like that.",
+      "range": {
+        "startLine": 1,
+        "startChar": 2,
+        "endLine": 1,
+        "endChar": 11
+      },
+      "revId": "97b79885539344ed4a967cffe636255637fa9539",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6fd3b9dd_849977e0",
+        "filename": "tests/test_perm.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-06-10T22:46:15Z",
+      "side": 1,
+      "message": "(question) I didn\u0027t know about command until today. I think I get what it does (at least more or less). Could you explain why it\u0027s useful in this context, please?",
+      "range": {
+        "startLine": 3,
+        "startChar": 5,
+        "endLine": 3,
+        "endChar": 12
+      },
+      "revId": "97b79885539344ed4a967cffe636255637fa9539",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1097b04f_86cb49a0",
+        "filename": "tests/test_perm.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-06-10T22:46:15Z",
+      "side": 1,
+      "message": "(minor) Alright, there is a lot to say, but it\u0027s getting late here, so I don\u0027t want to spend too much time on it. Overall, it\u0027s great that you took the time to write tests, I know I should have.\n\nSummarizing a bit, skipping over the minor stuff:\n\n- In most situations, you want to use \"@\" instead of \"*\" (eg. \"${array[@]}\") [0]\n- It\u0027s good practice to quote bash variables, unless you want to make it clear that the variable should never contain spaces or simply cannot (eg. when you declare an integer variable: `local -i var`)\n- I am seeing some for loops with indices that could probably become `for var in \"${array[@]}\"`\n- Ideally, when it comes to temporary files, it\u0027s better to generate the file with `mktemp` as it protects you from tests hysteresis (when the previous test run affects the next one) or unfortunate setups (when a user just happens to have a file like that in their filesystem).\n- The previous point applies to any persistent resources.\n- The tests look like they require a running mongodb server on localhost. It\u0027s not too bad because we don\u0027t have tests yet anyway, so we\u0027re trading \"no tests at all\" vs. \"a few tests that don\u0027t work unless you have the right setup\". Still, that\u0027s not great.\n\n----------\n\nIf you\u0027re into bash, I spent some time writing a test harness a few years back [1]. I meant to use it in robinhood but never took the time to do it. Feel free to ignore this part of the comment as not even I know exactly how good a fit it would be in practice.\n\n[0] https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html\n[1] https://github.com/shypa/bunny",
+      "revId": "97b79885539344ed4a967cffe636255637fa9539",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
