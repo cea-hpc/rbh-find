@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0e0e83e5_2e5557d3",
+        "filename": "src/filters.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-06-11T12:59:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "056809e7_12283546",
+      "range": {
+        "startLine": 217,
+        "startChar": 8,
+        "endLine": 218,
+        "endChar": 20
+      },
+      "revId": "8561a998ab57490d3cb41f510f667a8a9df774ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b608410c_795e0127",
@@ -37,6 +61,30 @@
       "writtenOn": "2021-06-11T12:26:24Z",
       "side": 1,
       "message": "defect: wouldn\u0027t -1M be interpreted as 0M ?",
+      "range": {
+        "startLine": 223,
+        "startChar": 8,
+        "endLine": 223,
+        "endChar": 21
+      },
+      "revId": "8561a998ab57490d3cb41f510f667a8a9df774ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "83ffcdf2_5acae281",
+        "filename": "src/filters.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-06-11T12:59:35Z",
+      "side": 1,
+      "message": "Yes, but this is gnu-find\u0027s behaviour, so it is fine for us aswell.",
+      "parentUuid": "b608410c_795e0127",
       "range": {
         "startLine": 223,
         "startChar": 8,
@@ -70,6 +118,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d742eb19_54a29e5c",
+        "filename": "src/filters.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-06-11T12:59:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "11988028_eca9b6b6",
+      "range": {
+        "startLine": 231,
+        "startChar": 8,
+        "endLine": 231,
+        "endChar": 86
+      },
+      "revId": "8561a998ab57490d3cb41f510f667a8a9df774ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6594045d_603ec175",
@@ -93,6 +165,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "268ccd57_73ec0fad",
+        "filename": "src/filters.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-06-11T12:59:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6594045d_603ec175",
+      "range": {
+        "startLine": 240,
+        "startChar": 27,
+        "endLine": 240,
+        "endChar": 92
+      },
+      "revId": "8561a998ab57490d3cb41f510f667a8a9df774ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ed1ac6b4_efc92520",
@@ -106,6 +202,30 @@
       "writtenOn": "2021-06-11T12:26:24Z",
       "side": 1,
       "message": "defect: I think the penalty should be applied after the multiplication.",
+      "range": {
+        "startLine": 244,
+        "startChar": 4,
+        "endLine": 244,
+        "endChar": 24
+      },
+      "revId": "8561a998ab57490d3cb41f510f667a8a9df774ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a9dcf8e0_8fcbef14",
+        "filename": "src/filters.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-06-11T12:59:35Z",
+      "side": 1,
+      "message": "In that case, -3w would be 3 * 2 - 1 bytes, so 5 bytes, the version here does (3 - 1) * 2 \u003d 4 bytes. Since you want to see all files with a size inferior or equal to 2w (\u003d 4 bytes), you can easily see that applying the penalty after the multiplication is wrong.",
+      "parentUuid": "ed1ac6b4_efc92520",
       "range": {
         "startLine": 244,
         "startChar": 4,
