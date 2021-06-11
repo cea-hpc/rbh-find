@@ -226,6 +226,98 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b825fee2_da2af8c2",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 390,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-06-11T08:16:14Z",
+      "side": 1,
+      "message": "nit: useless double check on the first character",
+      "range": {
+        "startLine": 385,
+        "startChar": 8,
+        "endLine": 390,
+        "endChar": 26
+      },
+      "revId": "97b79885539344ed4a967cffe636255637fa9539",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "53761621_b4be01f9",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-06-11T08:16:14Z",
+      "side": 1,
+      "message": "minor: use NULL here, since you don\u0027t use the \"end\" string after",
+      "range": {
+        "startLine": 393,
+        "startChar": 31,
+        "endLine": 393,
+        "endChar": 35
+      },
+      "revId": "97b79885539344ed4a967cffe636255637fa9539",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5787949c_eeec2bdf",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 398,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-06-11T08:16:14Z",
+      "side": 1,
+      "message": "major: the \"while\" loop isn\u0027t necessary. Since the digits are supposed to be the last characters, and they should be in octal, you can simply call strtoul on the string, and verify if the pointer given back points to \u0027\\0\u0027 or not (in which case keeping the end string is necessary).",
+      "range": {
+        "startLine": 385,
+        "startChar": 8,
+        "endLine": 398,
+        "endChar": 9
+      },
+      "revId": "97b79885539344ed4a967cffe636255637fa9539",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8c703964_0832ce4b",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-06-11T08:16:14Z",
+      "side": 1,
+      "message": "style: do not break the comment line on user-visible strings, as explained here https://github.com/cea-hpc/robinhood/blob/v4/doc/coding-style.rst#maximum-line-length",
+      "range": {
+        "startLine": 432,
+        "startChar": 27,
+        "endLine": 433,
+        "endChar": 52
+      },
+      "revId": "97b79885539344ed4a967cffe636255637fa9539",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "5ff3fde8_b6f5e985",
         "filename": "tests/test_perm.sh",
         "patchSetId": 1
