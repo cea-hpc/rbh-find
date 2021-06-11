@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "056809e7_12283546",
+        "filename": "src/filters.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2021-06-11T11:54:38Z",
+      "side": 1,
+      "message": "defect: I think a 1.5M file is not well captured by `-size +1M`\n\nAs discussed:\n\u003ex -- strictly greater than x\n\u003cx -- lesser or equal than (x-1)\n\u003dx -- (strictly greater than (x-1)) and (lesser or equal than (x))",
+      "range": {
+        "startLine": 217,
+        "startChar": 8,
+        "endLine": 218,
+        "endChar": 20
+      },
+      "revId": "8561a998ab57490d3cb41f510f667a8a9df774ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "11988028_eca9b6b6",
+        "filename": "src/filters.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2021-06-11T11:54:38Z",
+      "side": 1,
+      "message": "style: \u003e80 characters",
+      "range": {
+        "startLine": 231,
+        "startChar": 8,
+        "endLine": 231,
+        "endChar": 86
+      },
+      "revId": "8561a998ab57490d3cb41f510f667a8a9df774ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6594045d_603ec175",
+        "filename": "src/filters.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2021-06-11T11:54:38Z",
+      "side": 1,
+      "message": "style: \u003e80 characters",
+      "range": {
+        "startLine": 240,
+        "startChar": 27,
+        "endLine": 240,
+        "endChar": 92
+      },
+      "revId": "8561a998ab57490d3cb41f510f667a8a9df774ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
