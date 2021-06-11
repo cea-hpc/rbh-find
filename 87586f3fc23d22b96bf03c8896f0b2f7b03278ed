@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3d2cbf0b_bb5b123f",
+        "filename": "src/filters.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-06-11T14:18:27Z",
+      "side": 1,
+      "message": "suggest: if I\u0027m right, operator can only be stricly_greater or lower_or_equal here. So I think you could simply write filesize -\u003d (unit_size * (RBH_FOP_LOWER_OR_EQUAL \u003d\u003d operator));",
+      "range": {
+        "startLine": 278,
+        "startChar": 37,
+        "endLine": 278,
+        "endChar": 61
+      },
+      "revId": "87586f3fc23d22b96bf03c8896f0b2f7b03278ed",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
