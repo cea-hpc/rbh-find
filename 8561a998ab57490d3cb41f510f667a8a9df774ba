@@ -258,6 +258,30 @@
       },
       "revId": "8561a998ab57490d3cb41f510f667a8a9df774ba",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9f31ad18_70c08135",
+        "filename": "src/filters.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-06-11T14:11:26Z",
+      "side": 1,
+      "message": "Find handles it in a (I dare to call it) weird way : find -size -1G \u003d all files smaller than 0G included, so empty files. This is the way gnu find works, I am only replicating the behaviour.",
+      "parentUuid": "30b47928_37a388db",
+      "range": {
+        "startLine": 244,
+        "startChar": 4,
+        "endLine": 244,
+        "endChar": 24
+      },
+      "revId": "8561a998ab57490d3cb41f510f667a8a9df774ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
