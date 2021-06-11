@@ -234,6 +234,30 @@
       },
       "revId": "8561a998ab57490d3cb41f510f667a8a9df774ba",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "30b47928_37a388db",
+        "filename": "src/filters.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-06-11T13:34:04Z",
+      "side": 1,
+      "message": "But 3w is 6 bytes. Why matching a size of 5 bytes be wrong ? It\u0027s inferior to 6 bytes which is what \u0027-\u0027 means. This may not be how find works but to me, if I use \u0027-1G\u0027, I expect find to match with any size less than 1G (1G - 1 bit is less). And what would it mean for \u0027-1G\u0027 to match less than 0G? Only empty files?\n\nApplying it after the multiplication is not wrong, it\u0027s just a different behavior. The question is how does find handle this?",
+      "parentUuid": "a9dcf8e0_8fcbef14",
+      "range": {
+        "startLine": 244,
+        "startChar": 4,
+        "endLine": 244,
+        "endChar": 24
+      },
+      "revId": "8561a998ab57490d3cb41f510f667a8a9df774ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
