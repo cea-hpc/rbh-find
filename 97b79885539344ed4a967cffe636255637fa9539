@@ -75,6 +75,23 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b71d3220_3c7e9884",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-06-11T08:18:33Z",
+      "side": 1,
+      "message": "Thanks for taking the time to read my patch. As I said in one of the comments, I implemented this feature in Lustre\u0027s lfs find. The parsing the mode and the tests are an adaptation from this patch.\n\nUnfortunately, I can\u0027t update this patch today so I replied to a few of your comments that needed a response. The update will have to wait for Monday.",
+      "revId": "97b79885539344ed4a967cffe636255637fa9539",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a8f51336_f703cb3b",
@@ -140,6 +157,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ad287f65_ca5df4de",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-06-11T08:18:33Z",
+      "side": 1,
+      "message": "I wanted to use mode_t but there is no 16 bits filter implementation. So I used a 32 bits filter and I wanted to be consistent with that. But there is no harm in putting mode_t in the helper functions.",
+      "parentUuid": "d82cb91b_2ba2d63d",
+      "range": {
+        "startLine": 210,
+        "startChar": 4,
+        "endLine": 210,
+        "endChar": 12
+      },
+      "revId": "97b79885539344ed4a967cffe636255637fa9539",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f26c3d80_054e173d",
         "filename": "src/filters.c",
         "patchSetId": 1
@@ -174,6 +215,24 @@
       "writtenOn": "2021-06-10T22:46:15Z",
       "side": 1,
       "message": "(minor) I think it would be useful leave a comment to explain how umask gets mixed into this. I mean, I can try to guess, but I\u0027d rather have the explanation from the person who wrote the code firsthand.",
+      "revId": "97b79885539344ed4a967cffe636255637fa9539",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "641587a3_2daec84f",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-06-11T08:18:33Z",
+      "side": 1,
+      "message": "who is the denomination in the posix documentation for chmod. It represents the characters before the operation in the middle (e.g. [/-][who][+\u003d-][perm]). If who is empty, the permission `perm` applies to user, group and other without the bits in umask. I\u0027ll add a comment to explain that.",
+      "parentUuid": "d72f39b5_2aa17940",
       "revId": "97b79885539344ed4a967cffe636255637fa9539",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -381,6 +440,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "0d55359f_c9c21555",
+        "filename": "tests/test_perm.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-06-11T08:18:33Z",
+      "side": 1,
+      "message": "Do you mean explaining it in the code ? I\u0027ll explain it here as well in case that\u0027s you meant. The point of command here is to test whether rbh-sync is installed on the system or not so that the tests can be executed because rbh-sync is an independant project from rbh-find.",
+      "parentUuid": "6fd3b9dd_849977e0",
+      "range": {
+        "startLine": 3,
+        "startChar": 5,
+        "endLine": 3,
+        "endChar": 12
+      },
+      "revId": "97b79885539344ed4a967cffe636255637fa9539",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "1097b04f_86cb49a0",
         "filename": "tests/test_perm.sh",
         "patchSetId": 1
@@ -392,6 +475,24 @@
       "writtenOn": "2021-06-10T22:46:15Z",
       "side": 1,
       "message": "(minor) Alright, there is a lot to say, but it\u0027s getting late here, so I don\u0027t want to spend too much time on it. Overall, it\u0027s great that you took the time to write tests, I know I should have.\n\nSummarizing a bit, skipping over the minor stuff:\n\n- In most situations, you want to use \"@\" instead of \"*\" (eg. \"${array[@]}\") [0]\n- It\u0027s good practice to quote bash variables, unless you want to make it clear that the variable should never contain spaces or simply cannot (eg. when you declare an integer variable: `local -i var`)\n- I am seeing some for loops with indices that could probably become `for var in \"${array[@]}\"`\n- Ideally, when it comes to temporary files, it\u0027s better to generate the file with `mktemp` as it protects you from tests hysteresis (when the previous test run affects the next one) or unfortunate setups (when a user just happens to have a file like that in their filesystem).\n- The previous point applies to any persistent resources.\n- The tests look like they require a running mongodb server on localhost. It\u0027s not too bad because we don\u0027t have tests yet anyway, so we\u0027re trading \"no tests at all\" vs. \"a few tests that don\u0027t work unless you have the right setup\". Still, that\u0027s not great.\n\n----------\n\nIf you\u0027re into bash, I spent some time writing a test harness a few years back [1]. I meant to use it in robinhood but never took the time to do it. Feel free to ignore this part of the comment as not even I know exactly how good a fit it would be in practice.\n\n[0] https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html\n[1] https://github.com/shypa/bunny",
+      "revId": "97b79885539344ed4a967cffe636255637fa9539",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "557f688d_acf3b1a0",
+        "filename": "tests/test_perm.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-06-11T08:18:33Z",
+      "side": 1,
+      "message": "This patch comes after a patch I made on Lustre for lfs find. So the parsing of the mode string and the test are almost the same. The main differences being the use of rbh-sync and the filter construction.\n\nRegarding the for loops with indices, I\u0027m not a bash expert so there may be a way to handle iterating over multiple lists. Otherwise, I think they are mandatory.\n\nThe main point of this test was to make sure that the parsing is done properly as the symbolic representation is tricky to implement. It\u0027s a quick adaptation of Lustre\u0027s test that will surely need to be improved when a more rigorous testing framework will be in place.\n\nThese tests have been successfully run on a VM so I can leave the file there and remove the test from meson if you prefer for now.",
+      "parentUuid": "1097b04f_86cb49a0",
       "revId": "97b79885539344ed4a967cffe636255637fa9539",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
