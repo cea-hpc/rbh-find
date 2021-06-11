@@ -26,6 +26,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b608410c_795e0127",
+        "filename": "src/filters.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-06-11T12:26:24Z",
+      "side": 1,
+      "message": "defect: wouldn\u0027t -1M be interpreted as 0M ?",
+      "range": {
+        "startLine": 223,
+        "startChar": 8,
+        "endLine": 223,
+        "endChar": 21
+      },
+      "revId": "8561a998ab57490d3cb41f510f667a8a9df774ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "11988028_eca9b6b6",
         "filename": "src/filters.c",
         "patchSetId": 3
@@ -65,6 +88,29 @@
         "startChar": 27,
         "endLine": 240,
         "endChar": 92
+      },
+      "revId": "8561a998ab57490d3cb41f510f667a8a9df774ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ed1ac6b4_efc92520",
+        "filename": "src/filters.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-06-11T12:26:24Z",
+      "side": 1,
+      "message": "defect: I think the penalty should be applied after the multiplication.",
+      "range": {
+        "startLine": 244,
+        "startChar": 4,
+        "endLine": 244,
+        "endChar": 24
       },
       "revId": "8561a998ab57490d3cb41f510f667a8a9df774ba",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
