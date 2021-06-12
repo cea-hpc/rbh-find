@@ -239,6 +239,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "dfea1705_18a0e432",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-06-12T10:10:57Z",
+      "side": 1,
+      "message": "I read POSIX\u0027s spec for find [0] and haven\u0027t found a trace of umask beyond:\n\n\u003e To start, a template shall be assumed with all file mode bits cleared. An op symbol of \u0027+\u0027 shall set the appropriate mode bits in the template; \u0027-\u0027 shall clear the appropriate bits; \u0027\u003d\u0027 shall set the appropriate mode bits, without regard to the contents of the file mode creation mask of the process.\n\nWhich I interpret as \"don\u0027t mix umask into this\". 😊\n\nI also read the code in gnu-find that parses mode strings [1] [2] [3], and it looks like it follows POSIX to the letter (at least regarding the value of umask).\n\n[0] https://pubs.opengroup.org/onlinepubs/9699919799/utilities/find.html\n[1] https://git.savannah.gnu.org/cgit/findutils.git/tree/find/parser.c#n1833\n[2] https://git.savannah.gnu.org/cgit/gnulib.git/tree/lib/modechange.c#n133\n[3] https://git.savannah.gnu.org/cgit/gnulib.git/tree/lib/modechange.c#n338",
+      "parentUuid": "641587a3_2daec84f",
+      "revId": "97b79885539344ed4a967cffe636255637fa9539",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "fc90e9a9_6f3d6521",
         "filename": "src/filters.c",
         "patchSetId": 1
@@ -464,6 +482,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5fae3d88_93c03936",
+        "filename": "tests/test_perm.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-06-12T10:10:57Z",
+      "side": 1,
+      "message": "\u003e Do you mean explaining it in the code ?\n\nI meant here, on gerrit.\n\n\u003e The point of command here is to test whether rbh-sync is installed on the system or not\n\nAh, I missed the part where it was rbh-sync, and not rbh-find.\nWould you say `command -v` is better than `which`, and if so why?\n\nNo need to switch to `which` unless you find a compelling argument for it.\nI am just curious to know if I should update my practices.",
+      "parentUuid": "0d55359f_c9c21555",
+      "range": {
+        "startLine": 3,
+        "startChar": 5,
+        "endLine": 3,
+        "endChar": 12
+      },
+      "revId": "97b79885539344ed4a967cffe636255637fa9539",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "1097b04f_86cb49a0",
         "filename": "tests/test_perm.sh",
         "patchSetId": 1
@@ -493,6 +535,24 @@
       "side": 1,
       "message": "This patch comes after a patch I made on Lustre for lfs find. So the parsing of the mode string and the test are almost the same. The main differences being the use of rbh-sync and the filter construction.\n\nRegarding the for loops with indices, I\u0027m not a bash expert so there may be a way to handle iterating over multiple lists. Otherwise, I think they are mandatory.\n\nThe main point of this test was to make sure that the parsing is done properly as the symbolic representation is tricky to implement. It\u0027s a quick adaptation of Lustre\u0027s test that will surely need to be improved when a more rigorous testing framework will be in place.\n\nThese tests have been successfully run on a VM so I can leave the file there and remove the test from meson if you prefer for now.",
       "parentUuid": "1097b04f_86cb49a0",
+      "revId": "97b79885539344ed4a967cffe636255637fa9539",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eef8bfec_315ce62c",
+        "filename": "tests/test_perm.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-06-12T10:10:57Z",
+      "side": 1,
+      "message": "\u003e I can leave the file there and remove the test from meson if you prefer for now.\n\nThat\u0027s a good suggestion. I like it.\n\n\u003e Regarding the for loops with indices, I\u0027m not a bash expert so there may be a way to handle iterating over multiple lists. Otherwise, I think they are mandatory.\n\nMy bad, missed that there were multiple lists being iterated on.",
+      "parentUuid": "557f688d_acf3b1a0",
       "revId": "97b79885539344ed4a967cffe636255637fa9539",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
