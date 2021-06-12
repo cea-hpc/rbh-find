@@ -189,6 +189,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "18057381_12075de4",
+        "filename": "src/filters.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-06-12T01:08:36Z",
+      "side": 1,
+      "message": "\u003e I am not sure I understood the major part correctly\n\nMy bad, that wasn\u0027t very clear indeed. I was trying to show that your implementation tolerated spaces at the end of the argument, whereas find doesn\u0027t.\n\nI believe using strtoul() solves this issue silently. So we\u0027re good 😊\n\nHere is the reproducer I used:\n\n #include \u003cerror.h\u003e\n #include \u003cinttypes.h\u003e\n #include \u003cstdio.h\u003e\n #include \u003cstdlib.h\u003e\n #include \u003csysexits.h\u003e\n\n void\n test(const char *_filesize)\n {\n     uint64_t filesize \u003d 0;\n     char suffix[3];\n     int n;\n\n     n \u003d sscanf(_filesize, \"%\" PRIu64 \"%2s\", \u0026filesize, \u0026suffix);\n     if (n \u003c 1)\n         error(EX_USAGE, 0, \"arguments to -size should start with at least one \"\n                            \"digit\");\n\n     printf(\"string: \u0027%s\u0027, filesize: %\" PRIu64 \", suffix: \u0027%s\u0027\\n\", _filesize,\n            filesize, suffix);\n     if (suffix[0] \u0026\u0026 suffix[1])\n         error(EXIT_FAILURE, 0, \"extra character after the suffix \u0027%c\u0027\",\n               suffix[0]);\n }\n\n int\n main(int argc, char *argv[])\n {\n     for (int i \u003d 1; i \u003c argc; i++)\n         test(argv[i]);\n }\n\nAnd here is the result with some inputs:\n\n $ ./main 1024\n string: \u00271024\u0027, filesize: 1024, suffix: \u0027\u0027\n $ ./main 1024c\n string: \u00271024c\u0027, filesize: 1024, suffix: \u0027c\u0027\n $ ./main 1024ca\n string: \u00271024ca\u0027, filesize: 1024, suffix: \u0027ca\u0027\n ./main: extra character after the suffix \u0027c\u0027\n $ ./main \"1024c a\" # \u003c\u003d\u003d That\u0027s the bug\n string: \u00271024c a\u0027, filesize: 1024, suffix: \u0027c\u0027",
+      "parentUuid": "55ebe946_2657be55",
+      "range": {
+        "startLine": 231,
+        "startChar": 4,
+        "endLine": 234,
+        "endChar": 36
+      },
+      "revId": "3a00eaf5686618212bfbf45e02ecefd52365f849",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b3f0f52d_48f00b8b",
