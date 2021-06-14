@@ -20,6 +20,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "2f3f651d_750650b4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-06-14T13:45:39Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "cfa2feba_40cd2a5e",
+      "revId": "97b79885539344ed4a967cffe636255637fa9539",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "ba419f73_4079d101",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
@@ -54,6 +72,24 @@
       "writtenOn": "2021-06-10T22:46:15Z",
       "side": 1,
       "message": "(minor) Could you also add that the option is deprecated by gnu-find so that it\u0027s clear that we are not leaving anything on the table here.",
+      "revId": "97b79885539344ed4a967cffe636255637fa9539",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "921b410e_d296b158",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-06-14T13:45:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "40f42f67_c705cfa7",
       "revId": "97b79885539344ed4a967cffe636255637fa9539",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -117,6 +153,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "134e5390_62fbe4ae",
+        "filename": "include/filters.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-06-14T13:45:39Z",
+      "side": 1,
+      "message": "I need to differentiate between the mode string and the mode integer in the implementation. I used mode_arg for the string variable.",
+      "parentUuid": "a8f51336_f703cb3b",
+      "range": {
+        "startLine": 79,
+        "startChar": 24,
+        "endLine": 79,
+        "endChar": 31
+      },
+      "revId": "97b79885539344ed4a967cffe636255637fa9539",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "64328667_abeebcbb",
         "filename": "src/filters.c",
         "patchSetId": 1
@@ -128,6 +188,24 @@
       "writtenOn": "2021-06-10T22:46:15Z",
       "side": 1,
       "message": "(major) the function is too long",
+      "revId": "97b79885539344ed4a967cffe636255637fa9539",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5d06be4b_a6cfcdcc",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-06-14T13:45:39Z",
+      "side": 1,
+      "message": "Done.\n\nI read the coding style guide but didn\u0027t find any recommendation on the maximum size apart from the maximum of 10 variables per function and the mention of \"function definitions fit inside a single screen\" which is quite relative. Is there a hard limit on the number of lines per functions?",
+      "parentUuid": "64328667_abeebcbb",
       "revId": "97b79885539344ed4a967cffe636255637fa9539",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -179,6 +257,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "129d49fe_0f12751f",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-06-14T13:45:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ad287f65_ca5df4de",
+      "range": {
+        "startLine": 210,
+        "startChar": 4,
+        "endLine": 210,
+        "endChar": 12
+      },
+      "revId": "97b79885539344ed4a967cffe636255637fa9539",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f26c3d80_054e173d",
@@ -192,6 +294,30 @@
       "writtenOn": "2021-06-10T22:46:15Z",
       "side": 1,
       "message": "(minor) I am not a fan of this `loop` variable. You should be able to get rid of it if you extract the switch statements into dedicated functions.\n\nAlso in this case, I would prefer a boolean.",
+      "range": {
+        "startLine": 213,
+        "startChar": 8,
+        "endLine": 213,
+        "endChar": 12
+      },
+      "revId": "97b79885539344ed4a967cffe636255637fa9539",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ae658efb_ed1fc705",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-06-14T13:45:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f26c3d80_054e173d",
       "range": {
         "startLine": 213,
         "startChar": 8,
@@ -273,6 +399,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "409ed03e_05fe4ac1",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-06-14T13:45:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee8ace3f_dcddb2ce",
+      "revId": "97b79885539344ed4a967cffe636255637fa9539",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fc90e9a9_6f3d6521",
@@ -286,6 +430,30 @@
       "writtenOn": "2021-06-10T22:46:15Z",
       "side": 1,
       "message": "(minor) meh...\n\nThe man page for umask(2) says that you can get the value from /proc/self/status, but it sounds like a lot of work for not a lot of gain.\n\nYou could also do some complicated stuff to fork the current process, but I am not quite sure if that\u0027d be any better.\n\nOne way that would be a little bit safer and not too much work would be to use a destructor to make sure the umask is properly reset unless the process is SIGKILL-ed. You would probably want to use a constructor to get the initial value as well.",
+      "range": {
+        "startLine": 250,
+        "startChar": 8,
+        "endLine": 252,
+        "endChar": 26
+      },
+      "revId": "97b79885539344ed4a967cffe636255637fa9539",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "90df7f75_419f2a2f",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-06-14T13:45:39Z",
+      "side": 1,
+      "message": "This is not necessary anymore.",
+      "parentUuid": "fc90e9a9_6f3d6521",
       "range": {
         "startLine": 250,
         "startChar": 8,
@@ -319,6 +487,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6cee48f1_f757ce8f",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-06-14T13:45:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df0fb9da_7d18b381",
+      "range": {
+        "startLine": 265,
+        "startChar": 22,
+        "endLine": 265,
+        "endChar": 23
+      },
+      "revId": "97b79885539344ed4a967cffe636255637fa9539",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b825fee2_da2af8c2",
@@ -332,6 +524,30 @@
       "writtenOn": "2021-06-11T08:16:14Z",
       "side": 1,
       "message": "nit: useless double check on the first character",
+      "range": {
+        "startLine": 385,
+        "startChar": 8,
+        "endLine": 390,
+        "endChar": 26
+      },
+      "revId": "97b79885539344ed4a967cffe636255637fa9539",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b8b531b6_a2c5bbdd",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 390,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-06-14T13:45:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b825fee2_da2af8c2",
       "range": {
         "startLine": 385,
         "startChar": 8,
@@ -365,6 +581,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a7e71528_563224a6",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-06-14T13:45:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "53761621_b4be01f9",
+      "range": {
+        "startLine": 393,
+        "startChar": 31,
+        "endLine": 393,
+        "endChar": 35
+      },
+      "revId": "97b79885539344ed4a967cffe636255637fa9539",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5787949c_eeec2bdf",
@@ -378,6 +618,30 @@
       "writtenOn": "2021-06-11T08:16:14Z",
       "side": 1,
       "message": "major: the \"while\" loop isn\u0027t necessary. Since the digits are supposed to be the last characters, and they should be in octal, you can simply call strtoul on the string, and verify if the pointer given back points to \u0027\\0\u0027 or not (in which case keeping the end string is necessary).",
+      "range": {
+        "startLine": 385,
+        "startChar": 8,
+        "endLine": 398,
+        "endChar": 9
+      },
+      "revId": "97b79885539344ed4a967cffe636255637fa9539",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "befebd44_6205d4e0",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 398,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-06-14T13:45:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5787949c_eeec2bdf",
       "range": {
         "startLine": 385,
         "startChar": 8,
@@ -411,6 +675,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "369383ac_13539550",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-06-14T13:45:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8c703964_0832ce4b",
+      "range": {
+        "startLine": 432,
+        "startChar": 27,
+        "endLine": 433,
+        "endChar": 52
+      },
+      "revId": "97b79885539344ed4a967cffe636255637fa9539",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5ff3fde8_b6f5e985",
@@ -428,6 +716,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c76562f0_19c691af",
+        "filename": "tests/test_perm.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-06-14T13:45:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5ff3fde8_b6f5e985",
+      "revId": "97b79885539344ed4a967cffe636255637fa9539",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "594a418e_5f066df5",
@@ -441,6 +747,30 @@
       "writtenOn": "2021-06-10T22:46:15Z",
       "side": 1,
       "message": "(minor) I recently discovered, at a cost, that \"/usr/bin/env bash\" makes for a better shebang, because of things like software collections on Centos or things like that.",
+      "range": {
+        "startLine": 1,
+        "startChar": 2,
+        "endLine": 1,
+        "endChar": 11
+      },
+      "revId": "97b79885539344ed4a967cffe636255637fa9539",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3c19cbb3_f1c17de0",
+        "filename": "tests/test_perm.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-06-14T13:45:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "594a418e_5f066df5",
       "range": {
         "startLine": 1,
         "startChar": 2,
@@ -595,6 +925,24 @@
       "side": 1,
       "message": "\u003e I can leave the file there and remove the test from meson if you prefer for now.\n\nThat\u0027s a good suggestion. I like it.\n\n\u003e Regarding the for loops with indices, I\u0027m not a bash expert so there may be a way to handle iterating over multiple lists. Otherwise, I think they are mandatory.\n\nMy bad, missed that there were multiple lists being iterated on.",
       "parentUuid": "557f688d_acf3b1a0",
+      "revId": "97b79885539344ed4a967cffe636255637fa9539",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6473bafa_81e22b21",
+        "filename": "tests/test_perm.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-06-14T13:45:39Z",
+      "side": 1,
+      "message": "I think I fixed your suggestions. I left the test and the meson.build file in the tests directory but removed the subdir command in the main meson.build.",
+      "parentUuid": "eef8bfec_315ce62c",
       "revId": "97b79885539344ed4a967cffe636255637fa9539",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
