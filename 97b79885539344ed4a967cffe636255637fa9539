@@ -175,6 +175,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fee9ce1a_c9874ad3",
+        "filename": "include/filters.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-06-14T20:36:40Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "134e5390_62fbe4ae",
+      "range": {
+        "startLine": 79,
+        "startChar": 24,
+        "endLine": 79,
+        "endChar": 31
+      },
+      "revId": "97b79885539344ed4a967cffe636255637fa9539",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "64328667_abeebcbb",
@@ -206,6 +230,24 @@
       "side": 1,
       "message": "Done.\n\nI read the coding style guide but didn\u0027t find any recommendation on the maximum size apart from the maximum of 10 variables per function and the mention of \"function definitions fit inside a single screen\" which is quite relative. Is there a hard limit on the number of lines per functions?",
       "parentUuid": "64328667_abeebcbb",
+      "revId": "97b79885539344ed4a967cffe636255637fa9539",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9c56bbc0_a1d6f866",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-06-14T20:36:40Z",
+      "side": 1,
+      "message": "There is no precise hard limit (1000 is certainly too long, but I don\u0027t think it makes sense to be extremely precise on this one). Any time a function is longer than, let\u0027s say, 25 lines, just ask yourself it would make sense to encapsulate some of the logic into a smaller function, and you should be all right.\n\nActually, I\u0027d say it\u0027s a good habit to always do it, even for functions that are less than 25 lines long. 😊",
+      "parentUuid": "5d06be4b_a6cfcdcc",
       "revId": "97b79885539344ed4a967cffe636255637fa9539",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -876,6 +918,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7421c605_392ad2f2",
+        "filename": "tests/test_perm.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-06-14T20:36:40Z",
+      "side": 1,
+      "message": "Thanks",
+      "parentUuid": "02b4b0f3_dc95dde9",
+      "range": {
+        "startLine": 3,
+        "startChar": 5,
+        "endLine": 3,
+        "endChar": 12
+      },
+      "revId": "97b79885539344ed4a967cffe636255637fa9539",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1097b04f_86cb49a0",
@@ -943,6 +1009,24 @@
       "side": 1,
       "message": "I think I fixed your suggestions. I left the test and the meson.build file in the tests directory but removed the subdir command in the main meson.build.",
       "parentUuid": "eef8bfec_315ce62c",
+      "revId": "97b79885539344ed4a967cffe636255637fa9539",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2ea365a7_995fc8a3",
+        "filename": "tests/test_perm.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-06-14T20:36:40Z",
+      "side": 1,
+      "message": "All good",
+      "parentUuid": "6473bafa_81e22b21",
       "revId": "97b79885539344ed4a967cffe636255637fa9539",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }

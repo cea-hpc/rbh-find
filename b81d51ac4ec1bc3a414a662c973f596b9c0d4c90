@@ -1,0 +1,262 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2a73a4d9_abba9eac",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-06-14T20:36:40Z",
+      "side": 1,
+      "message": "(typo) I missing that in the previous review, but it\u0027s a prefix, not a suffix, right?",
+      "range": {
+        "startLine": 9,
+        "startChar": 60,
+        "endLine": 9,
+        "endChar": 66
+      },
+      "revId": "b81d51ac4ec1bc3a414a662c973f596b9c0d4c90",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8356358a_89812b89",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-06-14T20:36:40Z",
+      "side": 1,
+      "message": "...",
+      "range": {
+        "startLine": 11,
+        "startChar": 25,
+        "endLine": 11,
+        "endChar": 31
+      },
+      "revId": "b81d51ac4ec1bc3a414a662c973f596b9c0d4c90",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "09fe39d6_bcb04f27",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-06-14T20:36:40Z",
+      "side": 1,
+      "message": "It\u0027s too late for me to review the actual complex part that parses symbolic modes and compare it to the standard. I\u0027ll leave it for another time (not tomorrow either).",
+      "revId": "b81d51ac4ec1bc3a414a662c973f596b9c0d4c90",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "444a711a_84129afd",
+        "filename": "src/filters.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-06-14T20:36:40Z",
+      "side": 1,
+      "message": "(question) Do you need to keep track of `all` once you have user/group/other?",
+      "range": {
+        "startLine": 300,
+        "startChar": 19,
+        "endLine": 300,
+        "endChar": 28
+      },
+      "revId": "b81d51ac4ec1bc3a414a662c973f596b9c0d4c90",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2a91faba_0389fb1a",
+        "filename": "src/filters.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 415,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-06-14T20:36:40Z",
+      "side": 1,
+      "message": "(style) I\u0027d be tempted to say that this function can be split into even smaller functions. Also, I\u0027d change the prototype to return the mode rather than passing it as an argument:\n\n static unsigned long\n symbolic_mode(const char *input)\n {\n     /* parse comma-separated list of symbolic representation */\n     ...\n }\n\n static unsigned long\n octal_str2mode(const char *input)\n {\n     unsigned long mode;\n     char *end;\n\n     mode \u003d strtoul(input, \u0026end, 8);\n     if (mode \u003e 07777 || *end !\u003d \u0027\\0\u0027)\n         return ULONG_MAX;\n }\n\n static unsigned long\n str2mode(const char *input)\n {\n     switch (*input) { /* Did I mention I like switch statements? */\n     case \u00270\u0027 .. \u00277\u0027:\n         return octal_str2mode(input);\n     case \u00278\u0027 .. \u00279\u0027:\n         return ULONG_MAX;\n     default:\n         return symbolic_mode(input);\n     }\n }\n\n struct rbh_filter *\n mode2filter(const char *_input)\n {\n     const char *input \u003d _input;\n     unsigned long mode;\n     enum rbh_filter_operator op;\n\n     switch (*input) {\n     case \u0027+\u0027:\n         ...\n     ...\n     }\n\n     mode \u003d str2mode(input);\n     if (mode \u003e 07777)\n         error(EX_USAGE, 0, \"invalid mode: %s\", _input);\n\n     ...\n }",
+      "range": {
+        "startLine": 382,
+        "startChar": 4,
+        "endLine": 415,
+        "endChar": 13
+      },
+      "revId": "b81d51ac4ec1bc3a414a662c973f596b9c0d4c90",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b132e12c_a248d681",
+        "filename": "src/filters.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 423,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-06-14T20:36:40Z",
+      "side": 1,
+      "message": "(minor) don\u0027t use an int where an enum would be appropriate: enum rbh_filter_operator",
+      "range": {
+        "startLine": 423,
+        "startChar": 4,
+        "endLine": 423,
+        "endChar": 7
+      },
+      "revId": "b81d51ac4ec1bc3a414a662c973f596b9c0d4c90",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4a18c5e6_43c587fa",
+        "filename": "src/filters.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 427,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-06-14T20:36:40Z",
+      "side": 1,
+      "message": "(typo) symbolic",
+      "range": {
+        "startLine": 427,
+        "startChar": 73,
+        "endLine": 427,
+        "endChar": 80
+      },
+      "revId": "b81d51ac4ec1bc3a414a662c973f596b9c0d4c90",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "959730ca_39605a0c",
+        "filename": "src/filters.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 429,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-06-14T20:36:40Z",
+      "side": 1,
+      "message": "(style) I think a switch statement would be more appropriate and consistent with the rest of the codebase:\n\n switch (*mode_args) {\n case \u0027/\u0027:\n     operator \u003d RBH_FOP_BITS_ANY_SET;\n     mode_args++;\n     break;\n case \u0027-\u0027:\n     operator \u003d RBH_FOP_BITS_ALL_SET;\n     mode_args++;\n     break;\n default:\n     operator \u003d RBH_FOP_EQUAL;\n }",
+      "revId": "b81d51ac4ec1bc3a414a662c973f596b9c0d4c90",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fd39fe33_1cf47415",
+        "filename": "src/filters.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 434,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-06-14T20:36:40Z",
+      "side": 1,
+      "message": "(style) put the \"else if\" on the same line as the closing parenthesis please.",
+      "revId": "b81d51ac4ec1bc3a414a662c973f596b9c0d4c90",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7790255b_5a4b5838",
+        "filename": "src/filters.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 439,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-06-14T20:36:40Z",
+      "side": 1,
+      "message": "(style) no need for braces around single-statement conditionals or loops.\n\nref: https://github.com/cea-hpc/robinhood/blob/v4/doc/coding-style.rst#braces",
+      "range": {
+        "startLine": 439,
+        "startChar": 34,
+        "endLine": 439,
+        "endChar": 36
+      },
+      "revId": "b81d51ac4ec1bc3a414a662c973f596b9c0d4c90",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d1787dc2_7628a1a7",
+        "filename": "src/filters.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 440,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-06-14T20:36:40Z",
+      "side": 1,
+      "message": "(nit) this does not include the operator prefix if there is one.",
+      "range": {
+        "startLine": 440,
+        "startChar": 47,
+        "endLine": 440,
+        "endChar": 55
+      },
+      "revId": "b81d51ac4ec1bc3a414a662c973f596b9c0d4c90",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bece5be2_71be1e92",
+        "filename": "src/filters.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 448,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-06-14T20:36:40Z",
+      "side": 1,
+      "message": "(minor) uint32_new",
+      "range": {
+        "startLine": 448,
+        "startChar": 38,
+        "endLine": 448,
+        "endChar": 45
+      },
+      "revId": "b81d51ac4ec1bc3a414a662c973f596b9c0d4c90",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
