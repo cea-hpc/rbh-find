@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bd657918_92f0f2db",
+        "filename": "src/filters.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-06-14T12:52:28Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "de29d17b_1682b2f3",
+      "range": {
+        "startLine": 227,
+        "startChar": 7,
+        "endLine": 227,
+        "endChar": 26
+      },
+      "revId": "d3052c49e5f821ad8ae2806e5323b2cd395ab257",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0d288fa8_1ce4c468",
@@ -37,6 +61,30 @@
       "writtenOn": "2021-06-14T10:20:44Z",
       "side": 1,
       "message": "minor: duplicate of line 270",
+      "range": {
+        "startLine": 231,
+        "startChar": 8,
+        "endLine": 233,
+        "endChar": 22
+      },
+      "revId": "d3052c49e5f821ad8ae2806e5323b2cd395ab257",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d8176868_c8f8cbc6",
+        "filename": "src/filters.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-06-14T12:52:28Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "0d288fa8_1ce4c468",
       "range": {
         "startLine": 231,
         "startChar": 8,
@@ -108,6 +156,30 @@
       "side": 1,
       "message": "I think the goal of Quentin\u0027s comment was to remove the check l.227",
       "parentUuid": "2488f786_49a704b6",
+      "range": {
+        "startLine": 249,
+        "startChar": 0,
+        "endLine": 252,
+        "endChar": 37
+      },
+      "revId": "d3052c49e5f821ad8ae2806e5323b2cd395ab257",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d0f56438_c3615458",
+        "filename": "src/filters.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-06-14T12:52:28Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "9883fb4d_27e57ec6",
       "range": {
         "startLine": 249,
         "startChar": 0,

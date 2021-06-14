@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0148d6d6_c63c69ca",
+        "filename": "src/filters.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-06-14T12:52:28Z",
+      "side": 1,
+      "message": "nit: for more readability, I would put operator \u003d *_filesize in the switch statement.",
+      "range": {
+        "startLine": 208,
+        "startChar": 17,
+        "endLine": 208,
+        "endChar": 30
+      },
+      "revId": "15f11b75caa121fbefdde321cdad72dd550e8123",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6888091c_5270b2c7",
+        "filename": "src/filters.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-06-14T12:52:28Z",
+      "side": 1,
+      "message": "style: I think, in this case, the style guideline suggest that all the parameters are on a new line.",
+      "range": {
+        "startLine": 269,
+        "startChar": 47,
+        "endLine": 269,
+        "endChar": 71
+      },
+      "revId": "15f11b75caa121fbefdde321cdad72dd550e8123",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
