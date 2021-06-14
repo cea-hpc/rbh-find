@@ -22,6 +22,30 @@
       },
       "revId": "d3052c49e5f821ad8ae2806e5323b2cd395ab257",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4379fc35_fb3b1716",
+        "filename": "src/filters.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-06-14T10:16:46Z",
+      "side": 1,
+      "message": "Oops, forgot to delete the other part, my bad.",
+      "parentUuid": "2488f786_49a704b6",
+      "range": {
+        "startLine": 249,
+        "startChar": 0,
+        "endLine": 252,
+        "endChar": 37
+      },
+      "revId": "d3052c49e5f821ad8ae2806e5323b2cd395ab257",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
