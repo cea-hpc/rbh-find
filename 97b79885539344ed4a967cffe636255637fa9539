@@ -257,6 +257,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ee8ace3f_dcddb2ce",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-06-14T07:14:18Z",
+      "side": 1,
+      "message": "Yes, after a discussion with Sebastien last friday, I did a test and it turns out that `find` doesn\u0027t use the umask. I was focused on the fact that the symbolic representation is defined by the man page of `chmod` and copied it\u0027s behavior.\n\nIn the following: `touch file; chmod +rwx file; find -perm +rwx file`, the find command will not display \"file\" which I find odd. `+rwx` means `777 \u0026 ~umask` for chmod and just `777` for find.",
+      "parentUuid": "dfea1705_18a0e432",
+      "revId": "97b79885539344ed4a967cffe636255637fa9539",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "fc90e9a9_6f3d6521",
         "filename": "src/filters.c",
         "patchSetId": 1
@@ -494,6 +512,30 @@
       "side": 1,
       "message": "\u003e Do you mean explaining it in the code ?\n\nI meant here, on gerrit.\n\n\u003e The point of command here is to test whether rbh-sync is installed on the system or not\n\nAh, I missed the part where it was rbh-sync, and not rbh-find.\nWould you say `command -v` is better than `which`, and if so why?\n\nNo need to switch to `which` unless you find a compelling argument for it.\nI am just curious to know if I should update my practices.",
       "parentUuid": "0d55359f_c9c21555",
+      "range": {
+        "startLine": 3,
+        "startChar": 5,
+        "endLine": 3,
+        "endChar": 12
+      },
+      "revId": "97b79885539344ed4a967cffe636255637fa9539",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "02b4b0f3_dc95dde9",
+        "filename": "tests/test_perm.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-06-14T07:14:18Z",
+      "side": 1,
+      "message": "As far as I know, `command` is a builtin function, not an external program which I guess makes it less dependent on the system. And I think I read somewhere, but I don\u0027t have a compelling source, that some implementation of `which` can return 0 when the command fails.\n\nI don\u0027t think there is a huge difference between `which` and `command -v`.",
+      "parentUuid": "5fae3d88_93c03936",
       "range": {
         "startLine": 3,
         "startChar": 5,
