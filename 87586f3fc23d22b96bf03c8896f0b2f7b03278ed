@@ -194,6 +194,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7c91217d_017a11f8",
+        "filename": "src/filters.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-06-14T19:18:45Z",
+      "side": 1,
+      "message": "__attribute__((fallthrough)) is \"the future\". 😊\n\nConsidering this is only a build dependency, unless one of us (rbh devs) is stuck with gcc v6 or less, I\u0027d say we\u0027re gonna be fine.\n\nEven Centos7, which is stuck with gcc v4 by default, has \"software collections\" if it comes to that, so I am not too worried.\n\nAlso, that attribute is already used in some other places in the project, so adding one more is OK.",
+      "parentUuid": "5d57593a_d7686e63",
+      "revId": "87586f3fc23d22b96bf03c8896f0b2f7b03278ed",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3fce4847_2e63cd36",

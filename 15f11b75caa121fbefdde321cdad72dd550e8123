@@ -26,6 +26,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8a080347_fde99e63",
+        "filename": "src/filters.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-06-14T19:18:45Z",
+      "side": 1,
+      "message": "(style) Wrong line breaking/indentation\n\n        filter \u003d rbh_filter_compare_uint64_new(\n                RBH_FOP_LOWER_OR_EQUAL, \u0026predicate2filter_field[PRED_SIZE],\n                filesize\n                );\n\nref: https://github.com/cea-hpc/robinhood/blob/v4/doc/coding-style.rst#how-to-break-lines",
+      "revId": "15f11b75caa121fbefdde321cdad72dd550e8123",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6888091c_5270b2c7",
         "filename": "src/filters.c",
         "patchSetId": 6
@@ -42,6 +59,53 @@
         "startChar": 47,
         "endLine": 269,
         "endChar": 71
+      },
+      "revId": "15f11b75caa121fbefdde321cdad72dd550e8123",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1f84b986_48a705c3",
+        "filename": "src/filters.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-06-14T19:18:45Z",
+      "side": 1,
+      "message": "Same as above",
+      "parentUuid": "6888091c_5270b2c7",
+      "range": {
+        "startLine": 269,
+        "startChar": 47,
+        "endLine": 269,
+        "endChar": 71
+      },
+      "revId": "15f11b75caa121fbefdde321cdad72dd550e8123",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "af062d8e_30e43ad2",
+        "filename": "src/filters.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-06-14T19:18:45Z",
+      "side": 1,
+      "message": "(style) this is good 👍",
+      "range": {
+        "startLine": 274,
+        "startChar": 8,
+        "endLine": 276,
+        "endChar": 67
       },
       "revId": "15f11b75caa121fbefdde321cdad72dd550e8123",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
