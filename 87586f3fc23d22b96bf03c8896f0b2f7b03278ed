@@ -41,6 +41,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5be60fe3_2740f674",
+        "filename": "src/filters.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-06-14T08:18:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ace215e9_e72f93a5",
+      "range": {
+        "startLine": 69,
+        "startChar": 24,
+        "endLine": 69,
+        "endChar": 42
+      },
+      "revId": "87586f3fc23d22b96bf03c8896f0b2f7b03278ed",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ea2f3979_0592c3ca",
@@ -54,6 +78,30 @@
       "writtenOn": "2021-06-12T01:08:36Z",
       "side": 1,
       "message": "(minor) unsigned long is only guaranteed to be 32 bits longs, you want strtoull() for uint64_t",
+      "range": {
+        "startLine": 228,
+        "startChar": 15,
+        "endLine": 228,
+        "endChar": 22
+      },
+      "revId": "87586f3fc23d22b96bf03c8896f0b2f7b03278ed",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9b82d760_fa58caf3",
+        "filename": "src/filters.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-06-14T08:18:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ea2f3979_0592c3ca",
       "range": {
         "startLine": 228,
         "startChar": 15,
@@ -87,6 +135,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0a2d833e_47f950f7",
+        "filename": "src/filters.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-06-14T08:18:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "669472b1_466ad46b",
+      "range": {
+        "startLine": 233,
+        "startChar": 8,
+        "endLine": 234,
+        "endChar": 25
+      },
+      "revId": "87586f3fc23d22b96bf03c8896f0b2f7b03278ed",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2dba6204_6b793d50",
@@ -100,6 +172,24 @@
       "writtenOn": "2021-06-12T01:08:36Z",
       "side": 1,
       "message": "(nit) I wonder if we could merge this with the switch statement below... Let me give it a try:\n\n    switch (*suffix++) {\n    case \u0027T\u0027:\n        unit_size \u003d 1099511627776;\n        break;\n    case \u0027G\u0027:\n        unit_size \u003d 1073741824;\n        break;\n    case \u0027M\u0027:\n        unit_size \u003d 1048576;\n        break;\n    case \u0027k\u0027:\n        unit_size \u003d 1024;\n        break;\n    case \u0027\\0\u0027:\n        /* default suffix */\n        suffix--;\n        __attribute__((fallthrough));\n    case \u0027b\u0027:\n        unit_size \u003d 512;\n        break;\n    case \u0027w\u0027:\n        unit_size \u003d 2;\n        break;\n    case \u0027c\u0027:\n        unit_size \u003d 1;\n        break;\n    default:\n        error(EX_USAGE, 0, \"invalid argument `%s\u0027 to -size\", _filesize);\n    }\n\n    if (*suffix)\n        error(EX_USAGE, 0, \"invalid argument `%s\u0027 to -size\", _filesize);\n\nThat would work, wouldn\u0027t it?",
+      "revId": "87586f3fc23d22b96bf03c8896f0b2f7b03278ed",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5d57593a_d7686e63",
+        "filename": "src/filters.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-06-14T08:18:13Z",
+      "side": 1,
+      "message": "It does work, though I am not a fan of __attribute__((falltrhough)) just because it depends on the compiler: https://stackoverflow.com/questions/45349079/how-to-use-attribute-fallthrough-correctly-in-gcc",
+      "parentUuid": "2dba6204_6b793d50",
       "revId": "87586f3fc23d22b96bf03c8896f0b2f7b03278ed",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -127,6 +217,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "15dce115_7e2a45b2",
+        "filename": "src/filters.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-06-14T08:18:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3fce4847_2e63cd36",
+      "range": {
+        "startLine": 247,
+        "startChar": 20,
+        "endLine": 247,
+        "endChar": 33
+      },
+      "revId": "87586f3fc23d22b96bf03c8896f0b2f7b03278ed",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3b126aba_3ac5e7d2",
@@ -140,6 +254,24 @@
       "writtenOn": "2021-06-12T01:08:36Z",
       "side": 1,
       "message": "(defect) unit_size \u003d 1;",
+      "revId": "87586f3fc23d22b96bf03c8896f0b2f7b03278ed",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "12620622_68492cc5",
+        "filename": "src/filters.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-06-14T08:18:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3b126aba_3ac5e7d2",
       "revId": "87586f3fc23d22b96bf03c8896f0b2f7b03278ed",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -191,6 +323,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "91a9c3b3_ea8b2e60",
+        "filename": "src/filters.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-06-14T08:18:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dcb8f04f_8e73945f",
+      "range": {
+        "startLine": 278,
+        "startChar": 37,
+        "endLine": 278,
+        "endChar": 61
+      },
+      "revId": "87586f3fc23d22b96bf03c8896f0b2f7b03278ed",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b62396d2_cca38de5",
@@ -204,6 +360,30 @@
       "writtenOn": "2021-06-12T01:08:36Z",
       "side": 1,
       "message": "(style) wrong indentation after a line break:\n\nEither:\n\n filter \u003d rbh_filter_compare_uint64_new(operator,\n                                        \u0026predicate2filter_field[PRED_SIZE], filesize);\n\nOr:\n\n filter \u003d rbh_filter_compare_uint64_new(\n         operator, \u0026predicate2filter_field[PRED_SIZE], filesize\n         );\n\nref: https://github.com/cea-hpc/robinhood/blob/v4/doc/coding-style.rst#how-to-break-lines",
+      "range": {
+        "startLine": 280,
+        "startChar": 8,
+        "endLine": 281,
+        "endChar": 67
+      },
+      "revId": "87586f3fc23d22b96bf03c8896f0b2f7b03278ed",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "550cbfcd_6b0eddda",
+        "filename": "src/filters.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-06-14T08:18:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b62396d2_cca38de5",
       "range": {
         "startLine": 280,
         "startChar": 8,
