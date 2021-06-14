@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2488f786_49a704b6",
+        "filename": "src/filters.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2021-06-14T08:56:19Z",
+      "side": 1,
+      "message": "minor: is this not already handled by your check l.227?",
+      "range": {
+        "startLine": 249,
+        "startChar": 0,
+        "endLine": 252,
+        "endChar": 37
+      },
+      "revId": "d3052c49e5f821ad8ae2806e5323b2cd395ab257",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
