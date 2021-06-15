@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "084c8337_42fb4395",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-06-15T12:39:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2a73a4d9_abba9eac",
+      "range": {
+        "startLine": 9,
+        "startChar": 60,
+        "endLine": 9,
+        "endChar": 66
+      },
+      "revId": "b81d51ac4ec1bc3a414a662c973f596b9c0d4c90",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8356358a_89812b89",
@@ -37,6 +61,30 @@
       "writtenOn": "2021-06-14T20:36:40Z",
       "side": 1,
       "message": "...",
+      "range": {
+        "startLine": 11,
+        "startChar": 25,
+        "endLine": 11,
+        "endChar": 31
+      },
+      "revId": "b81d51ac4ec1bc3a414a662c973f596b9c0d4c90",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0eecdee4_ea1ac05a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-06-15T12:39:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8356358a_89812b89",
       "range": {
         "startLine": 11,
         "startChar": 25,
@@ -87,6 +135,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "269f2d8d_20a8ff40",
+        "filename": "src/filters.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-06-15T12:39:59Z",
+      "side": 1,
+      "message": "Actually, no. I though that it was necessary for the \u0027t\u0027 perm option. But \"ugo+t\", \"a+t\" and \"o+t\" set the sticky bit for GNU-find. I thought \"ugo+t\" would be 0 but I was wrong.",
+      "parentUuid": "444a711a_84129afd",
+      "range": {
+        "startLine": 300,
+        "startChar": 19,
+        "endLine": 300,
+        "endChar": 28
+      },
+      "revId": "b81d51ac4ec1bc3a414a662c973f596b9c0d4c90",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2a91faba_0389fb1a",
@@ -100,6 +172,30 @@
       "writtenOn": "2021-06-14T20:36:40Z",
       "side": 1,
       "message": "(style) I\u0027d be tempted to say that this function can be split into even smaller functions. Also, I\u0027d change the prototype to return the mode rather than passing it as an argument:\n\n static unsigned long\n symbolic_mode(const char *input)\n {\n     /* parse comma-separated list of symbolic representation */\n     ...\n }\n\n static unsigned long\n octal_str2mode(const char *input)\n {\n     unsigned long mode;\n     char *end;\n\n     mode \u003d strtoul(input, \u0026end, 8);\n     if (mode \u003e 07777 || *end !\u003d \u0027\\0\u0027)\n         return ULONG_MAX;\n }\n\n static unsigned long\n str2mode(const char *input)\n {\n     switch (*input) { /* Did I mention I like switch statements? */\n     case \u00270\u0027 .. \u00277\u0027:\n         return octal_str2mode(input);\n     case \u00278\u0027 .. \u00279\u0027:\n         return ULONG_MAX;\n     default:\n         return symbolic_mode(input);\n     }\n }\n\n struct rbh_filter *\n mode2filter(const char *_input)\n {\n     const char *input \u003d _input;\n     unsigned long mode;\n     enum rbh_filter_operator op;\n\n     switch (*input) {\n     case \u0027+\u0027:\n         ...\n     ...\n     }\n\n     mode \u003d str2mode(input);\n     if (mode \u003e 07777)\n         error(EX_USAGE, 0, \"invalid mode: %s\", _input);\n\n     ...\n }",
+      "range": {
+        "startLine": 382,
+        "startChar": 4,
+        "endLine": 415,
+        "endChar": 13
+      },
+      "revId": "b81d51ac4ec1bc3a414a662c973f596b9c0d4c90",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0101edd8_fb0cc509",
+        "filename": "src/filters.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 415,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-06-15T12:39:59Z",
+      "side": 1,
+      "message": "I have nothing against switch statements but I think in str2mode it\u0027s simpler to use an if/else if/else statement.",
+      "parentUuid": "2a91faba_0389fb1a",
       "range": {
         "startLine": 382,
         "startChar": 4,
@@ -133,6 +229,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7d62b5da_3982b645",
+        "filename": "src/filters.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 423,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-06-15T12:39:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b132e12c_a248d681",
+      "range": {
+        "startLine": 423,
+        "startChar": 4,
+        "endLine": 423,
+        "endChar": 7
+      },
+      "revId": "b81d51ac4ec1bc3a414a662c973f596b9c0d4c90",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4a18c5e6_43c587fa",
@@ -146,6 +266,30 @@
       "writtenOn": "2021-06-14T20:36:40Z",
       "side": 1,
       "message": "(typo) symbolic",
+      "range": {
+        "startLine": 427,
+        "startChar": 73,
+        "endLine": 427,
+        "endChar": 80
+      },
+      "revId": "b81d51ac4ec1bc3a414a662c973f596b9c0d4c90",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "084701b9_66b2788d",
+        "filename": "src/filters.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 427,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-06-15T12:39:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4a18c5e6_43c587fa",
       "range": {
         "startLine": 427,
         "startChar": 73,
@@ -173,6 +317,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "da1c9ab2_c8b86608",
+        "filename": "src/filters.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 429,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-06-15T12:39:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "959730ca_39605a0c",
+      "revId": "b81d51ac4ec1bc3a414a662c973f596b9c0d4c90",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fd39fe33_1cf47415",
@@ -190,6 +352,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1e178abb_8b289095",
+        "filename": "src/filters.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 434,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-06-15T12:39:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fd39fe33_1cf47415",
+      "revId": "b81d51ac4ec1bc3a414a662c973f596b9c0d4c90",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7790255b_5a4b5838",
@@ -203,6 +383,30 @@
       "writtenOn": "2021-06-14T20:36:40Z",
       "side": 1,
       "message": "(style) no need for braces around single-statement conditionals or loops.\n\nref: https://github.com/cea-hpc/robinhood/blob/v4/doc/coding-style.rst#braces",
+      "range": {
+        "startLine": 439,
+        "startChar": 34,
+        "endLine": 439,
+        "endChar": 36
+      },
+      "revId": "b81d51ac4ec1bc3a414a662c973f596b9c0d4c90",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6df60093_51e564c2",
+        "filename": "src/filters.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 439,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-06-15T12:39:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7790255b_5a4b5838",
       "range": {
         "startLine": 439,
         "startChar": 34,
@@ -236,6 +440,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "88732740_c9ad1fe0",
+        "filename": "src/filters.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 440,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-06-15T12:39:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d1787dc2_7628a1a7",
+      "range": {
+        "startLine": 440,
+        "startChar": 47,
+        "endLine": 440,
+        "endChar": 55
+      },
+      "revId": "b81d51ac4ec1bc3a414a662c973f596b9c0d4c90",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bece5be2_71be1e92",
@@ -249,6 +477,30 @@
       "writtenOn": "2021-06-14T20:36:40Z",
       "side": 1,
       "message": "(minor) uint32_new",
+      "range": {
+        "startLine": 448,
+        "startChar": 38,
+        "endLine": 448,
+        "endChar": 45
+      },
+      "revId": "b81d51ac4ec1bc3a414a662c973f596b9c0d4c90",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "458cc7c3_f14f9bf7",
+        "filename": "src/filters.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 448,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-06-15T12:39:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bece5be2_71be1e92",
       "range": {
         "startLine": 448,
         "startChar": 38,
