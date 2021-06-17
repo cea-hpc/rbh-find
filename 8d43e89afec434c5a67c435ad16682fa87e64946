@@ -3,6 +3,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ceeec0fc_89c7ed9c",
+        "filename": "src/filters.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-06-17T22:16:45Z",
+      "side": 1,
+      "message": "(defect) alright, this is a bit more work than I have time for, but from the looks of things, your implementation is not equivalent to that of find\u0027s [0].\n\nI compared the output of your implementation with that of find\u0027s for the input in POSIX\u0027 spec page for chmod [1], and only the first result matches:\n\n $ cat main.c\n // copy-paste all the code you need from this file to get str2mode\n \n int\n main(int argc, char *argv[])\n {\n     for (int i \u003d 1; i \u003c argc; i++) {\n         unsigned long mode \u003d str2mode(argv[i]);\n \n         if (mode \u003e 07777)\n             printf(\"%s --\u003e error\\n\", argv[i]);\n         else\n             printf(\"%s --\u003e 0%o\\n\", argv[i], (mode_t)mode);\n     }\n \n     return EXIT_SUCCESS;\n }\n\n $ cat reference.c\n #define _GNU_SOURCE\n \n #include \u003cstdbool.h\u003e\n #include \u003cstdio.h\u003e\n #include \u003cstdlib.h\u003e\n \n #include \"gnulib/lib/modechange.h\"\n \n int\n main(int argc, char *argv[])\n {\n     for (int i \u003d 1; i \u003c argc; i++) {\n         struct mode_change *change \u003d mode_compile(argv[i]);\n \n         if (change \u003d\u003d NULL)\n             printf(\"%s --\u003e error\\n\", argv[i]);\n         else\n             printf(\"%s --\u003e 0%o\\n\", argv[i], mode_adjust(0, false, 0, change, NULL));\n \n         free(change);\n     }\n \n     return EXIT_SUCCESS;\n }\n\nThen it\u0027s a bit of work to setup gnulib [2] but it\u0027s decently explained here. [3]\nBasically, you need:\n\n- a boilerplate configure.ac\n\n $ cat configure.ac\n AC_INIT([foo], [0.0], [john.smith@example.com])\n AC_CONFIG_SRCDIR([reference.c])\n AC_CONFIG_AUX_DIR([build-aux])\n \n AM_INIT_AUTOMAKE([foreign])\n \n AC_CONFIG_FILES([Makefile])\n \n AC_PROG_CC\n \n AC_CONFIG_HEADERS([config.h])\n \n AC_OUTPUT\n\n- an empty Makefile.am\n- to run `path/to/gnulib/gnulib-tool --import modechange` and follow the instructions at the end of the output\n- to run the classic autotools setup commands:\n\n $ autoreconf --install . \u0026\u0026 ./configure \u0026\u0026 make -j $(nproc)\n\n- and finally, a boilerplate Makefile to help compile reference.c into an executable:\n\n $ cat Makefile.bis\n CC :\u003d gcc\n CFLAGS :\u003d -Wall -Werror -std\u003dc11 -g\n LDFLAGS :\u003d\n\n reference: reference.c lib/modechange.h lib/modechange.o lib/*.o\n\nThen it\u0027s as straight forward as running `make -f Makefile.bis main reference`\n\nThe actual test I ran:\n\n $ make -f Makefile.bis main reference\n $ inputs\u003d(uo\u003dg g-r+w g\u003do-w go+-w a+\u003d)\n $ command diff -y \u003c(./reference \"${inputs[@]}\") \u003c(./main \"${inputs[@]}\")\n uo\u003dg --\u003e 00\t\tuo\u003dg --\u003e 00\n g-r+w --\u003e 020\t      |\tg-r+w --\u003e error\n g\u003do-w --\u003e 00\t      |\tg\u003do-w --\u003e error\n go+-w --\u003e 00\t      |\tgo+-w --\u003e error\n a+\u003d --\u003e 00\t      |\ta+\u003d --\u003e error\n\nAdmittedly, those are edge cases, but gnu-find supports them, and I would like those to pass before I test your patch with more (probably less exotic) inputs.\n\n[0] http://git.savannah.gnu.org/gitweb/?p\u003dfindutils.git;a\u003dblob;f\u003dfind/parser.c;h\u003df5d100a237794498815542a2a801b0155ad63374;hb\u003dHEAD#l1834\n[1] https://pubs.opengroup.org/onlinepubs/9699919799/utilities/chmod.html section \"EXAMPLES\"\n[2] https://github.com/coreutils/gnulib\n[3] https://www.gnu.org/software/gnulib/manual/gnulib.html#Initial-import",
+      "revId": "8d43e89afec434c5a67c435ad16682fa87e64946",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "17d1fc31_b9a9b7d8",
         "filename": "src/filters.c",
         "patchSetId": 3
@@ -19,6 +36,29 @@
         "startChar": 13,
         "endLine": 378,
         "endChar": 17
+      },
+      "revId": "8d43e89afec434c5a67c435ad16682fa87e64946",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2f5af5f3_8d4b5f77",
+        "filename": "src/filters.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 418,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-06-17T22:16:45Z",
+      "side": 1,
+      "message": "(style) no need for `else` after `return`, and no need for braces for single-line conditionals:\n\n if (*input \u003e\u003d \u00270\u0027 \u0026\u0026 *input \u003c\u003d \u00277\u0027)\n     return octal_str2mode(input);\n if (*input \u003d\u003d \u00278\u0027 || *input \u003d\u003d \u00279\u0027)\n     return ULONG_MAX;\n return symbolic_str2mode(input);\n\nI\u0027d still make the case that we have a switch statement begging to be used on our hands. 😊",
+      "range": {
+        "startLine": 412,
+        "startChar": 4,
+        "endLine": 418,
+        "endChar": 5
       },
       "revId": "8d43e89afec434c5a67c435ad16682fa87e64946",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
