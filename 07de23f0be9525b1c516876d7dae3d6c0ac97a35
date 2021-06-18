@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "03b37189_e0539ac2",
+        "filename": "src/filters.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-06-18T11:19:11Z",
+      "side": 1,
+      "message": "style-question: shouldn\u0027t this be only indented once?",
+      "range": {
+        "startLine": 269,
+        "startChar": 11,
+        "endLine": 269,
+        "endChar": 16
+      },
+      "revId": "07de23f0be9525b1c516876d7dae3d6c0ac97a35",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
