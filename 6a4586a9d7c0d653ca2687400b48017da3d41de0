@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f492b49e_d62c821d",
+        "filename": "src/filters.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 372,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-06-21T09:54:13Z",
+      "side": 1,
+      "message": "defect: I think this should be perm \u003d ...",
+      "range": {
+        "startLine": 372,
+        "startChar": 13,
+        "endLine": 372,
+        "endChar": 15
+      },
+      "revId": "6a4586a9d7c0d653ca2687400b48017da3d41de0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
