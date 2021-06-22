@@ -36,6 +36,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f8037222_a7825302",
+        "filename": "src/filters.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-06-22T21:48:55Z",
+      "side": 1,
+      "message": "You\u0027re welcome.",
+      "parentUuid": "d966d187_094969c0",
+      "revId": "8d43e89afec434c5a67c435ad16682fa87e64946",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "17d1fc31_b9a9b7d8",
@@ -120,6 +138,30 @@
       "side": 1,
       "message": "My bad, I thought that the switch statement that you gave was pseudo code. I had no idea that you could write `case \u00270\u0027 ... \u00277\u0027:`. I will use a switch.\n\nAlthough, I don\u0027t like the suggestion that you\u0027re making here. I don\u0027t think removing an if/else if/else structure is a good idea. To me the current structure conveys more meaning than the double if statements with a final return which, in my opinion, breaks the logic of the code.\n\nUnfortunately, we have the pendantic warning which is unhappy.\n`error: range expressions in switch statements are non-standard [-Werror\u003dpedantic]`\n\nShould we remove this warning since we don\u0027t conform to the standard anyway?",
       "parentUuid": "2f5af5f3_8d4b5f77",
+      "range": {
+        "startLine": 412,
+        "startChar": 4,
+        "endLine": 418,
+        "endChar": 5
+      },
+      "revId": "8d43e89afec434c5a67c435ad16682fa87e64946",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5a6c12f4_1c4ea49e",
+        "filename": "src/filters.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 418,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-06-22T21:48:55Z",
+      "side": 1,
+      "message": "Yes, feel free to do so.",
+      "parentUuid": "8d621806_579f128f",
       "range": {
         "startLine": 412,
         "startChar": 4,
