@@ -16,6 +16,63 @@
       "message": "Looks good to me.",
       "revId": "c1fdd901bd1f95b3f63c07a71206fbb8f698f822",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "86e72a6e_8ddb135d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-06-27T12:32:47Z",
+      "side": 1,
+      "message": "Alright, this is still not quite correct [0][1], but I feel this has been dragging on for long enough. It works for the most common use cases.\n\nLet\u0027s document that the implementation is a work in progress (README + commit message + sources), merge it, and we can revisit the differences at a later point in time.\n\nDon\u0027t beat yourself up too hard, this was always going to be a challenge to get right.\n\n[0] examples of modes that don\u0027t give the same result:\n\n   input | reference | rbh-find\n \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\n   \u003d0600 |      0600 |    error\n g\u003dw,o\u003dr |       042 |       02\n\n[1] the \u0027X\u0027 symbol is hard to handle",
+      "revId": "c1fdd901bd1f95b3f63c07a71206fbb8f698f822",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0f43c848_4f36f4b8",
+        "filename": "README.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-06-27T12:32:47Z",
+      "side": 1,
+      "message": "(minor) As you write later in this file, u+s will only report files whose mode is exactly u+s, won\u0027t it? In this case, doesn\u0027t it make more sense to use `/u+s` here?",
+      "range": {
+        "startLine": 77,
+        "startChar": 34,
+        "endLine": 77,
+        "endChar": 37
+      },
+      "revId": "c1fdd901bd1f95b3f63c07a71206fbb8f698f822",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "10bc5476_ab2b1c99",
+        "filename": "meson.build",
+        "patchSetId": 7
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-06-27T12:32:47Z",
+      "side": 1,
+      "message": "(style) This is not a configuration check (nor a `configuration check` \u003e `function`), it should not be here.\n\nHave you considered lowering the `warning_level` to 2 instead?",
+      "revId": "c1fdd901bd1f95b3f63c07a71206fbb8f698f822",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
