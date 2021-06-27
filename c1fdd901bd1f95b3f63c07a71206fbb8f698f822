@@ -35,6 +35,41 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "782256f7_6a1bfd90",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2021-06-27T13:50:31Z",
+      "side": 1,
+      "message": "Good work! -perm is useful, it\u0027s good to have done.\nAs said in reply to one of Quentin\u0027s comments it\u0027s a very messy option though, don\u0027t beat yourself over it.",
+      "revId": "c1fdd901bd1f95b3f63c07a71206fbb8f698f822",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4c7297b9_0c53f05b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2021-06-27T13:50:31Z",
+      "side": 1,
+      "message": "ah, I\u0027m just noticing this one after I wrote plenty of examples in the code :D\n\nI agree we don\u0027t need 100% compat, it\u0027s fine to have most common cases working.\nI think g\u003dw,o\u003dr should work at least though, that kind of kills the point of commas... Rest is probably fine I agree, I don\u0027t think I\u0027ve ever seen anyone use +-\u003d\u003cnumeral\u003e",
+      "parentUuid": "86e72a6e_8ddb135d",
+      "revId": "c1fdd901bd1f95b3f63c07a71206fbb8f698f822",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0f43c848_4f36f4b8",
@@ -71,6 +106,109 @@
       "writtenOn": "2021-06-27T12:32:47Z",
       "side": 1,
       "message": "(style) This is not a configuration check (nor a `configuration check` \u003e `function`), it should not be here.\n\nHave you considered lowering the `warning_level` to 2 instead?",
+      "revId": "c1fdd901bd1f95b3f63c07a71206fbb8f698f822",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aecdd1e1_40366114",
+        "filename": "meson.build",
+        "patchSetId": 7
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2021-06-27T13:50:31Z",
+      "side": 1,
+      "message": "reducing warning_level to 2 is not enough.\nThere are however warnings being ignored by using -Wno-pedantic that are worth fixing (in librobinhood......), rbh_backend_destroy, rbh_mut_iter_destroy and rbh_iter_destroy have a return statement with expression in void functions.\n\nThe other warnings are also in librobinhood, but are rather practical (errno ?: save_errno ternary with omitted middle statement and range expressions in switch statements), so I guess we have to find some common grounds here",
+      "parentUuid": "10bc5476_ab2b1c99",
+      "revId": "c1fdd901bd1f95b3f63c07a71206fbb8f698f822",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "25088dca_8cf1d0a1",
+        "filename": "src/filters.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2021-06-27T13:50:31Z",
+      "side": 1,
+      "message": "(nitpick) this might make more sense to be reverted?\nWhen used later I took a minute to understand why you would want to set all modes if who is not empty",
+      "revId": "c1fdd901bd1f95b3f63c07a71206fbb8f698f822",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "921d7e30_a6ace544",
+        "filename": "src/filters.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2021-06-27T13:50:31Z",
+      "side": 1,
+      "message": "if who is empty, we can actually pass an octal mode to find e.g.\n`find -perm \u003d444` or even `find -perm u\u003dx,-100` (final mode 0) work.",
+      "revId": "c1fdd901bd1f95b3f63c07a71206fbb8f698f822",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aaf643ff_07489bda",
+        "filename": "src/filters.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 374,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2021-06-27T13:50:31Z",
+      "side": 1,
+      "message": "this actually seems to work with no who set at all (`find -perm a\u003dr,-u,o+x` yields 0001, also tested with +/\u003d)",
+      "revId": "c1fdd901bd1f95b3f63c07a71206fbb8f698f822",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6e15a8f1_d53f1d04",
+        "filename": "src/filters.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2021-06-27T13:50:31Z",
+      "side": 1,
+      "message": "need to pass who as argument and only apply to the involved bits",
+      "revId": "c1fdd901bd1f95b3f63c07a71206fbb8f698f822",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7e76a45e_abd97440",
+        "filename": "src/filters.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 553,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2021-06-27T13:50:31Z",
+      "side": 1,
+      "message": "playing human fuzzer, there return errors with find but not with rbh-find:\n find -perm a\n find -perm /\n find -perm -\n\n(note find -perm \u0027\u003d\u0027 or \u0027a\u003d\u0027 works and mode \u003d 0 as rbh-find)\n\nThis is probably not very important...",
       "revId": "c1fdd901bd1f95b3f63c07a71206fbb8f698f822",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
