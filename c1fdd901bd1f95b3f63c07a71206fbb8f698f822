@@ -70,6 +70,42 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7279f9ca_305b460a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-06-28T10:29:36Z",
+      "side": 1,
+      "message": "Thanks for your review :)",
+      "parentUuid": "782256f7_6a1bfd90",
+      "revId": "c1fdd901bd1f95b3f63c07a71206fbb8f698f822",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c9818728_dc6ba2a3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-06-28T10:29:36Z",
+      "side": 1,
+      "message": "The examples you gave are now fixed thanks to the comments of Dominique.\n\nDo you have examples of how \u0027X\u0027 is not handled correctly? They might not be that hard to fix.",
+      "parentUuid": "4c7297b9_0c53f05b",
+      "revId": "c1fdd901bd1f95b3f63c07a71206fbb8f698f822",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0f43c848_4f36f4b8",
@@ -83,6 +119,30 @@
       "writtenOn": "2021-06-27T12:32:47Z",
       "side": 1,
       "message": "(minor) As you write later in this file, u+s will only report files whose mode is exactly u+s, won\u0027t it? In this case, doesn\u0027t it make more sense to use `/u+s` here?",
+      "range": {
+        "startLine": 77,
+        "startChar": 34,
+        "endLine": 77,
+        "endChar": 37
+      },
+      "revId": "c1fdd901bd1f95b3f63c07a71206fbb8f698f822",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a2b62ef2_7f090fd8",
+        "filename": "README.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-06-28T10:29:36Z",
+      "side": 1,
+      "message": "Yes, that\u0027s what \u0027/u+s\u0027 does.\n\nDone",
+      "parentUuid": "0f43c848_4f36f4b8",
       "range": {
         "startLine": 77,
         "startChar": 34,
@@ -130,6 +190,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "24b5714e_ed4c5878",
+        "filename": "meson.build",
+        "patchSetId": 7
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-06-28T10:29:36Z",
+      "side": 1,
+      "message": "My understanding is that warning_level \u003d 2 will remove pedantic but I imagine other warnings as well. And if I\u0027m correct, there is no specific warning for the range case statement, it comes with pedantic.\n\nI\u0027ve seen that it\u0027s possible to use:\n\n#pragma GCC diagnostic push\n#pragma GCC diagnostic ignored \"-Wpedantic\"\n...\n#pragma GCC diagnostic pop\n\narround the code, is this something acceptable to you ? I imagine this would only solve the problem for gcc, not clang.\n\nOne solution would be to revert back to the if/else if/else statement which is perfectly fine too.",
+      "parentUuid": "aecdd1e1_40366114",
+      "revId": "c1fdd901bd1f95b3f63c07a71206fbb8f698f822",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "25088dca_8cf1d0a1",
         "filename": "src/filters.c",
         "patchSetId": 7
@@ -141,6 +219,24 @@
       "writtenOn": "2021-06-27T13:50:31Z",
       "side": 1,
       "message": "(nitpick) this might make more sense to be reverted?\nWhen used later I took a minute to understand why you would want to set all modes if who is not empty",
+      "revId": "c1fdd901bd1f95b3f63c07a71206fbb8f698f822",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b2e54706_4715218b",
+        "filename": "src/filters.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-06-28T10:29:36Z",
+      "side": 1,
+      "message": "Yes, you\u0027re right. I\u0027ve changed the name without realizing that it changed its meaning.",
+      "parentUuid": "25088dca_8cf1d0a1",
       "revId": "c1fdd901bd1f95b3f63c07a71206fbb8f698f822",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -162,6 +258,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3caeff5b_479b4538",
+        "filename": "src/filters.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-06-28T10:29:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "921d7e30_a6ace544",
+      "revId": "c1fdd901bd1f95b3f63c07a71206fbb8f698f822",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "aaf643ff_07489bda",
@@ -175,6 +289,24 @@
       "writtenOn": "2021-06-27T13:50:31Z",
       "side": 1,
       "message": "this actually seems to work with no who set at all (`find -perm a\u003dr,-u,o+x` yields 0001, also tested with +/\u003d)",
+      "revId": "c1fdd901bd1f95b3f63c07a71206fbb8f698f822",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ea46853d_1d6bc752",
+        "filename": "src/filters.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 374,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-06-28T10:29:36Z",
+      "side": 1,
+      "message": "\u0027-u\u0027 seems to mean remove user perm from everyone. This means in your case that perm is 0000 after parsing \u0027-u\u0027.\n\nDone",
+      "parentUuid": "aaf643ff_07489bda",
       "revId": "c1fdd901bd1f95b3f63c07a71206fbb8f698f822",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -196,6 +328,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7b2c0f77_97322c24",
+        "filename": "src/filters.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-06-28T10:29:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6e15a8f1_d53f1d04",
+      "revId": "c1fdd901bd1f95b3f63c07a71206fbb8f698f822",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7e76a45e_abd97440",
@@ -209,6 +359,24 @@
       "writtenOn": "2021-06-27T13:50:31Z",
       "side": 1,
       "message": "playing human fuzzer, there return errors with find but not with rbh-find:\n find -perm a\n find -perm /\n find -perm -\n\n(note find -perm \u0027\u003d\u0027 or \u0027a\u003d\u0027 works and mode \u003d 0 as rbh-find)\n\nThis is probably not very important...",
+      "revId": "c1fdd901bd1f95b3f63c07a71206fbb8f698f822",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0fe08743_bfd27f90",
+        "filename": "src/filters.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 553,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-06-28T10:29:36Z",
+      "side": 1,
+      "message": "Thanks for the comment. My test for failed permissions didn\u0027t test anything. It should have caught the \u0027-\u0027. It is fixed now.",
+      "parentUuid": "7e76a45e_abd97440",
       "revId": "c1fdd901bd1f95b3f63c07a71206fbb8f698f822",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
