@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b98fe7c7_c755e93c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2021-06-28T10:58:37Z",
+      "side": 1,
+      "message": "looks good to me, I\u0027ll let Quentin decide for the warning I\u0027m not fussy.",
+      "revId": "e424524b785c4558aad15addad9898dda3d3b722",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
