@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "609dcf18_6301d9b2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2021-06-28T10:41:46Z",
+      "side": 1,
+      "message": "Thanks for the quick fix! just one typo left for me :)",
+      "revId": "f975d2b4bd9887d47a9fd10b53fb82304540412d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0eb295da_f93125a5",
+        "filename": "src/filters.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 434,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2021-06-28T10:41:46Z",
+      "side": 1,
+      "message": "This should be current",
+      "revId": "f975d2b4bd9887d47a9fd10b53fb82304540412d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
