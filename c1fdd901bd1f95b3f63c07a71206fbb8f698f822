@@ -106,6 +106,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d1dff0e1_6d273e4f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-06-28T22:28:15Z",
+      "side": 1,
+      "message": "According to the spec \u0027X\u0027 has a different meaning depending on whether it is applied to a dir or a file. That\u0027s why gnulib defines mode_adjust() to take a boolean `dir` and return different results based on that. findutils then goes on to compute both and pick whichever is right for every entry.\n\nIn robinhood terms, that means that when X is supplied we would need to split the generated filter into two:\n- the part that applies to directories\n- the part that applies to anything else\n\nJust for the record, examples that still don\u0027t fully work:\n\n       input | reference | rbh-find\n \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\n \u003d0600,\u003d0644 |      0644 |    error\n     g\u003dw,a\u003dr |      0444 |     0464\n\nAlso erratum, in the first message of this thread, I wrote that `g\u003dw,o\u003dr` should be parsed as `042`, when it should have been `024`. You fixed that one correctly.",
+      "parentUuid": "c9818728_dc6ba2a3",
+      "revId": "c1fdd901bd1f95b3f63c07a71206fbb8f698f822",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0f43c848_4f36f4b8",
@@ -202,6 +220,24 @@
       "side": 1,
       "message": "My understanding is that warning_level \u003d 2 will remove pedantic but I imagine other warnings as well. And if I\u0027m correct, there is no specific warning for the range case statement, it comes with pedantic.\n\nI\u0027ve seen that it\u0027s possible to use:\n\n#pragma GCC diagnostic push\n#pragma GCC diagnostic ignored \"-Wpedantic\"\n...\n#pragma GCC diagnostic pop\n\narround the code, is this something acceptable to you ? I imagine this would only solve the problem for gcc, not clang.\n\nOne solution would be to revert back to the if/else if/else statement which is perfectly fine too.",
       "parentUuid": "aecdd1e1_40366114",
+      "revId": "c1fdd901bd1f95b3f63c07a71206fbb8f698f822",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3005301f_a02d0837",
+        "filename": "meson.build",
+        "patchSetId": 7
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-06-28T22:28:15Z",
+      "side": 1,
+      "message": "I\u0027m fine with leaving it as -Wno-pedantic and doing a cross-project review around warnings. There is no consistency across projects right now.",
+      "parentUuid": "24b5714e_ed4c5878",
       "revId": "c1fdd901bd1f95b3f63c07a71206fbb8f698f822",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
