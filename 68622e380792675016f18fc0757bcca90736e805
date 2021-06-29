@@ -36,6 +36,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a78cf79b_db6cc6cc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2021-06-29T12:13:07Z",
+      "side": 1,
+      "message": "hmm I only have full name set and mails still come in wrong.. let\u0027s give this a few hours it might not be synchronized in real time. If you get told it\u0027s still not fixed after more time I\u0027d try just changing full name to something else and back as silly as it sounds :/",
+      "parentUuid": "31144882_60e0541a",
+      "revId": "68622e380792675016f18fc0757bcca90736e805",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a6579a9a_a5e5c325",
