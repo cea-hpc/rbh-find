@@ -13,13 +13,18 @@
 #include <dlfcn.h>
 #include <errno.h>
 #include <error.h>
+#include <grp.h>
+#include <pwd.h>
 #include <stdbool.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 #include <sysexits.h>
 
+#include <sys/param.h>
 #include <sys/stat.h>
+#include <sys/types.h>
+#include <time.h>
 
 #include <robinhood.h>
 #ifndef HAVE_STATX
@@ -39,6 +44,121 @@ exit_backends(void)
     for (size_t i = 0; i < backend_count; i++)
         rbh_backend_destroy(backends[i]);
     free(backends);
+}
+
+static struct tm now;
+
+static void __attribute__((constructor))
+now_init(void)
+{
+    time_t tmp;
+
+    tmp = time(NULL);
+    if (localtime_r(&tmp, &now) == NULL)
+        error(EXIT_FAILURE, errno, "localtime_r");
+}
+
+/* Mode string is: "drwxrwxrwx" or "-rwxrwxrwx" */
+static const int MODE_STR_LENGTH = sizeof("-rwxrwxrwx");
+
+/* Timestamp string is: "Jan 31 12:00" or "Jan 31 2000" */
+static const int DATETIME_STR_LENGTH = sizeof("Jan 31 12:00");
+
+/**
+ * duration2date - convert a fsentry's mtime to a timestamp string
+ *
+ * @param buf      a pointer to an empty buffer of size DATETIME_STR_LENGTH
+ * @param mtime    a mtime in seconds (which is the duration between the
+ *                 last modification time and the creation date of the system)
+ *
+ * @return         a pointer to a string representing the last modified
+ *                 datetime
+ */
+char *
+duration2date(char buf[DATETIME_STR_LENGTH], int64_t mtime)
+{
+    static_assert(sizeof(time_t) >= sizeof(int64_t), "");
+
+    time_t duration = mtime;
+    struct tm *datetime;
+
+    datetime = localtime(&duration);
+
+    if (datetime == NULL)
+        error(EXIT_FAILURE, errno, "localtime");
+    if (datetime->tm_year < now.tm_year)
+        strftime(buf, DATETIME_STR_LENGTH, "%b %e %G", datetime);
+    else
+        strftime(buf, DATETIME_STR_LENGTH, "%b %e %H:%M", datetime);
+
+    return buf;
+}
+
+/**
+ * mode2type - convert a mode to a type
+ *
+ * @param mode  a mode of a fsentry
+ *
+ * @return      a character representing the type
+ */
+char
+mode2type(mode_t mode)
+{
+    if (S_ISREG(mode))
+        return '-';
+    if (S_ISDIR(mode))
+        return 'd';
+    if (S_ISLNK(mode))
+        return 'l';
+    if (S_ISCHR(mode))
+        return 'c';
+    if (S_ISBLK(mode))
+        return 'b';
+    if (S_ISFIFO(mode))
+        return 'p';
+    if (S_ISSOCK(mode))
+        return 's';
+    error(EXIT_FAILURE, EINVAL, "non existant fsentry's type");
+     __builtin_unreachable();
+}
+
+/* The special bits. */
+static const mode_t SPECIAL_BITS[] = {
+    0, 0, S_ISUID,
+    0, 0, S_ISGID,
+    0, 0, S_ISVTX
+};
+
+/* The 9 mode bits to test */
+static const mode_t MODE_BITS[] = {
+    S_IRUSR, S_IWUSR, S_IXUSR,
+    S_IRGRP, S_IWGRP, S_IXGRP,
+    S_IROTH, S_IWOTH, S_IXOTH
+};
+
+/**
+ * mode_string - return the standard ls-like mode string from a file mode
+ *
+ * @param buf    a pointer to a buffer of size MODE_STR_LENGTH
+ * @param mode   the mode of a fsentry
+ *
+ * @return       a pointer to a string representing the mode
+ */
+char *
+mode_string(char buf[MODE_STR_LENGTH], mode_t mode)
+{
+    int i;
+
+    for (i = 0; i < MODE_STR_LENGTH - 1; i++) {
+        const char *mapping =
+            mode & SPECIAL_BITS[i] ? mode & MODE_BITS[i] ? "..s..s..t"
+                                                         : "..S..S..T"
+                                   : mode & MODE_BITS[i] ? "rwxrwxrwx"
+                                                         : "---------";
+        buf[i + 1] = mapping[i];
+    }
+    buf[i + 1] = '\0';
+    return buf;
 }
 
 static const char *
@@ -61,6 +181,125 @@ fsentry_path(const struct rbh_fsentry *fsentry)
     }
 
     return NULL;
+}
+
+static bool posixly_correct;
+
+static void __attribute__((constructor))
+posixly_correct_init(void)
+{
+    posixly_correct = secure_getenv("POSIXLY_CORRECT") != NULL;
+}
+
+static void
+print_fsentry_ls_dils(const struct rbh_fsentry *fsentry)
+{
+    uint64_t blocks = fsentry->statx->stx_blocks;
+    char datetime[DATETIME_STR_LENGTH];
+    char mode[MODE_STR_LENGTH];
+    struct passwd *uid;
+    struct group *gid;
+    int rc = 0;
+
+    static struct {
+        int blocks;
+        int gid;
+        int ino;
+        int nlink;
+        int size;
+        int uid;
+    } length = {
+        10,
+        10,
+        10,
+        5,
+        10,
+        10,
+    };
+
+    if (!(fsentry->mask & RBH_FP_STATX)) {
+        printf("%*c %*c %*s %*c %*c %*c %*c %*s %s",
+               length.ino, '?', length.blocks, '?',
+               MODE_STR_LENGTH, "??????????", length.nlink, '?',
+               length.uid, '?', length.gid, '?',
+               length.size, '?', DATETIME_STR_LENGTH, "???????????",
+               fsentry_path(fsentry));
+
+        if (fsentry->mask & RBH_FP_SYMLINK)
+            printf(" -> %s\n", fsentry->symlink);
+        else
+            printf("\n");
+        return;
+    }
+
+    if (fsentry->statx->stx_mask & STATX_INO) {
+        rc = printf("%*lld", length.ino, fsentry->statx->stx_ino);
+        length.ino = MAX(length.ino, rc);
+    } else {
+        printf("%*c", length.ino, '?');
+    }
+
+    if (fsentry->statx->stx_mask & STATX_BLOCKS) {
+        /* The "-1" make up for the space before the string. */
+        rc = printf(" %*ld", length.blocks,
+                             posixly_correct ? blocks : blocks / 2) - 1;
+        length.blocks = MAX(length.blocks, rc);
+    } else {
+        printf(" %*c", length.blocks, '?');
+    }
+
+    if (fsentry->statx->stx_mask & STATX_TYPE)
+        mode[0] = mode2type(fsentry->statx->stx_mode);
+    else
+        mode[0] = '?';
+
+    printf(" %*s", MODE_STR_LENGTH,
+                   fsentry->statx->stx_mask & STATX_MODE
+                   ? mode_string(mode, fsentry->statx->stx_mode)
+                   : "?");
+
+    if (fsentry->statx->stx_mask & STATX_NLINK) {
+        rc = printf(" %*d", length.nlink, fsentry->statx->stx_nlink) - 1;
+        length.nlink = MAX(length.nlink, rc);
+    } else {
+        printf(" %*c", length.nlink, '?');
+    }
+
+    if (fsentry->statx->stx_mask & STATX_UID) {
+        uid = getpwuid(fsentry->statx->stx_uid);
+        rc = printf(" %*s", length.uid, uid->pw_name) - 1;
+        length.uid = MAX(length.uid, rc);
+    } else {
+        printf(" %*c", length.uid, '?');
+    }
+
+    if (fsentry->statx->stx_mask & STATX_GID) {
+        gid = getgrgid(fsentry->statx->stx_gid);
+        rc = printf(" %*s", length.gid, gid->gr_name) - 1;
+        length.gid = MAX(length.gid, rc);
+    } else {
+        printf(" %*c", length.gid, '?');
+    }
+
+    if (fsentry->statx->stx_mask & STATX_SIZE) {
+        rc = printf(" %*lld", length.size, fsentry->statx->stx_size) - 1;
+        length.size = MAX(length.size, rc);
+    } else {
+        printf(" %*c", length.size, '?');
+    }
+
+    printf(" %*s", DATETIME_STR_LENGTH,
+                   fsentry->statx->stx_mask & STATX_MTIME
+                   ? duration2date(datetime,
+                                   fsentry->statx->stx_mtime.tv_sec)
+                   : "?");
+
+    printf(" %s", fsentry_path(fsentry));
+
+    if (fsentry->mask & RBH_FP_SYMLINK)
+        printf(" -> %s", fsentry->symlink);
+
+    printf("\n");
 }
 
 static size_t
@@ -106,6 +345,9 @@ _find(struct rbh_backend *backend, enum action action,
             break;
         case ACT_PRINT0:
             printf("%s%c", fsentry_path(fsentry), '\0');
+            break;
+        case ACT_LS:
+            print_fsentry_ls_dils(fsentry);
             break;
         case ACT_COUNT:
             count++;
