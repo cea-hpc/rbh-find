@@ -1017,6 +1017,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "beea8d4a_86b27996",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 390,
+      "author": {
+        "id": 1019295
+      },
+      "writtenOn": "2021-07-07T12:24:07Z",
+      "side": 1,
+      "message": "Yes it would be shorter, but we cannot add PRED_LAST to predicate enum because in this enum the predicates are sorted alphabetically. So we have to put a switch-case to only consider the predicates that interest us.",
+      "parentUuid": "169049fe_a78dd7db",
+      "range": {
+        "startLine": 390,
+        "startChar": 4,
+        "endLine": 390,
+        "endChar": 22
+      },
+      "revId": "7e74dad281df0fa39b199d59449d133dd99dcd52",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "5af94057_a2a8dd0c",
         "filename": "src/filters.c",
         "patchSetId": 1
@@ -1028,6 +1052,30 @@
       "writtenOn": "2021-07-07T10:00:14Z",
       "side": 1,
       "message": "question: won\u0027t the compiler complain about implicit fallthrough here ?",
+      "range": {
+        "startLine": 398,
+        "startChar": 8,
+        "endLine": 398,
+        "endChar": 23
+      },
+      "revId": "7e74dad281df0fa39b199d59449d133dd99dcd52",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "49ea2ea7_1b621551",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 398,
+      "author": {
+        "id": 1019295
+      },
+      "writtenOn": "2021-07-07T12:24:07Z",
+      "side": 1,
+      "message": "I think that as long as there is nothing in the cases (without a \"break\"), there is no compilation problem.",
+      "parentUuid": "5af94057_a2a8dd0c",
       "range": {
         "startLine": 398,
         "startChar": 8,
