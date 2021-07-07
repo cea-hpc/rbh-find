@@ -263,4 +263,23 @@ expect: count the matching entries.
     rbh-find rbh:mongo:test -type f -name '*.c' -o -name '*.h' -count
     71 matching entries
 
+-sort/-rstort
+-------------
+
+rbh-find defines a ``-sort`` option which allows to sort the output elements
+according to given fields, either ascending "-sort" or descending "-rsort".
+
+.. code:: bash
+
+    rbh-find rbh:mongo:test -sort name
+    ./
+    ./a
+    ./b
+    ./c
+    rbh-find rbh:mongo:test -rsort name
+    ./c
+    ./b
+    ./a
+    ./
+
 **The message format is not yet stable. Please do not rely on it.**
