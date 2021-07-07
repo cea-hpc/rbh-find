@@ -18,6 +18,23 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fc677e9a_07658dda",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-07-07T10:00:14Z",
+      "side": 1,
+      "message": "Nice work! The code looks good. Just a few minor things that can be improved in the comments.",
+      "revId": "7e74dad281df0fa39b199d59449d133dd99dcd52",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e115c47b_2f1fb6e9",
@@ -34,6 +51,29 @@
       "range": {
         "startLine": 128,
         "startChar": 40,
+        "endLine": 128,
+        "endChar": 47
+      },
+      "revId": "7e74dad281df0fa39b199d59449d133dd99dcd52",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2d164b2c_1ec6c859",
+        "filename": "include/filters.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-07-07T10:00:14Z",
+      "side": 1,
+      "message": "suggest: options filter",
+      "range": {
+        "startLine": 128,
+        "startChar": 33,
         "endLine": 128,
         "endChar": 47
       },
@@ -66,6 +106,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "4a3c605f_33484ca5",
+        "filename": "include/filters.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-07-07T10:00:14Z",
+      "side": 1,
+      "message": "suggest: instead of discribing the type, I think it would be better to describe the role of this argument. If I understand the code correctly, I would say: List of sort predicates",
+      "range": {
+        "startLine": 130,
+        "startChar": 29,
+        "endLine": 130,
+        "endChar": 72
+      },
+      "revId": "7e74dad281df0fa39b199d59449d133dd99dcd52",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f21bafd7_dd664486",
         "filename": "include/filters.h",
         "patchSetId": 1
@@ -82,6 +145,52 @@
         "startChar": 30,
         "endLine": 131,
         "endChar": 39
+      },
+      "revId": "7e74dad281df0fa39b199d59449d133dd99dcd52",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "37290a2e_b92fd047",
+        "filename": "include/filters.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-07-07T10:00:14Z",
+      "side": 1,
+      "message": "suggest: predicate used for filtering",
+      "range": {
+        "startLine": 131,
+        "startChar": 28,
+        "endLine": 131,
+        "endChar": 39
+      },
+      "revId": "7e74dad281df0fa39b199d59449d133dd99dcd52",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "98ca7d5a_5674ab73",
+        "filename": "include/filters.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-07-07T10:00:14Z",
+      "side": 1,
+      "message": "suggest: of \\p array",
+      "range": {
+        "startLine": 132,
+        "startChar": 50,
+        "endLine": 132,
+        "endChar": 62
       },
       "revId": "7e74dad281df0fa39b199d59449d133dd99dcd52",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
@@ -181,6 +290,75 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "258187dd_f3ed3779",
+        "filename": "rbh-find.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-07-07T10:00:14Z",
+      "side": 1,
+      "message": "suggest: again, I would describe the role of the argument instead of its type",
+      "range": {
+        "startLine": 216,
+        "startChar": 28,
+        "endLine": 216,
+        "endChar": 76
+      },
+      "revId": "7e74dad281df0fa39b199d59449d133dd99dcd52",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b3e63525_86a5e99e",
+        "filename": "rbh-find.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-07-07T10:00:14Z",
+      "side": 1,
+      "message": "typo: no need to put \u0027s here\nsuggest: the size of \\p array",
+      "range": {
+        "startLine": 217,
+        "startChar": 59,
+        "endLine": 217,
+        "endChar": 61
+      },
+      "revId": "7e74dad281df0fa39b199d59449d133dd99dcd52",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6046df6b_3a89f16d",
+        "filename": "rbh-find.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-07-07T10:00:14Z",
+      "side": 1,
+      "message": "style: remove the space",
+      "range": {
+        "startLine": 226,
+        "startChar": 57,
+        "endLine": 226,
+        "endChar": 58
+      },
+      "revId": "7e74dad281df0fa39b199d59449d133dd99dcd52",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d64c3d55_bc712048",
         "filename": "rbh-find.c",
         "patchSetId": 1
@@ -227,6 +405,52 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "1a331a18_158a99d9",
+        "filename": "rbh-find.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-07-07T10:00:14Z",
+      "side": 1,
+      "message": "typo: an options filter",
+      "range": {
+        "startLine": 347,
+        "startChar": 21,
+        "endLine": 347,
+        "endChar": 37
+      },
+      "revId": "7e74dad281df0fa39b199d59449d133dd99dcd52",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8f6a5ab4_0005644b",
+        "filename": "rbh-find.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-07-07T10:00:14Z",
+      "side": 1,
+      "message": "nit: I would remove the",
+      "range": {
+        "startLine": 349,
+        "startChar": 56,
+        "endLine": 349,
+        "endChar": 60
+      },
+      "revId": "7e74dad281df0fa39b199d59449d133dd99dcd52",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e18c47b2_4d22f22d",
         "filename": "rbh-find.c",
         "patchSetId": 1
@@ -266,6 +490,52 @@
         "startChar": 0,
         "endLine": 28,
         "endChar": 30
+      },
+      "revId": "7e74dad281df0fa39b199d59449d133dd99dcd52",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "169049fe_a78dd7db",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 390,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-07-07T10:00:14Z",
+      "side": 1,
+      "message": "style: I think there should be a space before the \u0027{\u0027 and the case statements should be aligned with the switch.\n\nAlso, instead of using a big switch just to see if the enum\u0027s value is not out of the bounds of the array. I think we could define a PRED_LAST at the end of the predicate enum and use that as a check. Something like:\n\nif (predicate \u003c PRED_LAST)\n    sort.field \u003d predicate2filter_field[predicate];\nelse\n    error(...);\n\nI don\u0027t know if that\u0027s something acceptable for robinhood\u0027s coding style but it would make the code simpler and less susceptible to change.",
+      "range": {
+        "startLine": 390,
+        "startChar": 4,
+        "endLine": 390,
+        "endChar": 22
+      },
+      "revId": "7e74dad281df0fa39b199d59449d133dd99dcd52",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5af94057_a2a8dd0c",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 398,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-07-07T10:00:14Z",
+      "side": 1,
+      "message": "question: won\u0027t the compiler complain about implicit fallthrough here ?",
+      "range": {
+        "startLine": 398,
+        "startChar": 8,
+        "endLine": 398,
+        "endChar": 23
       },
       "revId": "7e74dad281df0fa39b199d59449d133dd99dcd52",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
