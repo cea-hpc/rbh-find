@@ -65,12 +65,17 @@ fsentry_path(const struct rbh_fsentry *fsentry)
 
 static size_t
 _find(struct rbh_backend *backend, enum action action,
-      const struct rbh_filter *filter)
+      const struct rbh_filter *filter,
+      struct rbh_filter_sort *array, size_t sort_array_size)
 {
     const struct rbh_filter_options OPTIONS = {
         .projection = {
             .fsentry_mask = RBH_FP_ALL,
             .statx_mask = STATX_ALL,
+        },
+        .sort = {
+            .items = array,
+            .count = sort_array_size
         },
     };
     struct rbh_mut_iterator *fsentries;
@@ -131,14 +136,15 @@ static char **argv;
 static bool did_something = false;
 
 static void
-find(enum action action, const struct rbh_filter *filter)
+find(enum action action, const struct rbh_filter *filter,
+     struct rbh_filter_sort *array, size_t sort_array_size)
 {
     size_t count = 0;
 
     did_something = true;
 
     for (size_t i = 0; i < backend_count; i++)
-        count += _find(backends[i], action, filter);
+        count += _find(backends[i], action, filter, array, sort_array_size);
 
     switch (action) {
     case ACT_COUNT:
@@ -156,7 +162,7 @@ parse_predicate(int *arg_idx)
     struct rbh_filter *filter;
     int i = *arg_idx;
 
-    predicate = str2predicate(argv[i]);
+    predicate = argument2predicate(argv[i]);
 
     if (i + 1 >= argc)
         error(EX_USAGE, 0, "missing argument to `%s'", argv[i]);
@@ -205,16 +211,19 @@ parse_predicate(int *arg_idx)
 /**
  * parse_expression - parse a find expression (predicates / operators / actions)
  *
- * @param arg_idx   a pointer to the index of argv to start parsing at
- * @param _filter   a filter (the part of the cli parsed by the caller)
+ * @param arg_idx           a pointer to the index of argv to start parsing at
+ * @param _filter           a filter (the part of the cli parsed by the caller)
+ * @param array             a double pointer to the array of rbh_filter_sort
+ * @param sort_array_size   the size of the rbh_filter_sort's array
  *
- * @return          a filter that represents the parsed expression
+ * @return                  a filter that represents the parsed expression
  *
  * Note this function is recursive and will call find() itself if it parses an
  * action
  */
 static struct rbh_filter *
-parse_expression(int *arg_idx, const struct rbh_filter *_filter)
+parse_expression(int *arg_idx, const struct rbh_filter *_filter,
+                 struct rbh_filter_sort **array, size_t * sort_array_size)
 {
     enum command_line_token previous_token = CLT_URI;
     struct rbh_filter *filter = NULL;
@@ -240,6 +249,8 @@ parse_expression(int *arg_idx, const struct rbh_filter *_filter)
         };
         enum command_line_token token;
         struct rbh_filter *tmp;
+        enum predicate predicate;
+        bool ascending = true;
 
         token = str2command_line_token(argv[i]);
         switch (token) {
@@ -285,7 +296,7 @@ parse_expression(int *arg_idx, const struct rbh_filter *_filter)
             i++;
 
             /* Parse the filter at the right of -o/-or */
-            tmp = parse_expression(&i, &negated_left_filter);
+            tmp = parse_expression(&i, &negated_left_filter, array, sort_array_size);
             /* parse_expression() returned, so it must have seen a closing
              * parenthesis or reached the end of the command line, we should
              * return here too.
@@ -307,7 +318,7 @@ parse_expression(int *arg_idx, const struct rbh_filter *_filter)
             i++;
 
             /* Parse the sub-expression */
-            tmp = parse_expression(&i, NULL);
+            tmp = parse_expression(&i, NULL, array, sort_array_size);
             if (i >= argc
                     || str2command_line_token(argv[i]) != CLT_PARENTHESIS_CLOSE)
                 error(EX_USAGE, 0,
@@ -328,6 +339,17 @@ parse_expression(int *arg_idx, const struct rbh_filter *_filter)
             /* End of a sub-expression, update arg_idx and return */
             *arg_idx = i;
             return filter;
+        case CLT_RSORT:
+            /* Set a descending sort option */
+            ascending = false;
+            __attribute__((fallthrough));
+        case CLT_SORT:
+            /* Build a filter options from the sort command and its arguments */
+            if (i + 1 >= argc)
+                error(EX_USAGE, 0, "missing argument to the '%s'", argv[i]);
+            predicate = str2predicate(argv[++i]);
+            *array = add_sort_option(*array, predicate, sort_array_size, ascending);
+            break;
         case CLT_PREDICATE:
             /* Build a filter from the predicate and its arguments */
             tmp = parse_predicate(&i);
@@ -339,12 +361,11 @@ parse_expression(int *arg_idx, const struct rbh_filter *_filter)
             filter = filter_and(filter, tmp);
             break;
         case CLT_ACTION:
-            find(str2action(argv[i]), &left_filter);
+            find(str2action(argv[i]), &left_filter, *array, *sort_array_size);
             break;
         }
         previous_token = token;
     }
-
     *arg_idx = i;
     return filter;
 }
@@ -352,6 +373,8 @@ parse_expression(int *arg_idx, const struct rbh_filter *_filter)
 int
 main(int _argc, char *_argv[])
 {
+    struct rbh_filter_sort *array = NULL;
+    size_t sort_array_size = 0;
     struct rbh_filter *filter;
     int index;
 
@@ -376,12 +399,12 @@ main(int _argc, char *_argv[])
         backend_count++;
     }
 
-    filter = parse_expression(&index, NULL);
+    filter = parse_expression(&index, NULL, &array, &sort_array_size);
     if (index != argc)
         error(EX_USAGE, 0, "you have too many ')'");
 
     if (!did_something)
-        find(ACT_PRINT, filter);
+        find(ACT_PRINT, filter, array, sort_array_size);
     free(filter);
 
     return EXIT_SUCCESS;

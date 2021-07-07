@@ -17,6 +17,8 @@ enum command_line_token {
     CLT_PARENTHESIS_CLOSE,
     CLT_PREDICATE,
     CLT_ACTION,
+    CLT_SORT,
+    CLT_RSORT,
 };
 
 /**
@@ -89,6 +91,18 @@ enum predicate
 str2predicate(const char *string);
 
 /**
+ * argument2predicate - convert an argument to a predicate
+ *
+ * @param string    a string representing a valid predicate
+ *
+ * @return          the predicate that \p string represents
+ *
+ * This function will exit if \p string is not a valid predicate
+ */
+enum predicate
+argument2predicate(const char *string);
+
+/**
  * predicate2str - convert a predicate to a string
  *
  * @param predicate a predicate
@@ -130,6 +144,18 @@ enum action
 str2action(const char *string);
 
 /**
+ * argument2predicate - convert a string that does not start with '-' into a predicate
+ *
+ * @param string    a string representing a valid predicate
+ *
+ * @return          the predicate that \p string represents
+ *
+ * This function will exit if \p string is not a valid predicate
+ */
+enum predicate
+argument2predicate(const char *string);
+
+/**
  * action2str - convert an action to a string
  *
  * @param action    an action
@@ -138,5 +164,4 @@ str2action(const char *string);
  */
 const char *
 action2str(enum action action);
-
 #endif

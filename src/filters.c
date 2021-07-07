@@ -14,6 +14,7 @@
 #include <error.h>
 #include <inttypes.h>
 #include <limits.h>
+#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <sysexits.h>
@@ -24,6 +25,7 @@
 #endif
 
 #include <robinhood/sstack.h>
+#include <robinhood/backend.h>
 
 #include "filters.h"
 #include "utils.h"
@@ -375,4 +377,37 @@ filter_not(struct rbh_filter *filter)
     not->logical.count = 1;
 
     return not;
+}
+
+struct rbh_filter_sort *
+add_sort_option(struct rbh_filter_sort *array,
+                enum predicate predicate, size_t *sort_array_size,
+                bool ascending)
+{
+    struct rbh_filter_sort *tmp = array;
+    struct rbh_filter_sort sort;
+
+    switch(predicate){
+        case PRED_AMIN:
+        case PRED_ATIME:
+        case PRED_CMIN:
+        case PRED_CTIME:
+        case PRED_NAME:
+        case PRED_INAME:
+        case PRED_MMIN:
+        case PRED_TYPE:
+        case PRED_SIZE:
+                sort.field = predicate2filter_field[predicate];
+                break;
+        default:
+                error(EXIT_FAILURE, EINVAL, "invalid predicate for sort");
+    }
+    sort.ascending = ascending;
+
+    tmp = reallocarray(tmp, ++*sort_array_size, sizeof(*tmp));
+    if (tmp == NULL) {
+        error(EXIT_FAILURE, 0, "reallocarray with rbh_filter_sort");
+    }
+    tmp[*sort_array_size - 1] = sort;
+    return tmp;
 }
