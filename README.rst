@@ -215,6 +215,9 @@ An example of the difference in the output ordering:
     ./a/b
     ./a/b/c
 
+As the database is flat and rbh-find does not search in width,
+the second consequence of this choice is to sort the output elements
+in a (potentially) efficient way.
 
 The third difference is probably the most problematic. In all the previous
 examples, we used the action ``-print`` which always evaluates to ``true`` and
@@ -262,5 +265,24 @@ expect: count the matching entries.
     # count the file with a '.c' or '.h' extension
     rbh-find rbh:mongo:test -type f -name '*.c' -o -name '*.h' -count
     71 matching entries
+
+-sort/-rstort
+-------------
+
+rbh-find defines a ``-sort`` option which allows to sort the output elements
+according to given fields, either ascending "-sort" or descending "-rsort".
+
+.. code:: bash
+
+    rbh-find rbh:mongo:test -sort name
+    ./
+    ./a
+    ./b
+    ./c
+    rbh-find rbh:mongo:test -rsort name
+    ./c
+    ./b
+    ./a
+    ./
 
 **The message format is not yet stable. Please do not rely on it.**
