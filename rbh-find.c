@@ -13,6 +13,8 @@
 #include <dlfcn.h>
 #include <errno.h>
 #include <error.h>
+#include <grp.h>
+#include <pwd.h>
 #include <stdbool.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -20,6 +22,8 @@
 #include <sysexits.h>
 
 #include <sys/stat.h>
+#include <sys/types.h>
+#include <time.h>
 
 #include <robinhood.h>
 #ifndef HAVE_STATX
@@ -39,6 +43,128 @@ exit_backends(void)
     for (size_t i = 0; i < backend_count; i++)
         rbh_backend_destroy(backends[i]);
     free(backends);
+}
+
+static struct tm now;
+
+static void __attribute__((constructor))
+now_init(void)
+{
+    time_t tmp;
+
+    tmp = time(NULL);
+    if (localtime_r(&tmp, &now) == NULL)
+        error(EXIT_FAILURE, errno, "localtime");
+}
+
+/* Mode string is: "drwxrwxrwx" or "-rwxrwxrwx"*/
+const int MODE_STR_LENGTH = 11;
+
+/* Timestamp string is: "Jan 31 12:00:00" or "Jan 31 2000" */
+const int DATETIME_STR_LENGTH = 16;
+
+/**
+ * duration2date - convert a fsentry's mtime to a timestamp string
+ *
+ * @param buf      a pointer to an empty buffer of size DATETIME_STR_LENGTH
+ * @param mtime    a mtime in seconds (which is the duration between the
+ *                 last modification time and the creation date of the system)
+ *
+ * @return         a pointer to a string representing the last modified
+ *                 datetime
+ */
+char *
+duration2date(char buf[DATETIME_STR_LENGTH], int64_t mtime)
+{
+    static_assert(sizeof(time_t) >= sizeof(int64_t), "");
+
+    time_t duration = mtime;
+    struct tm *datetime;
+
+    if (duration < 0)
+        error(EXIT_FAILURE, EINVAL, "mtime");
+
+    datetime = localtime(&duration);
+
+    if (datetime == NULL)
+        error(EXIT_FAILURE, EINVAL, "localtime");
+    if (datetime->tm_year < now.tm_year)
+        strftime(buf, DATETIME_STR_LENGTH, "%b %e %G", datetime);
+    else
+        strftime(buf, DATETIME_STR_LENGTH, "%b %e %H:%M", datetime);
+
+    return buf;
+}
+
+/**
+ * mode2type - convert a mode to a type
+ *
+ * @param mode  a mode of a fsentry
+ *
+ * @return      a character representing the type
+ */
+char
+mode2type(mode_t mode)
+{
+    if (S_ISREG(mode))
+        return '-';
+    if (S_ISDIR(mode))
+        return 'd';
+    if (S_ISLNK(mode))
+        return 'l';
+    if (S_ISCHR(mode))
+        return 'c';
+    if (S_ISBLK(mode))
+        return 'b';
+    if (S_ISFIFO(mode))
+        return 'p';
+    if (S_ISSOCK(mode))
+        return 's';
+    error(EXIT_FAILURE, EINVAL, "non existant fsentry's type");
+     __builtin_unreachable();
+}
+
+/* The special bits. If set, display SMODES[0]/[1] instead of MODES[0]/[1] */
+static const mode_t SPECIAL_BITS[] = {
+    0, 0, S_ISUID,
+    0, 0, S_ISGID,
+    0, 0, S_ISVTX
+};
+
+/* The 9 mode bits to test */
+static const mode_t MODE_BITS[] = {
+    S_IRUSR, S_IWUSR, S_IXUSR,
+    S_IRGRP, S_IWGRP, S_IXGRP,
+    S_IROTH, S_IWOTH, S_IXOTH
+};
+
+static const char *SPECIAL_MODE_STRING[] = {"..s..s..t", "..S..S..T"};
+static const char *MODE_STRING[] = {"rwxrwxrwx", "---------"};
+
+/**
+ * mode_string - return the standard ls-like mode string from a file mode
+ *
+ * @param buf    a pointer to an empty buffer of size MODE_STR_LENGTH
+ * @param mode   the mode of a fsentry
+ *
+ * @return       a pointer to a string representing the mode
+ */
+char *
+mode_string(char buf[MODE_STR_LENGTH], mode_t mode)
+{
+    int i;
+
+    buf[0] = mode2type(mode);
+    for (i = 0; i < MODE_STR_LENGTH - 1; i++) {
+        if (mode & SPECIAL_BITS[i])
+            buf[i + 1] = (mode & MODE_BITS[i]) ? SPECIAL_MODE_STRING[0][i]
+                                               : SPECIAL_MODE_STRING[1][i];
+        else
+            buf[i + 1] = (mode & MODE_BITS[i]) ? MODE_STRING[0][i]
+                                               : MODE_STRING[1][i];
+    }
+    buf[i + 1] = '\0';
+    return buf;
 }
 
 static const char *
@@ -63,14 +189,88 @@ fsentry_path(const struct rbh_fsentry *fsentry)
     return NULL;
 }
 
+static bool posixly_correct;
+
+static void __attribute__((constructor))
+posixly_correct_init(void)
+{
+    posixly_correct = secure_getenv("POSIXLY_CORRECT") != NULL;
+}
+
+void
+print_fsentry_ls_dils(struct rbh_fsentry *fsentry)
+{
+    uint64_t blocks = fsentry->statx->stx_blocks;
+    char datetime[DATETIME_STR_LENGTH];
+    char mode[MODE_STR_LENGTH];
+    struct passwd *uid = NULL;
+    struct group *gid = NULL;
+    char str_blocks[11];
+    char nlink[5];
+    char size[11];
+    char ino[11];
+
+    if (! (fsentry->mask & RBH_FP_STATX))
+        printf("? ? ? ? ? ? ? ? %s%c", fsentry_path(fsentry), '\n');
+
+    if (fsentry->statx->stx_mask & STATX_INO)
+        sprintf(ino, "%lld", fsentry->statx->stx_ino);
+    else
+        sprintf(ino, "?");
+
+    if (fsentry->statx->stx_mask & STATX_BLOCKS) {
+        if (posixly_correct == false)
+            blocks /= 2;
+        sprintf(str_blocks, " %ld", blocks);
+    }
+    else
+        sprintf(str_blocks, "?");
+
+    if (fsentry->statx->stx_mask & STATX_NLINK)
+        sprintf(nlink, " %d", fsentry->statx->stx_nlink);
+    else
+        sprintf(nlink, "?");
+
+    if (fsentry->statx->stx_mask & STATX_UID)
+        uid = getpwuid(fsentry->statx->stx_uid);
+
+    if (fsentry->statx->stx_mask & STATX_GID)
+        gid = getgrgid(fsentry->statx->stx_gid);
+
+    if (fsentry->statx->stx_mask & STATX_SIZE)
+        sprintf(size, " %lld", fsentry->statx->stx_size);
+    else
+        sprintf(size, "?");
+
+    printf("%10s %10s %s %5s %10s %10s %10s %12s %s%c",
+           ino,
+           str_blocks,
+           fsentry->statx->stx_mask & STATX_MODE ?
+                  mode_string(mode, fsentry->statx->stx_mode) : "?",
+           nlink,
+           uid ? uid->pw_name : "?",
+           gid ? gid->gr_name : "?",
+           size,
+           fsentry->statx->stx_mask & STATX_MTIME ?
+                  duration2date(datetime, fsentry->statx->stx_mtime.tv_sec)
+                  : "?",
+           fsentry_path(fsentry),
+           '\n');
+}
+
 static size_t
 _find(struct rbh_backend *backend, enum action action,
-      const struct rbh_filter *filter)
+      const struct rbh_filter *filter,
+      const struct rbh_filter_sort *sorts, size_t sorts_count)
 {
     const struct rbh_filter_options OPTIONS = {
         .projection = {
             .fsentry_mask = RBH_FP_ALL,
             .statx_mask = STATX_ALL,
+        },
+        .sort = {
+            .items = sorts,
+            .count = sorts_count
         },
     };
     struct rbh_mut_iterator *fsentries;
@@ -102,6 +302,9 @@ _find(struct rbh_backend *backend, enum action action,
         case ACT_PRINT0:
             printf("%s%c", fsentry_path(fsentry), '\0');
             break;
+        case ACT_LS:
+            print_fsentry_ls_dils(fsentry);
+            break;
         case ACT_COUNT:
             count++;
             break;
@@ -129,14 +332,15 @@ static char **argv;
 static bool did_something = false;
 
 static void
-find(enum action action, const struct rbh_filter *filter)
+find(enum action action, const struct rbh_filter *filter,
+     const struct rbh_filter_sort *sorts, size_t sorts_count)
 {
     size_t count = 0;
 
     did_something = true;
 
     for (size_t i = 0; i < backend_count; i++)
-        count += _find(backends[i], action, filter);
+        count += _find(backends[i], action, filter, sorts, sorts_count);
 
     switch (action) {
     case ACT_COUNT:
@@ -206,16 +410,19 @@ parse_predicate(int *arg_idx)
 /**
  * parse_expression - parse a find expression (predicates / operators / actions)
  *
- * @param arg_idx   a pointer to the index of argv to start parsing at
- * @param _filter   a filter (the part of the cli parsed by the caller)
+ * @param arg_idx       a pointer to the index of argv to start parsing at
+ * @param _filter       a filter (the part of the cli parsed by the caller)
+ * @param sorts         an array of filtering options
+ * @param sorts_count   the size of \p sorts
  *
- * @return          a filter that represents the parsed expression
+ * @return              a filter that represents the parsed expression
  *
  * Note this function is recursive and will call find() itself if it parses an
  * action
  */
 static struct rbh_filter *
-parse_expression(int *arg_idx, const struct rbh_filter *_filter)
+parse_expression(int *arg_idx, const struct rbh_filter *_filter,
+                 struct rbh_filter_sort **sorts, size_t *sorts_count)
 {
     static enum command_line_token token = CLT_URI;
     struct rbh_filter *filter = NULL;
@@ -241,6 +448,7 @@ parse_expression(int *arg_idx, const struct rbh_filter *_filter)
         };
         enum command_line_token previous_token = token;
         struct rbh_filter *tmp;
+        bool ascending = true;
 
         token = str2command_line_token(argv[i]);
         switch (token) {
@@ -287,7 +495,8 @@ parse_expression(int *arg_idx, const struct rbh_filter *_filter)
             i++;
 
             /* Parse the filter at the right of -o/-or */
-            tmp = parse_expression(&i, &negated_left_filter);
+            tmp = parse_expression(&i, &negated_left_filter, sorts,
+                                   sorts_count);
             /* parse_expression() returned, so it must have seen a closing
              * parenthesis or reached the end of the command line, we should
              * return here too.
@@ -309,7 +518,7 @@ parse_expression(int *arg_idx, const struct rbh_filter *_filter)
             i++;
 
             /* Parse the sub-expression */
-            tmp = parse_expression(&i, &left_filter);
+            tmp = parse_expression(&i, &left_filter, sorts, sorts_count);
             if (i >= argc || token != CLT_PARENTHESIS_CLOSE)
                 error(EX_USAGE, 0,
                       "invalid expression; I was expecting to find a ')' somewhere but did not see one.");
@@ -329,6 +538,17 @@ parse_expression(int *arg_idx, const struct rbh_filter *_filter)
             /* End of a sub-expression, update arg_idx and return */
             *arg_idx = i;
             return filter;
+        case CLT_RSORT:
+            /* Set a descending sort option */
+            ascending = false;
+            __attribute__((fallthrough));
+        case CLT_SORT:
+            /* Build an options filter from the sort command and its arguments */
+            if (i + 1 >= argc)
+                error(EX_USAGE, 0, "missing argument to '%s'", argv[i]);
+            *sorts = sort_options_append(*sorts, (*sorts_count)++,
+                                         str2field(argv[++i]), ascending);
+            break;
         case CLT_PREDICATE:
             /* Build a filter from the predicate and its arguments */
             tmp = parse_predicate(&i);
@@ -340,7 +560,7 @@ parse_expression(int *arg_idx, const struct rbh_filter *_filter)
             filter = filter_and(filter, tmp);
             break;
         case CLT_ACTION:
-            find(str2action(argv[i]), &left_filter);
+            find(str2action(argv[i]), &left_filter, *sorts, *sorts_count);
             break;
         }
     }
@@ -352,6 +572,8 @@ parse_expression(int *arg_idx, const struct rbh_filter *_filter)
 int
 main(int _argc, char *_argv[])
 {
+    struct rbh_filter_sort *sorts = NULL;
+    size_t sorts_count = 0;
     struct rbh_filter *filter;
     int index;
 
@@ -376,12 +598,12 @@ main(int _argc, char *_argv[])
         backend_count++;
     }
 
-    filter = parse_expression(&index, NULL);
+    filter = parse_expression(&index, NULL, &sorts, &sorts_count);
     if (index != argc)
         error(EX_USAGE, 0, "you have too many ')'");
 
     if (!did_something)
-        find(ACT_PRINT, filter);
+        find(ACT_PRINT, filter, sorts, sorts_count);
     free(filter);
 
     return EXIT_SUCCESS;
