@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7fa79242_ba130cb7",
+        "filename": "include/filters.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2021-07-07T09:06:09Z",
+      "side": 1,
+      "message": "style: length \u003e80 chars\n\nWe prefer something like this (with the correct indent):\n\n * @return        a double pointer to a newly allocated\n *                struct rbh_filter_sort",
+      "range": {
+        "startLine": 134,
+        "startChar": 0,
+        "endLine": 134,
+        "endChar": 88
+      },
+      "revId": "7e74dad281df0fa39b199d59449d133dd99dcd52",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "00d60b97_53556b34",
+        "filename": "include/parser.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2021-07-07T09:06:09Z",
+      "side": 1,
+      "message": "style: length \u003e80 chars",
+      "range": {
+        "startLine": 147,
+        "startChar": 3,
+        "endLine": 147,
+        "endChar": 86
+      },
+      "revId": "7e74dad281df0fa39b199d59449d133dd99dcd52",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "086324c7_90f5e32b",
+        "filename": "rbh-find.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2021-07-07T09:06:09Z",
+      "side": 1,
+      "message": "style: length \u003e80 chars\n\n tmp \u003d parse_expression(\u0026i, \u0026negated_left_filter, array,\n                        sort_array_size);",
+      "range": {
+        "startLine": 299,
+        "startChar": 12,
+        "endLine": 299,
+        "endChar": 85
+      },
+      "revId": "7e74dad281df0fa39b199d59449d133dd99dcd52",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e18c47b2_4d22f22d",
+        "filename": "rbh-find.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 351,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2021-07-07T09:06:09Z",
+      "side": 1,
+      "message": "style: length \u003e80 chars",
+      "range": {
+        "startLine": 351,
+        "startChar": 12,
+        "endLine": 351,
+        "endChar": 84
+      },
+      "revId": "7e74dad281df0fa39b199d59449d133dd99dcd52",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8d3c6303_9de4a004",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2021-07-07T09:06:09Z",
+      "side": 1,
+      "message": "style: backend before sstack (alphabetical order)",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 30
+      },
+      "revId": "7e74dad281df0fa39b199d59449d133dd99dcd52",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0871ac01_084160c1",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 408,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2021-07-07T09:06:09Z",
+      "side": 1,
+      "message": "style: the if block does not need brackets if there is only one instruction",
+      "range": {
+        "startLine": 408,
+        "startChar": 20,
+        "endLine": 408,
+        "endChar": 22
+      },
+      "revId": "7e74dad281df0fa39b199d59449d133dd99dcd52",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
