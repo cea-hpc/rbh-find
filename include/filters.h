@@ -124,4 +124,21 @@ filter_or(struct rbh_filter *left, struct rbh_filter *right);
 struct rbh_filter *
 filter_not(struct rbh_filter *filter);
 
+/**
+ * Build a dynamically allocated options filter
+ *
+ * @param array             a list of sort predicates
+ * @param predicate         a predicate used for filtering
+ * @param sort_array_size   a pointer to the size of \p array
+ *
+ * @return                  a pointer to a newly allocated
+ *                           struct rbh_filter_sort
+ *
+ * Exit on error
+ */
+struct rbh_filter_sort *
+add_sort_option(struct rbh_filter_sort *array,
+                enum predicate predicate, size_t *sort_array_size,
+                bool ascending);
+
 #endif
