@@ -3,6 +3,57 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b8ddad9e_130f7826",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-07T22:39:25Z",
+      "side": 1,
+      "message": "Can you document what -sort/-rsort do in the `Extra features` section of the README, please?",
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "014a0cf3_42b50b51",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-07T22:39:25Z",
+      "side": 1,
+      "message": "Hey, thanks for the patch! 😊\n\nI never intended rbh-find to support a sorting option, I am going to need to think about it.\n\nI don\u0027t think I will be very hard to convince, still, it\u0027d be nice to read your side of the story: why do you think we should add this feature to rbh-find when (gnu-)find does not support it? (this information should probably go into the commit message as well)\n\nI\u0027ll do a more thorough review later this week.",
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "099bcc94_8d748dbe",
+        "filename": "include/parser.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-07T22:39:25Z",
+      "side": 1,
+      "message": "I feel like this is an opportunity to split this patch into several smaller patches. It really helps reviewers if a patch only really does one thing.",
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "55a9daf4_57d7d851",
         "filename": "rbh-find.c",
         "patchSetId": 2
@@ -38,6 +89,30 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "55a9daf4_57d7d851",
+      "range": {
+        "startLine": 302,
+        "startChar": 67,
+        "endLine": 302,
+        "endChar": 68
+      },
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e6889827_d86f47db",
+        "filename": "rbh-find.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-07T22:39:25Z",
+      "side": 1,
+      "message": "I feel it\u0027s nicer if you only mark a comment as \"Done\" and resolved if you already uploaded the code that goes with it, otherwise it\u0027s really easy to forget to push the update later on.\n\nThe gatekeeper might end up merging the patch before you get your latest version out. If you leave the comment unresolved, the gatekeeper gets a nice warning.\n\nIf you don\u0027t want to push the code right away but you still want your reviewer to know that you addressed their comments, you can use \"Will do\" instead of \"Done\" (without checking the resolved box).\n\nIf you just don\u0027t want to forget to post comments on gerrit, there is an option in your user profile you can check to automatically publish comments when you upload a newer patchset.",
+      "parentUuid": "bd762162_5b85c99f",
       "range": {
         "startLine": 302,
         "startChar": 67,
