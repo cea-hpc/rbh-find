@@ -36,6 +36,47 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "460a255f_2e98a8cd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-08T22:57:41Z",
+      "side": 1,
+      "message": "It would be awesome if you could also add one or two sentences to the \"FS traversal vs. Backend filtering\" section of the README [0] which explain how in exchange for the discrepancy with (gnu-)find, we gain the ability to sort the output in a (potentially) efficient way. 😊\n\n[0] https://github.com/cea-hpc/rbh-find#fs-traversal-vs-backend-filtering",
+      "parentUuid": "1c63b051_07e6c310",
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0b7a1312_7331ab00",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-08T22:57:41Z",
+      "side": 1,
+      "message": "(nitpick) -sort/-rsort",
+      "range": {
+        "startLine": 7,
+        "startChar": 14,
+        "endLine": 7,
+        "endChar": 19
+      },
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "014a0cf3_42b50b51",
@@ -71,6 +112,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d40fd1fd_2f02bd2a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-08T22:57:41Z",
+      "side": 1,
+      "message": "Thanks!\n\nI guess I would add that the feature is likely missing from (gnu-)find because any implement of -sort/-rsort there would be, performance-wise, equivalent to:\n\n  $ find -printf \u0027\u003ccriterion\u003e \u003cname\u003e\\0\u0027 | sort -z | cut -zd\u0027 \u0027 -f2-\n\nThe added complexity of including a sorting algorithm in find is simply not worth that much.\n\nOn the other hand, rbh-find, whose backends are going to commonly be databases, has a real shot at providing better performance than that if, for example, the field used to sort fsentries is indexed.\n\nAlso, the complexity of the feature in rbh-find is much more limited than in (gnu-)find.",
+      "parentUuid": "ac7c9c7f_5fd8279e",
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "099bcc94_8d748dbe",
@@ -102,6 +161,259 @@
       "side": 1,
       "message": "Will do",
       "parentUuid": "099bcc94_8d748dbe",
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ff76a37f_56d80936",
+        "filename": "rbh-find.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-08T22:57:41Z",
+      "side": 1,
+      "message": "(style) \"array\" is a bit generic. How about \"order\", \"order_bys\", or \"sorts\"?",
+      "range": {
+        "startLine": 69,
+        "startChar": 30,
+        "endLine": 69,
+        "endChar": 35
+      },
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "46e8ee8e_167fccda",
+        "filename": "rbh-find.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-08T22:57:41Z",
+      "side": 1,
+      "message": "(minor) const struct",
+      "range": {
+        "startLine": 69,
+        "startChar": 6,
+        "endLine": 69,
+        "endChar": 12
+      },
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9296a20f_261d2987",
+        "filename": "rbh-find.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-08T22:57:41Z",
+      "side": 1,
+      "message": "(style) Conversely, I\u0027d say \"sort_array_size\" is a bit too verbose. I personally like to use \"count\"... Which arguably is a bit generic, but that I\u0027d justify by saying that a `size_t count` when used right after an array in a function\u0027s prototype consistently means \"the array\u0027s size\", at least in the robinhood codebase.",
+      "range": {
+        "startLine": 69,
+        "startChar": 44,
+        "endLine": 69,
+        "endChar": 59
+      },
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "95ac60cf_2417ee4c",
+        "filename": "rbh-find.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-08T22:57:41Z",
+      "side": 1,
+      "message": "(style) this seems unrelated to this patch.\n\nFor the record, the call to error() on l.122 prints a similar message, but even better, because we get the name of the option that is not yet implemented, and it\u0027s automatically printed on stderr rather than stdout.",
+      "range": {
+        "startLine": 112,
+        "startChar": 8,
+        "endLine": 114,
+        "endChar": 18
+      },
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2fa5bfc2_bc07dc36",
+        "filename": "rbh-find.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-08T22:57:41Z",
+      "side": 1,
+      "message": "(style) same remark about the names",
+      "range": {
+        "startLine": 143,
+        "startChar": 29,
+        "endLine": 143,
+        "endChar": 58
+      },
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dac179ee_410c0fc9",
+        "filename": "rbh-find.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-08T22:57:41Z",
+      "side": 1,
+      "message": "(minor) const struct",
+      "range": {
+        "startLine": 143,
+        "startChar": 5,
+        "endLine": 143,
+        "endChar": 11
+      },
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "197d1e25_bccde251",
+        "filename": "rbh-find.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-08T22:57:41Z",
+      "side": 1,
+      "message": "(nitpick++) array \u003dP",
+      "range": {
+        "startLine": 219,
+        "startChar": 30,
+        "endLine": 219,
+        "endChar": 34
+      },
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ff378e30_a13e218e",
+        "filename": "rbh-find.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-08T22:57:41Z",
+      "side": 1,
+      "message": "(minor) No, a predicate is a statement that affirms or denies something. In find\u0027s semantics, filtering options (-size 2G, -atime +2, ...) are called predicates.\n\nHere we have an array of filtering options, or an array of fields to sort fsentries against.",
+      "range": {
+        "startLine": 219,
+        "startChar": 43,
+        "endLine": 219,
+        "endChar": 53
+      },
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "73e979de_1d58fb75",
+        "filename": "rbh-find.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-08T22:57:41Z",
+      "side": 1,
+      "message": "(style) the \\p directive sort of makes \"array\" a proper name, as if you called it \"Charles\". The same way you wouldn\u0027t say \"the size of the Charles\", we\u0027ll rather write \"the size of \\p array\".",
+      "range": {
+        "startLine": 220,
+        "startChar": 40,
+        "endLine": 220,
+        "endChar": 43
+      },
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9a2e7651_fa90de44",
+        "filename": "rbh-find.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-08T22:57:41Z",
+      "side": 1,
+      "message": "(style) same remark about the names",
+      "range": {
+        "startLine": 229,
+        "startChar": 42,
+        "endLine": 229,
+        "endChar": 72
+      },
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "779074a3_90b5b886",
+        "filename": "rbh-find.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-08T22:57:41Z",
+      "side": 1,
+      "message": "(minor) const struct",
+      "range": {
+        "startLine": 229,
+        "startChar": 17,
+        "endLine": 229,
+        "endChar": 23
+      },
       "revId": "57f9fad26db66815191e2d4878f406ff16639365",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -196,6 +508,144 @@
         "startChar": 67,
         "endLine": 302,
         "endChar": 68
+      },
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "48763298_54ed45b3",
+        "filename": "rbh-find.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-08T22:57:41Z",
+      "side": 1,
+      "message": "neat! 👍",
+      "range": {
+        "startLine": 347,
+        "startChar": 12,
+        "endLine": 349,
+        "endChar": 41
+      },
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5454dfec_2cfa40bb",
+        "filename": "rbh-find.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 351,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-08T22:57:41Z",
+      "side": 1,
+      "message": "(typo) an",
+      "range": {
+        "startLine": 351,
+        "startChar": 21,
+        "endLine": 351,
+        "endChar": 22
+      },
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e080593e_d9416d1e",
+        "filename": "rbh-find.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-08T22:57:41Z",
+      "side": 1,
+      "message": "(defect) this is not correct\n\n  $ rbh-find -rsort name \\( -sort name -print \\) -print\n\nShould output the name of each fsentry once, in a sorted order, and then once again, in a reverse-sorted order. IIUC, your implementation will output each fsentry twice in the same order.\n\nYou can have a look at how `_filter` and `filter` are used in this function. I expect you will need a similar approach to implement the correct behavior.",
+      "range": {
+        "startLine": 355,
+        "startChar": 13,
+        "endLine": 355,
+        "endChar": 18
+      },
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c5a4b34b_94f2ad1b",
+        "filename": "rbh-find.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-08T22:57:41Z",
+      "side": 1,
+      "message": "(style) trailing space",
+      "range": {
+        "startLine": 355,
+        "startChar": 72,
+        "endLine": 355,
+        "endChar": 73
+      },
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "603d82db_1538ce07",
+        "filename": "src/filters.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 384,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-08T22:57:41Z",
+      "side": 1,
+      "message": "(minor) considering the function exits on error and otherwise always increments this value by one, I would rather the caller does the \u0027++\u0027 than pass a pointer here.",
+      "range": {
+        "startLine": 384,
+        "startChar": 42,
+        "endLine": 384,
+        "endChar": 65
+      },
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9d0dbe09_41e66c43",
+        "filename": "src/filters.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 399,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-08T22:57:41Z",
+      "side": 1,
+      "message": "(defect) I disagree with the syntax -sort \u003cpredicate\u003e.\n\nI would expect:\n\n  $ rbh-find -sort iname\n\nTo sort fsentries based on their name, without taking the case into account, which it will with your implementation.\n\nAnd I expect:\n\n  $ rbh-find -sort amin\n\nWill confuse more than one user.\n\nAlso, robinhood\u0027s API allows you to sort on an xattr, which your implementation does not allow.\n\nI would rather you implement a separate \"field\" parser please.",
+      "range": {
+        "startLine": 390,
+        "startChar": 4,
+        "endLine": 399,
+        "endChar": 19
       },
       "revId": "57f9fad26db66815191e2d4878f406ff16639365",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
