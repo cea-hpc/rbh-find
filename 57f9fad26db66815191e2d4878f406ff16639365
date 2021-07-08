@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "1c63b051_07e6c310",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019295
+      },
+      "writtenOn": "2021-07-08T15:29:04Z",
+      "side": 1,
+      "message": "Will do",
+      "parentUuid": "b8ddad9e_130f7826",
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "014a0cf3_42b50b51",
@@ -35,6 +53,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ac7c9c7f_5fd8279e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019295
+      },
+      "writtenOn": "2021-07-08T15:29:04Z",
+      "side": 1,
+      "message": "Hi, thanks for the review!\n\nThis feature can make it possible to output data according to the size or the time of last access for example, to be able to identify better targets during migration policies.",
+      "parentUuid": "014a0cf3_42b50b51",
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "099bcc94_8d748dbe",
@@ -48,6 +84,24 @@
       "writtenOn": "2021-07-07T22:39:25Z",
       "side": 1,
       "message": "I feel like this is an opportunity to split this patch into several smaller patches. It really helps reviewers if a patch only really does one thing.",
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4e431cf0_eb07e2ab",
+        "filename": "include/parser.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1019295
+      },
+      "writtenOn": "2021-07-08T15:29:04Z",
+      "side": 1,
+      "message": "Will do",
+      "parentUuid": "099bcc94_8d748dbe",
       "revId": "57f9fad26db66815191e2d4878f406ff16639365",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -113,6 +167,30 @@
       "side": 1,
       "message": "I feel it\u0027s nicer if you only mark a comment as \"Done\" and resolved if you already uploaded the code that goes with it, otherwise it\u0027s really easy to forget to push the update later on.\n\nThe gatekeeper might end up merging the patch before you get your latest version out. If you leave the comment unresolved, the gatekeeper gets a nice warning.\n\nIf you don\u0027t want to push the code right away but you still want your reviewer to know that you addressed their comments, you can use \"Will do\" instead of \"Done\" (without checking the resolved box).\n\nIf you just don\u0027t want to forget to post comments on gerrit, there is an option in your user profile you can check to automatically publish comments when you upload a newer patchset.",
       "parentUuid": "bd762162_5b85c99f",
+      "range": {
+        "startLine": 302,
+        "startChar": 67,
+        "endLine": 302,
+        "endChar": 68
+      },
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cb1aa619_d2c78be5",
+        "filename": "rbh-find.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 1019295
+      },
+      "writtenOn": "2021-07-08T15:29:04Z",
+      "side": 1,
+      "message": "Okay, thanks for all these recomendations.",
+      "parentUuid": "e6889827_d86f47db",
       "range": {
         "startLine": 302,
         "startChar": 67,
