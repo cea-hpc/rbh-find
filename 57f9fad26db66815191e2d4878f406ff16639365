@@ -56,6 +56,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "08cd362c_5bdab7c0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019295
+      },
+      "writtenOn": "2021-07-09T14:06:38Z",
+      "side": 1,
+      "message": "Will do",
+      "parentUuid": "460a255f_2e98a8cd",
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "0b7a1312_7331ab00",
         "filename": "/COMMIT_MSG",
         "patchSetId": 2
@@ -67,6 +85,30 @@
       "writtenOn": "2021-07-08T22:57:41Z",
       "side": 1,
       "message": "(nitpick) -sort/-rsort",
+      "range": {
+        "startLine": 7,
+        "startChar": 14,
+        "endLine": 7,
+        "endChar": 19
+      },
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2698245f_c50c0bd5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1019295
+      },
+      "writtenOn": "2021-07-09T14:06:38Z",
+      "side": 1,
+      "message": "Will do",
+      "parentUuid": "0b7a1312_7331ab00",
       "range": {
         "startLine": 7,
         "startChar": 14,
@@ -236,6 +278,78 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f9ff59c0_11feab2b",
+        "filename": "rbh-find.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1019295
+      },
+      "writtenOn": "2021-07-09T14:06:38Z",
+      "side": 1,
+      "message": "Will do",
+      "parentUuid": "ff76a37f_56d80936",
+      "range": {
+        "startLine": 69,
+        "startChar": 30,
+        "endLine": 69,
+        "endChar": 35
+      },
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7593efc8_5c771b53",
+        "filename": "rbh-find.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1019295
+      },
+      "writtenOn": "2021-07-09T14:06:38Z",
+      "side": 1,
+      "message": "As the \"count\" variable already exists in some functions, is \"count_sorts\" right for you?",
+      "parentUuid": "9296a20f_261d2987",
+      "range": {
+        "startLine": 69,
+        "startChar": 44,
+        "endLine": 69,
+        "endChar": 59
+      },
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2a93d193_05b4408a",
+        "filename": "rbh-find.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1019295
+      },
+      "writtenOn": "2021-07-09T14:06:38Z",
+      "side": 1,
+      "message": "Will do",
+      "parentUuid": "46e8ee8e_167fccda",
+      "range": {
+        "startLine": 69,
+        "startChar": 6,
+        "endLine": 69,
+        "endChar": 12
+      },
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "95ac60cf_2417ee4c",
         "filename": "rbh-find.c",
         "patchSetId": 2
@@ -247,6 +361,30 @@
       "writtenOn": "2021-07-08T22:57:41Z",
       "side": 1,
       "message": "(style) this seems unrelated to this patch.\n\nFor the record, the call to error() on l.122 prints a similar message, but even better, because we get the name of the option that is not yet implemented, and it\u0027s automatically printed on stderr rather than stdout.",
+      "range": {
+        "startLine": 112,
+        "startChar": 8,
+        "endLine": 114,
+        "endChar": 18
+      },
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ed73648c_ee72e795",
+        "filename": "rbh-find.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1019295
+      },
+      "writtenOn": "2021-07-09T14:06:38Z",
+      "side": 1,
+      "message": "Will do",
+      "parentUuid": "95ac60cf_2417ee4c",
       "range": {
         "startLine": 112,
         "startChar": 8,
@@ -293,6 +431,54 @@
       "writtenOn": "2021-07-08T22:57:41Z",
       "side": 1,
       "message": "(minor) const struct",
+      "range": {
+        "startLine": 143,
+        "startChar": 5,
+        "endLine": 143,
+        "endChar": 11
+      },
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "413b3cb8_60b5aca1",
+        "filename": "rbh-find.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1019295
+      },
+      "writtenOn": "2021-07-09T14:06:38Z",
+      "side": 1,
+      "message": "Will do",
+      "parentUuid": "2fa5bfc2_bc07dc36",
+      "range": {
+        "startLine": 143,
+        "startChar": 29,
+        "endLine": 143,
+        "endChar": 58
+      },
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b03e7c62_11d0a883",
+        "filename": "rbh-find.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1019295
+      },
+      "writtenOn": "2021-07-09T14:06:38Z",
+      "side": 1,
+      "message": "Will do",
+      "parentUuid": "dac179ee_410c0fc9",
       "range": {
         "startLine": 143,
         "startChar": 5,
@@ -351,6 +537,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "0ea19170_e0aae00d",
+        "filename": "rbh-find.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 1019295
+      },
+      "writtenOn": "2021-07-09T14:06:38Z",
+      "side": 1,
+      "message": "Will do",
+      "parentUuid": "ff378e30_a13e218e",
+      "range": {
+        "startLine": 219,
+        "startChar": 43,
+        "endLine": 219,
+        "endChar": 53
+      },
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "73e979de_1d58fb75",
         "filename": "rbh-find.c",
         "patchSetId": 2
@@ -362,6 +572,30 @@
       "writtenOn": "2021-07-08T22:57:41Z",
       "side": 1,
       "message": "(style) the \\p directive sort of makes \"array\" a proper name, as if you called it \"Charles\". The same way you wouldn\u0027t say \"the size of the Charles\", we\u0027ll rather write \"the size of \\p array\".",
+      "range": {
+        "startLine": 220,
+        "startChar": 40,
+        "endLine": 220,
+        "endChar": 43
+      },
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d2aedf35_0ce52ca3",
+        "filename": "rbh-find.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 1019295
+      },
+      "writtenOn": "2021-07-09T14:06:38Z",
+      "side": 1,
+      "message": "Will do",
+      "parentUuid": "73e979de_1d58fb75",
       "range": {
         "startLine": 220,
         "startChar": 40,
@@ -413,6 +647,54 @@
         "startChar": 17,
         "endLine": 229,
         "endChar": 23
+      },
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "35cbdf33_392c69e0",
+        "filename": "rbh-find.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 1019295
+      },
+      "writtenOn": "2021-07-09T14:06:38Z",
+      "side": 1,
+      "message": "Will do",
+      "parentUuid": "779074a3_90b5b886",
+      "range": {
+        "startLine": 229,
+        "startChar": 17,
+        "endLine": 229,
+        "endChar": 23
+      },
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "555acb9e_3cb3ecbc",
+        "filename": "rbh-find.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 1019295
+      },
+      "writtenOn": "2021-07-09T14:06:38Z",
+      "side": 1,
+      "message": "Will do",
+      "parentUuid": "9a2e7651_fa90de44",
+      "range": {
+        "startLine": 229,
+        "startChar": 42,
+        "endLine": 229,
+        "endChar": 72
       },
       "revId": "57f9fad26db66815191e2d4878f406ff16639365",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
@@ -561,6 +843,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "1f696105_96683442",
+        "filename": "rbh-find.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 351,
+      "author": {
+        "id": 1019295
+      },
+      "writtenOn": "2021-07-09T14:06:38Z",
+      "side": 1,
+      "message": "Will do",
+      "parentUuid": "5454dfec_2cfa40bb",
+      "range": {
+        "startLine": 351,
+        "startChar": 21,
+        "endLine": 351,
+        "endChar": 22
+      },
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e080593e_d9416d1e",
         "filename": "rbh-find.c",
         "patchSetId": 2
@@ -607,6 +913,54 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "6a362209_dc7f6e7a",
+        "filename": "rbh-find.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 1019295
+      },
+      "writtenOn": "2021-07-09T14:06:38Z",
+      "side": 1,
+      "message": "I managed to modify it so that it output the name of each fsentry once in sorted order and then again in reverse sorted order.\nHowever, comparing with (gnu-)find it showed a difference, which is that (gnu-)find takes into account what\u0027s to the left of the parenthesis.\nFor example with (gnu-)find:\n $ find \\( -print \\) -type f -print\n   /\n   /a.txt\n   /a.txt\n   /b.txt\n   /b.txt\n $ find -type f \\( -print \\) -print\n   /a.txt\n   /a.txt\n   /b.txt\n   /b.txt\n\nAnd with rbh-find:\n $ rbh-find \\( -print \\) -type f -print\n   /b.txt\n   /\n   /a.txt\n   /b.txt\n   /a.txt\n $ rbh-find -type f \\( -print \\) -print\n   /b.txt\n   /\n   /a.txt\n   /b.txt\n   /a.txt\n\nSo, do I need to change the sort to take into account what\u0027s to the left of the parenthesis like (gnu-)find or leave it like that?",
+      "parentUuid": "e080593e_d9416d1e",
+      "range": {
+        "startLine": 355,
+        "startChar": 13,
+        "endLine": 355,
+        "endChar": 18
+      },
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0b87d4fd_2f49b415",
+        "filename": "rbh-find.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 1019295
+      },
+      "writtenOn": "2021-07-09T14:06:38Z",
+      "side": 1,
+      "message": "Will do",
+      "parentUuid": "c5a4b34b_94f2ad1b",
+      "range": {
+        "startLine": 355,
+        "startChar": 72,
+        "endLine": 355,
+        "endChar": 73
+      },
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "603d82db_1538ce07",
         "filename": "src/filters.c",
         "patchSetId": 2
@@ -630,6 +984,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "13cbb13b_a3d7bde7",
+        "filename": "src/filters.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 384,
+      "author": {
+        "id": 1019295
+      },
+      "writtenOn": "2021-07-09T14:06:38Z",
+      "side": 1,
+      "message": "Will do",
+      "parentUuid": "603d82db_1538ce07",
+      "range": {
+        "startLine": 384,
+        "startChar": 42,
+        "endLine": 384,
+        "endChar": 65
+      },
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "9d0dbe09_41e66c43",
         "filename": "src/filters.c",
         "patchSetId": 2
@@ -641,6 +1019,30 @@
       "writtenOn": "2021-07-08T22:57:41Z",
       "side": 1,
       "message": "(defect) I disagree with the syntax -sort \u003cpredicate\u003e.\n\nI would expect:\n\n  $ rbh-find -sort iname\n\nTo sort fsentries based on their name, without taking the case into account, which it will with your implementation.\n\nAnd I expect:\n\n  $ rbh-find -sort amin\n\nWill confuse more than one user.\n\nAlso, robinhood\u0027s API allows you to sort on an xattr, which your implementation does not allow.\n\nI would rather you implement a separate \"field\" parser please.",
+      "range": {
+        "startLine": 390,
+        "startChar": 4,
+        "endLine": 399,
+        "endChar": 19
+      },
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "169bfd91_18835164",
+        "filename": "src/filters.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 399,
+      "author": {
+        "id": 1019295
+      },
+      "writtenOn": "2021-07-09T14:06:38Z",
+      "side": 1,
+      "message": "Will do",
+      "parentUuid": "9d0dbe09_41e66c43",
       "range": {
         "startLine": 390,
         "startChar": 4,
