@@ -16,6 +16,24 @@
       "message": "I don\u0027t actually see the difference, could you give an example that didn\u0027t work in commit message for archival?\n\n+1 anyway because it still looks correct to me",
       "revId": "c1ac36ed4acd7ad8c3f80fc4b887d33901d6bdff",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2642f14c_c1a588b2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2021-07-10T10:09:09Z",
+      "side": 1,
+      "message": "\u003e I don\u0027t actually see the difference, could you give an example that didn\u0027t work in commit message for archival?\n\nOk I see what changed, since token is now made static the following calls won\u0027t assume the original previous token was CLI_URI and we\u0027ll detect empty parenthesis properly at least, so I see something that used to work when it shouldn\u0027t.\nI still don\u0027t see what didn\u0027t work where it should before that\u0027d make the example from the other patch not work, but as written there I just can\u0027t get my head around this for loop properly.",
+      "parentUuid": "8ea8b96f_7c0451d5",
+      "revId": "c1ac36ed4acd7ad8c3f80fc4b887d33901d6bdff",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
