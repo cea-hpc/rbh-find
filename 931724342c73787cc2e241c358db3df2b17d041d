@@ -16,6 +16,23 @@
       "message": "Thanks!",
       "revId": "931724342c73787cc2e241c358db3df2b17d041d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c7ceb0c5_2c282a2e",
+        "filename": "rbh-find.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2021-07-10T10:04:47Z",
+      "side": 1,
+      "message": "actually sorry... coming back here: isn\u0027t the error not just that this uses filter here instead of left_filter, and tmp should keep NULL?\n\nThis function has too many hoops for me; if this works I\u0027m fine with the current code but I don\u0027t understand why there\u0027s an extra and here -- would appreciate an extra test with a -not in here somewhere.",
+      "revId": "931724342c73787cc2e241c358db3df2b17d041d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
