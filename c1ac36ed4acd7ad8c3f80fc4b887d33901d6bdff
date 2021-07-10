@@ -34,6 +34,24 @@
       "parentUuid": "8ea8b96f_7c0451d5",
       "revId": "c1ac36ed4acd7ad8c3f80fc4b887d33901d6bdff",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0e98c281_3ab89102",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2021-07-10T10:47:18Z",
+      "side": 1,
+      "message": "Still replying to myself, nested parenthesis wouldn\u0027t work as we would be left with previous token \u003d open parent to a close parent despite having other tokens before; now we correctly have previous token identified as the previous closing parent so not something empty. Ok.",
+      "parentUuid": "2642f14c_c1a588b2",
+      "revId": "c1ac36ed4acd7ad8c3f80fc4b887d33901d6bdff",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
