@@ -1,0 +1,216 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d5ede63d_92179f0e",
+        "filename": "README.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-10T13:28:10Z",
+      "side": 1,
+      "message": "(major) Oooh, that\u0027s right... I mean, that\u0027s not right, but that\u0027s a pre-requisite...\n\nActually, rbh-find (or more accurately the mongo backend in librobinhood) does perform multiple queries under the hood if the URI provided on the command line includes a fragment. [0][1]\n\nWhich means -sort/-rsort will error out with ENOTSUP if it\u0027s used with such URIs. [2] (at least for the mongo backend)\n\nWorth documenting.\n\n[0] https://datatracker.ietf.org/doc/html/rfc3986#section-3\n[1] https://github.com/cea-hpc/librobinhood/commit/5a0d27dee5d7eb56e693136f68e9762baca6bb1e\n[2] https://github.com/cea-hpc/librobinhood/commit/5a0d27dee5d7eb56e693136f68e9762baca6bb1e#diff-8740ba6118459380552b0b969f5b9dde20fa161a28b06c51143de8d633efac47R934",
+      "range": {
+        "startLine": 218,
+        "startChar": 24,
+        "endLine": 218,
+        "endChar": 61
+      },
+      "revId": "7c59a04037beb7cdaaa1a4ef578876d642b821c6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7a095bdd_6e3f12b5",
+        "filename": "README.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-10T13:28:10Z",
+      "side": 1,
+      "message": "(minor) I was wrong, this doesn\u0027t fit very well in this section. Can you move it to the end of the document, please?\n\n(note that if you use the diff I posted as a suggestion, this becomes redundant)",
+      "range": {
+        "startLine": 218,
+        "startChar": 0,
+        "endLine": 220,
+        "endChar": 33
+      },
+      "revId": "7c59a04037beb7cdaaa1a4ef578876d642b821c6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "48a5b68f_8b796eb7",
+        "filename": "README.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-10T13:28:10Z",
+      "side": 1,
+      "message": "(suggest)\n\nFrom 2bc82774a64adbf4e2498650be0558914c2045e5 Mon Sep 17 00:00:00 2001\nFrom: Quentin Bouget \u003cypsah@devyard.org\u003e\nDate: Sat, 10 Jul 2021 15:18:50 +0200\nSubject: [PATCH] doc: rbh-find implements the -sort/-rsort options\n\n---\n README.rst | 64 ++++++++++++++++++++++++++++++++++++++++++++++++++++++\n 1 file changed, 64 insertions(+)\n\ndiff --git a/README.rst b/README.rst\nindex 413bf98..836f3a3 100644\n--- a/README.rst\n+++ b/README.rst\n@@ -264,3 +264,67 @@ expect: count the matching entries.\n     71 matching entries\n \n **The message format is not yet stable. Please do not rely on it.**\n+\n+-sort/-rstort\n+-------------\n+\n+rbh-find defines a ``-sort`` and ``-rsort`` options which allow sorting entries\n+based on their name, last access time, ... in ascending and descending order.\n+\n+.. code:: bash\n+\n+    rbh-find rbh:mongo:test -sort name\n+    ./\n+    ./a\n+    ./b\n+    ./c\n+    rbh-find rbh:mongo:test -rsort name\n+    ./c\n+    ./b\n+    ./a\n+    ./\n+\n+Depending on the backend and the field being sorted on, this option may provide\n+orders of magnitude faster results than sorting entries after the fact. That is\n+because, for database-like backends, ordering entries on an indexed field is\n+usually (if not always) an efficient process.\n+\n+For technical reasons, not every backend supports sorting, and those which do,\n+may not be able to in every situation. For example, at the time of writing, the\n+mongo backend does support sorting for fragment-less URIs, but not for URIs with\n+fragments:\n+\n+.. code:: bash\n+\n+    rbh-find rbh:mongo:test -sort type\n+    ./\n+    ./dir-0\n+    ./dir-1\n+    ./dir-0/file-0\n+    ./dir-0/file-1\n+    ./dir-1/file-2\n+    ./dir-2/file-3\n+\n+    rbh-find rbh:mongo:test#dir-0 -sort type\n+    rbh-find:../rbh-find.c:81: filter_fsentries: Operation not supported\n+\n+In these cases, short of finding a tricky way to achieve the same result:\n+\n+.. code:: bash\n+\n+    rbh-find rbh:mongo:test#dir-0 -type d -print -o -type f -print\n+    ./\n+    ./dir-0\n+    ./dir-0/file-0\n+    ./dir-0/file-1\n+\n+You will have to resort to manually sorting the output:\n+\n+.. code:: bash\n+\n+    rbh-find rbh:mongo:test#dir-0 -printf \"%y %p\\0\" | sort -zsk1,1 |\n+        cut -zd\u0027 \u0027 -f2- | tr \u0027\\0\u0027 \u0027\\n\u0027\n+    ./\n+    ./dir-0\n+    ./dir-0/file-0\n+    ./dir-0/file-1\n-- \n2.32.0",
+      "revId": "7c59a04037beb7cdaaa1a4ef578876d642b821c6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7ab9b10c_969cc543",
+        "filename": "README.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-10T13:28:10Z",
+      "side": 1,
+      "message": "(defect) this line belongs to the \"-count\" subsection.",
+      "revId": "7c59a04037beb7cdaaa1a4ef578876d642b821c6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8f89bd63_7527a10a",
+        "filename": "include/filters.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-10T13:28:10Z",
+      "side": 1,
+      "message": "(nitpick) -sort/-rsort",
+      "range": {
+        "startLine": 128,
+        "startChar": 33,
+        "endLine": 128,
+        "endChar": 38
+      },
+      "revId": "7c59a04037beb7cdaaa1a4ef578876d642b821c6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7ee33f95_0fa48b5f",
+        "filename": "include/filters.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-10T13:28:10Z",
+      "side": 1,
+      "message": "(style) I think \"sort_options_append\" is a little bit better, in that it is clear where in the array the new sort option will be added.",
+      "range": {
+        "startLine": 152,
+        "startChar": 0,
+        "endLine": 152,
+        "endChar": 15
+      },
+      "revId": "7c59a04037beb7cdaaa1a4ef578876d642b821c6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5b6bb26f_6728d0f0",
+        "filename": "include/filters.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-10T13:28:10Z",
+      "side": 1,
+      "message": "(style) this one could be named \"count\", right?\n\n(style) could you move this right after `sorts` in the prototype, please?",
+      "range": {
+        "startLine": 153,
+        "startChar": 47,
+        "endLine": 153,
+        "endChar": 65
+      },
+      "revId": "7c59a04037beb7cdaaa1a4ef578876d642b821c6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d21a666c_566d43c1",
+        "filename": "src/filters.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 391,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-10T13:28:10Z",
+      "side": 1,
+      "message": "(style) 4 too many spaces",
+      "range": {
+        "startLine": 391,
+        "startChar": 8,
+        "endLine": 391,
+        "endChar": 16
+      },
+      "revId": "7c59a04037beb7cdaaa1a4ef578876d642b821c6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7e3030cf_01ba18e3",
+        "filename": "src/filters.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-10T13:28:10Z",
+      "side": 1,
+      "message": "(minor) Have you considered implementing all the fields?\n\nYou don\u0027t have to do it, that can come in a later patch, and if you\u0027re short on time, I can easily fill in the gaps.\nYour contribution is already appreciated as-is. 👍",
+      "revId": "7c59a04037beb7cdaaa1a4ef578876d642b821c6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a8dfff22_f01b4a77",
+        "filename": "src/filters.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 440,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-10T13:28:10Z",
+      "side": 1,
+      "message": "(major) That\u0027s my bad, I asked for one too many \"const\".\n\nCasting \"const\" away is generally bad practice. [0]\nHere it means that `sorts` should not be made const in this function\u0027s prototype.\n\n[0] https://wiki.sei.cmu.edu/confluence/display/c/EXP05-C.+Do+not+cast+away+a+const+qualification",
+      "range": {
+        "startLine": 440,
+        "startChar": 34,
+        "endLine": 440,
+        "endChar": 60
+      },
+      "revId": "7c59a04037beb7cdaaa1a4ef578876d642b821c6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

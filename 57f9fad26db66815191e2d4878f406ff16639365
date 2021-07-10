@@ -72,6 +72,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a6e29758_ab2897c9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-10T13:28:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "08cd362c_5bdab7c0",
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0b7a1312_7331ab00",
@@ -203,6 +221,24 @@
       "side": 1,
       "message": "Will do",
       "parentUuid": "099bcc94_8d748dbe",
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ecf0dbfb_d42a9959",
+        "filename": "include/parser.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-10T13:28:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e431cf0_eb07e2ab",
       "revId": "57f9fad26db66815191e2d4878f406ff16639365",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -348,6 +384,78 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "481e66c9_ffd7441d",
+        "filename": "rbh-find.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-10T13:28:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f9ff59c0_11feab2b",
+      "range": {
+        "startLine": 69,
+        "startChar": 30,
+        "endLine": 69,
+        "endChar": 35
+      },
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a2bd35d2_4616e1fe",
+        "filename": "rbh-find.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-10T13:28:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2a93d193_05b4408a",
+      "range": {
+        "startLine": 69,
+        "startChar": 6,
+        "endLine": 69,
+        "endChar": 12
+      },
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b8e45bc0_30926839",
+        "filename": "rbh-find.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-10T13:28:10Z",
+      "side": 1,
+      "message": "I\u0027d prefer it the other way around: \"sorts_count\", but yes, sure. 👍",
+      "parentUuid": "7593efc8_5c771b53",
+      "range": {
+        "startLine": 69,
+        "startChar": 44,
+        "endLine": 69,
+        "endChar": 59
+      },
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "95ac60cf_2417ee4c",
@@ -385,6 +493,30 @@
       "side": 1,
       "message": "Will do",
       "parentUuid": "95ac60cf_2417ee4c",
+      "range": {
+        "startLine": 112,
+        "startChar": 8,
+        "endLine": 114,
+        "endChar": 18
+      },
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "33cfebde_2e838a35",
+        "filename": "rbh-find.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-10T13:28:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ed73648c_ee72e795",
       "range": {
         "startLine": 112,
         "startChar": 8,
@@ -491,6 +623,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "8a157049_55e7988d",
+        "filename": "rbh-find.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-10T13:28:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b03e7c62_11d0a883",
+      "range": {
+        "startLine": 143,
+        "startChar": 5,
+        "endLine": 143,
+        "endChar": 11
+      },
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "197d1e25_bccde251",
         "filename": "rbh-find.c",
         "patchSetId": 2
@@ -559,6 +715,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d58ad9b6_c45e018b",
+        "filename": "rbh-find.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-10T13:28:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0ea19170_e0aae00d",
+      "range": {
+        "startLine": 219,
+        "startChar": 43,
+        "endLine": 219,
+        "endChar": 53
+      },
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "73e979de_1d58fb75",
@@ -596,6 +776,30 @@
       "side": 1,
       "message": "Will do",
       "parentUuid": "73e979de_1d58fb75",
+      "range": {
+        "startLine": 220,
+        "startChar": 40,
+        "endLine": 220,
+        "endChar": 43
+      },
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3b167a9b_a7993f87",
+        "filename": "rbh-find.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-10T13:28:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d2aedf35_0ce52ca3",
       "range": {
         "startLine": 220,
         "startChar": 40,
@@ -695,6 +899,30 @@
         "startChar": 42,
         "endLine": 229,
         "endChar": 72
+      },
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "688d93f2_479ebe8f",
+        "filename": "rbh-find.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-10T13:28:10Z",
+      "side": 1,
+      "message": "That\u0027s my bad, this one shouldn\u0027t be made const.\n\nI guess the implications of using or not using const are a bit complex...\nThe best reference I can give would be the C standard [0], section 6.7.3, which arguably is a bit dry to read.\n\n[0] https://web.archive.org/web/20181230041359if_/http://www.open-std.org/jtc1/sc22/wg14/www/abq/c17_updated_proposed_fdis.pdf\n\nSimplifying quite a bit, when you use a function to which you pass a pointer to a \"const \u003csometype\u003e\", you can expect that function not to modify the memory the pointer points at. Conversely, when you write a function and declare it to accept a pointer to a \"const \u003csometype\u003e\", you should treat the memory the pointer points at as immutable.\n\nFor example:\n\n static void\n my_func(const char *string)\n {\n     string[0] \u003d \u0027a\u0027; // invalid\n }\n\nAnd the other way around:\n\n static void\n blackbox(char *string);\n\n static const char *MY_STRING \u003d \"Hello World\";\n\n int\n main()\n {\n     backbox(MY_STRING); // invalid\n }\n\n-------\n\nA good example to grasp how const works and doesn\u0027t work:\n\n struct Point {\n     int x;\n     int y;\n };\n\n struct Line {\n     struct Point *start;\n     struct Point *end;\n };\n\n static void\n test(const struct Line *line)\n {\n     line-\u003estart \u003d NULL; // invalid\n     line-\u003estart.x \u003d 10; // valid\n }\n\nTo make the second assignment in test() invalid, `struct Line` should have been defined as:\n\n struct Line {\n     const struct Point *start;\n     const struct Point *end;\n };\n\nOr:\n\n struct Line {\n     struct Point start;\n     struct Point end;\n };",
+      "parentUuid": "35cbdf33_392c69e0",
+      "range": {
+        "startLine": 229,
+        "startChar": 17,
+        "endLine": 229,
+        "endChar": 23
       },
       "revId": "57f9fad26db66815191e2d4878f406ff16639365",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
@@ -865,6 +1093,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bc99be3b_7171f73f",
+        "filename": "rbh-find.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 351,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-10T13:28:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1f696105_96683442",
+      "range": {
+        "startLine": 351,
+        "startChar": 21,
+        "endLine": 351,
+        "endChar": 22
+      },
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e080593e_d9416d1e",
@@ -954,6 +1206,54 @@
         "startChar": 72,
         "endLine": 355,
         "endChar": 73
+      },
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b69ee577_f1e0c4ad",
+        "filename": "rbh-find.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-10T13:28:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0b87d4fd_2f49b415",
+      "range": {
+        "startLine": 355,
+        "startChar": 72,
+        "endLine": 355,
+        "endChar": 73
+      },
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d04c36ac_3e0b680a",
+        "filename": "rbh-find.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-10T13:28:10Z",
+      "side": 1,
+      "message": "\u003e \u003e   $ rbh-find -rsort name \\( -sort name -print \\) -print\n\u003e \u003e \n\u003e \u003e Should output the name of each fsentry once, in a sorted order, and then once again, in a reverse-sorted order. IIUC, your implementation will output each fsentry twice in the same order.\n\nI\u0027m so sorry, my example was wrong. 😞\n\n $ rbh-find -rsort name \\( -sort name -print \\) -print\n\nIs equivalent to:\n\n $ rbh-find -rsort name -sort name -print -print\n\nIn which case, of course \"-sort name\" overrides \"-rsort name\", and we end up with:\n\n $ rbh-find -sort name -print -print\n\nie. print fsentries ordered by name, twice.\n\n-----\n\nWe need something a bit more complicated to highlight the issue.\n\nTaking this tree of files/directories as an example:\n\n $ tree .\n .\n ├── dir-0\n │   └── file-0\n └── dir-1\n     └── file-1\n\n 2 directories, 2 files\n\nAnd assuming file-0 was last modified before file-1, I would expect the following:\n\n $ rbh-find -type d -sort name -print -o -type f -rsort mtime -print\n /\n /dir-0\n /dir-1\n /dir-1/file-1\n /dir-0/file-0\n\nie. \"-sort name\" only applies to the part left of the \"-o\".\n\n ---------------------------------------------------------------------------------\n\n\u003e For example with (gnu-)find:\n\u003e   ...\n\u003e \n\u003e And with rbh-find:\n\u003e   ...\n\nThat\u0027s a great (bug-)find! 😊\n\nI pushed a patch to fix this here: https://review.gerrithub.io/c/cea-hpc/rbh-find/+/520474\nYou should probably rebase your work on top of it.\n\n\u003e So, do I need to change the sort to take into account what\u0027s to the left of the parenthesis like (gnu-)find or leave it like that?\n\nYou should take what\u0027s to the left of the parenthesis into account, like (gnu-)find does.",
+      "parentUuid": "6a362209_dc7f6e7a",
+      "range": {
+        "startLine": 355,
+        "startChar": 13,
+        "endLine": 355,
+        "endChar": 18
       },
       "revId": "57f9fad26db66815191e2d4878f406ff16639365",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
