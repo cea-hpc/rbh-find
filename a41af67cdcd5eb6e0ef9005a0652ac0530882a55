@@ -69,6 +69,24 @@
       "parentUuid": "2c1d18f7_e3215ce7",
       "revId": "a41af67cdcd5eb6e0ef9005a0652ac0530882a55",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "287a1a2c_3c3c90cf",
+        "filename": "rbh-find.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-10T09:11:57Z",
+      "side": 1,
+      "message": "I had to push another patch [0] underneath this one because the reproducer I came up with was not being parsed right either.\n\n[0] https://review.gerrithub.io/c/cea-hpc/rbh-find/+/520476",
+      "parentUuid": "4cf41949_8a91e078",
+      "revId": "a41af67cdcd5eb6e0ef9005a0652ac0530882a55",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
