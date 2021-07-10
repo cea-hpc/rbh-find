@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b7ed159f_fe057a7f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-10T09:10:19Z",
+      "side": 1,
+      "message": "CEA has interns, contributing interns! [0] 😊\n\n[0] https://review.gerrithub.io/c/cea-hpc/rbh-find/+/520339",
+      "parentUuid": "ae562d85_c84e74b5",
+      "revId": "a41af67cdcd5eb6e0ef9005a0652ac0530882a55",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2c1d18f7_e3215ce7",
@@ -31,6 +49,24 @@
       "writtenOn": "2021-07-10T08:19:04Z",
       "side": 1,
       "message": "I have a hard time following the logic, should this be left_filter instead?\nI don\u0027t have a mongo db running to test right now, if you say this works I\u0027ll trust you...",
+      "revId": "a41af67cdcd5eb6e0ef9005a0652ac0530882a55",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4cf41949_8a91e078",
+        "filename": "rbh-find.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-10T09:10:19Z",
+      "side": 1,
+      "message": "You\u0027re right. With the current patch:\n\n$ rbh-find rbh:mongo:test -type f \\( -type d \\( -type d -print \\) \\)\n/dir-0\n/dir-1\n/dir-2\n...\n\nWith your suggestion, the output is empty.",
+      "parentUuid": "2c1d18f7_e3215ce7",
       "revId": "a41af67cdcd5eb6e0ef9005a0652ac0530882a55",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
