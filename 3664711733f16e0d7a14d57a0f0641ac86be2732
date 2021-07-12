@@ -16,6 +16,29 @@
       "message": "Thanks, will save the next person some time :)",
       "revId": "3664711733f16e0d7a14d57a0f0641ac86be2732",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2e37db27_20099054",
+        "filename": "rbh-find.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-07-12T07:43:08Z",
+      "side": 1,
+      "message": "nit: that part is quite tricky to understand. Maybe a more explicit name would be helpfull ? Like static_token, last_token or current_token?",
+      "range": {
+        "startLine": 311,
+        "startChar": 29,
+        "endLine": 311,
+        "endChar": 34
+      },
+      "revId": "3664711733f16e0d7a14d57a0f0641ac86be2732",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
