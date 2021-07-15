@@ -45,6 +45,30 @@
       },
       "revId": "55d3d824744014cf70e6fbec7638443a8781b9fc",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9c68c8a3_a25fbfe0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2021-07-15T09:06:34Z",
+      "side": 1,
+      "message": "-o/-or will not evaluate the second part if the first one is true.\n\nYou are right here, files are printed in the first \u0027or\u0027 part, and directories in the second.",
+      "parentUuid": "aa30cf91_5b345658",
+      "range": {
+        "startLine": 14,
+        "startChar": 13,
+        "endLine": 14,
+        "endChar": 45
+      },
+      "revId": "55d3d824744014cf70e6fbec7638443a8781b9fc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
