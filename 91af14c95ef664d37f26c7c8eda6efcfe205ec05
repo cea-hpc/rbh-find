@@ -187,6 +187,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "46f48490_1902b111",
+        "filename": "src/filters.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 761,
+      "author": {
+        "id": 1019295
+      },
+      "writtenOn": "2021-07-15T16:35:45Z",
+      "side": 1,
+      "message": "I need to move it at the end of the array for two reasons:\n- the order of attributes have an impact on the result\n- the \"-rsort\" overrides \"-sort\" for the same attributes\n\nFor example in the command:\n\n  $ rbh-find -sort name -sort size\n\nIt\u0027ll sort the fsentries first by names and then for all fsentries with the same names sort them by size.\n\nBut in the command:\n\n  $ rbh-find -sort name -sort size -rsort name\n\nIt\u0027ll sort them by size and all of the same size sort them by names in descending alphabetical order. Because the \"-rsort name\" overrides the \"-sort name\", and since it\u0027s after the \"-sort size\", it becomes secondary. That\u0027s why I need to move it at the end of the arrray.",
+      "parentUuid": "558ab7f9_c9603ac1",
+      "range": {
+        "startLine": 761,
+        "startChar": 0,
+        "endLine": 761,
+        "endChar": 16
+      },
+      "revId": "91af14c95ef664d37f26c7c8eda6efcfe205ec05",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8cb6ade7_4e769dd7",
         "filename": "src/filters.c",
         "patchSetId": 5
