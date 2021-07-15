@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fa0fa88c_0975b080",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-07-15T06:47:26Z",
+      "side": 1,
+      "message": "typo: an",
+      "range": {
+        "startLine": 9,
+        "startChar": 11,
+        "endLine": 9,
+        "endChar": 14
+      },
+      "revId": "55d3d824744014cf70e6fbec7638443a8781b9fc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aa30cf91_5b345658",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-07-15T06:47:26Z",
+      "side": 1,
+      "message": "question: I\u0027ve never use these advanced features of find. What is this command suppose to do ?\n\nIf the type is file it prints using the first print action and if the type is a directory, it prints using the second action ?",
+      "range": {
+        "startLine": 14,
+        "startChar": 13,
+        "endLine": 14,
+        "endChar": 45
+      },
+      "revId": "55d3d824744014cf70e6fbec7638443a8781b9fc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
