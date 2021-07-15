@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "37141f48_dfd2afd2",
+        "filename": "README.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 1019295
+      },
+      "writtenOn": "2021-07-15T09:40:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d5ede63d_92179f0e",
+      "range": {
+        "startLine": 218,
+        "startChar": 24,
+        "endLine": 218,
+        "endChar": 61
+      },
+      "revId": "7c59a04037beb7cdaaa1a4ef578876d642b821c6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7a095bdd_6e3f12b5",
@@ -37,6 +61,30 @@
       "writtenOn": "2021-07-10T13:28:10Z",
       "side": 1,
       "message": "(minor) I was wrong, this doesn\u0027t fit very well in this section. Can you move it to the end of the document, please?\n\n(note that if you use the diff I posted as a suggestion, this becomes redundant)",
+      "range": {
+        "startLine": 218,
+        "startChar": 0,
+        "endLine": 220,
+        "endChar": 33
+      },
+      "revId": "7c59a04037beb7cdaaa1a4ef578876d642b821c6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ad5bdb3d_6672074a",
+        "filename": "README.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 1019295
+      },
+      "writtenOn": "2021-07-15T09:40:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a095bdd_6e3f12b5",
       "range": {
         "startLine": 218,
         "startChar": 0,
@@ -64,6 +112,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f60e7746_0fdc996d",
+        "filename": "README.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 1019295
+      },
+      "writtenOn": "2021-07-15T09:40:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "48a5b68f_8b796eb7",
+      "revId": "7c59a04037beb7cdaaa1a4ef578876d642b821c6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7ab9b10c_969cc543",
@@ -81,6 +147,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e502eeea_441f4962",
+        "filename": "README.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 1019295
+      },
+      "writtenOn": "2021-07-15T09:40:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7ab9b10c_969cc543",
+      "revId": "7c59a04037beb7cdaaa1a4ef578876d642b821c6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8f89bd63_7527a10a",
@@ -94,6 +178,30 @@
       "writtenOn": "2021-07-10T13:28:10Z",
       "side": 1,
       "message": "(nitpick) -sort/-rsort",
+      "range": {
+        "startLine": 128,
+        "startChar": 33,
+        "endLine": 128,
+        "endChar": 38
+      },
+      "revId": "7c59a04037beb7cdaaa1a4ef578876d642b821c6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5e2d4d56_68f37107",
+        "filename": "include/filters.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1019295
+      },
+      "writtenOn": "2021-07-15T09:40:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8f89bd63_7527a10a",
       "range": {
         "startLine": 128,
         "startChar": 33,
@@ -127,6 +235,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "516294ba_77f162f5",
+        "filename": "include/filters.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1019295
+      },
+      "writtenOn": "2021-07-15T09:40:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7ee33f95_0fa48b5f",
+      "range": {
+        "startLine": 152,
+        "startChar": 0,
+        "endLine": 152,
+        "endChar": 15
+      },
+      "revId": "7c59a04037beb7cdaaa1a4ef578876d642b821c6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5b6bb26f_6728d0f0",
@@ -140,6 +272,30 @@
       "writtenOn": "2021-07-10T13:28:10Z",
       "side": 1,
       "message": "(style) this one could be named \"count\", right?\n\n(style) could you move this right after `sorts` in the prototype, please?",
+      "range": {
+        "startLine": 153,
+        "startChar": 47,
+        "endLine": 153,
+        "endChar": 65
+      },
+      "revId": "7c59a04037beb7cdaaa1a4ef578876d642b821c6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c8d25e37_b5590992",
+        "filename": "include/filters.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1019295
+      },
+      "writtenOn": "2021-07-15T09:40:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5b6bb26f_6728d0f0",
       "range": {
         "startLine": 153,
         "startChar": 47,
@@ -173,6 +329,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "565d7701_2625cb96",
+        "filename": "src/filters.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 391,
+      "author": {
+        "id": 1019295
+      },
+      "writtenOn": "2021-07-15T09:40:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d21a666c_566d43c1",
+      "range": {
+        "startLine": 391,
+        "startChar": 8,
+        "endLine": 391,
+        "endChar": 16
+      },
+      "revId": "7c59a04037beb7cdaaa1a4ef578876d642b821c6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7e3030cf_01ba18e3",
@@ -190,6 +370,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2f5b5f84_138b7a47",
+        "filename": "src/filters.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 1019295
+      },
+      "writtenOn": "2021-07-15T09:40:39Z",
+      "side": 1,
+      "message": "Yes I saw that, but with Sebastien Gougeaud we think it will be better in a patch later.",
+      "parentUuid": "7e3030cf_01ba18e3",
+      "revId": "7c59a04037beb7cdaaa1a4ef578876d642b821c6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a8dfff22_f01b4a77",
@@ -203,6 +401,30 @@
       "writtenOn": "2021-07-10T13:28:10Z",
       "side": 1,
       "message": "(major) That\u0027s my bad, I asked for one too many \"const\".\n\nCasting \"const\" away is generally bad practice. [0]\nHere it means that `sorts` should not be made const in this function\u0027s prototype.\n\n[0] https://wiki.sei.cmu.edu/confluence/display/c/EXP05-C.+Do+not+cast+away+a+const+qualification",
+      "range": {
+        "startLine": 440,
+        "startChar": 34,
+        "endLine": 440,
+        "endChar": 60
+      },
+      "revId": "7c59a04037beb7cdaaa1a4ef578876d642b821c6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "acc6ff24_6c407925",
+        "filename": "src/filters.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 440,
+      "author": {
+        "id": 1019295
+      },
+      "writtenOn": "2021-07-15T09:40:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a8dfff22_f01b4a77",
       "range": {
         "startLine": 440,
         "startChar": 34,

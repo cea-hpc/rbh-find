@@ -456,6 +456,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3424b3e6_d4393881",
+        "filename": "rbh-find.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1019295
+      },
+      "writtenOn": "2021-07-15T09:40:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b8e45bc0_30926839",
+      "range": {
+        "startLine": 69,
+        "startChar": 44,
+        "endLine": 69,
+        "endChar": 59
+      },
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "95ac60cf_2417ee4c",
@@ -928,6 +952,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e989fc4f_7b749bf1",
+        "filename": "rbh-find.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 1019295
+      },
+      "writtenOn": "2021-07-15T09:40:39Z",
+      "side": 1,
+      "message": "Thank you for the explanation.\nDone",
+      "parentUuid": "688d93f2_479ebe8f",
+      "range": {
+        "startLine": 229,
+        "startChar": 17,
+        "endLine": 229,
+        "endChar": 23
+      },
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "55a9daf4_57d7d851",
@@ -1249,6 +1297,30 @@
       "side": 1,
       "message": "\u003e \u003e   $ rbh-find -rsort name \\( -sort name -print \\) -print\n\u003e \u003e \n\u003e \u003e Should output the name of each fsentry once, in a sorted order, and then once again, in a reverse-sorted order. IIUC, your implementation will output each fsentry twice in the same order.\n\nI\u0027m so sorry, my example was wrong. 😞\n\n $ rbh-find -rsort name \\( -sort name -print \\) -print\n\nIs equivalent to:\n\n $ rbh-find -rsort name -sort name -print -print\n\nIn which case, of course \"-sort name\" overrides \"-rsort name\", and we end up with:\n\n $ rbh-find -sort name -print -print\n\nie. print fsentries ordered by name, twice.\n\n-----\n\nWe need something a bit more complicated to highlight the issue.\n\nTaking this tree of files/directories as an example:\n\n $ tree .\n .\n ├── dir-0\n │   └── file-0\n └── dir-1\n     └── file-1\n\n 2 directories, 2 files\n\nAnd assuming file-0 was last modified before file-1, I would expect the following:\n\n $ rbh-find -type d -sort name -print -o -type f -rsort mtime -print\n /\n /dir-0\n /dir-1\n /dir-1/file-1\n /dir-0/file-0\n\nie. \"-sort name\" only applies to the part left of the \"-o\".\n\n ---------------------------------------------------------------------------------\n\n\u003e For example with (gnu-)find:\n\u003e   ...\n\u003e \n\u003e And with rbh-find:\n\u003e   ...\n\nThat\u0027s a great (bug-)find! 😊\n\nI pushed a patch to fix this here: https://review.gerrithub.io/c/cea-hpc/rbh-find/+/520474\nYou should probably rebase your work on top of it.\n\n\u003e So, do I need to change the sort to take into account what\u0027s to the left of the parenthesis like (gnu-)find or leave it like that?\n\nYou should take what\u0027s to the left of the parenthesis into account, like (gnu-)find does.",
       "parentUuid": "6a362209_dc7f6e7a",
+      "range": {
+        "startLine": 355,
+        "startChar": 13,
+        "endLine": 355,
+        "endChar": 18
+      },
+      "revId": "57f9fad26db66815191e2d4878f406ff16639365",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e9e7a696_4b7e1f42",
+        "filename": "rbh-find.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 1019295
+      },
+      "writtenOn": "2021-07-15T09:40:39Z",
+      "side": 1,
+      "message": "Thank you. I have updated as resquested.",
+      "parentUuid": "d04c36ac_3e0b680a",
       "range": {
         "startLine": 355,
         "startChar": 13,
