@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bd9992c1_d235b9af",
+        "filename": "README.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-07-19T15:03:48Z",
+      "side": 1,
+      "message": "question: what do you mean by that?",
+      "range": {
+        "startLine": 307,
+        "startChar": 7,
+        "endLine": 307,
+        "endChar": 12
+      },
+      "revId": "f2e536cea4c603ec25e05427fab8a7c79c4b413f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
