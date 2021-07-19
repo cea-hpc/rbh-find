@@ -3,6 +3,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "977d82e8_bde805f7",
+        "filename": "README.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-07-19T10:19:00Z",
+      "side": 1,
+      "message": "nit: I\u0027m not sure the space is necessary.",
+      "range": {
+        "startLine": 285,
+        "startChar": 0,
+        "endLine": 285,
+        "endChar": 1
+      },
+      "revId": "91af14c95ef664d37f26c7c8eda6efcfe205ec05",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "00d00833_ab6ff873",
         "filename": "README.rst",
         "patchSetId": 5
@@ -95,6 +118,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b67afc65_a2315481",
+        "filename": "README.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-07-19T10:19:00Z",
+      "side": 1,
+      "message": "suggest: \"does not support sorting for fragmented URIs\"",
+      "range": {
+        "startLine": 335,
+        "startChar": 14,
+        "endLine": 336,
+        "endChar": 10
+      },
+      "revId": "91af14c95ef664d37f26c7c8eda6efcfe205ec05",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a9ccc627_0189f9ba",
         "filename": "include/filters.h",
         "patchSetId": 5
@@ -134,6 +180,29 @@
         "startChar": 30,
         "endLine": 156,
         "endChar": 31
+      },
+      "revId": "91af14c95ef664d37f26c7c8eda6efcfe205ec05",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fb8e8432_bf7cf72f",
+        "filename": "include/filters.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-07-19T10:19:00Z",
+      "side": 1,
+      "message": "minor: why use a size_t in the return value is equivalent to a boolean ?",
+      "range": {
+        "startLine": 158,
+        "startChar": 0,
+        "endLine": 161,
+        "endChar": 6
       },
       "revId": "91af14c95ef664d37f26c7c8eda6efcfe205ec05",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
