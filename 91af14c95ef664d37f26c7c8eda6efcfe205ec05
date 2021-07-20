@@ -97,6 +97,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "754b24e7_35a54770",
+        "filename": "README.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-20T07:14:06Z",
+      "side": 1,
+      "message": "(suggest)\n\n``-sort`` and ``-rsort`` affect the actions that they precede, irrespective of logical operators: parentheses, ``!``, ``-or``, and ``-and``.\n\nFor example: (...)",
+      "revId": "91af14c95ef664d37f26c7c8eda6efcfe205ec05",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "862d4f05_3077a1f2",
         "filename": "README.rst",
         "patchSetId": 5
@@ -191,6 +208,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "bb7e8364_8739d470",
+        "filename": "README.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-20T07:14:06Z",
+      "side": 1,
+      "message": "(typo) example",
+      "range": {
+        "startLine": 312,
+        "startChar": 4,
+        "endLine": 312,
+        "endChar": 11
+      },
+      "revId": "91af14c95ef664d37f26c7c8eda6efcfe205ec05",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "77eacb18_e74080e0",
         "filename": "README.rst",
         "patchSetId": 5
@@ -278,6 +318,29 @@
         "startChar": 14,
         "endLine": 336,
         "endChar": 10
+      },
+      "revId": "91af14c95ef664d37f26c7c8eda6efcfe205ec05",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "719b16f9_aa0f617b",
+        "filename": "include/filters.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-20T07:14:06Z",
+      "side": 1,
+      "message": "(style) `@return` does not take any argument",
+      "range": {
+        "startLine": 144,
+        "startChar": 11,
+        "endLine": 144,
+        "endChar": 16
       },
       "revId": "91af14c95ef664d37f26c7c8eda6efcfe205ec05",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
@@ -426,6 +489,52 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "925a95cb_ebc3988b",
+        "filename": "include/filters.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-20T07:14:06Z",
+      "side": 1,
+      "message": "(style) alignment",
+      "range": {
+        "startLine": 179,
+        "startChar": 16,
+        "endLine": 179,
+        "endChar": 20
+      },
+      "revId": "91af14c95ef664d37f26c7c8eda6efcfe205ec05",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2aa44d8a_53262dfc",
+        "filename": "rbh-find.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-20T07:14:06Z",
+      "side": 1,
+      "message": "(minor) hasty rebase \u003d]",
+      "range": {
+        "startLine": 325,
+        "startChar": 20,
+        "endLine": 325,
+        "endChar": 54
+      },
+      "revId": "91af14c95ef664d37f26c7c8eda6efcfe205ec05",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2ccc8c3a_3ab6da78",
         "filename": "src/filters.c",
         "patchSetId": 5
@@ -532,6 +641,30 @@
       "side": 1,
       "message": "I find this behavior strange but if everyone agrees with it, I think it should be documented.",
       "parentUuid": "46f48490_1902b111",
+      "range": {
+        "startLine": 761,
+        "startChar": 0,
+        "endLine": 761,
+        "endChar": 16
+      },
+      "revId": "91af14c95ef664d37f26c7c8eda6efcfe205ec05",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bb6ce53a_8cdd7618",
+        "filename": "src/filters.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 761,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-20T07:14:06Z",
+      "side": 1,
+      "message": "I agree with Guillaume. Why not just append the options and let the backend sort them out?\n\nAs an example, with SQL, if you request `ORDER BY 1 ASC, 1 DESC`, the `1 DESC` part has no visible effect.",
+      "parentUuid": "604993d5_0a6b8729",
       "range": {
         "startLine": 761,
         "startChar": 0,
