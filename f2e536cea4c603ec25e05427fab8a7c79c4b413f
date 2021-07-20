@@ -18,6 +18,23 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cc4107c7_62cab52d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-20T22:12:02Z",
+      "side": 1,
+      "message": "You\u0027re really close. I\u0027m just holding off because of the `-sort X -rsort X` Guillaume raised, but provided you agree with us, it shouldn\u0027t be too hard to address.\n\nGood work!",
+      "revId": "f2e536cea4c603ec25e05427fab8a7c79c4b413f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bd9992c1_d235b9af",
@@ -43,6 +60,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ff013289_2f9b19dd",
+        "filename": "rbh-find.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-20T22:12:02Z",
+      "side": 1,
+      "message": "(nitpick++) if you meant to commit this because you feel it makes the code more readable, or anything else, I think it should be made a separate commit. Otherwise, we try to refrain from committing whitespace-only changes.",
+      "revId": "f2e536cea4c603ec25e05427fab8a7c79c4b413f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "14878145_de0febe6",
         "filename": "src/filters.c",
         "patchSetId": 6
@@ -59,6 +93,144 @@
         "startChar": 38,
         "endLine": 724,
         "endChar": 39
+      },
+      "revId": "f2e536cea4c603ec25e05427fab8a7c79c4b413f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "40c27b05_499ffc79",
+        "filename": "src/filters.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 756,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-20T22:12:02Z",
+      "side": 1,
+      "message": "(style/nitpick) unlike French, English mandates not space before colons, semi-colons, question marks and exclamation marks.",
+      "range": {
+        "startLine": 756,
+        "startChar": 46,
+        "endLine": 756,
+        "endChar": 47
+      },
+      "revId": "f2e536cea4c603ec25e05427fab8a7c79c4b413f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "71ee74b0_277355f4",
+        "filename": "src/filters.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 778,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-20T22:12:02Z",
+      "side": 1,
+      "message": "(style) this doesn\u0027t need to be a pointer. The caller could just as well increment the count itself.",
+      "range": {
+        "startLine": 778,
+        "startChar": 51,
+        "endLine": 778,
+        "endChar": 64
+      },
+      "revId": "f2e536cea4c603ec25e05427fab8a7c79c4b413f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "487d3c78_a9d4c305",
+        "filename": "src/filters.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 779,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-20T22:12:02Z",
+      "side": 1,
+      "message": "(style) alignment",
+      "range": {
+        "startLine": 779,
+        "startChar": 16,
+        "endLine": 779,
+        "endChar": 20
+      },
+      "revId": "f2e536cea4c603ec25e05427fab8a7c79c4b413f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3abdbf97_913f47b0",
+        "filename": "src/filters.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 782,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-20T22:12:02Z",
+      "side": 1,
+      "message": "(style) the rest of the codebase writes initializers like this on multiple lines:\n\n struct rbh_filter_sort sort \u003d {\n     .field \u003d field,\n     .ascending \u003d ascending,\n };\n\nI don\u0027t think this is documented anywhere though, and it\u0027s not that important for this patch anyway.",
+      "range": {
+        "startLine": 782,
+        "startChar": 34,
+        "endLine": 782,
+        "endChar": 76
+      },
+      "revId": "f2e536cea4c603ec25e05427fab8a7c79c4b413f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "239ed532_e0f6ecb6",
+        "filename": "src/filters.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 782,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-20T22:12:02Z",
+      "side": 1,
+      "message": "(style) extraneous space",
+      "range": {
+        "startLine": 782,
+        "startChar": 35,
+        "endLine": 782,
+        "endChar": 36
+      },
+      "revId": "f2e536cea4c603ec25e05427fab8a7c79c4b413f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8d33dbde_ea8c3756",
+        "filename": "src/filters.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 789,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-20T22:12:02Z",
+      "side": 1,
+      "message": "(style) we use 4 space indentation",
+      "range": {
+        "startLine": 789,
+        "startChar": 8,
+        "endLine": 789,
+        "endChar": 16
       },
       "revId": "f2e536cea4c603ec25e05427fab8a7c79c4b413f",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
