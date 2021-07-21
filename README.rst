@@ -284,3 +284,10 @@ expect: count the matching entries.
     71 matching entries
 
 **The message format is not yet stable. Please do not rely on it.**
+
+-ls
+------
+
+rbh-find defines a ``-ls`` action that list current file in (gnu-)find -ls
+format on standard output. The block counts, which comes directly from statx,
+are of 512bytes-blocks which is different with (gnu-)find.
