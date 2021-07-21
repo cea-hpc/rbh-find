@@ -20,6 +20,7 @@
 #include <sysexits.h>
 
 #include <sys/stat.h>
+#include <time.h>
 
 #include <robinhood.h>
 #ifndef HAVE_STATX
@@ -39,6 +40,122 @@ exit_backends(void)
     for (size_t i = 0; i < backend_count; i++)
         rbh_backend_destroy(backends[i]);
     free(backends);
+}
+
+/* Mode string is: "drwxrwxrwx" or "-rwxrwxrwx"*/
+const int MODE_STR_LENGTH = 11;
+
+/* Timestamp string is: "Jan 31 12:00:00" or "Jan 31 2000" */
+const int DATETIME_STR_LENGTH = 16;
+
+/**
+ * duration2date - convert a fsentry's mtime to a timestamp string
+ *
+ * @param buf      a pointer to an empty buffer large enough
+ * @param mtime    a mtime in seconds (which is the duration between the
+ *                 last modification time and the creation date of the system)
+ *
+ * @return         a pointer to a string representing the last modified
+ *                 datetime
+ */
+char *
+duration2date(char *buf, uint64_t mtime)
+{
+    time_t duration = mtime;
+    struct tm *datetime;
+    struct tm now;
+    time_t tmp;
+
+    if (duration < 0)
+        error(EXIT_FAILURE, EINVAL, "mtime");
+
+    tmp = time(NULL);
+    if (localtime_r(&tmp, &now) == NULL)
+        error(EXIT_FAILURE, EINVAL, "localtime_r");;
+
+    datetime = localtime(&duration);
+
+    if (datetime == NULL)
+        error(EXIT_FAILURE, EINVAL, "localtime");
+    if (datetime->tm_year < now.tm_year)
+        strftime(buf, DATETIME_STR_LENGTH, "%b %e %G", datetime);
+    else
+        strftime(buf, DATETIME_STR_LENGTH, "%b %e %T", datetime);
+
+    return buf;
+}
+
+/**
+ * mode2type - convert a mode to a type and add it at the beginnig
+ *             of the string mode
+ *
+ * @param buf   a pointer to an empty buffer
+ * @param mode  a mode of a fsentry
+ *
+ * @return      a pointer to a string representing the mode
+ */
+char *
+mode2type(char *buf, mode_t mode)
+{
+    if (S_ISREG(mode))
+        buf[0] = '-';
+    else if (S_ISDIR(mode))
+        buf[0] = 'd';
+    else if (S_ISLNK(mode))
+        buf[0] = 'l';
+    else if (S_ISCHR(mode))
+        buf[0] = 'c';
+    else if (S_ISBLK(mode))
+        buf[0] = 'b';
+    else if (S_ISFIFO(mode))
+        buf[0] = 'p';
+    else if (S_ISSOCK(mode))
+        buf[0] = 's';
+    else
+        error(EXIT_FAILURE, EINVAL, "non existant fsentry's type");
+    return buf;
+}
+
+/* The special bits. If set, display SMODES[0]/[1] instead of MODES[0]/[1] */
+static const mode_t SBIT[] = {
+    0, 0, S_ISUID,
+    0, 0, S_ISGID,
+    0, 0, S_ISVTX
+};
+
+/* The 9 mode bits to test */
+static const mode_t MBIT[] = {
+    S_IRUSR, S_IWUSR, S_IXUSR,
+    S_IRGRP, S_IWGRP, S_IXGRP,
+    S_IROTH, S_IWOTH, S_IXOTH
+};
+
+static const char *SMODES[] = {"..s..s..t", "..S..S..T"};
+static const char *MODES[] = {"rwxrwxrwx", "---------"};
+
+/**
+ * mode_string - return the standard ls-like mode string from a file mode
+ *
+ * @param buf               a pointer to an empty buffer large enough
+ * @param decimal_mode      a decimal representing the mode of a fsentry
+ *
+ * @return                  a pointer to a string representing the mode
+ */
+char *
+mode_string(char *buf, uint16_t decimal_mode)
+{
+    mode_t mode = decimal_mode;
+    int i;
+
+    buf = mode2type(buf, mode);
+    for (i = 0; i < MODE_STR_LENGTH - 1; i++) {
+        if (mode & SBIT[i])
+            buf[i + 1] = (mode & MBIT[i]) ? SMODES[0][i] : SMODES[1][i];
+        else
+            buf[i + 1] = (mode & MBIT[i]) ? MODES[0][i] : MODES[1][i];
+    }
+    buf[i + 1] = '\0';
+    return buf;
 }
 
 static const char *
@@ -74,6 +191,8 @@ _find(struct rbh_backend *backend, enum action action,
         },
     };
     struct rbh_mut_iterator *fsentries;
+    char datetime[DATETIME_STR_LENGTH];
+    char mode[MODE_STR_LENGTH];
     size_t count = 0;
 
     fsentries = rbh_backend_filter(backend, filter, &OPTIONS);
@@ -101,6 +220,21 @@ _find(struct rbh_backend *backend, enum action action,
             break;
         case ACT_PRINT0:
             printf("%s%c", fsentry_path(fsentry), '\0');
+            break;
+        case ACT_LS:
+            printf("%lld %lld %s %d %d %d %lld %s %s%c",
+                   fsentry->statx->stx_ino,
+                   fsentry->statx->stx_blocks,
+                   mode_string(mode,
+                               fsentry->statx->stx_mode),
+                   fsentry->statx->stx_nlink,
+                   fsentry->statx->stx_uid,
+                   fsentry->statx->stx_gid,
+                   fsentry->statx->stx_size,
+                   duration2date(datetime,
+                                 fsentry->statx->stx_mtime.tv_sec),
+                   fsentry_path(fsentry),
+                   '\n');
             break;
         case ACT_COUNT:
             count++;
