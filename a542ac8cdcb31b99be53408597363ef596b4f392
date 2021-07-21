@@ -16,6 +16,46 @@
       "message": "Seems good to me, nice work!",
       "revId": "a542ac8cdcb31b99be53408597363ef596b4f392",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ecfcc300_362d8865",
+        "filename": "include/filters.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-21T17:47:34Z",
+      "side": 1,
+      "message": "(style) 4 too many spaces",
+      "range": {
+        "startLine": 154,
+        "startChar": 15,
+        "endLine": 154,
+        "endChar": 24
+      },
+      "revId": "a542ac8cdcb31b99be53408597363ef596b4f392",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4b870611_11e8bd6a",
+        "filename": "src/filters.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 770,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-21T17:47:34Z",
+      "side": 1,
+      "message": "(minor) It is surprising to me that sort_options_append() reallocs the array with the same size as passed in argument. I expected it to acknowledge `count` as the current size of `sorts` and realloc it with `count + 1`. The caller would then use:\n\n sorts \u003d sort_options_append(sorts, count++, field, true);\n\n -------------------------------------------------------------------------------\n\nNote that if you use `count + 1` here instead of `count++` like in prior versions, you don\u0027t have to use `count - 1` later in the function.",
+      "revId": "a542ac8cdcb31b99be53408597363ef596b4f392",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
