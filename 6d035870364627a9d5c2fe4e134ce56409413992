@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b2581a88_f6c9a160",
+        "filename": "README.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2021-07-21T08:35:43Z",
+      "side": 0,
+      "message": "nit: this blank line is missing in the most recent patch",
+      "revId": "6d035870364627a9d5c2fe4e134ce56409413992",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
