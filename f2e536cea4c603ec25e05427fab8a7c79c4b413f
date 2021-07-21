@@ -77,6 +77,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f42c2989_b41e4f3b",
+        "filename": "README.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 1019295
+      },
+      "writtenOn": "2021-07-21T07:53:26Z",
+      "side": 1,
+      "message": "I mean that since the sort is global and since the parser walks through the command, it will only affect the actions that are to its right.",
+      "parentUuid": "bd9992c1_d235b9af",
+      "range": {
+        "startLine": 307,
+        "startChar": 7,
+        "endLine": 307,
+        "endChar": 12
+      },
+      "revId": "f2e536cea4c603ec25e05427fab8a7c79c4b413f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ff013289_2f9b19dd",
         "filename": "rbh-find.c",
         "patchSetId": 6
