@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e3439f02_01db6471",
+        "filename": "README.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 1019295
+      },
+      "writtenOn": "2021-07-21T08:44:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bce29f05_3c11edfa",
+      "range": {
+        "startLine": 287,
+        "startChar": 7,
+        "endLine": 287,
+        "endChar": 13
+      },
+      "revId": "e74eb04a1ae347afc9beaacb0340aaa6ba50336a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b0d7b4df_d5d4fe56",
@@ -47,6 +71,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2a5f4466_0db72253",
+        "filename": "README.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 1019295
+      },
+      "writtenOn": "2021-07-21T08:44:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b0d7b4df_d5d4fe56",
+      "range": {
+        "startLine": 290,
+        "startChar": 74,
+        "endLine": 290,
+        "endChar": 81
+      },
+      "revId": "e74eb04a1ae347afc9beaacb0340aaa6ba50336a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "27938348_6325a704",
@@ -60,6 +108,30 @@
       "writtenOn": "2021-07-21T08:35:43Z",
       "side": 1,
       "message": "major: I do not see where this function is used? I guess it was in a previous version, maybe removing it now?",
+      "range": {
+        "startLine": 761,
+        "startChar": 0,
+        "endLine": 761,
+        "endChar": 16
+      },
+      "revId": "e74eb04a1ae347afc9beaacb0340aaa6ba50336a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "240be26e_fa32e21c",
+        "filename": "src/filters.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 761,
+      "author": {
+        "id": 1019295
+      },
+      "writtenOn": "2021-07-21T08:44:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "27938348_6325a704",
       "range": {
         "startLine": 761,
         "startChar": 0,
