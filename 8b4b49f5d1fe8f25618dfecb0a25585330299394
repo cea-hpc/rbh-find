@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ebfa6dd7_efb71a9f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2021-07-23T12:01:09Z",
+      "side": 1,
+      "message": "Thanks for the modifications, I do not see any blocking point.",
+      "revId": "8b4b49f5d1fe8f25618dfecb0a25585330299394",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
