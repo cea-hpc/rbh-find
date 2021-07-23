@@ -724,6 +724,11 @@ str2field(const char *attribute)
             field.statx = STATX_BLOCKS;
             return field;
         }
+        if (strcmp(&attribute[1], "time") == 0) {
+            field.fsentry = RBH_FP_STATX;
+            field.statx = STATX_BTIME;
+            return field;
+        }
         break;
     case 'c':
         if (strcmp(&attribute[1], "time") == 0) {
