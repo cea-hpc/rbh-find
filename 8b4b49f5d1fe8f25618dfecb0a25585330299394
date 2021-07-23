@@ -112,6 +112,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "09af41a6_d97e823b",
+        "filename": "rbh-find.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-07-23T12:52:14Z",
+      "side": 1,
+      "message": "suggest: I think it would be nice to explain a bit more, mostly what the duration/mtime refer to. Duration between what and what ?",
+      "range": {
+        "startLine": 52,
+        "startChar": 3,
+        "endLine": 52,
+        "endChar": 64
+      },
+      "revId": "8b4b49f5d1fe8f25618dfecb0a25585330299394",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "b784c73c_e27d8997",
         "filename": "rbh-find.c",
         "patchSetId": 3
@@ -135,6 +158,98 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "0c0b3830_63aca48f",
+        "filename": "rbh-find.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-07-23T12:52:14Z",
+      "side": 1,
+      "message": "defect: in case an overflow occured, you should probably return an error. In any case, the operation made here doesn\u0027t make any sense as you\u0027ll just be going up to the maximum value possible in time_t, and then down to 0.",
+      "range": {
+        "startLine": 72,
+        "startChar": 4,
+        "endLine": 73,
+        "endChar": 29
+      },
+      "revId": "8b4b49f5d1fe8f25618dfecb0a25585330299394",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3bde9837_c5ea210b",
+        "filename": "rbh-find.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-07-23T12:52:14Z",
+      "side": 1,
+      "message": "suggest: I think the two cases below shouldn\u0027t be linked to the safe-check on datetime",
+      "range": {
+        "startLine": 79,
+        "startChar": 4,
+        "endLine": 79,
+        "endChar": 8
+      },
+      "revId": "8b4b49f5d1fe8f25618dfecb0a25585330299394",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1d06e04b_31c7735b",
+        "filename": "rbh-find.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-07-23T12:52:14Z",
+      "side": 1,
+      "message": "nit-suggest: static const char *MODES[] \u003d {\"rwxrwxrwx\", \"---------\"};",
+      "range": {
+        "startLine": 101,
+        "startChar": 0,
+        "endLine": 102,
+        "endChar": 40
+      },
+      "revId": "8b4b49f5d1fe8f25618dfecb0a25585330299394",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "710b1d87_52f69026",
+        "filename": "rbh-find.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-07-23T12:52:14Z",
+      "side": 1,
+      "message": "nit-suggest: idem",
+      "range": {
+        "startLine": 103,
+        "startChar": 0,
+        "endLine": 104,
+        "endChar": 41
+      },
+      "revId": "8b4b49f5d1fe8f25618dfecb0a25585330299394",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c248887a_5932491d",
         "filename": "rbh-find.c",
         "patchSetId": 3
@@ -151,6 +266,29 @@
         "startChar": 0,
         "endLine": 115,
         "endChar": 11
+      },
+      "revId": "8b4b49f5d1fe8f25618dfecb0a25585330299394",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a4b25359_fa2c9a8d",
+        "filename": "rbh-find.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-07-23T12:52:14Z",
+      "side": 1,
+      "message": "major: use MODE_STR_LENGTH - 1 here instead (or use MODE_STR_LENGTH here and initialize mode[MODE_STR_LENGTH + 1])",
+      "range": {
+        "startLine": 120,
+        "startChar": 20,
+        "endLine": 120,
+        "endChar": 21
       },
       "revId": "8b4b49f5d1fe8f25618dfecb0a25585330299394",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
