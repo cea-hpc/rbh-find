@@ -740,6 +740,11 @@ str2field(const char *attribute)
         }
         break;
     case 'm':
+        if (strcmp(&attribute[1], "ode") == 0) {
+            field.fsentry = RBH_FP_STATX;
+            field.statx = STATX_MODE;
+            return field;
+        }
         if (strcmp(&attribute[1], "time") == 0) {
             field.fsentry = RBH_FP_STATX;
             field.statx = STATX_MTIME;
