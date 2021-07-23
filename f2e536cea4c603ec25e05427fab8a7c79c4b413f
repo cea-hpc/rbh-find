@@ -99,6 +99,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5f8b6812_1f094799",
+        "filename": "README.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-23T21:46:51Z",
+      "side": 1,
+      "message": "Closing as answered",
+      "parentUuid": "f42c2989_b41e4f3b",
+      "range": {
+        "startLine": 307,
+        "startChar": 7,
+        "endLine": 307,
+        "endChar": 12
+      },
+      "revId": "f2e536cea4c603ec25e05427fab8a7c79c4b413f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ff013289_2f9b19dd",
