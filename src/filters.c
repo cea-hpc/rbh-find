@@ -751,6 +751,11 @@ str2field(const char *attribute)
             field.fsentry = RBH_FP_NAME;
             return field;
         }
+        if (strcmp(&attribute[1], "link") == 0) {
+            field.fsentry = RBH_FP_STATX;
+            field.statx = STATX_NLINK;
+            return field;
+        }
         break;
     case 's':
         if (strcmp(&attribute[1], "ize") == 0) {
