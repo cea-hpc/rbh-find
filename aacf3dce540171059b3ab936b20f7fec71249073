@@ -3,6 +3,161 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "86637aea_bef9eeb0",
+        "filename": "README.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-25T13:53:19Z",
+      "side": 1,
+      "message": "(minor) I would argue this inconsistency is too easily fixed to be left as-is.\n\n(suggest)\n\n static bool posixly_correct;\n\n static void __attribute__((constructor))\n posixly_correct_init(void)\n {\n     posixly_correct \u003d secure_getenv(\"POSIXLY_CORRECT\") !\u003d NULL;\n }",
+      "revId": "aacf3dce540171059b3ab936b20f7fec71249073",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2bb9511e_ce5122d8",
+        "filename": "rbh-find.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-25T13:53:19Z",
+      "side": 1,
+      "message": "(minor) As mentioned later, I\u0027d prefer if the function\u0027s prototype specified the required size of buf:\n\n char *\n duration2date(char buf[DATETIME_STR_LENGTH], uint64_t mtime)\n\nI encourage you to have a look at ls\u0027s code on github [0] to see how it deals with timestamps. It makes for an interesting read. Feel free not to implement the exact same behaviour: I suspect (gnu-)find implements its own quirky version of ls, and I consider the output of `-ls` to be destined to humans rather than machines.\n\n[0] https://github.com/coreutils/coreutils/blob/master/src/ls.c",
+      "range": {
+        "startLine": 62,
+        "startChar": 19,
+        "endLine": 62,
+        "endChar": 23
+      },
+      "revId": "aacf3dce540171059b3ab936b20f7fec71249073",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "528de05b_abde1a30",
+        "filename": "rbh-find.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-25T13:53:19Z",
+      "side": 1,
+      "message": "(minor) int64_t",
+      "range": {
+        "startLine": 62,
+        "startChar": 25,
+        "endLine": 62,
+        "endChar": 33
+      },
+      "revId": "aacf3dce540171059b3ab936b20f7fec71249073",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "922ab937_cf69f770",
+        "filename": "rbh-find.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-25T13:53:19Z",
+      "side": 1,
+      "message": "(minor) time_t was not a 64 bits integer until pretty recently. Can you please add a static_assert() statement to check the two are compatible?\n\n static_assert(sizeof(time_t) \u003e\u003d sizeof(int64_t), \"\");",
+      "range": {
+        "startLine": 64,
+        "startChar": 4,
+        "endLine": 64,
+        "endChar": 10
+      },
+      "revId": "aacf3dce540171059b3ab936b20f7fec71249073",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a3f10e1e_3fcf0cab",
+        "filename": "rbh-find.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-25T13:53:19Z",
+      "side": 1,
+      "message": "(typo) extra semi-colon",
+      "range": {
+        "startLine": 74,
+        "startChar": 51,
+        "endLine": 74,
+        "endChar": 52
+      },
+      "revId": "aacf3dce540171059b3ab936b20f7fec71249073",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a7a4bcaf_193e2b54",
+        "filename": "rbh-find.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-25T13:53:19Z",
+      "side": 1,
+      "message": "(minor) Use errno rather than EINVAL.",
+      "range": {
+        "startLine": 74,
+        "startChar": 28,
+        "endLine": 74,
+        "endChar": 34
+      },
+      "revId": "aacf3dce540171059b3ab936b20f7fec71249073",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "197e56da_3b44c0c0",
+        "filename": "rbh-find.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-25T13:53:19Z",
+      "side": 1,
+      "message": "(minor) Calling time() + localtime_r() for every fsentry just to check the current year\u0027s feels a bit wasteful. I\u0027m sure users will forgive you if the format is not quite right at the year\u0027s mark 😄\n\nPlease consider using a constructor to initialize the current year.\n\n(suggest)\n\n static struct tm now;\n\n static void __attribute__((constructor))\n now_init(void)\n {\n     time_t tmp;\n\n     tmp \u003d time(NULL);\n     if (localtime_r(\u0026tmp, \u0026now) \u003d\u003d NULL)\n         error(EXIT_FAILURE, errno, \"localtime\");\n }",
+      "range": {
+        "startLine": 72,
+        "startChar": 4,
+        "endLine": 74,
+        "endChar": 51
+      },
+      "revId": "aacf3dce540171059b3ab936b20f7fec71249073",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "750c07f7_1d2aed88",
         "filename": "rbh-find.c",
         "patchSetId": 4
@@ -19,6 +174,122 @@
         "startChar": 0,
         "endLine": 98,
         "endChar": 9
+      },
+      "revId": "aacf3dce540171059b3ab936b20f7fec71249073",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b760da5f_0695576c",
+        "filename": "rbh-find.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-25T13:53:19Z",
+      "side": 1,
+      "message": "👍",
+      "parentUuid": "750c07f7_1d2aed88",
+      "range": {
+        "startLine": 98,
+        "startChar": 0,
+        "endLine": 98,
+        "endChar": 9
+      },
+      "revId": "aacf3dce540171059b3ab936b20f7fec71249073",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2fa354f4_0089c547",
+        "filename": "rbh-find.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-25T13:53:19Z",
+      "side": 1,
+      "message": "(style) As a rule of thumb, try to refrain from using on-off abbreviations in robinhood. I\u0027d rather this read `SPECIAL_BITS`.",
+      "range": {
+        "startLine": 120,
+        "startChar": 20,
+        "endLine": 120,
+        "endChar": 24
+      },
+      "revId": "aacf3dce540171059b3ab936b20f7fec71249073",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "269cfb66_493a00c5",
+        "filename": "rbh-find.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-25T13:53:19Z",
+      "side": 1,
+      "message": "(style) ... and `MODE_BITS`.",
+      "range": {
+        "startLine": 127,
+        "startChar": 20,
+        "endLine": 127,
+        "endChar": 24
+      },
+      "revId": "aacf3dce540171059b3ab936b20f7fec71249073",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5e834c62_1c41865d",
+        "filename": "rbh-find.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-25T13:53:19Z",
+      "side": 1,
+      "message": "(style) ... and `SPECIAL_MODE_STRING` or `SPECIAL_MODE_TEMPLATE`.",
+      "range": {
+        "startLine": 133,
+        "startChar": 19,
+        "endLine": 133,
+        "endChar": 25
+      },
+      "revId": "aacf3dce540171059b3ab936b20f7fec71249073",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d943d15c_186f1580",
+        "filename": "rbh-find.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-25T13:53:19Z",
+      "side": 1,
+      "message": "(style) ... you get the point 😊",
+      "range": {
+        "startLine": 134,
+        "startChar": 19,
+        "endLine": 134,
+        "endChar": 24
       },
       "revId": "aacf3dce540171059b3ab936b20f7fec71249073",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
@@ -43,6 +314,110 @@
         "endLine": 139,
         "endChar": 69
       },
+      "revId": "aacf3dce540171059b3ab936b20f7fec71249073",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "66018b94_0d83a57e",
+        "filename": "rbh-find.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-25T13:53:19Z",
+      "side": 1,
+      "message": "I would put that in the function\u0027s prototype:\n\n char *\n mode_string(char buf[MODE_STR_LENGTH], mode_t mode)",
+      "parentUuid": "3fbc2697_89b9444a",
+      "range": {
+        "startLine": 139,
+        "startChar": 57,
+        "endLine": 139,
+        "endChar": 69
+      },
+      "revId": "aacf3dce540171059b3ab936b20f7fec71249073",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5d1ed111_3a6bd107",
+        "filename": "rbh-find.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-25T13:53:19Z",
+      "side": 1,
+      "message": "(style) There is no such thing as a decimal uint16_t or an octal uint16_t. Octal and decimal apply to string representations of numbers.",
+      "range": {
+        "startLine": 140,
+        "startChar": 28,
+        "endLine": 140,
+        "endChar": 50
+      },
+      "revId": "aacf3dce540171059b3ab936b20f7fec71249073",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bb6c702c_f915d677",
+        "filename": "rbh-find.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-25T13:53:19Z",
+      "side": 1,
+      "message": "(suggest) mode_t (? not quite sure of the implications)",
+      "range": {
+        "startLine": 145,
+        "startChar": 23,
+        "endLine": 145,
+        "endChar": 31
+      },
+      "revId": "aacf3dce540171059b3ab936b20f7fec71249073",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "23769457_3dc02d85",
+        "filename": "rbh-find.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-25T13:53:19Z",
+      "side": 1,
+      "message": "(defect) No every fsentry necessarily has a filled in struct statx (cf. fsentry.h and fsentry-\u003emask), and not every field in that structure are necessarily set to a meaningful value (cf. man (2) statx).\n\nMy advice would be to put the logic in a function named something like \"fsentry_ls_dils\" (in reference to find\u0027s man page which indicates `-ls`\u0027s output is equivalent to that of `ls -dils`).\n\nMy advice would be to replace any field that is unknown by question marks, except the path itself, where using the return value of fsentry_path() will be more consistent.",
+      "revId": "aacf3dce540171059b3ab936b20f7fec71249073",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "819a7966_0eb0f96e",
+        "filename": "rbh-find.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-25T13:53:19Z",
+      "side": 1,
+      "message": "You are missing the content of `fsentry-\u003esymlink` (when it is set).",
       "revId": "aacf3dce540171059b3ab936b20f7fec71249073",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }

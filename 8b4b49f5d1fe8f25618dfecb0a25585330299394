@@ -644,6 +644,30 @@
       },
       "revId": "8b4b49f5d1fe8f25618dfecb0a25585330299394",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "12e3a1a7_1fef6be3",
+        "filename": "rbh-find.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-25T13:53:19Z",
+      "side": 1,
+      "message": "You can\u0027t assume that the uid/gid mappings from a (possibly remote) filesystem matches that of your local system. That being said, when one creates a FS on a USB stick and mounts that stick on different systems, the system cares little whether uid 1000 on machine X relates to the same user on machine Y: so long as the numbers match...\n\nI\u0027d say there is value in displaying usernames and group names if the uids/gids map to something on the local system even if the result may be erroneous.\n\nTo that end, you can have a look at getpwuid() and getgrgid()\u0027s man pages.",
+      "parentUuid": "ecbc06db_2ebe0c5c",
+      "range": {
+        "startLine": 200,
+        "startChar": 19,
+        "endLine": 201,
+        "endChar": 43
+      },
+      "revId": "8b4b49f5d1fe8f25618dfecb0a25585330299394",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
