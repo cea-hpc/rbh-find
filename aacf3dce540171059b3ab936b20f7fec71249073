@@ -858,6 +858,24 @@
       "parentUuid": "819a7966_0eb0f96e",
       "revId": "aacf3dce540171059b3ab936b20f7fec71249073",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4a86f949_01f77090",
+        "filename": "rbh-find.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-27T23:39:07Z",
+      "side": 1,
+      "message": "find -ls does display symlinks on my machine:\n\n $ (set -o errexit\n    tmpdir\u003d\"$(mktemp -d)\"\n    trap -- \"rm -rf \u0027$tmpdir\u0027\" EXIT\n    cd \"$tmpdir\"\n    touch file\n    ln -s file symlink\n    find -ls)\n 67      0 drwx------   2 guest  guest        80 Jul 27 23:56 .\n 69      0 lrwxrwxrwx   1 guest  guest         4 Jul 27 23:56 ./symlink -\u003e file\n 68      0 -rw-r--r--   1 guest  guest         0 Jul 27 23:56 ./file",
+      "parentUuid": "4f154467_dd3b75c6",
+      "revId": "aacf3dce540171059b3ab936b20f7fec71249073",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }

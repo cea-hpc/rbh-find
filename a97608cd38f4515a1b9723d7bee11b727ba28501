@@ -1,0 +1,366 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "202a2e53_a6fbbec8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-27T23:39:07Z",
+      "side": 1,
+      "message": "I took the liberty of pushing a new version to fix the rebase.",
+      "revId": "a97608cd38f4515a1b9723d7bee11b727ba28501",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1c93b882_e5baf96b",
+        "filename": "rbh-find.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-27T23:39:07Z",
+      "side": 1,
+      "message": "(typo) localtime_r (my bad)",
+      "range": {
+        "startLine": 57,
+        "startChar": 36,
+        "endLine": 57,
+        "endChar": 45
+      },
+      "revId": "a97608cd38f4515a1b9723d7bee11b727ba28501",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c0144d01_80dd98e8",
+        "filename": "rbh-find.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-27T23:39:07Z",
+      "side": 1,
+      "message": "(style) I forgot to mention this on my previous review, but if you want to make it clear where the number is coming from, you could write:\n\n static const size_t MODE_STR_LENGTH \u003d sizeof(\"-rwxrwxrwx\");\n\n(style) use `static` to tell the compiler the variable\u0027s scope it local to this compilation unit (ie. file)\n\n(style) feel free to keep using an `int`, I feel like making it unsigned conveys a bit better that it relates to a length, `size_t` would be good or `uint8_t` if space is a concern.",
+      "range": {
+        "startLine": 61,
+        "startChar": 28,
+        "endLine": 61,
+        "endChar": 30
+      },
+      "revId": "a97608cd38f4515a1b9723d7bee11b727ba28501",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f8a5ce94_ca8d2f66",
+        "filename": "rbh-find.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-27T23:39:07Z",
+      "side": 1,
+      "message": "(style) same comment as above.",
+      "range": {
+        "startLine": 64,
+        "startChar": 32,
+        "endLine": 64,
+        "endChar": 34
+      },
+      "revId": "a97608cd38f4515a1b9723d7bee11b727ba28501",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a4a24827_9f7fc995",
+        "filename": "rbh-find.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-27T23:39:07Z",
+      "side": 1,
+      "message": "(major) I don\u0027t think you can make that assumption. since mtime is the number of seconds since EPOCH, I expect that files that are backdated to have been last modified in 1969 have a negative mtime (relative to EPOCH).",
+      "range": {
+        "startLine": 84,
+        "startChar": 4,
+        "endLine": 85,
+        "endChar": 45
+      },
+      "revId": "a97608cd38f4515a1b9723d7bee11b727ba28501",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "07380f47_09c83a0b",
+        "filename": "rbh-find.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-27T23:39:07Z",
+      "side": 1,
+      "message": "(style) errno",
+      "range": {
+        "startLine": 90,
+        "startChar": 28,
+        "endLine": 90,
+        "endChar": 34
+      },
+      "revId": "a97608cd38f4515a1b9723d7bee11b727ba28501",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b4e6bc03_897e49a8",
+        "filename": "rbh-find.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-27T23:39:07Z",
+      "side": 1,
+      "message": "(typo) MODE_STRING",
+      "range": {
+        "startLine": 127,
+        "startChar": 62,
+        "endLine": 127,
+        "endChar": 67
+      },
+      "revId": "a97608cd38f4515a1b9723d7bee11b727ba28501",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "59d0ed4a_00e94780",
+        "filename": "rbh-find.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-27T23:39:07Z",
+      "side": 1,
+      "message": "(typo) SPECIAL_MODE_STRING",
+      "range": {
+        "startLine": 127,
+        "startChar": 37,
+        "endLine": 127,
+        "endChar": 43
+      },
+      "revId": "a97608cd38f4515a1b9723d7bee11b727ba28501",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c4ab61dc_1a556164",
+        "filename": "rbh-find.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-27T23:39:07Z",
+      "side": 1,
+      "message": "(suggest)\n\n const char *mapping \u003d\n     mode \u0026 SPECIAL_BITS[i] ? mode \u0026 MODE_BITS[i] ? \"..s..s..t\"\n                                                  : \"..S..S..T\"\n                            : mode \u0026 MODE_BITS[i] ? \"rwxrwxrwx\"\n                                                  : \"---------\";\n\n buf[i + 1] \u003d mapping[i];",
+      "range": {
+        "startLine": 159,
+        "startChar": 8,
+        "endLine": 164,
+        "endChar": 67
+      },
+      "revId": "a97608cd38f4515a1b9723d7bee11b727ba28501",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "667b9ba6_c7757412",
+        "filename": "rbh-find.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-27T23:39:07Z",
+      "side": 1,
+      "message": "(style) static void",
+      "range": {
+        "startLine": 200,
+        "startChar": 0,
+        "endLine": 200,
+        "endChar": 4
+      },
+      "revId": "a97608cd38f4515a1b9723d7bee11b727ba28501",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8d208be9_4cc6393f",
+        "filename": "rbh-find.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-27T23:39:07Z",
+      "side": 1,
+      "message": "(style) const struct rbh_fsentry",
+      "range": {
+        "startLine": 201,
+        "startChar": 22,
+        "endLine": 201,
+        "endChar": 40
+      },
+      "revId": "a97608cd38f4515a1b9723d7bee11b727ba28501",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "656579e0_90733837",
+        "filename": "rbh-find.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-27T23:39:07Z",
+      "side": 1,
+      "message": "(style) this looks like it\u0027s missing a return statement. Also the alignment of the produced string will not match that of the rest.",
+      "range": {
+        "startLine": 213,
+        "startChar": 4,
+        "endLine": 214,
+        "endChar": 68
+      },
+      "revId": "a97608cd38f4515a1b9723d7bee11b727ba28501",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ad82278f_3918180b",
+        "filename": "rbh-find.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-27T23:39:07Z",
+      "side": 1,
+      "message": "(style) I don\u0027t think you need to write each field to a temporary buffer to later print that buffer. You could just as easily use printf() from the get go.",
+      "range": {
+        "startLine": 217,
+        "startChar": 8,
+        "endLine": 217,
+        "endChar": 15
+      },
+      "revId": "a97608cd38f4515a1b9723d7bee11b727ba28501",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2a002a9e_ca32d608",
+        "filename": "rbh-find.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-27T23:39:07Z",
+      "side": 1,
+      "message": "(suggest)\n\n printf(\" %9ld\", posixly_correct ? blocks : blocks / 2);",
+      "range": {
+        "startLine": 222,
+        "startChar": 8,
+        "endLine": 224,
+        "endChar": 44
+      },
+      "revId": "a97608cd38f4515a1b9723d7bee11b727ba28501",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "518ee31e_1358cb74",
+        "filename": "rbh-find.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-27T23:39:07Z",
+      "side": 1,
+      "message": "(style) I believe (gnu-)find -ls aligns numbers to the right but strings (eg. owner username) to the left.\n\n(style) Also, from what I can see, (gnu-)find keeps track of each field\u0027s length in a manner that looks like:\n\n    static ino_length \u003d 9;\n    ino_length \u003d printf(\"%*ld\", ino_length, fsentry-\u003estatx_ino);",
+      "range": {
+        "startLine": 245,
+        "startChar": 12,
+        "endLine": 245,
+        "endChar": 48
+      },
+      "revId": "a97608cd38f4515a1b9723d7bee11b727ba28501",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6553c6ac_789524b9",
+        "filename": "rbh-find.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-27T23:39:07Z",
+      "side": 1,
+      "message": "(minor) `uid` may be NULL just because the ID of the fsentry\u0027s owner does not match any user ID on the running system.\n\nIf `stx_uid` is available, it would be better to display the numerical value rather than \u0027?\u0027.",
+      "range": {
+        "startLine": 251,
+        "startChar": 32,
+        "endLine": 251,
+        "endChar": 35
+      },
+      "revId": "a97608cd38f4515a1b9723d7bee11b727ba28501",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
