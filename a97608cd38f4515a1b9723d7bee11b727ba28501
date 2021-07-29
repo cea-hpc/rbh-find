@@ -601,6 +601,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "377e9115_6390eff3",
+        "filename": "rbh-find.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-29T23:06:48Z",
+      "side": 1,
+      "message": "It was done this way in _find() because \"\\0\" will not be printed if present in the format string (it will simply be interpreted as the end of the string, modern compilers should give a warning about that).\n\nI think it makes sense not to keep this style anywhere else, and arguably, it should even be fixed in _find() when the line separator is `\\n`.",
+      "parentUuid": "6714bb8b_befe949a",
+      "range": {
+        "startLine": 214,
+        "startChar": 34,
+        "endLine": 214,
+        "endChar": 36
+      },
+      "revId": "a97608cd38f4515a1b9723d7bee11b727ba28501",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ad82278f_3918180b",
         "filename": "rbh-find.c",
         "patchSetId": 6

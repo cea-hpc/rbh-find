@@ -1,0 +1,262 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "77b989f8_d93ff4b5",
+        "filename": "rbh-find.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-29T23:06:48Z",
+      "side": 1,
+      "message": "(minor) These variables do not exist anymore",
+      "range": {
+        "startLine": 124,
+        "startChar": 21,
+        "endLine": 124,
+        "endChar": 93
+      },
+      "revId": "7f7f13ddded85a1d28e3f52dae0bcfd0a026981e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ab8b1143_8a89a978",
+        "filename": "rbh-find.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-29T23:06:48Z",
+      "side": 1,
+      "message": "(style) It would make sense to declare them as an anonymous structure:\n\n static struct {\n     int ino;\n     int uid;\n     ...\n } length \u003d {\n     5,\n     10,\n     10,\n     ...\n };\n\nMaybe also declare it inside fsentry_print_ls_dils().",
+      "range": {
+        "startLine": 194,
+        "startChar": 0,
+        "endLine": 199,
+        "endChar": 28
+      },
+      "revId": "7f7f13ddded85a1d28e3f52dae0bcfd0a026981e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e07772dc_52a59d55",
+        "filename": "rbh-find.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-29T23:06:48Z",
+      "side": 1,
+      "message": "(style) Not mentioned anywhere, but we don\u0027t put a space after a `!`.",
+      "range": {
+        "startLine": 210,
+        "startChar": 9,
+        "endLine": 210,
+        "endChar": 10
+      },
+      "revId": "7f7f13ddded85a1d28e3f52dae0bcfd0a026981e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c9267833_bbd08f4c",
+        "filename": "rbh-find.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-29T23:06:48Z",
+      "side": 1,
+      "message": "(style) I think I would prefer a series of ?????????? for the permissions.",
+      "range": {
+        "startLine": 211,
+        "startChar": 24,
+        "endLine": 211,
+        "endChar": 27
+      },
+      "revId": "7f7f13ddded85a1d28e3f52dae0bcfd0a026981e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "27e3e492_009497da",
+        "filename": "rbh-find.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-29T23:06:48Z",
+      "side": 1,
+      "message": "(style) same for the date (mtime)",
+      "range": {
+        "startLine": 211,
+        "startChar": 44,
+        "endLine": 211,
+        "endChar": 47
+      },
+      "revId": "7f7f13ddded85a1d28e3f52dae0bcfd0a026981e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6284e28f_14bbfbe7",
+        "filename": "rbh-find.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-29T23:06:48Z",
+      "side": 1,
+      "message": "(style) alignment",
+      "range": {
+        "startLine": 212,
+        "startChar": 15,
+        "endLine": 212,
+        "endChar": 16
+      },
+      "revId": "7f7f13ddded85a1d28e3f52dae0bcfd0a026981e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7bc38b31_8351dba4",
+        "filename": "rbh-find.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-29T23:06:48Z",
+      "side": 1,
+      "message": "(defect) printf() expects:\n - size, field\n - size, field\n - ...\n\nNot:\n - size, size, ...\n - field, field, ...\n\nThe compiler doesn\u0027t complain because chars and ints are compatible, but it\u0027s not going to print the string you expect.",
+      "range": {
+        "startLine": 212,
+        "startChar": 16,
+        "endLine": 212,
+        "endChar": 41
+      },
+      "revId": "7f7f13ddded85a1d28e3f52dae0bcfd0a026981e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d58805a8_6a607714",
+        "filename": "rbh-find.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-29T23:06:48Z",
+      "side": 1,
+      "message": "(major) RBH_FP_SYMLINK may still be set even if RBH_FP_STATX is not.",
+      "revId": "7f7f13ddded85a1d28e3f52dae0bcfd0a026981e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dc67d454_7ec6cad4",
+        "filename": "rbh-find.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-29T23:06:48Z",
+      "side": 1,
+      "message": "(minor) `ino_length` should not be allowed to decrease, otherwise, the fields will probably never really align.\n\n(suggest)\n\n #include \u003csys/param.h\u003e\n\n (...)\n\n         length.ino \u003d MAX(length.ino,\n                          printf(\"%*lld\", length.ino, fsentry-\u003estatx-\u003estx_ino);",
+      "range": {
+        "startLine": 220,
+        "startChar": 8,
+        "endLine": 220,
+        "endChar": 74
+      },
+      "revId": "7f7f13ddded85a1d28e3f52dae0bcfd0a026981e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "de68c1d9_40ae5628",
+        "filename": "rbh-find.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-29T23:06:48Z",
+      "side": 1,
+      "message": "(major) STATX_TYPE may be set even if STATX_MODE is not",
+      "range": {
+        "startLine": 234,
+        "startChar": 5,
+        "endLine": 234,
+        "endChar": 42
+      },
+      "revId": "7f7f13ddded85a1d28e3f52dae0bcfd0a026981e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4b66d61e_81246f1e",
+        "filename": "rbh-find.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-29T23:06:48Z",
+      "side": 1,
+      "message": "(style) missing braces for the `else` branch. [0] [1]\n\n[0] https://www.kernel.org/doc/html/v4.10/process/coding-style.html#placing-braces-and-spaces\n[1] https://github.com/cea-hpc/robinhood/blob/v4/doc/coding-style.rst#braces",
+      "revId": "7f7f13ddded85a1d28e3f52dae0bcfd0a026981e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1c3b216e_3706d4d7",
+        "filename": "rbh-find.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-29T23:06:48Z",
+      "side": 1,
+      "message": "(style) ...",
+      "revId": "7f7f13ddded85a1d28e3f52dae0bcfd0a026981e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
