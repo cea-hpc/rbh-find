@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "43bab6a3_235269a9",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 743,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-29T23:13:21Z",
+      "side": 1,
+      "message": "(style) same comment as the previous patch.",
+      "revId": "01683bbea624db8d18948c3cce1e9b30848a1247",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
