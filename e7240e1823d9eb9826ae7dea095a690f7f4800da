@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bf021482_b7b3fd34",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019295
+      },
+      "writtenOn": "2021-07-30T07:31:38Z",
+      "side": 1,
+      "message": "Thanks for your review!",
+      "revId": "e7240e1823d9eb9826ae7dea095a690f7f4800da",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5e7493cf_e43cf68a",
@@ -14,6 +31,24 @@
       "writtenOn": "2021-07-29T23:13:45Z",
       "side": 1,
       "message": "(style) same comment as the previous patches",
+      "revId": "e7240e1823d9eb9826ae7dea095a690f7f4800da",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4f2c00f5_87468453",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 727,
+      "author": {
+        "id": 1019295
+      },
+      "writtenOn": "2021-07-30T07:31:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5e7493cf_e43cf68a",
       "revId": "e7240e1823d9eb9826ae7dea095a690f7f4800da",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
