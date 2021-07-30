@@ -1,0 +1,198 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "37847c9c_6384ff5a",
+        "filename": "rbh-find.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-30T19:08:01Z",
+      "side": 1,
+      "message": "(gnu-)find adds a space here to keep things aligned with dates with hours and minutes.",
+      "range": {
+        "startLine": 61,
+        "startChar": 50,
+        "endLine": 61,
+        "endChar": 51
+      },
+      "revId": "dcf6d76f3e850f0884473a80d1b696b822ac01b9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0f01fc5d_06767ba5",
+        "filename": "rbh-find.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-30T19:08:01Z",
+      "side": 1,
+      "message": "Refactored to avoid passing buffers around",
+      "range": {
+        "startLine": 63,
+        "startChar": 0,
+        "endLine": 63,
+        "endChar": 23
+      },
+      "revId": "dcf6d76f3e850f0884473a80d1b696b822ac01b9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9aefb393_4c3f2f29",
+        "filename": "rbh-find.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-30T19:08:01Z",
+      "side": 1,
+      "message": "Added a space here for the alignment with the alternative format with hours and minutes.",
+      "range": {
+        "startLine": 75,
+        "startChar": 54,
+        "endLine": 75,
+        "endChar": 55
+      },
+      "revId": "dcf6d76f3e850f0884473a80d1b696b822ac01b9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e0579305_8ce32fe2",
+        "filename": "rbh-find.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-30T19:08:01Z",
+      "side": 1,
+      "message": "Unless functions are used in other compilation units and need to be made \"public\", declare them as static.",
+      "range": {
+        "startLine": 88,
+        "startChar": 0,
+        "endLine": 88,
+        "endChar": 6
+      },
+      "revId": "dcf6d76f3e850f0884473a80d1b696b822ac01b9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ba4e3abd_19cfa1b1",
+        "filename": "rbh-find.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-30T19:08:01Z",
+      "side": 1,
+      "message": "It would be interesting to measure how much overhead calling printf() repeatedly incurs compared with building a string and printing it once.",
+      "revId": "dcf6d76f3e850f0884473a80d1b696b822ac01b9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b9157bf2_cf0f318d",
+        "filename": "rbh-find.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-30T19:08:01Z",
+      "side": 1,
+      "message": "Reordered the fields to match the order in which they are printed",
+      "revId": "dcf6d76f3e850f0884473a80d1b696b822ac01b9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ff4de017_981aef5f",
+        "filename": "rbh-find.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-30T19:08:01Z",
+      "side": 1,
+      "message": "Used defaults from find (I only checked the sources for uid/gid, but visually, the rest is nicely aligned as well).",
+      "revId": "dcf6d76f3e850f0884473a80d1b696b822ac01b9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "029063a0_08b2728e",
+        "filename": "rbh-find.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-30T19:08:01Z",
+      "side": 1,
+      "message": "There was no reason to pas \"?????????\" as an argument rather than in the format string, even less so to use variable size format specifier.",
+      "revId": "dcf6d76f3e850f0884473a80d1b696b822ac01b9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "79dc14de_76c3f615",
+        "filename": "rbh-find.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-30T19:08:01Z",
+      "side": 1,
+      "message": "We want to see the numerical value of the uid if it doesn\u0027t map to anything on the local system.",
+      "revId": "dcf6d76f3e850f0884473a80d1b696b822ac01b9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "99b6fc47_05ba41df",
+        "filename": "rbh-find.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-30T19:08:01Z",
+      "side": 1,
+      "message": "...",
+      "revId": "dcf6d76f3e850f0884473a80d1b696b822ac01b9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
