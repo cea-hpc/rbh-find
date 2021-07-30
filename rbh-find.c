@@ -13,6 +13,7 @@
 #include <dlfcn.h>
 #include <errno.h>
 #include <error.h>
+#include <fcntl.h>
 #include <grp.h>
 #include <pwd.h>
 #include <stdbool.h>
@@ -25,6 +26,7 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <time.h>
+#include <unistd.h>
 
 #include <robinhood.h>
 #ifndef HAVE_STATX
@@ -285,9 +287,64 @@ fsentry_print_ls_dils(const struct rbh_fsentry *fsentry)
     printf("\n");
 }
 
+static void
+fsentry_fprint(const struct rbh_fsentry *fsentry, int file)
+{
+    size_t path_length = strlen(fsentry_path(fsentry));
+    char *buf = malloc(path_length + 2);
+    ssize_t rc;
+
+    strcpy(buf, fsentry_path(fsentry));
+    buf[path_length + 1] = '\n';
+
+    rc = write(file, buf, path_length + 2);
+    if (rc == -1)
+        error(EXIT_FAILURE, errno, "write");
+
+    free(buf);
+}
+
+static struct rbh_queue *queue_action_attr = NULL;
+
+int
+open_file(const char *action_attr)
+{
+    bool attr_exist = false;
+    int file;
+
+    /* open or create a file whose mode is set to "-rw-rw-r--" */
+    if (queue_action_attr != NULL) {
+        size_t ptr;
+        char **peek_queue = rbh_queue_peek(queue_action_attr, &ptr);
+        for (size_t i = 0; i < ptr / sizeof(action_attr) ; i++) {
+            if (strcmp(action_attr, peek_queue[i]) == 0) {
+                file = open(action_attr, O_WRONLY | O_APPEND);
+                attr_exist = true;
+                break;
+            }
+        }
+    }
+    if (attr_exist == false) {
+        file = creat(action_attr,
+                S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
+
+        if (queue_action_attr == NULL) {
+            queue_action_attr = rbh_queue_new(4096);
+            if (queue_action_attr == NULL)
+                error(EXIT_FAILURE, errno, "rbh_queue_new");
+        }
+        char *cpy = strdup(action_attr);
+        if (rbh_queue_push(queue_action_attr, &cpy, sizeof(cpy)) == NULL)
+            error(EXIT_FAILURE, errno, "rbh_queue_push");
+    }
+
+    return file;
+}
+
+
 static size_t
 _find(struct rbh_backend *backend, enum action action,
-      const struct rbh_filter *filter,
+      const char *action_attr, const struct rbh_filter *filter,
       const struct rbh_filter_sort *sorts, size_t sorts_count)
 {
     const struct rbh_filter_options OPTIONS = {
@@ -302,11 +359,18 @@ _find(struct rbh_backend *backend, enum action action,
     };
     struct rbh_mut_iterator *fsentries;
     size_t count = 0;
+    int file;
 
     fsentries = rbh_backend_filter(backend, filter, &OPTIONS);
     if (fsentries == NULL)
         error_at_line(EXIT_FAILURE, errno, __FILE__, __LINE__,
                       "filter_fsentries");
+
+    if (action == ACT_FPRINT) {
+        file = open_file(action_attr);
+        if (file == -1)
+            error(EXIT_FAILURE, errno, "open");
+    }
 
     do {
         struct rbh_fsentry *fsentry;
@@ -329,6 +393,9 @@ _find(struct rbh_backend *backend, enum action action,
         case ACT_PRINT0:
             printf("%s%c", fsentry_path(fsentry), '\0');
             break;
+        case ACT_FPRINT:
+            fsentry_fprint(fsentry, file);
+            break;
         case ACT_LS:
             fsentry_print_ls_dils(fsentry);
             break;
@@ -345,6 +412,12 @@ _find(struct rbh_backend *backend, enum action action,
         free(fsentry);
     } while (true);
 
+    if (action == ACT_FPRINT) {
+        file = close(file);
+        if (file == -1)
+            error(EXIT_FAILURE, errno, "close");
+   }
+
     if (errno != ENODATA)
         error_at_line(EXIT_FAILURE, errno, __FILE__, __LINE__,
                       "rbh_mut_iter_next");
@@ -359,15 +432,17 @@ static char **argv;
 static bool did_something = false;
 
 static void
-find(enum action action, const struct rbh_filter *filter,
-     const struct rbh_filter_sort *sorts, size_t sorts_count)
+find(enum action action, const char *action_attr,
+     const struct rbh_filter *filter, const struct rbh_filter_sort *sorts,
+     size_t sorts_count)
 {
     size_t count = 0;
 
     did_something = true;
 
     for (size_t i = 0; i < backend_count; i++)
-        count += _find(backends[i], action, filter, sorts, sorts_count);
+        count += _find(backends[i], action, action_attr, filter, sorts,
+                       sorts_count);
 
     switch (action) {
     case ACT_COUNT:
@@ -476,6 +551,7 @@ parse_expression(int *arg_idx, const struct rbh_filter *_filter,
         enum command_line_token previous_token = token;
         struct rbh_filter *tmp;
         bool ascending = true;
+        char *action_attr = NULL;
 
         token = str2command_line_token(argv[i]);
         switch (token) {
@@ -587,7 +663,18 @@ parse_expression(int *arg_idx, const struct rbh_filter *_filter,
             filter = filter_and(filter, tmp);
             break;
         case CLT_ACTION:
-            find(str2action(argv[i]), &left_filter, *sorts, *sorts_count);
+            if (str2action(argv[i]) == ACT_FPRINT) {
+                if (i + 1 >= argc)
+                    error(EX_USAGE, 0, "missing argument to '%s'", argv[i]);
+                action_attr = malloc(strlen(argv[++i]) + 1);
+                strcpy(action_attr, argv[i]);
+                find(str2action(argv[i - 1]), action_attr, &left_filter, *sorts,
+                     *sorts_count);
+                free(action_attr);
+            } else {
+                find(str2action(argv[i]), action_attr, &left_filter, *sorts,
+                     *sorts_count);
+            }
             break;
         }
     }
@@ -630,8 +717,16 @@ main(int _argc, char *_argv[])
         error(EX_USAGE, 0, "you have too many ')'");
 
     if (!did_something)
-        find(ACT_PRINT, filter, sorts, sorts_count);
+        find(ACT_PRINT, NULL, filter, sorts, sorts_count);
     free(filter);
+
+    if (queue_action_attr) {
+        size_t ptr;
+        char **peek_queue = rbh_queue_peek(queue_action_attr, &ptr);
+        for (size_t i = 0; i < ptr / sizeof(*peek_queue) ; i++)
+            free(peek_queue[i]);
+        rbh_queue_destroy(queue_action_attr);
+    }
 
     return EXIT_SUCCESS;
 }

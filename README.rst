@@ -367,3 +367,15 @@ You will have to resort to manually sorting the output:
     ./dir-0
     ./dir-0/file-0
     ./dir-0/file-1
+
+-fprint
+--------
+
+rbh-find defines the ``-fprint`` option which allows the output to be written
+into a given file. If file does not exist when the command is run, it is
+created; if it does exist, it is truncated. If a file is called twice in the
+same command, the information will be attached.
+
+.. code:: bash
+
+    rbh-find rbh:mongo:test -fprint filename
