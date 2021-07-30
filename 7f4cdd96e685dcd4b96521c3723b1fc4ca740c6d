@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8001fe58_68909e63",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019295
+      },
+      "writtenOn": "2021-07-30T07:00:28Z",
+      "side": 1,
+      "message": "Thanks for your review!",
+      "revId": "7f4cdd96e685dcd4b96521c3723b1fc4ca740c6d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5fa41aa0_fd40cf14",
@@ -14,6 +31,30 @@
       "writtenOn": "2021-07-29T23:12:48Z",
       "side": 1,
       "message": "(style) What we do in the rest of the codebase is just go one level of switch deeper:\n\n        switch (attribute[1]) {\n        case \u0027a\u0027:\n            if (strcmp(\u0026attribute[2], \"me\"))\n                break;\n            field.fsentry \u003d RBH_FP_NAME;\n            return field;\n        case \u0027l\u0027:\n            if (strcmp(\u0026attribute[2], \"ink\"))\n                break;\n            field.fsentry \u003d RBH_FP_STATX;\n            field.statx \u003d STATX_NLINK;\n            return field;\n        }\n        break;\n\nIn other places, we even use `switch (attribute++)` to avoid having to carry the `[i]` over. (do keep in mind that you need a copy of `attribute` early in the function if you go this way as your error message at the end of the function should output the full initial string.",
+      "range": {
+        "startLine": 750,
+        "startChar": 8,
+        "endLine": 759,
+        "endChar": 14
+      },
+      "revId": "7f4cdd96e685dcd4b96521c3723b1fc4ca740c6d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d9cdeb4c_1aa8224b",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 759,
+      "author": {
+        "id": 1019295
+      },
+      "writtenOn": "2021-07-30T07:00:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5fa41aa0_fd40cf14",
       "range": {
         "startLine": 750,
         "startChar": 8,
