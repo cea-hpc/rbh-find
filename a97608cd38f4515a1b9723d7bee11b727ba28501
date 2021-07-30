@@ -623,6 +623,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "22c977e0_eb685798",
+        "filename": "rbh-find.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 1019295
+      },
+      "writtenOn": "2021-07-30T14:12:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "377e9115_6390eff3",
+      "range": {
+        "startLine": 214,
+        "startChar": 34,
+        "endLine": 214,
+        "endChar": 36
+      },
+      "revId": "a97608cd38f4515a1b9723d7bee11b727ba28501",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ad82278f_3918180b",
