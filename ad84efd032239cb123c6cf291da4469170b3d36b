@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "983375cf_d562e326",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-07-30T18:43:57Z",
+      "side": 1,
+      "message": "Hmm, I\u0027ll push an intermediary patch, so the diff with PS8 is easier to review.",
+      "revId": "ad84efd032239cb123c6cf291da4469170b3d36b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
