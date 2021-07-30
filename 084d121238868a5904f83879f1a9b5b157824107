@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c97630e3_27ccd157",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019295
+      },
+      "writtenOn": "2021-07-30T07:25:44Z",
+      "side": 1,
+      "message": "Sorry, I made my corrections too quickly. I push a new correct patch.",
+      "revId": "084d121238868a5904f83879f1a9b5b157824107",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
