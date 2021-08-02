@@ -16,6 +16,24 @@
       "message": "The new version does not consider your review made on patchset #1 and the modifications Candice made after. Rebase issue?",
       "revId": "e689f2d7f828e851d15ce5919fd63fa9cb193c35",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3a291664_6fb47338",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-08-02T21:23:19Z",
+      "side": 1,
+      "message": "You are right, my bad.",
+      "parentUuid": "ecf034c5_2d37aaa7",
+      "revId": "e689f2d7f828e851d15ce5919fd63fa9cb193c35",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
