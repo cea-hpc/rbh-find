@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ecf034c5_2d37aaa7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2021-08-02T06:55:56Z",
+      "side": 1,
+      "message": "The new version does not consider your review made on patchset #1 and the modifications Candice made after. Rebase issue?",
+      "revId": "e689f2d7f828e851d15ce5919fd63fa9cb193c35",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
