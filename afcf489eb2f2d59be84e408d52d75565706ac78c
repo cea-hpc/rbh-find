@@ -33,6 +33,24 @@
       "message": "It seems ok for me!",
       "revId": "afcf489eb2f2d59be84e408d52d75565706ac78c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8895398f_6850008a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019295
+      },
+      "writtenOn": "2021-08-03T07:04:44Z",
+      "side": 1,
+      "message": "Thanks again for your help and your corrections, I see nothing to change !",
+      "parentUuid": "39c272d9_93ebb6fe",
+      "revId": "afcf489eb2f2d59be84e408d52d75565706ac78c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
