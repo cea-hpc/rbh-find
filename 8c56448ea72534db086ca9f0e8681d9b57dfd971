@@ -16,6 +16,24 @@
       "message": "I push a first patch for the -fprint action, but since this is the end of my internship I could not make the corrections.\nI tried some somewhat complex commands to verify that everything is working as it should, like:\n  \n   $ rbh-find uri -fprint a -fprint b -fprint a -fprint b\n\nAnd normally it works correctly, that is that it writes twice in each file without deleting what was there before because it is in the same command.\n\nThank you very much for your welcome and your reviews,\nCandice Astier",
       "revId": "8c56448ea72534db086ca9f0e8681d9b57dfd971",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b20f9f08_d4b0948f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-08-07T09:30:05Z",
+      "side": 1,
+      "message": "\u003e Thank you very much for your welcome and your reviews\n\nYou are most welcome! Thank you for you contributions! 💯",
+      "parentUuid": "2d843e06_a9fd22e0",
+      "revId": "8c56448ea72534db086ca9f0e8681d9b57dfd971",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
