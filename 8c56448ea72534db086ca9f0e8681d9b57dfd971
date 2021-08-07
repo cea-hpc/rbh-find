@@ -34,6 +34,86 @@
       "parentUuid": "2d843e06_a9fd22e0",
       "revId": "8c56448ea72534db086ca9f0e8681d9b57dfd971",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "176837c3_65b9ecec",
+        "filename": "README.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 370,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-08-07T09:51:04Z",
+      "side": 1,
+      "message": "(minor) -fprint being a feature of (gnu-)find, it should not be documented under the \"extra features\" section",
+      "revId": "8c56448ea72534db086ca9f0e8681d9b57dfd971",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a0df2940_342a51c9",
+        "filename": "rbh-find.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-08-07T09:51:04Z",
+      "side": 1,
+      "message": "(major) fprintf() is I think a better alternative to implementing our own IO stack, especially since we use printf() when writing to stdout.",
+      "range": {
+        "startLine": 290,
+        "startChar": 0,
+        "endLine": 342,
+        "endChar": 1
+      },
+      "revId": "8c56448ea72534db086ca9f0e8681d9b57dfd971",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0f82c446_f6d89fe8",
+        "filename": "rbh-find.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-08-07T09:51:04Z",
+      "side": 1,
+      "message": "(minor) this isn\u0027t future proof, actions like \u0027-exec\u0027 require more than one string arguments",
+      "range": {
+        "startLine": 347,
+        "startChar": 6,
+        "endLine": 347,
+        "endChar": 29
+      },
+      "revId": "8c56448ea72534db086ca9f0e8681d9b57dfd971",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1aa2096f_6fbf3274",
+        "filename": "rbh-find.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 443,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-08-07T09:51:04Z",
+      "side": 1,
+      "message": "(defect) If there are multiple backends, each call to _find() will overwrite the file from scratch, which means only the results for the last backend will be persisted",
+      "revId": "8c56448ea72534db086ca9f0e8681d9b57dfd971",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
