@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ed1de691_8212eebd",
+        "filename": "rbh-find.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 392,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-08-16T08:40:47Z",
+      "side": 1,
+      "message": "suggest: it may be better to parse the fprint argument outside of find juste before calling it (line 622).\n\nYou could create a seperate function and call it before instead of modifying the index here.",
+      "range": {
+        "startLine": 380,
+        "startChar": 3,
+        "endLine": 392,
+        "endChar": 5
+      },
+      "revId": "bc364e8d22052eb47f46c49e99be7cabc0fec745",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
