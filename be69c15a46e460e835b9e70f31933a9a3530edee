@@ -22,6 +22,30 @@
       },
       "revId": "be69c15a46e460e835b9e70f31933a9a3530edee",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5189eb70_965cb4e9",
+        "filename": "rbh-find.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-08-16T10:27:56Z",
+      "side": 1,
+      "message": "For the same reason one puts null characters on stdout: file names may contain any character except for \u0027/\u0027 and \u0027\\0\u0027, and \u0027/\u0027 is used in paths.\n\nTo correctly parse arbitrary file paths, whether from stdout or from a file, one _must_ use \u0027\\0\u0027 as a separator.",
+      "parentUuid": "c1038824_189b8a66",
+      "range": {
+        "startLine": 341,
+        "startChar": 33,
+        "endLine": 341,
+        "endChar": 37
+      },
+      "revId": "be69c15a46e460e835b9e70f31933a9a3530edee",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
