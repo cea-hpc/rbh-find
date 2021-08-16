@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c1038824_189b8a66",
+        "filename": "rbh-find.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-08-16T08:46:41Z",
+      "side": 1,
+      "message": "question: why put a null character in the file ?",
+      "range": {
+        "startLine": 341,
+        "startChar": 33,
+        "endLine": 341,
+        "endChar": 37
+      },
+      "revId": "be69c15a46e460e835b9e70f31933a9a3530edee",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
