@@ -22,6 +22,30 @@
       },
       "revId": "bc364e8d22052eb47f46c49e99be7cabc0fec745",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6dea38be_134212ed",
+        "filename": "rbh-find.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 392,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-08-16T10:27:39Z",
+      "side": 1,
+      "message": "Ack\n\nI\u0027m not interested in coding this myself, but feel free to submit a patch if you want to.",
+      "parentUuid": "ed1de691_8212eebd",
+      "range": {
+        "startLine": 380,
+        "startChar": 3,
+        "endLine": 392,
+        "endChar": 5
+      },
+      "revId": "bc364e8d22052eb47f46c49e99be7cabc0fec745",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
