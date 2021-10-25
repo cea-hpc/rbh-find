@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1e0065c1_8a2e2c3e",
+        "filename": "src/actions.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-10-25T12:49:53Z",
+      "side": 1,
+      "message": "question: why is this broken now ? Did the change from statx to rbh_statx changed the size of this field and stx_size ?",
+      "range": {
+        "startLine": 154,
+        "startChar": 47,
+        "endLine": 154,
+        "endChar": 64
+      },
+      "revId": "a73a9f9811511e854d924ecaf2ced500705cc8a4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
