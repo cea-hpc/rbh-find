@@ -22,6 +22,30 @@
       },
       "revId": "a73a9f9811511e854d924ecaf2ced500705cc8a4",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "99d3e6be_ff90cc3d",
+        "filename": "src/actions.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-10-25T12:51:31Z",
+      "side": 1,
+      "message": "On my end, I got this error. Why did I get it though is a mystery.\n\n\n[1/7] Compiling C object \u0027rbh-find@exe/src_actions.c.o\u0027.\nFAILED: rbh-find@exe/src_actions.c.o \ncc -Irbh-find@exe -I. -I.. -I../ -I../include -fdiagnostics-color\u003dalways -pipe -D_FILE_OFFSET_BITS\u003d64 -Wall -Winvalid-pch -Wextra -Wpedantic -Werror -g -Wno-pedantic -D_GNU_SOURCE -DHAVE_CONFIG_H  -MD -MQ \u0027rbh-find@exe/src_actions.c.o\u0027 -MF \u0027rbh-find@exe/src_actions.c.o.d\u0027 -o \u0027rbh-find@exe/src_actions.c.o\u0027 -c ../src/actions.c\n../src/actions.c: In function ‘statx_print_ls_dils’:\n../src/actions.c:154:33: error: format ‘%lld’ expects argument of type ‘long long int’, but argument 4 has type ‘uint64_t’ {aka ‘const long unsigned int’} [-Werror\u003dformat\u003d]\n         rc \u003d fprintf(file, \"%*lld\", length.ino, statxbuf-\u003estx_ino);\n                             ~~~~^               ~~~~~~~~~~~~~~~~~\n                             %*ld\n../src/actions.c:215:34: error: format ‘%lld’ expects argument of type ‘long long int’, but argument 4 has type ‘uint64_t’ {aka ‘const long unsigned int’} [-Werror\u003dformat\u003d]\n         rc \u003d fprintf(file, \" %*lld\", length.size, statxbuf-\u003estx_size) - 1;\n                              ~~~~^                ~~~~~~~~~~~~~~~~~~\n                              %*ld\ncc1: all warnings being treated as errors",
+      "parentUuid": "1e0065c1_8a2e2c3e",
+      "range": {
+        "startLine": 154,
+        "startChar": 47,
+        "endLine": 154,
+        "endChar": 64
+      },
+      "revId": "a73a9f9811511e854d924ecaf2ced500705cc8a4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
