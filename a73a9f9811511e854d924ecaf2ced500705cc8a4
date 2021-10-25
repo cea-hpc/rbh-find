@@ -46,6 +46,30 @@
       },
       "revId": "a73a9f9811511e854d924ecaf2ced500705cc8a4",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8e352154_534f64c5",
+        "filename": "src/actions.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2021-10-25T13:41:33Z",
+      "side": 1,
+      "message": "u64 being a long or a long long is one of the annoying things about C... on x86 (32bit), long is 32bits but on x86_64 long is 64bits, but on both of these long long is 64bit.\nI\u0027m too lazy to look it up but the C standard only says that long int must stores \"at least x\" so it can change depending on the arch like this\n\nAnyway, the linux kernel decided u64 is a long long on every arch so stx_ino which is defined as __u64 in the linux/stat.h is a long long (see asm-generic/types.h: int-ll64 is used everywhere now. -- and asm-generic/int-ll64.h which defines __u64 as long long) -- these are all kernel headers.\n\nBut uint64 used for rbh_statx is defined as unsigned long in bits/types.h...\n(note statx is -also- defined in glibc headers (bits/types/struct_statx.h) with __uint64_t, and that one is also a long - so glibc and the kernel just don\u0027t agree on this point...)\n\n\nAnyway I\u0027d be tempted to say that since we\u0027ve always used the kernel version of the struct rbh_statx should keep these fields as long long, but since there are/will be checks I\u0027m happy with either version here. If you use %ld though that won\u0027t work on 32 bit systems so you should use PRIu64 or similar.",
+      "parentUuid": "99d3e6be_ff90cc3d",
+      "range": {
+        "startLine": 154,
+        "startChar": 47,
+        "endLine": 154,
+        "endChar": 64
+      },
+      "revId": "a73a9f9811511e854d924ecaf2ced500705cc8a4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
