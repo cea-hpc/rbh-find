@@ -70,6 +70,30 @@
       },
       "revId": "a73a9f9811511e854d924ecaf2ced500705cc8a4",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e71720a9_ac45f30c",
+        "filename": "src/actions.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-10-25T20:23:22Z",
+      "side": 1,
+      "message": "\u003e I\u0027d be tempted to say that since we\u0027ve always used the kernel version of the struct rbh_statx should keep these fields as long long\n\nI don\u0027t know what the kernel developer\u0027s reasoning is, but the C standard clearly defines exact-width integers:\n\n\u003e 7.20.1.1 Exact-width integer types\n\u003e\n\u003e The typedef name intN_t designates a signed integer type with width N, no padding bits, and a two’s complement representation. Thus, int8_t denotes such a signed integer type with a width of exactly 8 bits.\n\u003e The typedef name uintN_t designates an unsigned integer type with width N and no padding bits. Thus, uint24_t denotes such an unsigned integer type with a width of exactly 24 bits.\n\u003e These types are optional. However, if an implementation provides integer types with widths of 8, 16, 32, or 64 bits, no padding bits, and (for the signed types) that have a two’s complement representation, it shall define the corresponding typedef names.\n\nWell, IIUC it defines them as optional, unless the implementation already provides the same types under different names... So, except for uint16_t, they\u0027re not so optional, are they? 😐\n\nI\u0027m tempted to say: to hell with that. We need a 64-bit unsigned integer, uint64_t is clearly the right type. Let\u0027s leave it to clang/gcc, glibc and the kernel developers to figure a long term solution to this inconsistency.\n\n\u003e If you use %ld though that won\u0027t work on 32 bit systems so you should use PRIu64 or similar.\n\nAgreed.",
+      "parentUuid": "8e352154_534f64c5",
+      "range": {
+        "startLine": 154,
+        "startChar": 47,
+        "endLine": 154,
+        "endChar": 64
+      },
+      "revId": "a73a9f9811511e854d924ecaf2ced500705cc8a4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
