@@ -1,0 +1,188 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a1500b39_7369aee6",
+        "filename": "tests/meson.build",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-11-22T13:04:13Z",
+      "side": 1,
+      "message": "question: why use this ? check is not used in the test",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 5
+      },
+      "revId": "672ecc6fb7a066f987fc4a88975b80082f28d2ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7cc0b0ff_4b81414d",
+        "filename": "tests/meson.build",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-11-22T13:04:13Z",
+      "side": 1,
+      "message": "style: I would leave the names on a separate line as more tests should come in the future",
+      "range": {
+        "startLine": 14,
+        "startChar": 20,
+        "endLine": 14,
+        "endChar": 46
+      },
+      "revId": "672ecc6fb7a066f987fc4a88975b80082f28d2ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c8c437c5_b44e29d4",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-11-22T13:04:13Z",
+      "side": 1,
+      "message": "suggest: this can be inferred from the number of arguments, something like: `$#-1`",
+      "range": {
+        "startLine": 19,
+        "startChar": 4,
+        "endLine": 19,
+        "endChar": 20
+      },
+      "revId": "672ecc6fb7a066f987fc4a88975b80082f28d2ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cc5a3419_196c533f",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-11-22T13:04:13Z",
+      "side": 1,
+      "message": "suggest: wc -l ?",
+      "range": {
+        "startLine": 21,
+        "startChar": 45,
+        "endLine": 21,
+        "endChar": 56
+      },
+      "revId": "672ecc6fb7a066f987fc4a88975b80082f28d2ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5c33aef7_bc5f0a3a",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-11-22T13:04:13Z",
+      "side": 1,
+      "message": "minor: if you quote the arguments line 40-43 you should keep doing it after. Otherwise, the first time is useless.",
+      "range": {
+        "startLine": 45,
+        "startChar": 19,
+        "endLine": 45,
+        "endChar": 24
+      },
+      "revId": "672ecc6fb7a066f987fc4a88975b80082f28d2ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "12cbddd2_c34c0dd5",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-11-22T13:04:13Z",
+      "side": 1,
+      "message": "question: why is / returned by find ? Shouldn\u0027t \"-size 1M\" target files of size [1M;2M) ? Or is it [0M;1M] ?",
+      "range": {
+        "startLine": 52,
+        "startChar": 30,
+        "endLine": 52,
+        "endChar": 33
+      },
+      "revId": "672ecc6fb7a066f987fc4a88975b80082f28d2ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a9593ddf_cfb38c78",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-11-22T13:04:13Z",
+      "side": 1,
+      "message": "suggest: rather that having all these variables, I think you can just put them in the arguments line 80 and 82:\n\nmkdir -p \"$dir/dir\"\ntest_size \"$path\" \"rbh:posix:$dir\" \"$mongo_URI\" \"$mongo_URI#dir\"",
+      "range": {
+        "startLine": 75,
+        "startChar": 4,
+        "endLine": 76,
+        "endChar": 25
+      },
+      "revId": "672ecc6fb7a066f987fc4a88975b80082f28d2ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "373f1c73_93a2ca39",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-11-22T13:04:13Z",
+      "side": 1,
+      "message": "suggest: I think you can just use this directly line 82 instead of making a variable",
+      "range": {
+        "startLine": 78,
+        "startChar": 21,
+        "endLine": 78,
+        "endChar": 45
+      },
+      "revId": "672ecc6fb7a066f987fc4a88975b80082f28d2ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
