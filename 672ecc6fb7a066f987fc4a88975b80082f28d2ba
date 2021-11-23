@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d7e1b1ef_c45397aa",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2021-11-23T03:10:58Z",
+      "side": 1,
+      "message": "more tests are good! Guillaume\u0027s comments too, so leaving this mostly as is :)",
+      "revId": "672ecc6fb7a066f987fc4a88975b80082f28d2ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a1500b39_7369aee6",
@@ -118,6 +135,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "aeababa6_afb6d704",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2021-11-23T03:10:58Z",
+      "side": 1,
+      "message": "to expand on this comment: I recommend running shellcheck (either the online parser or install it)\nIt\u0027s also possible to have it run automatically in vim (ALE) or emacs (flycheck-mode), probably also possible in other tools if you use anything else - it\u0027s quite useful.",
+      "parentUuid": "5c33aef7_bc5f0a3a",
+      "range": {
+        "startLine": 45,
+        "startChar": 19,
+        "endLine": 45,
+        "endChar": 24
+      },
+      "revId": "672ecc6fb7a066f987fc4a88975b80082f28d2ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "12cbddd2_c34c0dd5",
         "filename": "tests/test_size.bash",
         "patchSetId": 1
@@ -129,6 +170,30 @@
       "writtenOn": "2021-11-22T13:04:13Z",
       "side": 1,
       "message": "question: why is / returned by find ? Shouldn\u0027t \"-size 1M\" target files of size [1M;2M) ? Or is it [0M;1M] ?",
+      "range": {
+        "startLine": 52,
+        "startChar": 30,
+        "endLine": 52,
+        "endChar": 33
+      },
+      "revId": "672ecc6fb7a066f987fc4a88975b80082f28d2ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f2ed6822_fcbc6223",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2021-11-23T03:10:58Z",
+      "side": 1,
+      "message": "There\u0027s a warning about this in the -size section of find man page:\n\n  Bear in mind that the size is rounded up to the next unit. Therefore\n  -size -1M  is  not  equivalent to -size -1048576c.  The former only\n  matches empty files, the latter matches files from 0 to 1,048,575 bytes.\n\n(so -size 1M matches ]0;1M] (0 is excluded))",
+      "parentUuid": "12cbddd2_c34c0dd5",
       "range": {
         "startLine": 52,
         "startChar": 30,
