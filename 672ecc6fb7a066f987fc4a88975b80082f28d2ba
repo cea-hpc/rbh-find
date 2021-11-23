@@ -41,6 +41,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bea4a6b0_f2c1614c",
+        "filename": "tests/meson.build",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-11-23T09:03:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a1500b39_7369aee6",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 5
+      },
+      "revId": "672ecc6fb7a066f987fc4a88975b80082f28d2ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7cc0b0ff_4b81414d",
@@ -54,6 +78,30 @@
       "writtenOn": "2021-11-22T13:04:13Z",
       "side": 1,
       "message": "style: I would leave the names on a separate line as more tests should come in the future",
+      "range": {
+        "startLine": 14,
+        "startChar": 20,
+        "endLine": 14,
+        "endChar": 46
+      },
+      "revId": "672ecc6fb7a066f987fc4a88975b80082f28d2ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5e028a5d_bce82f9a",
+        "filename": "tests/meson.build",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-11-23T09:03:57Z",
+      "side": 1,
+      "message": "This is more consistent with the RBH V4 coding style, just like this:\n\n/* This */\nlong_function_name(long_argument_1, long_argument_2,\n                   long_argument_3, long_argument_4);\n\n/* Is better than */\nlong_function_name(long_argument_1,\n                   long_argument_2,\n                   long_argument_3,\n                   long_argument_4);",
+      "parentUuid": "7cc0b0ff_4b81414d",
       "range": {
         "startLine": 14,
         "startChar": 20,
@@ -87,6 +135,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "99642097_05fce204",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-11-23T09:03:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c8c437c5_b44e29d4",
+      "range": {
+        "startLine": 19,
+        "startChar": 4,
+        "endLine": 19,
+        "endChar": 20
+      },
+      "revId": "672ecc6fb7a066f987fc4a88975b80082f28d2ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cc5a3419_196c533f",
@@ -100,6 +172,30 @@
       "writtenOn": "2021-11-22T13:04:13Z",
       "side": 1,
       "message": "suggest: wc -l ?",
+      "range": {
+        "startLine": 21,
+        "startChar": 45,
+        "endLine": 21,
+        "endChar": 56
+      },
+      "revId": "672ecc6fb7a066f987fc4a88975b80082f28d2ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "94ea04e8_10b1e145",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-11-23T09:03:57Z",
+      "side": 1,
+      "message": "No because echo adds a newline no matter what, so the result may be flawed for wc, especially in the case of empty strings",
+      "parentUuid": "cc5a3419_196c533f",
       "range": {
         "startLine": 21,
         "startChar": 45,
@@ -147,6 +243,30 @@
       "side": 1,
       "message": "to expand on this comment: I recommend running shellcheck (either the online parser or install it)\nIt\u0027s also possible to have it run automatically in vim (ALE) or emacs (flycheck-mode), probably also possible in other tools if you use anything else - it\u0027s quite useful.",
       "parentUuid": "5c33aef7_bc5f0a3a",
+      "range": {
+        "startLine": 45,
+        "startChar": 19,
+        "endLine": 45,
+        "endChar": 24
+      },
+      "revId": "672ecc6fb7a066f987fc4a88975b80082f28d2ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "263ac3f3_5caf51be",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-11-23T09:03:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "aeababa6_afb6d704",
       "range": {
         "startLine": 45,
         "startChar": 19,
@@ -227,6 +347,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "df129b4a_3faddb26",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-11-23T09:03:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a9593ddf_cfb38c78",
+      "range": {
+        "startLine": 75,
+        "startChar": 4,
+        "endLine": 76,
+        "endChar": 25
+      },
+      "revId": "672ecc6fb7a066f987fc4a88975b80082f28d2ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "373f1c73_93a2ca39",
@@ -240,6 +384,30 @@
       "writtenOn": "2021-11-22T13:04:13Z",
       "side": 1,
       "message": "suggest: I think you can just use this directly line 82 instead of making a variable",
+      "range": {
+        "startLine": 78,
+        "startChar": 21,
+        "endLine": 78,
+        "endChar": 45
+      },
+      "revId": "672ecc6fb7a066f987fc4a88975b80082f28d2ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "99e497c5_b30f90ae",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-11-23T09:03:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "373f1c73_93a2ca39",
       "range": {
         "startLine": 78,
         "startChar": 21,
