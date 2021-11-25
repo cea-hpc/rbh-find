@@ -1,0 +1,301 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5748abd7_61baf32f",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-11-25T21:39:53Z",
+      "side": 1,
+      "message": "(minor) Missing license header",
+      "revId": "d8b814e5570c4751ece9fd2e188ff230e2506b65",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "52243661_48fdab82",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-11-25T21:39:53Z",
+      "side": 1,
+      "message": "(style) Rather than put the path of rbh-find in a variable, how about using a function?\n\n [[ -x ./rbh-find ]] \u0026\u0026 function rbh_find\n {\n     ./rbh-find \"$@\"\n } || function rbh_find\n {\n     rbh-find \"$@\"\n }\n\nOr, maybe more elegantly, you could use $PATH to get rid of the conditional:\n\n __rbh_find\u003d\"$(PATH\u003d\"$PWD:$PATH\" which rbh-find)\"\n function rbh_find()\n {\n     \"$__rbh_find\" \"$@\"\n }\n\nA good argument for not using \"./rbh-find\" is that it is PWD-dependent. Might work in one test, but not in another which calls `cd ...`.",
+      "revId": "d8b814e5570c4751ece9fd2e188ff230e2506b65",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3eca2995_d6250589",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-11-25T21:39:53Z",
+      "side": 1,
+      "message": "(major) If there is one this which you want to quote, it is arguments to rm. Unless you want to pass a wildcard at some point, which I cannot advise.",
+      "revId": "d8b814e5570c4751ece9fd2e188ff230e2506b65",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2cf4e0b1_9adf0e18",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-11-25T21:39:53Z",
+      "side": 1,
+      "message": "(style) I doubt mongo database can have spaces in them, but better quote this one as well.",
+      "revId": "d8b814e5570c4751ece9fd2e188ff230e2506b65",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "911d70eb_85131d7f",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-11-25T21:39:53Z",
+      "side": 1,
+      "message": "(style) you could shift one line above:\n\nlocal output\u003d\"$1\"\nshift\nlocal -i expected_line_count\u003d$#",
+      "range": {
+        "startLine": 27,
+        "startChar": 18,
+        "endLine": 27,
+        "endChar": 29
+      },
+      "revId": "d8b814e5570c4751ece9fd2e188ff230e2506b65",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "18d430c8_48c1d3e2",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-11-25T21:39:53Z",
+      "side": 1,
+      "message": "(style) 1 is already the default for shift",
+      "range": {
+        "startLine": 35,
+        "startChar": 9,
+        "endLine": 35,
+        "endChar": 11
+      },
+      "revId": "d8b814e5570c4751ece9fd2e188ff230e2506b65",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "da8f1dfb_fe7320bc",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-11-25T21:39:53Z",
+      "side": 1,
+      "message": "Did you consider using diff(1) instead?",
+      "range": {
+        "startLine": 30,
+        "startChar": 4,
+        "endLine": 43,
+        "endChar": 8
+      },
+      "revId": "d8b814e5570c4751ece9fd2e188ff230e2506b65",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6c550607_55782620",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-11-25T21:39:53Z",
+      "side": 1,
+      "message": "(style) Does this have to be the URI to a posix backend?\n\nHow about:\n\n local source\u003d\"$2\"",
+      "range": {
+        "startLine": 49,
+        "startChar": 10,
+        "endLine": 49,
+        "endChar": 19
+      },
+      "revId": "d8b814e5570c4751ece9fd2e188ff230e2506b65",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7e20c22d_9b7ef41a",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-11-25T21:39:53Z",
+      "side": 1,
+      "message": "(minor) Let\u0027s not mix \"setup\" and \"test\" logic.\n\nA nice test (in pseudo-python:\n\n with setup():\n     expected \u003d ...\n     actual \u003d ...\n\n     expected \u003d\u003d actual\n\nIn bash:\n\n function test()\n {\n     local expected\u003d...\n     local actual\u003d...\n\n     [[ expected \u003d\u003d actual ]]\n }\n\n # Ideally, this is handled by a test framework\n (\n trap -- \"\u003ccleanup-logic\u003e\" EXIT\n \n \u003csetup-logic\u003e\n test\n )",
+      "range": {
+        "startLine": 53,
+        "startChar": 4,
+        "endLine": 57,
+        "endChar": 38
+      },
+      "revId": "d8b814e5570c4751ece9fd2e188ff230e2506b65",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "89d81072_7f7ff017",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-11-25T21:39:53Z",
+      "side": 1,
+      "message": "(suggest) \"$rbh_find\" \"$find_mongo_URI\" -size 1M | sort | diff - \u003c(printf \u0027%s\\n\u0027 / fileA fileB fileC)\n\nIf you want to abstract something:\n\n function difflines\n {\n     diff - \u003c(printf \u0027%s\\n\u0027 \"$@\")\n }\n\n \"$rbh_find\" \"$find_mongo_URI\" -size 1M | sort | difflines / fileA fileB fileC\n\n(note that this requires you sort the lines yourself when passing them as arguments to difflines, but it makes difflines usable with non-sorted inputs, which I find nice)\n\nAlso, consider using diff\u0027s `-u` or `-y` options.",
+      "range": {
+        "startLine": 59,
+        "startChar": 4,
+        "endLine": 60,
+        "endChar": 55
+      },
+      "revId": "d8b814e5570c4751ece9fd2e188ff230e2506b65",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "19be8065_6a4164ac",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 2
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-11-25T21:39:53Z",
+      "side": 1,
+      "message": "(style) quotes (I\u0027m not going to point out every place where quotes are missing, consider using shellcheck [0] for this)\n\n[0] https://github.com/koalaman/shellcheck",
+      "revId": "d8b814e5570c4751ece9fd2e188ff230e2506b65",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3ef9877b_20469a7a",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 2
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-11-25T21:39:53Z",
+      "side": 1,
+      "message": "(minor) Eh, why not?\n\nI would argue that mktemp(1) has some logic which accounts for collisions which this strategy is missing. Probably not going to matter in 99.99..% of cases, but still. If what you need is a unique/random database name to put test data in, you could/should have a function that does just that.",
+      "range": {
+        "startLine": 72,
+        "startChar": 25,
+        "endLine": 72,
+        "endChar": 35
+      },
+      "revId": "d8b814e5570c4751ece9fd2e188ff230e2506b65",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "07392526_0239016e",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-11-25T21:39:53Z",
+      "side": 1,
+      "message": "(minor) Did you check whether your exit trap was actually run?\n\nI suspect that it doesn\u0027t and that you would have to run each test in a subshell for it to work:\n\n (test_size_simple)\n (test_size_with_branch)",
+      "revId": "d8b814e5570c4751ece9fd2e188ff230e2506b65",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a22386f0_8da0b54b",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 2
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-11-25T21:39:53Z",
+      "side": 1,
+      "message": "Do you foresee any reason for mongo backend branches to handle -size in a meaningfully different way that non-branch backends?\n\nI would have expected tests for \u003csize\u003e, +\u003csize\u003e, -\u003csize\u003e, all the units, weird cases (like the one Dominique described), 0...",
+      "revId": "d8b814e5570c4751ece9fd2e188ff230e2506b65",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9c651df9_982bbafc",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 2
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-11-25T21:39:53Z",
+      "side": 1,
+      "message": "(major) That\u0027s not a good sign. Either there not trap registered at this point and this line does nothing, or there is a trap registered at this point, and you probably don\u0027t want to discard it.",
+      "revId": "d8b814e5570c4751ece9fd2e188ff230e2506b65",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
