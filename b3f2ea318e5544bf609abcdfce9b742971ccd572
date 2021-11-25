@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5e02a428_1bbdca57",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-11-25T08:08:28Z",
+      "side": 1,
+      "message": "nit: based on",
+      "range": {
+        "startLine": 15,
+        "startChar": 54,
+        "endLine": 15,
+        "endChar": 63
+      },
+      "revId": "b3f2ea318e5544bf609abcdfce9b742971ccd572",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3c71a544_dbe8ca9e",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-11-25T08:08:28Z",
+      "side": 1,
+      "message": "minor: one too many",
+      "range": {
+        "startLine": 59,
+        "startChar": 69,
+        "endLine": 59,
+        "endChar": 71
+      },
+      "revId": "b3f2ea318e5544bf609abcdfce9b742971ccd572",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "de7b9f32_eaa5b245",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-11-25T08:08:28Z",
+      "side": 1,
+      "message": "suggest: wouldn\u0027t the reverse make more sense ? Find all entries in demo where the xattr is not trusted.toto ?",
+      "range": {
+        "startLine": 66,
+        "startChar": 28,
+        "endLine": 66,
+        "endChar": 39
+      },
+      "revId": "b3f2ea318e5544bf609abcdfce9b742971ccd572",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "55cb7b62_0b7b1793",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-11-25T08:08:28Z",
+      "side": 1,
+      "message": "suggest: exists and verifies",
+      "range": {
+        "startLine": 71,
+        "startChar": 47,
+        "endLine": 71,
+        "endChar": 70
+      },
+      "revId": "b3f2ea318e5544bf609abcdfce9b742971ccd572",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3626dcd2_20856179",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-11-25T08:08:28Z",
+      "side": 1,
+      "message": "minor: idem",
+      "range": {
+        "startLine": 78,
+        "startChar": 8,
+        "endLine": 78,
+        "endChar": 10
+      },
+      "revId": "b3f2ea318e5544bf609abcdfce9b742971ccd572",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e53780a7_095f6b7d",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-11-25T08:08:28Z",
+      "side": 1,
+      "message": "minor: idem",
+      "range": {
+        "startLine": 84,
+        "startChar": 15,
+        "endLine": 84,
+        "endChar": 17
+      },
+      "revId": "b3f2ea318e5544bf609abcdfce9b742971ccd572",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7e81f2dc_f355eb3c",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-11-25T08:08:28Z",
+      "side": 1,
+      "message": "minor: if its",
+      "range": {
+        "startLine": 110,
+        "startChar": 36,
+        "endLine": 110,
+        "endChar": 39
+      },
+      "revId": "b3f2ea318e5544bf609abcdfce9b742971ccd572",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
