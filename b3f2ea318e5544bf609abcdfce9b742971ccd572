@@ -93,6 +93,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "74585cea_189f9ce3",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-11-25T15:12:20Z",
+      "side": 1,
+      "message": "After talking, ACK.",
+      "parentUuid": "de7b9f32_eaa5b245",
+      "range": {
+        "startLine": 66,
+        "startChar": 28,
+        "endLine": 66,
+        "endChar": 39
+      },
+      "revId": "b3f2ea318e5544bf609abcdfce9b742971ccd572",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "55cb7b62_0b7b1793",
