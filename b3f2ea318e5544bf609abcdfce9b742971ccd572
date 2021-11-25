@@ -43,6 +43,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "74be9863_d8ab56e0",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-11-25T22:08:47Z",
+      "side": 1,
+      "message": "(ci) ./doc/adr/xattrs.rst:34: (WARNING/2) Blank line required after table.\n\n(me) I should translate this into robot comments so it gets published automatically... 🤓",
+      "revId": "b3f2ea318e5544bf609abcdfce9b742971ccd572",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3c71a544_dbe8ca9e",
         "filename": "doc/adr/xattrs.rst",
         "patchSetId": 1
