@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ef888823_f9bcf49d",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-11-26T15:29:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5748abd7_61baf32f",
+      "revId": "d8b814e5570c4751ece9fd2e188ff230e2506b65",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "52243661_48fdab82",
@@ -31,6 +49,24 @@
       "writtenOn": "2021-11-25T21:39:53Z",
       "side": 1,
       "message": "(style) Rather than put the path of rbh-find in a variable, how about using a function?\n\n [[ -x ./rbh-find ]] \u0026\u0026 function rbh_find\n {\n     ./rbh-find \"$@\"\n } || function rbh_find\n {\n     rbh-find \"$@\"\n }\n\nOr, maybe more elegantly, you could use $PATH to get rid of the conditional:\n\n __rbh_find\u003d\"$(PATH\u003d\"$PWD:$PATH\" which rbh-find)\"\n function rbh_find()\n {\n     \"$__rbh_find\" \"$@\"\n }\n\nA good argument for not using \"./rbh-find\" is that it is PWD-dependent. Might work in one test, but not in another which calls `cd ...`.",
+      "revId": "d8b814e5570c4751ece9fd2e188ff230e2506b65",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "735a99f6_7e5f504d",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-11-26T15:29:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "52243661_48fdab82",
       "revId": "d8b814e5570c4751ece9fd2e188ff230e2506b65",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -52,6 +88,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7c2f7ac3_65ec94c4",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-11-26T15:29:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3eca2995_d6250589",
+      "revId": "d8b814e5570c4751ece9fd2e188ff230e2506b65",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2cf4e0b1_9adf0e18",
@@ -69,6 +123,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0d35c791_867d85d7",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-11-26T15:29:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2cf4e0b1_9adf0e18",
+      "revId": "d8b814e5570c4751ece9fd2e188ff230e2506b65",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "911d70eb_85131d7f",
@@ -82,6 +154,30 @@
       "writtenOn": "2021-11-25T21:39:53Z",
       "side": 1,
       "message": "(style) you could shift one line above:\n\nlocal output\u003d\"$1\"\nshift\nlocal -i expected_line_count\u003d$#",
+      "range": {
+        "startLine": 27,
+        "startChar": 18,
+        "endLine": 27,
+        "endChar": 29
+      },
+      "revId": "d8b814e5570c4751ece9fd2e188ff230e2506b65",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8e39f682_dbe91d4b",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-11-26T15:29:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "911d70eb_85131d7f",
       "range": {
         "startLine": 27,
         "startChar": 18,
@@ -115,6 +211,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "90f401bf_93b8f274",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-11-26T15:29:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "18d430c8_48c1d3e2",
+      "range": {
+        "startLine": 35,
+        "startChar": 9,
+        "endLine": 35,
+        "endChar": 11
+      },
+      "revId": "d8b814e5570c4751ece9fd2e188ff230e2506b65",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "da8f1dfb_fe7320bc",
@@ -128,6 +248,30 @@
       "writtenOn": "2021-11-25T21:39:53Z",
       "side": 1,
       "message": "Did you consider using diff(1) instead?",
+      "range": {
+        "startLine": 30,
+        "startChar": 4,
+        "endLine": 43,
+        "endChar": 8
+      },
+      "revId": "d8b814e5570c4751ece9fd2e188ff230e2506b65",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8db9b630_78014214",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-11-26T15:29:05Z",
+      "side": 1,
+      "message": "I did not, I should have...",
+      "parentUuid": "da8f1dfb_fe7320bc",
       "range": {
         "startLine": 30,
         "startChar": 4,
@@ -161,6 +305,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8213a281_2ad185cb",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-11-26T15:29:05Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "6c550607_55782620",
+      "range": {
+        "startLine": 49,
+        "startChar": 10,
+        "endLine": 49,
+        "endChar": 19
+      },
+      "revId": "d8b814e5570c4751ece9fd2e188ff230e2506b65",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7e20c22d_9b7ef41a",
@@ -174,6 +342,30 @@
       "writtenOn": "2021-11-25T21:39:53Z",
       "side": 1,
       "message": "(minor) Let\u0027s not mix \"setup\" and \"test\" logic.\n\nA nice test (in pseudo-python:\n\n with setup():\n     expected \u003d ...\n     actual \u003d ...\n\n     expected \u003d\u003d actual\n\nIn bash:\n\n function test()\n {\n     local expected\u003d...\n     local actual\u003d...\n\n     [[ expected \u003d\u003d actual ]]\n }\n\n # Ideally, this is handled by a test framework\n (\n trap -- \"\u003ccleanup-logic\u003e\" EXIT\n \n \u003csetup-logic\u003e\n test\n )",
+      "range": {
+        "startLine": 53,
+        "startChar": 4,
+        "endLine": 57,
+        "endChar": 38
+      },
+      "revId": "d8b814e5570c4751ece9fd2e188ff230e2506b65",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2b3eb99f_1230a1a5",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-11-26T15:29:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7e20c22d_9b7ef41a",
       "range": {
         "startLine": 53,
         "startChar": 4,
@@ -207,6 +399,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9c20a5fa_fbb955e8",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-11-26T15:29:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "89d81072_7f7ff017",
+      "range": {
+        "startLine": 59,
+        "startChar": 4,
+        "endLine": 60,
+        "endChar": 55
+      },
+      "revId": "d8b814e5570c4751ece9fd2e188ff230e2506b65",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "19be8065_6a4164ac",
@@ -220,6 +436,24 @@
       "writtenOn": "2021-11-25T21:39:53Z",
       "side": 1,
       "message": "(style) quotes (I\u0027m not going to point out every place where quotes are missing, consider using shellcheck [0] for this)\n\n[0] https://github.com/koalaman/shellcheck",
+      "revId": "d8b814e5570c4751ece9fd2e188ff230e2506b65",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5f3d19ed_c1f6e2c3",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 2
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-11-26T15:29:05Z",
+      "side": 1,
+      "message": "Shellcheck does not say anything to me here, but okay, I can add quotes",
+      "parentUuid": "19be8065_6a4164ac",
       "revId": "d8b814e5570c4751ece9fd2e188ff230e2506b65",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -247,6 +481,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c43413c8_64ae5fac",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 2
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-11-26T15:29:05Z",
+      "side": 1,
+      "message": "We could technically have a collision indeed, but the chance is so low that I do not want to bother generating a random name, check the current state of MongoDB, get each db name, compare them to the random name, and using it if not. If someone wants to do it, have a go 😊",
+      "parentUuid": "3ef9877b_20469a7a",
+      "range": {
+        "startLine": 72,
+        "startChar": 25,
+        "endLine": 72,
+        "endChar": 35
+      },
+      "revId": "d8b814e5570c4751ece9fd2e188ff230e2506b65",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "07392526_0239016e",
@@ -260,6 +518,24 @@
       "writtenOn": "2021-11-25T21:39:53Z",
       "side": 1,
       "message": "(minor) Did you check whether your exit trap was actually run?\n\nI suspect that it doesn\u0027t and that you would have to run each test in a subshell for it to work:\n\n (test_size_simple)\n (test_size_with_branch)",
+      "revId": "d8b814e5570c4751ece9fd2e188ff230e2506b65",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6d5f6d2e_e38ef517",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-11-26T15:29:05Z",
+      "side": 1,
+      "message": "Yes it is actually run, if an error occurs, the set -e will exit the program, and thus trigger the trap.",
+      "parentUuid": "07392526_0239016e",
       "revId": "d8b814e5570c4751ece9fd2e188ff230e2506b65",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -281,6 +557,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a1172311_fd959e40",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 2
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-11-26T15:29:05Z",
+      "side": 1,
+      "message": "I do not see any reason it should be different, which is why I\u0027m testing the same things, to verify there\u0027s no difference.\nRegarding the tests, 0 doesn\u0027t work properly because we don\u0027t accept it in rbh-find (which is different from find\u0027s behaviour, so I\u0027ll fix that later). As for the units, it is harder to do generically because of the root, and I can\u0027t see any way to do it nicely",
+      "parentUuid": "a22386f0_8da0b54b",
+      "revId": "d8b814e5570c4751ece9fd2e188ff230e2506b65",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9c651df9_982bbafc",
@@ -294,6 +588,24 @@
       "writtenOn": "2021-11-25T21:39:53Z",
       "side": 1,
       "message": "(major) That\u0027s not a good sign. Either there not trap registered at this point and this line does nothing, or there is a trap registered at this point, and you probably don\u0027t want to discard it.",
+      "revId": "d8b814e5570c4751ece9fd2e188ff230e2506b65",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f8100be4_04bcbd83",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 2
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-11-26T15:29:05Z",
+      "side": 1,
+      "message": "In a way, there is a trap still registered, but it shouldn\u0027t have any effect as all everything\u0027s cleaned up after each test. It is just a way to remove the trap, even though it wouldn\u0027t do much anyway",
+      "parentUuid": "9c651df9_982bbafc",
       "revId": "d8b814e5570c4751ece9fd2e188ff230e2506b65",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }

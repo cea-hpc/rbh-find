@@ -112,6 +112,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cd59d946_08d0b4be",
+        "filename": "tests/meson.build",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-11-26T15:29:05Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "5e028a5d_bce82f9a",
+      "range": {
+        "startLine": 14,
+        "startChar": 20,
+        "endLine": 14,
+        "endChar": 46
+      },
+      "revId": "672ecc6fb7a066f987fc4a88975b80082f28d2ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c8c437c5_b44e29d4",
@@ -220,6 +244,30 @@
       "side": 1,
       "message": "\u003e No because echo adds a newline no matter what\n\nNo, echo does not add a newline no matter what:\n\n $ echo -n 3 | wc -l\n 0\n\nUnlike heredocs, which I find quite unfortunate:\n\n $ wc -l \u003c\u003c\u003c \"\"\n 1",
       "parentUuid": "94ea04e8_10b1e145",
+      "range": {
+        "startLine": 21,
+        "startChar": 45,
+        "endLine": 21,
+        "endChar": 56
+      },
+      "revId": "672ecc6fb7a066f987fc4a88975b80082f28d2ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "90df3f8a_3c19fa6d",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-11-26T15:29:05Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "dfab81f7_4a4c0b07",
       "range": {
         "startLine": 21,
         "startChar": 45,
