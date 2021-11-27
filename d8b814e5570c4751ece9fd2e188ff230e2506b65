@@ -458,6 +458,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9f362a83_a985adb4",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 2
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-11-27T10:11:40Z",
+      "side": 1,
+      "message": "Looks like you are right and there is indeed no risk not to quote the right value of an assignment.",
+      "parentUuid": "5f3d19ed_c1f6e2c3",
+      "revId": "d8b814e5570c4751ece9fd2e188ff230e2506b65",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3ef9877b_20469a7a",
@@ -495,6 +513,30 @@
       "side": 1,
       "message": "We could technically have a collision indeed, but the chance is so low that I do not want to bother generating a random name, check the current state of MongoDB, get each db name, compare them to the random name, and using it if not. If someone wants to do it, have a go 😊",
       "parentUuid": "3ef9877b_20469a7a",
+      "range": {
+        "startLine": 72,
+        "startChar": 25,
+        "endLine": 72,
+        "endChar": 35
+      },
+      "revId": "d8b814e5570c4751ece9fd2e188ff230e2506b65",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6bc46ee0_d762a4aa",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 2
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-11-27T10:11:40Z",
+      "side": 1,
+      "message": "Fair enough",
+      "parentUuid": "c43413c8_64ae5fac",
       "range": {
         "startLine": 72,
         "startChar": 25,
