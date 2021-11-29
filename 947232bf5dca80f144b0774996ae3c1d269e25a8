@@ -16,6 +16,24 @@
       "message": "Here is what I have in mind:\n\n #!/usr/bin/env bash\n\n # This file is part of the RobinHood Library\n # Copyright (C) 2021 Commissariat a l\u0027energie atomique et aux energies\n #                    alternatives\n #\n # SPDX-License-Identifer: LGPL-3.0-or-later\n\n set -e\n\n if ! command -v rbh-sync \u0026\u003e /dev/null; then\n     echo \"This test requires rbh-sync to be installed\" \u003e\u00262\n     exit 1\n fi\n\n ################################################################################\n #                                  UTILITIES                                   #\n ################################################################################\n\n SUITE\u003d${BASH_SOURCE##*/}\n SUITE\u003d${SUITE%.*}\n\n __rbh_find\u003d$(PATH\u003d\"$PWD:$PATH\" which rbh-find)\n rbh_find()\n {\n     \"$__rbh_find\" \"$@\"\n }\n\n __mongosh\u003d$(which mongosh || which mongo)\n mongosh()\n {\n     \"$__mongosh\" \"$@\"\n }\n\n setup()\n {\n     # Create a test directory and `cd` into it\n     testdir\u003d$SUITE-$test\n     mkdir \"$testdir\"\n     cd \"$testdir\"\n\n     # \"Create\" a test database\n     testdb\u003d$SUITE-$test\n }\n\n teardown()\n {\n     mongosh --quiet \"$testdb\" --eval \"db.dropDatabase()\" \u003e/dev/null\n     rm -rf \"$testdir\"\n }\n\n difflines()\n {\n     diff -y - \u003c(printf \u0027%s\\n\u0027 \"$@\")\n }\n\n ################################################################################\n #                                    TESTS                                     #\n ################################################################################\n\n test_equal_1K()\n {\n     touch \"empty\"\n     truncate --size 1K \"1K\"\n     truncate --size 1025 \"1K+1\"\n     rbh-sync \"rbh:posix:.\" \"rbh:mongo:$testdb\"\n\n     rbh_find \"rbh:mongo:$testdb\" -size 1k | sort |\n         difflines \"/\" \"/1K\"\n }\n\n test_equal_1M()\n {\n     touch \"empty\"\n     truncate --size 1M \"1M\"\n     truncate --size $((1024 * 1024 + 1)) \"1M+1\"\n     rbh-sync \"rbh:posix:.\" \"rbh:mongo:$testdb\"\n\n     rbh_find \"rbh:mongo:$testdb\" -size 1M | sort |\n         difflines \"/\" \"/1M\"\n }\n\n ################################################################################\n #                                     MAIN                                     #\n ################################################################################\n\n declare -a tests\u003d(test_equal_1K test_equal_1M)\n\n tmpdir\u003d$(mktemp --directory)\n trap -- \"rm -rf \u0027$tmpdir\u0027\" EXIT\n cd \"$tmpdir\"\n\n for test in \"${tests[@]}\"; do\n     (\n     trap -- \"teardown\" EXIT\n     setup\n\n     (\"$test\") \u0026\u0026 echo \"$test: ✔\" || echo \"$test: ✖\"\n     )\n done\n\nI did not implement all the tests you did, and the ones I wrote you can likely improve, but I think this bit of framework should make it easier to write and maintain more tests.\n\nThe output (for an edited version of test_equal_1M) looks like this:\n\n $ bash tests/test_size.bash\n /\t\t\t\t\t\t\t\t/\n /1K\t\t\t\t\t\t\t\t/1K\n test_equal_1K: ✔\n /\t\t\t\t\t\t\t\t/\n /1M\t\t\t\t\t\t\t\t/1M\n \t\t\t\t\t\t\t      \u003e\t/empty\n test_equal_1M: ✖",
       "revId": "947232bf5dca80f144b0774996ae3c1d269e25a8",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e69e810e_6693e31f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-11-29T11:36:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8ba57805_c3159036",
+      "revId": "947232bf5dca80f144b0774996ae3c1d269e25a8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
