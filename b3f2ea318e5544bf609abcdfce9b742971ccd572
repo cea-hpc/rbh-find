@@ -41,6 +41,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0d2bbb04_345a4b01",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2021-11-29T11:15:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5e02a428_1bbdca57",
+      "range": {
+        "startLine": 15,
+        "startChar": 54,
+        "endLine": 15,
+        "endChar": 63
+      },
+      "revId": "b3f2ea318e5544bf609abcdfce9b742971ccd572",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "74be9863_d8ab56e0",
@@ -54,6 +78,24 @@
       "writtenOn": "2021-11-25T22:08:47Z",
       "side": 1,
       "message": "(ci) ./doc/adr/xattrs.rst:34: (WARNING/2) Blank line required after table.\n\n(me) I should translate this into robot comments so it gets published automatically... 🤓",
+      "revId": "b3f2ea318e5544bf609abcdfce9b742971ccd572",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a959d906_6338067d",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2021-11-29T11:15:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "74be9863_d8ab56e0",
       "revId": "b3f2ea318e5544bf609abcdfce9b742971ccd572",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -83,6 +125,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d9f6e082_d2be8ed1",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2021-11-29T11:15:48Z",
+      "side": 1,
+      "message": "The double \u0027:\u0027 is to declare the code block that follows.",
+      "parentUuid": "3c71a544_dbe8ca9e",
+      "range": {
+        "startLine": 59,
+        "startChar": 69,
+        "endLine": 59,
+        "endChar": 71
+      },
+      "revId": "b3f2ea318e5544bf609abcdfce9b742971ccd572",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "dafec93c_61341abb",
         "filename": "doc/adr/xattrs.rst",
         "patchSetId": 1
@@ -94,6 +160,30 @@
       "writtenOn": "2021-11-25T08:22:22Z",
       "side": 1,
       "message": "typo: do",
+      "range": {
+        "startLine": 63,
+        "startChar": 67,
+        "endLine": 63,
+        "endChar": 71
+      },
+      "revId": "b3f2ea318e5544bf609abcdfce9b742971ccd572",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8c2949c7_39d2795b",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2021-11-29T11:15:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dafec93c_61341abb",
       "range": {
         "startLine": 63,
         "startChar": 67,
@@ -175,6 +265,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "891204cc_c4b8e819",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2021-11-29T11:15:48Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "8b3f45bd_f99ed94a",
+      "range": {
+        "startLine": 66,
+        "startChar": 28,
+        "endLine": 66,
+        "endChar": 39
+      },
+      "revId": "b3f2ea318e5544bf609abcdfce9b742971ccd572",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "55cb7b62_0b7b1793",
@@ -188,6 +302,30 @@
       "writtenOn": "2021-11-25T08:08:28Z",
       "side": 1,
       "message": "suggest: exists and verifies",
+      "range": {
+        "startLine": 71,
+        "startChar": 47,
+        "endLine": 71,
+        "endChar": 70
+      },
+      "revId": "b3f2ea318e5544bf609abcdfce9b742971ccd572",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5837a7ec_ff418699",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2021-11-29T11:15:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "55cb7b62_0b7b1793",
       "range": {
         "startLine": 71,
         "startChar": 47,
@@ -223,6 +361,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ed59f14d_a3746527",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2021-11-29T11:15:48Z",
+      "side": 1,
+      "message": "cf above",
+      "parentUuid": "3626dcd2_20856179",
+      "range": {
+        "startLine": 78,
+        "startChar": 8,
+        "endLine": 78,
+        "endChar": 10
+      },
+      "revId": "b3f2ea318e5544bf609abcdfce9b742971ccd572",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e53780a7_095f6b7d",
         "filename": "doc/adr/xattrs.rst",
         "patchSetId": 1
@@ -234,6 +396,30 @@
       "writtenOn": "2021-11-25T08:08:28Z",
       "side": 1,
       "message": "minor: idem",
+      "range": {
+        "startLine": 84,
+        "startChar": 15,
+        "endLine": 84,
+        "endChar": 17
+      },
+      "revId": "b3f2ea318e5544bf609abcdfce9b742971ccd572",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "98ca54ff_4c0c6a65",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2021-11-29T11:15:48Z",
+      "side": 1,
+      "message": "cf above",
+      "parentUuid": "e53780a7_095f6b7d",
       "range": {
         "startLine": 84,
         "startChar": 15,
@@ -269,6 +455,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "203c2e52_bef921c7",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2021-11-29T11:15:48Z",
+      "side": 1,
+      "message": "Those examples directly follow the note that says attribute names can contain \u0027\u003d\u0027 or \u0027\u003c\u0027 characters, and so the seconde syntax should be used.",
+      "parentUuid": "b3483443_4daa3460",
+      "range": {
+        "startLine": 86,
+        "startChar": 45,
+        "endLine": 86,
+        "endChar": 46
+      },
+      "revId": "b3f2ea318e5544bf609abcdfce9b742971ccd572",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "7e81f2dc_f355eb3c",
         "filename": "doc/adr/xattrs.rst",
         "patchSetId": 1
@@ -280,6 +490,30 @@
       "writtenOn": "2021-11-25T08:08:28Z",
       "side": 1,
       "message": "minor: if its",
+      "range": {
+        "startLine": 110,
+        "startChar": 36,
+        "endLine": 110,
+        "endChar": 39
+      },
+      "revId": "b3f2ea318e5544bf609abcdfce9b742971ccd572",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "05d63abf_5a40105b",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2021-11-29T11:15:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7e81f2dc_f355eb3c",
       "range": {
         "startLine": 110,
         "startChar": 36,
