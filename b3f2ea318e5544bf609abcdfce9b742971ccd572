@@ -477,6 +477,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6155b149_3a76b0ea",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-11-29T11:26:45Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "203c2e52_bef921c7",
+      "range": {
+        "startLine": 86,
+        "startChar": 45,
+        "endLine": 86,
+        "endChar": 46
+      },
+      "revId": "b3f2ea318e5544bf609abcdfce9b742971ccd572",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7e81f2dc_f355eb3c",
