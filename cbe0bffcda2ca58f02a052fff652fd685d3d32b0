@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b980f953_3db6cb72",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 4
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-11-29T15:45:49Z",
+      "side": 1,
+      "message": "question: is this option really useful here?",
+      "range": {
+        "startLine": 54,
+        "startChar": 9,
+        "endLine": 54,
+        "endChar": 12
+      },
+      "revId": "cbe0bffcda2ca58f02a052fff652fd685d3d32b0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "89eae449_42d4939b",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 4
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-11-29T15:45:49Z",
+      "side": 1,
+      "message": "style: since you\u0027ve quoted all the names, this one should be too",
+      "range": {
+        "startLine": 135,
+        "startChar": 27,
+        "endLine": 135,
+        "endChar": 31
+      },
+      "revId": "cbe0bffcda2ca58f02a052fff652fd685d3d32b0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a95467cb_45f803a9",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 4
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2021-11-29T15:45:49Z",
+      "side": 1,
+      "message": "suggest: you could maybe add a valid file in $PWD to make sure that it\u0027s not seen by rbh-fund.",
+      "range": {
+        "startLine": 144,
+        "startChar": 4,
+        "endLine": 147,
+        "endChar": 35
+      },
+      "revId": "cbe0bffcda2ca58f02a052fff652fd685d3d32b0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
