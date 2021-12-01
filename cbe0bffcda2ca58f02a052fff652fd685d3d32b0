@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3999d4c9_f98d6602",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 4
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-12-01T10:36:20Z",
+      "side": 1,
+      "message": "It\u0027s just more beautiful, and that\u0027s mighty important.",
+      "parentUuid": "b980f953_3db6cb72",
+      "range": {
+        "startLine": 54,
+        "startChar": 9,
+        "endLine": 54,
+        "endChar": 12
+      },
+      "revId": "cbe0bffcda2ca58f02a052fff652fd685d3d32b0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "89eae449_42d4939b",
@@ -47,6 +71,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a7126204_f05179ac",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 4
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-12-01T10:36:20Z",
+      "side": 1,
+      "message": "True, true.",
+      "parentUuid": "89eae449_42d4939b",
+      "range": {
+        "startLine": 135,
+        "startChar": 27,
+        "endLine": 135,
+        "endChar": 31
+      },
+      "revId": "cbe0bffcda2ca58f02a052fff652fd685d3d32b0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a95467cb_45f803a9",
@@ -60,6 +108,30 @@
       "writtenOn": "2021-11-29T15:45:49Z",
       "side": 1,
       "message": "suggest: you could maybe add a valid file in $PWD to make sure that it\u0027s not seen by rbh-fund.",
+      "range": {
+        "startLine": 144,
+        "startChar": 4,
+        "endLine": 147,
+        "endChar": 35
+      },
+      "revId": "cbe0bffcda2ca58f02a052fff652fd685d3d32b0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8735e50d_1ab3d870",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 4
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-12-01T10:36:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a95467cb_45f803a9",
       "range": {
         "startLine": 144,
         "startChar": 4,
