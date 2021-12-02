@@ -618,7 +618,6 @@ struct rbh_filter *
 xattr2filter(const char *xattr_field)
 {
     struct rbh_filter_field field = predicate2filter_field[PRED_XATTR];
-    enum rbh_filter_operator operator = RBH_FOP_EXISTS;
     struct rbh_filter *filter;
 
     if (xattr_field == NULL)
@@ -627,7 +626,7 @@ xattr2filter(const char *xattr_field)
 
     field.xattr = xattr_field;
 
-    filter = rbh_filter_compare_exists_new(operator, &field);
+    filter = rbh_filter_compare_exists_new(&field);
     if (filter == NULL)
         error_at_line(EXIT_FAILURE, errno, __FILE__, __LINE__,
                       "filter_compare_exists_new");
