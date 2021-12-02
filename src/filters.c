@@ -46,6 +46,7 @@ static const struct rbh_filter_field predicate2filter_field[] = {
     [PRED_TYPE]     = {.fsentry = RBH_FP_STATX, .statx = RBH_STATX_TYPE},
     [PRED_SIZE]     = {.fsentry = RBH_FP_STATX, .statx = RBH_STATX_SIZE},
     [PRED_PERM]     = {.fsentry = RBH_FP_STATX, .statx = RBH_STATX_MODE},
+    [PRED_XATTR]    = {.fsentry = RBH_FP_INODE_XATTRS},
 };
 
 struct rbh_filter *
@@ -609,6 +610,26 @@ mode2filter(const char *_input)
     if (filter == NULL)
         error_at_line(EXIT_FAILURE, errno, __FILE__, __LINE__,
                       "filter_compare_uint32_new");
+
+    return filter;
+}
+
+struct rbh_filter *
+xattr2filter(const char *xattr_field)
+{
+    struct rbh_filter_field field = predicate2filter_field[PRED_XATTR];
+    struct rbh_filter *filter;
+
+    if (xattr_field == NULL)
+        error(EX_USAGE, 0,
+              "arguments to -xattr should contain at least one xattr or predicate");
+
+    field.xattr = xattr_field;
+
+    filter = rbh_filter_compare_exists_new(&field);
+    if (filter == NULL)
+        error_at_line(EXIT_FAILURE, errno, __FILE__, __LINE__,
+                      "filter_compare_exists_new");
 
     return filter;
 }
