@@ -369,7 +369,7 @@ str2predicate(const char *string)
                 return PRED_XATTR;
             break;
         case 't':
-            if (strcmp(&string[3], "type") == 0)
+            if (strcmp(&string[3], "ype") == 0)
                 return PRED_XTYPE;
             break;
         }
