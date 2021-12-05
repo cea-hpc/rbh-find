@@ -1,0 +1,199 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "00836887_eb63d343",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-12-05T21:16:06Z",
+      "side": 1,
+      "message": "(defect) This is missing a _lot_ of context. Please consider including:\n\n- why `-xattr` is an important option to add to rbh-find\n- which challenges arise when trying to implement it\n- what the option(s) to solve these challenges is(/are)\n- if there are more than one option, why we choose the one we choose\n\nADRs are not meant to document how a feature works, there are meant to describe why a feature was implemented the way it was implemented.",
+      "revId": "14ece37d01150ce22c601f33f4fd60b9b270b508",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5541f075_7e006120",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-12-05T21:16:06Z",
+      "side": 1,
+      "message": "(major) Architecture Decision Record?\n\nhttps://github.com/cea-hpc/robinhood/tree/v4/doc/adr",
+      "range": {
+        "startLine": 11,
+        "startChar": 37,
+        "endLine": 11,
+        "endChar": 62
+      },
+      "revId": "14ece37d01150ce22c601f33f4fd60b9b270b508",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "70dc0f44_ee8d0b72",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-12-05T21:16:06Z",
+      "side": 1,
+      "message": "(minor) I would not write that down. The first implementation should fit what is described in this document.",
+      "range": {
+        "startLine": 11,
+        "startChar": 63,
+        "endLine": 12,
+        "endChar": 65
+      },
+      "revId": "14ece37d01150ce22c601f33f4fd60b9b270b508",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b5933259_97d2f633",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-12-05T21:16:06Z",
+      "side": 1,
+      "message": "(typo) usage / semantics",
+      "range": {
+        "startLine": 14,
+        "startChar": 45,
+        "endLine": 14,
+        "endChar": 56
+      },
+      "revId": "14ece37d01150ce22c601f33f4fd60b9b270b508",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e6ec0408_7e8bf81b",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-12-05T21:16:06Z",
+      "side": 1,
+      "message": "What does \"stored as a string\" mean?",
+      "range": {
+        "startLine": 21,
+        "startChar": 37,
+        "endLine": 21,
+        "endChar": 55
+      },
+      "revId": "14ece37d01150ce22c601f33f4fd60b9b270b508",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "62111c1f_614acd30",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-12-05T21:16:06Z",
+      "side": 1,
+      "message": "This sentence is missing some context. Is this about parsing extended attributes from the command-line?",
+      "range": {
+        "startLine": 37,
+        "startChar": 41,
+        "endLine": 38,
+        "endChar": 32
+      },
+      "revId": "14ece37d01150ce22c601f33f4fd60b9b270b508",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "de766b23_2b2265ac",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-12-05T21:16:06Z",
+      "side": 1,
+      "message": "What does this mean?",
+      "range": {
+        "startLine": 38,
+        "startChar": 57,
+        "endLine": 39,
+        "endChar": 21
+      },
+      "revId": "14ece37d01150ce22c601f33f4fd60b9b270b508",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7c7e9936_fadcbbcb",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-12-05T21:16:06Z",
+      "side": 1,
+      "message": "(style) Double backticks to get monospaced style.\n\nYou can have a look at the rendered output using rst2html (from python-docutils).",
+      "range": {
+        "startLine": 62,
+        "startChar": 17,
+        "endLine": 62,
+        "endChar": 23
+      },
+      "revId": "14ece37d01150ce22c601f33f4fd60b9b270b508",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1973db9d_eed6d6b2",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-12-05T21:16:06Z",
+      "side": 1,
+      "message": "(minor) This is not how I am used to defining tables in reStructuredText, are you sure it displays as you expect?",
+      "revId": "14ece37d01150ce22c601f33f4fd60b9b270b508",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
