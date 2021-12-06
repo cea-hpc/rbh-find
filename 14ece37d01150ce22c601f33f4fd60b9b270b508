@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "05a7e4c1_8734c689",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2021-12-06T13:58:56Z",
+      "side": 1,
+      "message": "Okay for the lack of context, I will work on it.\n\nSo, it looks like this kind of document can be written once some parts of the implementation are done?",
+      "parentUuid": "00836887_eb63d343",
+      "revId": "14ece37d01150ce22c601f33f4fd60b9b270b508",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "5541f075_7e006120",
         "filename": "doc/adr/xattrs.rst",
         "patchSetId": 2
@@ -112,6 +130,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "95f33985_8a4d8107",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2021-12-06T13:58:56Z",
+      "side": 1,
+      "message": "It\u0027s a mistake, my bad. The description will be revised.",
+      "parentUuid": "e6ec0408_7e8bf81b",
+      "range": {
+        "startLine": 21,
+        "startChar": 37,
+        "endLine": 21,
+        "endChar": 55
+      },
+      "revId": "14ece37d01150ce22c601f33f4fd60b9b270b508",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "62111c1f_614acd30",
         "filename": "doc/adr/xattrs.rst",
         "patchSetId": 2
@@ -135,6 +177,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "4c13a4a4_7636f504",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2021-12-06T13:58:56Z",
+      "side": 1,
+      "message": "I get your point. I will move this sentence in a more adequate section and precise it.\n\nTo answer you, it is more about how xattrs were created. We do not control how users or other parties manage their xattrs (our main use case being Lustre).\n\nMaybe this is one of the reasons xattrs are stored in mongo as BinaryData? I think the main reason is because they may be binary.. Anyways, one of our most challenging job will be to use comparison operators to filter them as binary. For now, we saw two ways: the first one, filter them using mongo (but we do not see a way to convert BinaryData on the fly depending on the operator) ; the second one, retrieve them all from mongo, then select them after decoding their xattrs...\n\nI agree that parsing extended attributes from the command line is not an issue.",
+      "parentUuid": "62111c1f_614acd30",
+      "range": {
+        "startLine": 37,
+        "startChar": 41,
+        "endLine": 38,
+        "endChar": 32
+      },
+      "revId": "14ece37d01150ce22c601f33f4fd60b9b270b508",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "de766b23_2b2265ac",
         "filename": "doc/adr/xattrs.rst",
         "patchSetId": 2
@@ -146,6 +212,30 @@
       "writtenOn": "2021-12-05T21:16:06Z",
       "side": 1,
       "message": "What does this mean?",
+      "range": {
+        "startLine": 38,
+        "startChar": 57,
+        "endLine": 39,
+        "endChar": 21
+      },
+      "revId": "14ece37d01150ce22c601f33f4fd60b9b270b508",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7ffaacc2_2b0d922d",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2021-12-06T13:58:56Z",
+      "side": 1,
+      "message": "As explained in the previous comment, this just means that we do not control the syntax used for xattr values when they were set. We just know they are stored as BinaryData in our backend.",
+      "parentUuid": "de766b23_2b2265ac",
       "range": {
         "startLine": 38,
         "startChar": 57,
@@ -192,6 +282,24 @@
       "writtenOn": "2021-12-05T21:16:06Z",
       "side": 1,
       "message": "(minor) This is not how I am used to defining tables in reStructuredText, are you sure it displays as you expect?",
+      "revId": "14ece37d01150ce22c601f33f4fd60b9b270b508",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7132e705_e9645053",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2021-12-06T13:58:56Z",
+      "side": 1,
+      "message": "Yes :).",
+      "parentUuid": "1973db9d_eed6d6b2",
       "revId": "14ece37d01150ce22c601f33f4fd60b9b270b508",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
