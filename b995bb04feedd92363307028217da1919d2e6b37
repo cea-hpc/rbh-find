@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "869b8c36_c3df6940",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 5
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-12-06T09:15:54Z",
+      "side": 1,
+      "message": "Because the output is completely empty, and difflines can\u0027t check for that. If I do:\n```\n+ rbh_find \"rbh:mongo:$testdb\" -size +1k -size -1M | sort | difflines \"\"\n+ echo \"$?\"\n1\nrbh_find \"rbh:mongo:$testdb\" -size +1k -size -1M | sort | difflines\n+ echo \"$?\"\n1\n```",
+      "parentUuid": "e61b342c_2cad72fe",
+      "revId": "b995bb04feedd92363307028217da1919d2e6b37",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "63c4cc80_2aff01ec",
         "filename": "tests/test_size.bash",
         "patchSetId": 5
@@ -31,6 +49,24 @@
       "writtenOn": "2021-12-05T21:29:53Z",
       "side": 1,
       "message": "What is the difference between this test and test_plus_1k_minus_1M()?",
+      "revId": "b995bb04feedd92363307028217da1919d2e6b37",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6f184943_27a994a9",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 5
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-12-06T09:15:54Z",
+      "side": 1,
+      "message": "Test +1k -1M is supposed to match with nothing, as -1M ensures we only get empty files, and +1k ensures we get files bigger than 1k.\nMeanwhile, +1M -2G matches with anything bigger than 1M, and anything with size 1G or less, which can actually correspond to files.\n\nI just wanted to test that +1k -1M actually verify we don\u0027t match anything, and +1M -2G is a way to check two different filters that are not incompatible.",
+      "parentUuid": "63c4cc80_2aff01ec",
       "revId": "b995bb04feedd92363307028217da1919d2e6b37",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
