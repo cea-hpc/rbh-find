@@ -36,6 +36,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4257e36e_016a1843",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 5
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-12-06T10:00:39Z",
+      "side": 1,
+      "message": "After some tinkering, if we give the empty line or nothing to current difflines, it will still output the \u0027\\n\u0027 with nothing, and so we can\u0027t exactly check we got an empty line. The way to solve this if to add an if condition in the difflines function directly.",
+      "parentUuid": "869b8c36_c3df6940",
+      "revId": "b995bb04feedd92363307028217da1919d2e6b37",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "63c4cc80_2aff01ec",
