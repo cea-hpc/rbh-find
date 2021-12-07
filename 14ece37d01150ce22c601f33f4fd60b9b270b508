@@ -38,6 +38,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "3e60400a_b8cf3f01",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-12-07T20:14:07Z",
+      "side": 1,
+      "message": "\u003e So, it looks like this kind of document can be written once some parts of the implementation are done?\n\nThat is one way, yes. But you can also describe how you _plan_ on implementing something and leave the implementation for later.\n\nAt the very least, I would expect all ADRs to reflect how a feature was implemented when it was first merged. It\u0027s not great if they rot away, it would be better if they were updated as the implementation evolves but at least if they were accurate at some point in the git history, one has a chance to retrace the history of a feature from git messages (definitely not ideal though).\n\nIf you are looking to document how a feature works I would suggest writing a standalone `.rst` about it under `/doc`.\n\nA Request For Comments (RFC) on robinhood-devel is also an option, albeit maybe for a different purpose.",
+      "parentUuid": "05a7e4c1_8734c689",
+      "revId": "14ece37d01150ce22c601f33f4fd60b9b270b508",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "5541f075_7e006120",
         "filename": "doc/adr/xattrs.rst",
         "patchSetId": 2
@@ -201,6 +219,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "cc86f0bf_27d7f7de",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-12-07T20:14:07Z",
+      "side": 1,
+      "message": "\u003e Maybe this is one of the reasons xattrs are stored in mongo as BinaryData?\n\nxattrs are not _all_ stored as BinaryData in mongo. It is just that from the posix backend\u0027s perspective, xattrs have no format (because they are presented as raw binary data by the Linux syscalls) and I suppose that up until now you only ever filled a mongo backend using rbh-sync and a posix backend as the source.\n\nThis would not have to be case if we had a Lustre connector that can ingest Lustre changelog records and make assumption about the format of Lustre-specific xattrs.\n\nThe same thing could be achieved with `rbh-sync`, but we would need a Lustre posix backend. Which isn\u0027t necessarily more work.\n\nActually, there are a number of ways we could enrich xattrs on the fly from the posix backend (using a generic option to register parsers for specific xattr keys, a specific method attached to struct posix_backend which others backends could override, ...), we can discuss this further if it is of interest to you.",
+      "parentUuid": "4c13a4a4_7636f504",
+      "range": {
+        "startLine": 37,
+        "startChar": 41,
+        "endLine": 38,
+        "endChar": 32
+      },
+      "revId": "14ece37d01150ce22c601f33f4fd60b9b270b508",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "de766b23_2b2265ac",
         "filename": "doc/adr/xattrs.rst",
         "patchSetId": 2
@@ -236,6 +278,30 @@
       "side": 1,
       "message": "As explained in the previous comment, this just means that we do not control the syntax used for xattr values when they were set. We just know they are stored as BinaryData in our backend.",
       "parentUuid": "de766b23_2b2265ac",
+      "range": {
+        "startLine": 38,
+        "startChar": 57,
+        "endLine": 39,
+        "endChar": 21
+      },
+      "revId": "14ece37d01150ce22c601f33f4fd60b9b270b508",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "514f5c43_45049d18",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-12-07T20:14:07Z",
+      "side": 1,
+      "message": "Well then that is inaccurate, every xattr has a type, it is just that the default is not as useful as you might like.",
+      "parentUuid": "7ffaacc2_2b0d922d",
       "range": {
         "startLine": 38,
         "startChar": 57,
