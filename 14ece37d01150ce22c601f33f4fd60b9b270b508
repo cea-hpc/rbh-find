@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d769028f_35ef9b0c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2021-12-08T16:21:51Z",
+      "side": 1,
+      "message": "Thanks for your reviews!",
+      "revId": "14ece37d01150ce22c601f33f4fd60b9b270b508",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "00836887_eb63d343",
@@ -56,6 +73,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5602852d_59a73b4d",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2021-12-08T16:21:51Z",
+      "side": 1,
+      "message": "Okay, I will stick with that, putting more context, and planning on future implementation!",
+      "parentUuid": "3e60400a_b8cf3f01",
+      "revId": "14ece37d01150ce22c601f33f4fd60b9b270b508",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "5541f075_7e006120",
         "filename": "doc/adr/xattrs.rst",
         "patchSetId": 2
@@ -67,6 +102,30 @@
       "writtenOn": "2021-12-05T21:16:06Z",
       "side": 1,
       "message": "(major) Architecture Decision Record?\n\nhttps://github.com/cea-hpc/robinhood/tree/v4/doc/adr",
+      "range": {
+        "startLine": 11,
+        "startChar": 37,
+        "endLine": 11,
+        "endChar": 62
+      },
+      "revId": "14ece37d01150ce22c601f33f4fd60b9b270b508",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ac31ce33_0b672393",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2021-12-08T16:21:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5541f075_7e006120",
       "range": {
         "startLine": 11,
         "startChar": 37,
@@ -100,6 +159,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2c7d8279_7496f762",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2021-12-08T16:21:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "70dc0f44_ee8d0b72",
+      "range": {
+        "startLine": 11,
+        "startChar": 63,
+        "endLine": 12,
+        "endChar": 65
+      },
+      "revId": "14ece37d01150ce22c601f33f4fd60b9b270b508",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b5933259_97d2f633",
@@ -113,6 +196,30 @@
       "writtenOn": "2021-12-05T21:16:06Z",
       "side": 1,
       "message": "(typo) usage / semantics",
+      "range": {
+        "startLine": 14,
+        "startChar": 45,
+        "endLine": 14,
+        "endChar": 56
+      },
+      "revId": "14ece37d01150ce22c601f33f4fd60b9b270b508",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fd18389f_da89dab3",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2021-12-08T16:21:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b5933259_97d2f633",
       "range": {
         "startLine": 14,
         "startChar": 45,
@@ -160,6 +267,30 @@
       "side": 1,
       "message": "It\u0027s a mistake, my bad. The description will be revised.",
       "parentUuid": "e6ec0408_7e8bf81b",
+      "range": {
+        "startLine": 21,
+        "startChar": 37,
+        "endLine": 21,
+        "endChar": 55
+      },
+      "revId": "14ece37d01150ce22c601f33f4fd60b9b270b508",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "99d706f7_4fe095c8",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2021-12-08T16:21:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "95f33985_8a4d8107",
       "range": {
         "startLine": 21,
         "startChar": 37,
@@ -243,6 +374,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "2a6ec5ce_ffe74cd7",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2021-12-08T16:21:51Z",
+      "side": 1,
+      "message": "Yes, this is what we start thinking of. I just write down a better version of this document, so I will push it (knowing that there is still room for improvement).",
+      "parentUuid": "cc86f0bf_27d7f7de",
+      "range": {
+        "startLine": 37,
+        "startChar": 41,
+        "endLine": 38,
+        "endChar": 32
+      },
+      "revId": "14ece37d01150ce22c601f33f4fd60b9b270b508",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "de766b23_2b2265ac",
         "filename": "doc/adr/xattrs.rst",
         "patchSetId": 2
@@ -314,6 +469,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5e16e1f2_0cfd2e3f",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2021-12-08T16:21:51Z",
+      "side": 1,
+      "message": "Well, you\u0027re right about xattr type, and that binary is not as comfortable a I would like. But as you mentioned in the previous comment, the way we have to retrieve them with posix do not let us know about their type.\n\nI agree with you, we can still work (a little) with binary, and just change the type of some known xattrs using other backends. This is the kind of reflexion I wrote in the new version of this document.",
+      "parentUuid": "514f5c43_45049d18",
+      "range": {
+        "startLine": 38,
+        "startChar": 57,
+        "endLine": 39,
+        "endChar": 21
+      },
+      "revId": "14ece37d01150ce22c601f33f4fd60b9b270b508",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "7c7e9936_fadcbbcb",
         "filename": "doc/adr/xattrs.rst",
         "patchSetId": 2
@@ -325,6 +504,30 @@
       "writtenOn": "2021-12-05T21:16:06Z",
       "side": 1,
       "message": "(style) Double backticks to get monospaced style.\n\nYou can have a look at the rendered output using rst2html (from python-docutils).",
+      "range": {
+        "startLine": 62,
+        "startChar": 17,
+        "endLine": 62,
+        "endChar": 23
+      },
+      "revId": "14ece37d01150ce22c601f33f4fd60b9b270b508",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9a4ace16_c9456872",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2021-12-08T16:21:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7c7e9936_fadcbbcb",
       "range": {
         "startLine": 62,
         "startChar": 17,
