@@ -1,0 +1,136 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "25c2cc3e_62720576",
+        "filename": "tests/test_xattr.bash",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-12-08T20:13:56Z",
+      "side": 1,
+      "message": "(typo) rbh-find",
+      "range": {
+        "startLine": 3,
+        "startChar": 27,
+        "endLine": 3,
+        "endChar": 44
+      },
+      "revId": "da96ccd982c18782b7ec6736a7d08fd9262c864d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "71022a7b_61cac25f",
+        "filename": "tests/test_xattr.bash",
+        "patchSetId": 3
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-12-08T20:13:56Z",
+      "side": 1,
+      "message": "(style) no need for backslashes after `\u0026\u0026`, `||`, or `|` at the end of a line.",
+      "range": {
+        "startLine": 66,
+        "startChar": 43,
+        "endLine": 66,
+        "endChar": 44
+      },
+      "revId": "da96ccd982c18782b7ec6736a7d08fd9262c864d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bfa7e43a_349aeb2e",
+        "filename": "tests/test_xattr.bash",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-12-08T20:13:56Z",
+      "side": 1,
+      "message": "(style) One way to write this more consisely:\n\n ! rbh_find ...\n\n`set -e` will take care of errorring for you",
+      "range": {
+        "startLine": 66,
+        "startChar": 4,
+        "endLine": 68,
+        "endChar": 12
+      },
+      "revId": "da96ccd982c18782b7ec6736a7d08fd9262c864d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e11c829e_c10d3790",
+        "filename": "tests/test_xattr.bash",
+        "patchSetId": 3
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-12-08T20:13:56Z",
+      "side": 1,
+      "message": "(style) Using \"a\" as a filename and as the name of the xattr is a bit confusing, let\u0027s call \"a\" \"file\". And let\u0027s use the long options while we are at it:\n\n touch file\n setfattr --name user.key --value value file",
+      "range": {
+        "startLine": 74,
+        "startChar": 21,
+        "endLine": 74,
+        "endChar": 29
+      },
+      "revId": "da96ccd982c18782b7ec6736a7d08fd9262c864d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "37f4d455_f6482c86",
+        "filename": "tests/test_xattr.bash",
+        "patchSetId": 3
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-12-08T20:13:56Z",
+      "side": 1,
+      "message": "(question) How does this work? Does it rely on Mongo\u0027s \"dot notation\" to access fields inside documents? If so, this isn\u0027t portable across backends.",
+      "range": {
+        "startLine": 79,
+        "startChar": 40,
+        "endLine": 79,
+        "endChar": 46
+      },
+      "revId": "da96ccd982c18782b7ec6736a7d08fd9262c864d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "00f7bdeb_f5696cde",
+        "filename": "tests/test_xattr.bash",
+        "patchSetId": 3
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-12-08T20:13:56Z",
+      "side": 1,
+      "message": "(major) Let\u0027s be critical, this does not test anything about -xattr. The -not -not will be swallowed by the mongo backend before it reaches any xattr-specific code.",
+      "revId": "da96ccd982c18782b7ec6736a7d08fd9262c864d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
