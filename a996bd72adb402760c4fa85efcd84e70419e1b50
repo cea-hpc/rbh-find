@@ -48,6 +48,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2f7d1267_efe66533",
+        "filename": "src/filters.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 620,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-12-09T22:35:29Z",
+      "side": 1,
+      "message": "There isn\u0027t any case where we are going to be able to use the value in the array without first assigning it to a variable and then initialize the `xattr` field, so I think it\u0027s fine.",
+      "parentUuid": "da0f01fa_4ddb36e4",
+      "range": {
+        "startLine": 620,
+        "startChar": 36,
+        "endLine": 620,
+        "endChar": 70
+      },
+      "revId": "a996bd72adb402760c4fa85efcd84e70419e1b50",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8ac75d70_58f28616",
