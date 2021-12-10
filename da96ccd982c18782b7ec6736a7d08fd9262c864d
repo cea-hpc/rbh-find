@@ -191,6 +191,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "320c8de1_e004353c",
+        "filename": "tests/test_xattr.bash",
+        "patchSetId": 3
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2021-12-10T14:28:54Z",
+      "side": 1,
+      "message": "tests shouldn\u0027t have to work around bugs - design tests as we want them :)\n\nI\u0027ve submitted a fix for your bug here:\nhttps://review.gerrithub.io/c/cea-hpc/librobinhood/+/529206\n\n(took me a bit of time, but basically the problem isn\u0027t \"too big\", just bad luck on key length -- at that point need to look at how size is counted vs. how it\u0027s eaten up later on. Calling rbh_fsentry_new with only xattr helped.)",
+      "parentUuid": "d3856352_4aee4b58",
+      "range": {
+        "startLine": 74,
+        "startChar": 21,
+        "endLine": 74,
+        "endChar": 29
+      },
+      "revId": "da96ccd982c18782b7ec6736a7d08fd9262c864d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "37f4d455_f6482c86",
         "filename": "tests/test_xattr.bash",
         "patchSetId": 3
