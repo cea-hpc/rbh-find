@@ -213,6 +213,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a08648f0_9362e38d",
+        "filename": "tests/test_xattr.bash",
+        "patchSetId": 3
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-12-10T15:02:59Z",
+      "side": 1,
+      "message": "Thanks a lot for the help and the patch 😊\nDone",
+      "parentUuid": "320c8de1_e004353c",
+      "range": {
+        "startLine": 74,
+        "startChar": 21,
+        "endLine": 74,
+        "endChar": 29
+      },
+      "revId": "da96ccd982c18782b7ec6736a7d08fd9262c864d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "37f4d455_f6482c86",
