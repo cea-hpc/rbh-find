@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fb570561_978dffb3",
+        "filename": "tests/test_xattr.bash",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-12-10T13:46:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "25c2cc3e_62720576",
+      "range": {
+        "startLine": 3,
+        "startChar": 27,
+        "endLine": 3,
+        "endChar": 44
+      },
+      "revId": "da96ccd982c18782b7ec6736a7d08fd9262c864d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "71022a7b_61cac25f",
@@ -47,6 +71,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "336fc2ad_c999f7c1",
+        "filename": "tests/test_xattr.bash",
+        "patchSetId": 3
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-12-10T13:46:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "71022a7b_61cac25f",
+      "range": {
+        "startLine": 66,
+        "startChar": 43,
+        "endLine": 66,
+        "endChar": 44
+      },
+      "revId": "da96ccd982c18782b7ec6736a7d08fd9262c864d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bfa7e43a_349aeb2e",
@@ -60,6 +108,30 @@
       "writtenOn": "2021-12-08T20:13:56Z",
       "side": 1,
       "message": "(style) One way to write this more consisely:\n\n ! rbh_find ...\n\n`set -e` will take care of errorring for you",
+      "range": {
+        "startLine": 66,
+        "startChar": 4,
+        "endLine": 68,
+        "endChar": 12
+      },
+      "revId": "da96ccd982c18782b7ec6736a7d08fd9262c864d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5e8f7c5d_70e643fb",
+        "filename": "tests/test_xattr.bash",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-12-10T13:46:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bfa7e43a_349aeb2e",
       "range": {
         "startLine": 66,
         "startChar": 4,
@@ -95,6 +167,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d3856352_4aee4b58",
+        "filename": "tests/test_xattr.bash",
+        "patchSetId": 3
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-12-10T13:46:28Z",
+      "side": 1,
+      "message": "There\u0027s currently a bug unfortunately with rbh-sync, where if you have a name/value too long (even 10 characters combined), rbh-sync will return an error on a map copy. I checked a bit with GDB, and found out the problem is in src/fsentry.c, in \"rbh_fsentry_new\": the size considered for the destination of the copy is too small, so we end up with a copy that cannot be completed, and an error.\nHowever I wasn\u0027t able to find what\u0027s the source of the problem precisely...\nSo currently, this isn\u0027t possible...",
+      "parentUuid": "e11c829e_c10d3790",
+      "range": {
+        "startLine": 74,
+        "startChar": 21,
+        "endLine": 74,
+        "endChar": 29
+      },
+      "revId": "da96ccd982c18782b7ec6736a7d08fd9262c864d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "37f4d455_f6482c86",
         "filename": "tests/test_xattr.bash",
         "patchSetId": 3
@@ -118,6 +214,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "423fcfdc_b5b0a44d",
+        "filename": "tests/test_xattr.bash",
+        "patchSetId": 3
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-12-10T13:46:28Z",
+      "side": 1,
+      "message": "Yes and no: we will just check the field xattrs.user.a in the backend by using the -xattr as defined in the ADR; Mongo, fortunately, allows this precise syntax to access fields in documents so it works as is for that backend. On the other hand, there\u0027s no other modification done according to the backend, so yes it might not be portable.",
+      "parentUuid": "37f4d455_f6482c86",
+      "range": {
+        "startLine": 79,
+        "startChar": 40,
+        "endLine": 79,
+        "endChar": 46
+      },
+      "revId": "da96ccd982c18782b7ec6736a7d08fd9262c864d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "00f7bdeb_f5696cde",
         "filename": "tests/test_xattr.bash",
         "patchSetId": 3
@@ -129,6 +249,24 @@
       "writtenOn": "2021-12-08T20:13:56Z",
       "side": 1,
       "message": "(major) Let\u0027s be critical, this does not test anything about -xattr. The -not -not will be swallowed by the mongo backend before it reaches any xattr-specific code.",
+      "revId": "da96ccd982c18782b7ec6736a7d08fd9262c864d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6b281dd4_723d9f75",
+        "filename": "tests/test_xattr.bash",
+        "patchSetId": 3
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-12-10T13:46:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "00f7bdeb_f5696cde",
       "revId": "da96ccd982c18782b7ec6736a7d08fd9262c864d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
