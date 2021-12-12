@@ -286,6 +286,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b97a522e_f7ebbfe1",
+        "filename": "tests/test_xattr.bash",
+        "patchSetId": 3
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-12-12T13:28:53Z",
+      "side": 1,
+      "message": "\u003e \u003e Does it rely on Mongo\u0027s \"dot notation\" to access fields inside documents?\n\n\u003e Yes an no (...)\n\u003e Mongo, fortunately, allows this precise syntax to access fields in documents so it works as is for that backend.\n\nSo just \"yes\" then.\n\nTo be fair, the posix backend already has a similar issue where it makes no effort at splitting xattrs around dots and the only reason we get hierarchical xattrs in mongo is because of mongo\u0027s \"dot notation\". The question can be asked whether it\u0027s the posix backend\u0027s job to split xattrs around dots considering FS xattrs are not hierarchical in nature beyond maybe the first dot. Also, to be completely fair, the reason this parsing didn\u0027t make it into the posix backend is that it was already quite a bit of work to just fetch the xattrs and return them.\n\nIMO, while there is a point in producing less than perfect implementation for new features, it\u0027s a dangerous game to start and build on those imperfect implementations. I feel like there is an exponential time complexity to building on top of technical debt.\n\nI\u0027m not fundamentally opposed to it, but I expect a strong commitment from someone™ that all the code will be cleaned at some point.",
+      "parentUuid": "423fcfdc_b5b0a44d",
+      "range": {
+        "startLine": 79,
+        "startChar": 40,
+        "endLine": 79,
+        "endChar": 46
+      },
+      "revId": "da96ccd982c18782b7ec6736a7d08fd9262c864d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "00f7bdeb_f5696cde",
         "filename": "tests/test_xattr.bash",
         "patchSetId": 3
