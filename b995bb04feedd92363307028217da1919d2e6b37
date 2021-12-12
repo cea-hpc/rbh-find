@@ -123,6 +123,24 @@
       "parentUuid": "7b662e41_a2cd9078",
       "revId": "b995bb04feedd92363307028217da1919d2e6b37",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "408701ee_66856e49",
+        "filename": "tests/test_size.bash",
+        "patchSetId": 5
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-12-12T13:09:25Z",
+      "side": 1,
+      "message": "OK for not changing the name.",
+      "parentUuid": "81bb1a59_84caa907",
+      "revId": "b995bb04feedd92363307028217da1919d2e6b37",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
