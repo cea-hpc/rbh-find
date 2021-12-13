@@ -1,0 +1,658 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "75a992be_b03c09c2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-12-13T22:20:22Z",
+      "side": 1,
+      "message": "Reviewing this document makes me think our time would be better spent working on storing properly-typed lustre xattrs and a python API to avoid the \"how to write \u003ctype of data\u003e on the command line\" question entirely.\n\nAlso, if you have really specific needs for Lustre\u0027s HSM, why not write those in a few hundred lines of C rather than try to hack them into rbh-find? You would get a much nicer command line interface, like:\n\n rbh-lustre-hsm archive --older-than 90d --unaccessed-for 30d\n rbh-lustre-hsm restore --project-id job.1234\n \nAnd you wouldn\u0027t have to deal with the complexity of adding... basically anything to rbh-find.\n\nI am pretty confident you would get something that fits your need in around 300 lines of code... Maybe more depending on the number of options you decide to support.",
+      "revId": "1498f1d123b0f24625d89268bcdf09fb49e2e399",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6e3e4f64_82e42296",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-12-13T22:20:22Z",
+      "side": 1,
+      "message": "I am having a hard time following your document\u0027s structure. If I try to summarize it, it looks like this:\n\n - What is an extended attribute?\n   + Definition\n   + Examples\n - Why do we need to filter on xattrs?\n   + For data placement policies\n   + Kinds of filters needed\n     * A\n     * B\n     * C   \n - Command line parsing\n   + Parsing xattr names\n   + Parsing xattr filters\n     * #1\n     * #2\n     * #1 first, #2 for later\n   + Parsing xattr values\n     * complicated because of the values types\n     * #1\n     * #2\n     * #3\n     * #3 later, #2 is hard, #1 is practical \n - Command lines examples\n   + Filter on extended attribute existence\n   + Filter on extended attribute comparison\n   + Advanced filter on extended attributes\n   + Answer to use cases\n - Going further\n\nI fail to see the coherence among top-level sections, and the logical progression from one to the other. I can still see how the original document was documenting how a feature works, and you patched it to make it look more like an ADR.\n\nAfter my initial review, I expected something along the lines of:\n \n - Context (+ Problematic)\n   + Lustre supports hierarchical storage management:\n     *  What is hierarchical storage management? (that can be just a sentence + a link)\n   + It uses extended attributes (+ a link to man xattr(7)) to manage a file\u0027s HSM lifetime:\n     * Example: {\"security.hsm.state\": [\"archived\"]}\n   + In order to move files across tiers, one needs to be able to efficiently query files in particular states \u003d\u003e filter on xattrs\n   + Regular find does not support the feature, but we think it is a worthy addition nonetheless because:\n     * \u003cX\u003e\n     * the alternative would be to do \u003cY\u003e which is less attractive because of \u003cZ\u003e\n - Challenge(s) / Requirement(s)\n   + #1\n   + #2\n   + #3\n - Solution(s)\n   + The ones we considered but rejected (optional):\n     * A, but not so good regarding #2\n     * B, but not so good regarding #1\n     * C, but not so good regarding #3\n   + The one we champion:\n     * D, because blablabla",
+      "revId": "1498f1d123b0f24625d89268bcdf09fb49e2e399",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "89c8a5ac_6d3627fc",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-12-13T22:20:22Z",
+      "side": 1,
+      "message": "(style) rst has support for admonitions [0]\n\n.. note::\n    This document is an Architecture Decision Record (ADR)\n\n[0] https://docutils.sourceforge.io/docs/ref/rst/directives.html#admonitions\n\n(minor) Considering the document is stored under `doc/ard`, I would argue this note is redundant.",
+      "revId": "1498f1d123b0f24625d89268bcdf09fb49e2e399",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "35d6ca3c_a3839971",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-12-13T22:20:22Z",
+      "side": 1,
+      "message": "(typo) allows",
+      "range": {
+        "startLine": 20,
+        "startChar": 47,
+        "endLine": 20,
+        "endChar": 52
+      },
+      "revId": "1498f1d123b0f24625d89268bcdf09fb49e2e399",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "64e1d8b6_bb0efdb7",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-12-13T22:20:22Z",
+      "side": 1,
+      "message": "(style) allow you/s.o. to store | allow storing",
+      "range": {
+        "startLine": 20,
+        "startChar": 47,
+        "endLine": 20,
+        "endChar": 61
+      },
+      "revId": "1498f1d123b0f24625d89268bcdf09fb49e2e399",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3077aed4_4fe0120a",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-12-13T22:20:22Z",
+      "side": 1,
+      "message": "(style) the Lustre file system",
+      "range": {
+        "startLine": 22,
+        "startChar": 21,
+        "endLine": 22,
+        "endChar": 22
+      },
+      "revId": "1498f1d123b0f24625d89268bcdf09fb49e2e399",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b63ca9b5_1d4202b3",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-12-13T22:20:22Z",
+      "side": 1,
+      "message": "(style) a file\u0027s layout.",
+      "range": {
+        "startLine": 23,
+        "startChar": 7,
+        "endLine": 23,
+        "endChar": 22
+      },
+      "revId": "1498f1d123b0f24625d89268bcdf09fb49e2e399",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8579568e_49613de7",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-12-13T22:20:22Z",
+      "side": 1,
+      "message": "(minor) If we are talking about FS xattrs, their values are always binary data. Phrasing it as a choice makes it sound like xattrs hold some information on the type of data they point at.\n\nI would instead write:\n\n Extended attributes on Linux filesystems are key/value pairs where the key is\n a NUL-terminated string of characters [0][1] and the value is a binary blob [2].\n Keys are always expressed in a fully qualified \"namespace.attribute\" form. [3]\n\n[0] Does it have to be ascii? Can it be UTF-8 encoded?\n[1] Limited in size to 255 characters\n[2] Limited in size to 64KiB\n[3] For more information, consult the man page for xattr(7)",
+      "range": {
+        "startLine": 29,
+        "startChar": 39,
+        "endLine": 29,
+        "endChar": 61
+      },
+      "revId": "1498f1d123b0f24625d89268bcdf09fb49e2e399",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "03a2a67b_9e16518d",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-12-13T22:20:22Z",
+      "side": 1,
+      "message": "(minor) This is misleading. There is no agreed-upon format to store any kind of data in an xattr, what you are providing here are suggestions on how one _could_ store strings/numbers/datetimes/binary-blob/sets/maps.\n\nYou should add a disclaimer that these are only suggestions, or make it clear that this is how you intend robinhood to do it, if that is your point.",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 42,
+        "endChar": 60
+      },
+      "revId": "1498f1d123b0f24625d89268bcdf09fb49e2e399",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f3c6a69e_ba4f4e78",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-12-13T22:20:22Z",
+      "side": 1,
+      "message": "(style) The transition is quite abrupt here IMO. If you are to ask me a question, I\u0027d like to be eased into it a little.",
+      "range": {
+        "startLine": 61,
+        "startChar": 0,
+        "endLine": 61,
+        "endChar": 35
+      },
+      "revId": "1498f1d123b0f24625d89268bcdf09fb49e2e399",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "642aa9aa_f921df23",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-12-13T22:20:22Z",
+      "side": 1,
+      "message": "(major) _That_ is the part of the context I expected you to expand on.\n\nIt may be clear to people familiar with Lustre, but probably not to the general public.",
+      "range": {
+        "startLine": 64,
+        "startChar": 0,
+        "endLine": 65,
+        "endChar": 12
+      },
+      "revId": "1498f1d123b0f24625d89268bcdf09fb49e2e399",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fb871f1e_928cb1ac",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-12-13T22:20:22Z",
+      "side": 1,
+      "message": "(typo) hints",
+      "range": {
+        "startLine": 67,
+        "startChar": 28,
+        "endLine": 67,
+        "endChar": 32
+      },
+      "revId": "1498f1d123b0f24625d89268bcdf09fb49e2e399",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3be15279_d4cf0aec",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-12-13T22:20:22Z",
+      "side": 1,
+      "message": "(defect) So many of these examples assume a deep understanding/knowledge of the Lustre FS. I don\u0027t think the examples themselves are wrong, but you need to explain what they mean a bit more.",
+      "revId": "1498f1d123b0f24625d89268bcdf09fb49e2e399",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f0f4accf_98705019",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-12-13T22:20:22Z",
+      "side": 1,
+      "message": "(major) How do we get to \"especially when checking xattr existence\" when I don\u0027t think \"xattr existence testing\" has been mentioned before in this document.\n\nAlso, how relevant/informational is this part of the sentence?",
+      "range": {
+        "startLine": 92,
+        "startChar": 28,
+        "endLine": 92,
+        "endChar": 68
+      },
+      "revId": "1498f1d123b0f24625d89268bcdf09fb49e2e399",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5edb2075_6ddf147f",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-12-13T22:20:22Z",
+      "side": 1,
+      "message": "(typo) shorter",
+      "range": {
+        "startLine": 114,
+        "startChar": 20,
+        "endLine": 114,
+        "endChar": 28
+      },
+      "revId": "1498f1d123b0f24625d89268bcdf09fb49e2e399",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fc7d80f0_c8cf6169",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-12-13T22:20:22Z",
+      "side": 1,
+      "message": "(style) cannot",
+      "range": {
+        "startLine": 115,
+        "startChar": 23,
+        "endLine": 115,
+        "endChar": 30
+      },
+      "revId": "1498f1d123b0f24625d89268bcdf09fb49e2e399",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "14a8fa69_cdb68571",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-12-13T22:20:22Z",
+      "side": 1,
+      "message": "(major) But... why? (that\u0027s the whole point of an ADR)",
+      "range": {
+        "startLine": 118,
+        "startChar": 0,
+        "endLine": 119,
+        "endChar": 60
+      },
+      "revId": "1498f1d123b0f24625d89268bcdf09fb49e2e399",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "492d08db_0a59d793",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-12-13T22:20:22Z",
+      "side": 1,
+      "message": "That\u0027s good 👍\n\nThis is the kind of information I expect to find in an ADR.",
+      "range": {
+        "startLine": 122,
+        "startChar": 0,
+        "endLine": 124,
+        "endChar": 35
+      },
+      "revId": "1498f1d123b0f24625d89268bcdf09fb49e2e399",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2ef7e1da_340e2a2d",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-12-13T22:20:22Z",
+      "side": 1,
+      "message": "(defect) No, if we are talking about FS xattrs, they are binary blobs, period. If we are talking about rbh xattrs, we support a whole lots of types.",
+      "range": {
+        "startLine": 129,
+        "startChar": 39,
+        "endLine": 129,
+        "endChar": 69
+      },
+      "revId": "1498f1d123b0f24625d89268bcdf09fb49e2e399",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "08ed1050_8b263346",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-12-13T22:20:22Z",
+      "side": 1,
+      "message": "(typo) three ways",
+      "range": {
+        "startLine": 131,
+        "startChar": 3,
+        "endLine": 131,
+        "endChar": 11
+      },
+      "revId": "1498f1d123b0f24625d89268bcdf09fb49e2e399",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "680ed1ab_741b0a63",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-12-13T22:20:22Z",
+      "side": 1,
+      "message": "(major) What does this refer to?",
+      "range": {
+        "startLine": 135,
+        "startChar": 3,
+        "endLine": 135,
+        "endChar": 38
+      },
+      "revId": "1498f1d123b0f24625d89268bcdf09fb49e2e399",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c6ae56a5_2ffc61f8",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-12-13T22:20:22Z",
+      "side": 1,
+      "message": "(typo) for later",
+      "range": {
+        "startLine": 137,
+        "startChar": 47,
+        "endLine": 137,
+        "endChar": 52
+      },
+      "revId": "1498f1d123b0f24625d89268bcdf09fb49e2e399",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e4835078_20d666b8",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-12-13T22:20:22Z",
+      "side": 1,
+      "message": "(typo) from",
+      "range": {
+        "startLine": 138,
+        "startChar": 51,
+        "endLine": 138,
+        "endChar": 53
+      },
+      "revId": "1498f1d123b0f24625d89268bcdf09fb49e2e399",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "621b4968_bf78dd06",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-12-13T22:20:22Z",
+      "side": 1,
+      "message": "How about using YAML?",
+      "range": {
+        "startLine": 138,
+        "startChar": 18,
+        "endLine": 139,
+        "endChar": 73
+      },
+      "revId": "1498f1d123b0f24625d89268bcdf09fb49e2e399",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5b34a65c_77c77efe",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-12-13T22:20:22Z",
+      "side": 1,
+      "message": "(typo?) practical?",
+      "range": {
+        "startLine": 141,
+        "startChar": 20,
+        "endLine": 141,
+        "endChar": 31
+      },
+      "revId": "1498f1d123b0f24625d89268bcdf09fb49e2e399",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6c04de0a_60c9aa4c",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-12-13T22:20:22Z",
+      "side": 1,
+      "message": "(defect) It is unclear to me at the end of this section which option we will pick when, and why.",
+      "revId": "1498f1d123b0f24625d89268bcdf09fb49e2e399",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0bd449cd_241087c9",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-12-13T22:20:22Z",
+      "side": 1,
+      "message": "(defect) No, it\u0027s simply not true. Xattrs in \"proper\" backends, such as the mongo backend are strongly typed and stored as structured data. The limitations of pseudo-backends such as the posix backend should be worked out separately and not leak into your designs.",
+      "range": {
+        "startLine": 224,
+        "startChar": 9,
+        "endLine": 226,
+        "endChar": 17
+      },
+      "revId": "1498f1d123b0f24625d89268bcdf09fb49e2e399",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "32603727_2c280498",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-12-13T22:20:22Z",
+      "side": 1,
+      "message": "(typo) affects",
+      "range": {
+        "startLine": 233,
+        "startChar": 30,
+        "endLine": 233,
+        "endChar": 36
+      },
+      "revId": "1498f1d123b0f24625d89268bcdf09fb49e2e399",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "96050684_a974dbde",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-12-13T22:20:22Z",
+      "side": 1,
+      "message": "(typo?) rbh-fsevents?",
+      "range": {
+        "startLine": 233,
+        "startChar": 50,
+        "endLine": 233,
+        "endChar": 60
+      },
+      "revId": "1498f1d123b0f24625d89268bcdf09fb49e2e399",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f8bf7cd0_58ad39ba",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-12-13T22:20:22Z",
+      "side": 1,
+      "message": "(major) This makes me feel like we need to address the issues in the posix backend first (possibly by creating a lustre backend), and only then will we be able to design a proper `-xattr` predicate for rbh-find.",
+      "revId": "1498f1d123b0f24625d89268bcdf09fb49e2e399",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
