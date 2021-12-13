@@ -334,6 +334,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "24600f7f_9908e5d9",
+        "filename": "tests/test_xattr.bash",
+        "patchSetId": 3
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-12-13T20:04:16Z",
+      "side": 1,
+      "message": "\u003e I think that it\u0027s the backend\u0027s job of correctly managing the xattrs and how to access them based on a string.\n\nI strongly disagree. This pre-processing can be implemented once, correctly, for all backends, so there is no point IMO to delegate it to backends. It will only lead to subtle inconsistencies.\n\n\u003e So in that regard, just giving \"user.a\" to the mongo backend is enough for it to understand that it should fetch the entries which have a key \"a\" in the xattrs map \"user\".\n\nStarting with version 5, mongodb offers improved support for storing dots and dollar signs in documents\u0027 keys. [0] I take this as a signal that they realized dot notation, while extremely convenient in most cases, is also unnecessarily restrictive and annoying to support in every other case.\n\nI think it\u0027s OK for applications to interpret dot notation for xattr access, I don\u0027t think it\u0027s OK for backends to bake in that logic.\n\nA reason for this is that if I send the following xattr map:\n\n {\n     \"jane.doe@example.com\": [\"read\", \"write\"],\n     \"john.smith@example.com\": [\"read\"],\n }\n \nAnd when I query the backend, I get the following xattr map back:\n\n {\n     \"jane\": {\n         \"doe@example\": {\n             \"com\": [\"read\", \"write\"],\n         },\n     },\n     \"john\": {\n         \"smith@example\": {\n             \"com\": [\"read\"],\n         },\n     },\n }\n \nI am not going to be terribly happy to have to deal with those extra levels of nesting.\n\n[0] https://docs.mongodb.com/manual/core/dot-dollar-considerations/#std-label-crud-concepts-dot-dollar-considerations",
+      "parentUuid": "e6ee6d8c_3f9b52be",
+      "range": {
+        "startLine": 79,
+        "startChar": 40,
+        "endLine": 79,
+        "endChar": 46
+      },
+      "revId": "da96ccd982c18782b7ec6736a7d08fd9262c864d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "00f7bdeb_f5696cde",
         "filename": "tests/test_xattr.bash",
         "patchSetId": 3
