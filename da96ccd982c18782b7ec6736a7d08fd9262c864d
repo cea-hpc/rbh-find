@@ -310,6 +310,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e6ee6d8c_3f9b52be",
+        "filename": "tests/test_xattr.bash",
+        "patchSetId": 3
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-12-13T08:38:59Z",
+      "side": 1,
+      "message": "I think that it\u0027s the backend\u0027s job of correctly managing the xattrs and how to access them based on a string. So in that regard, just giving \"user.a\" to the mongo backend is enough for it to understand that it should fetch the entries which have a key \"a\" in the xattrs map \"user\".\n\nIf another backend is implemented, it should be its job to understand this notation in the same way as the mongo backend.",
+      "parentUuid": "b97a522e_f7ebbfe1",
+      "range": {
+        "startLine": 79,
+        "startChar": 40,
+        "endLine": 79,
+        "endChar": 46
+      },
+      "revId": "da96ccd982c18782b7ec6736a7d08fd9262c864d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "00f7bdeb_f5696cde",
         "filename": "tests/test_xattr.bash",
         "patchSetId": 3
