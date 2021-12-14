@@ -192,6 +192,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "21c4cf5e_55c716c7",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1003874
+      },
+      "writtenOn": "2021-12-14T16:33:44Z",
+      "side": 1,
+      "message": "I agree. It should be clarified if this is a convention that every librobinhood client must follow, or a suggestion, or...",
+      "parentUuid": "03a2a67b_9e16518d",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 42,
+        "endChar": 60
+      },
+      "revId": "1498f1d123b0f24625d89268bcdf09fb49e2e399",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f3c6a69e_ba4f4e78",
         "filename": "doc/adr/xattrs.rst",
         "patchSetId": 3
@@ -272,6 +296,24 @@
       "writtenOn": "2021-12-13T22:20:22Z",
       "side": 1,
       "message": "(defect) So many of these examples assume a deep understanding/knowledge of the Lustre FS. I don\u0027t think the examples themselves are wrong, but you need to explain what they mean a bit more.",
+      "revId": "1498f1d123b0f24625d89268bcdf09fb49e2e399",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5db8aa06_246b8de3",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1003874
+      },
+      "writtenOn": "2021-12-14T16:33:44Z",
+      "side": 1,
+      "message": "Only the second point is Lustre related, but I agree this would be nice to give a little more background here.\n\n1st point applies to any filesystem where a user would specify future access hints as a user xattr, so robinhood can then be used to trigger actions based on this attributes\u0027 value.\n3rd case is also FS-generic, and allows implementing data lifetime criteria using RBH.",
+      "parentUuid": "3be15279_d4cf0aec",
       "revId": "1498f1d123b0f24625d89268bcdf09fb49e2e399",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -628,6 +670,30 @@
       "writtenOn": "2021-12-13T22:20:22Z",
       "side": 1,
       "message": "(typo?) rbh-fsevents?",
+      "range": {
+        "startLine": 233,
+        "startChar": 50,
+        "endLine": 233,
+        "endChar": 60
+      },
+      "revId": "1498f1d123b0f24625d89268bcdf09fb49e2e399",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "058f1174_533f0a2c",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 1003874
+      },
+      "writtenOn": "2021-12-14T16:33:44Z",
+      "side": 1,
+      "message": "I think he used this name as a generic name to designate an \"enricher\", a component that gets entries from the robinhood DB, and then enrich them (or update them) by attaching extra information to entries as xattrs.",
+      "parentUuid": "96050684_a974dbde",
       "range": {
         "startLine": 233,
         "startChar": 50,
