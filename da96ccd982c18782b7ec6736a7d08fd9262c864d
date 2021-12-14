@@ -358,6 +358,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "665e2a97_0e00bdb8",
+        "filename": "tests/test_xattr.bash",
+        "patchSetId": 3
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-12-14T17:39:21Z",
+      "side": 1,
+      "message": "After extensive digging, we found two ways of dealing with this dot notation problem:\n - We keep the nested maps as they are for xattr names. In that case, we must modify the synchronize and the posix backend to \"remove\" the dots, and create actual maps based on those points. That way, we keep Mongo\u0027s behaviour with the dot notation, but apply it to all backends, as long as they manage maps. The main problem is that we may end up with a lot of maps sparsely populated.\n \n - We manage everything as strings, and to circumvent the dot notation issue, we use the $setField and $getField operators introduced in Mongo 5.0, which allows us to simply use \"a.b.c\" as a string, and not as \"a : { b : { c } }\". This implies that we restrict the use of Robinhood V4 as it is currently to only systems with access to Mongo 5.0, and that we must modify the mongo backend when registering and fetching data, to use both of those operators at those points.\n\nI\u0027m personally leaning towards the first option, as I believe it is easier to implement, less restrictive, and not much harder to maintain, since the only problem that arises is when a backend we implement cannot handle maps, which I\u0027m not sure will ever happen.\n\nWhat are your thoughts about this issue ?",
+      "parentUuid": "24600f7f_9908e5d9",
+      "range": {
+        "startLine": 79,
+        "startChar": 40,
+        "endLine": 79,
+        "endChar": 46
+      },
+      "revId": "da96ccd982c18782b7ec6736a7d08fd9262c864d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "00f7bdeb_f5696cde",
         "filename": "tests/test_xattr.bash",
         "patchSetId": 3
