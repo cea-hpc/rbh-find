@@ -382,6 +382,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "11b19b1d_8f8988ac",
+        "filename": "tests/test_xattr.bash",
+        "patchSetId": 3
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2021-12-15T02:00:12Z",
+      "side": 1,
+      "message": "I think we need a bit of both approaches.\n\nI think the posix backend should translate the first dot in xattr keys as a level of nesting, but none of the other dots.\n\nExample:\n\n    user.foo\u003d0 -\u003e {user: {foo: 0}}\n    security.foo.bar\u003d0 -\u003e {security: {foo.bar: 0}}\n    \nThe reasoning being that the man page for xattr(7) clearly states that the format of keys is that of `namespace.attribute`, and does not give any special meaning to dots in the `attribute` part.\n\nOnce again, I am open to enriching the parsing of specific xattrs so that:\n\n security.hsm.state\u003d0x0009\n\nCould be parsed as:\n\n {\n     security: {\n         hsm: {\n             state: [archived, released]\n         }\n     }\n }\n \n(can\u0027t remember if 0x9 really means archived \u0026 released, but you get the point)\n\nWhether that extra parsing needs to go in a separate backend implementation that extends the posix backend, or as a backend option for the posix backend, or really as anything else, it should be left as future work.\n    \nThen, while it is arguably convenient that the mongo backend implicitly understands dot notation, as soon as this logic is pushed up to applications, it shouldn\u0027t be a thing anymore. That will allow the use of keys with literal dots in them.\n\nrbh-find and the other CLIs which need to support dot notation can allow escaping dots to make them literal dots, but this should be left as a future improvement as well, as it does not seem like a priority.",
+      "parentUuid": "665e2a97_0e00bdb8",
+      "range": {
+        "startLine": 79,
+        "startChar": 40,
+        "endLine": 79,
+        "endChar": 46
+      },
+      "revId": "da96ccd982c18782b7ec6736a7d08fd9262c864d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "00f7bdeb_f5696cde",
         "filename": "tests/test_xattr.bash",
         "patchSetId": 3
