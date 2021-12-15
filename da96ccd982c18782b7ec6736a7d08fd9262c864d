@@ -406,6 +406,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "dae55686_6cc4751b",
+        "filename": "tests/test_xattr.bash",
+        "patchSetId": 3
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-12-15T08:52:26Z",
+      "side": 1,
+      "message": "OK that works for for us. For our needs, we\u0027re thinking of a separate backend implementation which would \"overload\" the posix backend, maybe coupled with an option for the posix backend, but that\u0027s still unsure.\n\nSo as I said before, this patch will be abandoned, I will put the whole of this conversation in the other patch which merges the two.",
+      "parentUuid": "11b19b1d_8f8988ac",
+      "range": {
+        "startLine": 79,
+        "startChar": 40,
+        "endLine": 79,
+        "endChar": 46
+      },
+      "revId": "da96ccd982c18782b7ec6736a7d08fd9262c864d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "00f7bdeb_f5696cde",
         "filename": "tests/test_xattr.bash",
         "patchSetId": 3
