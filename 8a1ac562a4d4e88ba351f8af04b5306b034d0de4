@@ -16,6 +16,24 @@
       "message": "Wait wait wait, no, I want that dot notation issue cleared out before I merge this.\n\nCurrently, I expect either:\n- code that does not rely on MongoDB\u0027s interpretation of the dot notation;\n- a strong commitment that you will fix this in a timely manner.",
       "revId": "8a1ac562a4d4e88ba351f8af04b5306b034d0de4",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ac06c0b1_f326f2de",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2021-12-15T08:51:43Z",
+      "side": 1,
+      "message": "Putting the link of the other patch\u0027s conversation here for future reference.\n\nhttps://review.gerrithub.io/c/cea-hpc/rbh-find/+/528646/comments/37f4d455_f6482c86\n\nRegarding this particular comment, we indeed commit to fixing the issue, as it is necessary anyway for other projects we have regarding RBH v4.",
+      "parentUuid": "95988ee7_4b318a13",
+      "revId": "8a1ac562a4d4e88ba351f8af04b5306b034d0de4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
