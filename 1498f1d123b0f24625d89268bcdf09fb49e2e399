@@ -20,6 +20,41 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "1dc486ee_66696d4a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2021-12-17T14:33:20Z",
+      "side": 1,
+      "message": "Yes, we are starting thinking about that too..\n\nWe will make this in standby, sorry for the time spent on reviewing this, I will still upload a better version in January, once things are clear on our mind.",
+      "parentUuid": "75a992be_b03c09c2",
+      "revId": "1498f1d123b0f24625d89268bcdf09fb49e2e399",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "204c6385_543318d3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2021-12-17T14:33:20Z",
+      "side": 1,
+      "message": "Thanks again for your reviews! Happy holidays!",
+      "revId": "1498f1d123b0f24625d89268bcdf09fb49e2e399",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6e3e4f64_82e42296",
         "filename": "doc/adr/xattrs.rst",
         "patchSetId": 3
@@ -203,6 +238,30 @@
       "writtenOn": "2021-12-14T16:33:44Z",
       "side": 1,
       "message": "I agree. It should be clarified if this is a convention that every librobinhood client must follow, or a suggestion, or...",
+      "parentUuid": "03a2a67b_9e16518d",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 42,
+        "endChar": 60
+      },
+      "revId": "1498f1d123b0f24625d89268bcdf09fb49e2e399",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e9e60647_8cf71387",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2021-12-17T14:33:20Z",
+      "side": 1,
+      "message": "You are right. I think the place of this kind of stuff is more in specific backend descriptions, where values of recognized extended attributes must follow a specific format.",
       "parentUuid": "03a2a67b_9e16518d",
       "range": {
         "startLine": 33,
@@ -423,6 +482,30 @@
       "writtenOn": "2021-12-13T22:20:22Z",
       "side": 1,
       "message": "That\u0027s good 👍\n\nThis is the kind of information I expect to find in an ADR.",
+      "range": {
+        "startLine": 122,
+        "startChar": 0,
+        "endLine": 124,
+        "endChar": 35
+      },
+      "revId": "1498f1d123b0f24625d89268bcdf09fb49e2e399",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3e2dad9f_7121e5c9",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2021-12-17T14:33:20Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "492d08db_0a59d793",
       "range": {
         "startLine": 122,
         "startChar": 0,
@@ -717,6 +800,24 @@
       "writtenOn": "2021-12-13T22:20:22Z",
       "side": 1,
       "message": "(major) This makes me feel like we need to address the issues in the posix backend first (possibly by creating a lustre backend), and only then will we be able to design a proper `-xattr` predicate for rbh-find.",
+      "revId": "1498f1d123b0f24625d89268bcdf09fb49e2e399",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a23bcdca_f04eb072",
+        "filename": "doc/adr/xattrs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2021-12-17T14:33:20Z",
+      "side": 1,
+      "message": "Yes, there is a chance we will change our dev roadmap...",
+      "parentUuid": "f8bf7cd0_58ad39ba",
       "revId": "1498f1d123b0f24625d89268bcdf09fb49e2e399",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
