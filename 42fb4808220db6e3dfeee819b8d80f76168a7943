@@ -16,6 +16,41 @@
       "message": "Shouldn\u0027t this be merged ?",
       "revId": "42fb4808220db6e3dfeee819b8d80f76168a7943",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e5b4a160_f54df1f6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2022-01-04T21:10:33Z",
+      "side": 1,
+      "message": "No, because there is a merge conflict",
+      "parentUuid": "19b7190e_e2c05bd6",
+      "revId": "42fb4808220db6e3dfeee819b8d80f76168a7943",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "72126c05_4cc6d7ca",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2022-01-04T21:10:33Z",
+      "side": 1,
+      "message": "There is a merge conflict",
+      "revId": "42fb4808220db6e3dfeee819b8d80f76168a7943",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
