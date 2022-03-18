@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "35a37f42_6ef22392",
+        "filename": "include/meson.build",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2022-03-18T10:26:31Z",
+      "side": 1,
+      "message": "(suggestion) install it in rbh-find subdir as well?\nI don\u0027t think it matters much but generally it\u0027s either a single file or everything in a subdir, the very few files I have matching their subdir is just an include for a file in the subdir:\n\n   /usr/include$ for f in *.h; do [[ -e \"${f%.h}\" ]] \u0026\u0026 echo $f; done\nfluidsynth.h\nfuse.h\ngdbm.h\ngssapi.h\nkrb5.h\nliburing.h\nlzma.h\nncurses.h\npcap.h\nprofile.h\nurcu.h\nuv.h\n$ cat krb5.h\n/* The MIT Kerberos header file krb5.h used to live here.\n\n   As of the 1.5 release, we\u0027re installing multiple Kerberos headers,\n   so they\u0027re all moving to a krb5/ subdirectory.  This file is\n   present just to keep old software still compiling.  Please update\n   your code to use the new path for the header.  */\n#include \u003ckrb5/krb5.h\u003e",
+      "revId": "ba395a8407b331bee12999b211d903ff46509005",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2510b4ca_09260973",
+        "filename": "meson.build",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2022-03-18T10:26:31Z",
+      "side": 1,
+      "message": "description?",
+      "revId": "ba395a8407b331bee12999b211d903ff46509005",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "78d3c57c_f0507e48",
+        "filename": "src/meson.build",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2022-03-18T10:26:31Z",
+      "side": 1,
+      "message": "(library version and project version aren\u0027t the same, but librobinhood does the same so it\u0027ll probably do for now. On this note I would have suggested symbol versioning but it\u0027s too much hassle at this point, and I\u0027m surprised to see meson doesn\u0027t support it natively... https://github.com/mesonbuild/meson/issues/3047 )",
+      "revId": "ba395a8407b331bee12999b211d903ff46509005",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
