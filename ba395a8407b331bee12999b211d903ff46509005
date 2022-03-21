@@ -26,6 +26,47 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "edb9a833_d26b1959",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2022-03-21T11:47:23Z",
+      "side": 1,
+      "message": "I do not think this is the philosophy of RBHv4 to have all rbh-find-like tools in the same repository. It seems logical to me that rbh-lustre-find will be in its own repository, requiring rbh-find dependency.",
+      "parentUuid": "3c0b329b_87471d7a",
+      "range": {
+        "startLine": 9,
+        "startChar": 39,
+        "endLine": 9,
+        "endChar": 57
+      },
+      "revId": "ba395a8407b331bee12999b211d903ff46509005",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a135cb23_84822855",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2022-03-21T11:47:23Z",
+      "side": 1,
+      "message": "Thanks for your reviews!",
+      "revId": "ba395a8407b331bee12999b211d903ff46509005",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "35a37f42_6ef22392",
         "filename": "include/meson.build",
         "patchSetId": 1
@@ -37,6 +78,24 @@
       "writtenOn": "2022-03-18T10:26:31Z",
       "side": 1,
       "message": "(suggestion) install it in rbh-find subdir as well?\nI don\u0027t think it matters much but generally it\u0027s either a single file or everything in a subdir, the very few files I have matching their subdir is just an include for a file in the subdir:\n\n   /usr/include$ for f in *.h; do [[ -e \"${f%.h}\" ]] \u0026\u0026 echo $f; done\nfluidsynth.h\nfuse.h\ngdbm.h\ngssapi.h\nkrb5.h\nliburing.h\nlzma.h\nncurses.h\npcap.h\nprofile.h\nurcu.h\nuv.h\n$ cat krb5.h\n/* The MIT Kerberos header file krb5.h used to live here.\n\n   As of the 1.5 release, we\u0027re installing multiple Kerberos headers,\n   so they\u0027re all moving to a krb5/ subdirectory.  This file is\n   present just to keep old software still compiling.  Please update\n   your code to use the new path for the header.  */\n#include \u003ckrb5/krb5.h\u003e",
+      "revId": "ba395a8407b331bee12999b211d903ff46509005",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a62544f5_01f50bd5",
+        "filename": "include/meson.build",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2022-03-21T11:47:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "35a37f42_6ef22392",
       "revId": "ba395a8407b331bee12999b211d903ff46509005",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -58,6 +117,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3e5d1d68_3a24ed4a",
+        "filename": "meson.build",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2022-03-21T11:47:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2510b4ca_09260973",
+      "revId": "ba395a8407b331bee12999b211d903ff46509005",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "78d3c57c_f0507e48",
@@ -71,6 +148,24 @@
       "writtenOn": "2022-03-18T10:26:31Z",
       "side": 1,
       "message": "(library version and project version aren\u0027t the same, but librobinhood does the same so it\u0027ll probably do for now. On this note I would have suggested symbol versioning but it\u0027s too much hassle at this point, and I\u0027m surprised to see meson doesn\u0027t support it natively... https://github.com/mesonbuild/meson/issues/3047 )",
+      "revId": "ba395a8407b331bee12999b211d903ff46509005",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b697cdfe_cd17b14d",
+        "filename": "src/meson.build",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2022-03-21T11:47:23Z",
+      "side": 1,
+      "message": "I naively copied the lines from librobinhood here.\n\nI agree with you, project and library versions may differ, but not the case for now.\n\nThanks for the link! We will reconsider all those questions once our first version of the ecosystem is ready (which may be later this year).",
+      "parentUuid": "78d3c57c_f0507e48",
       "revId": "ba395a8407b331bee12999b211d903ff46509005",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
