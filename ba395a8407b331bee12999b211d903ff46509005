@@ -168,6 +168,24 @@
       "parentUuid": "78d3c57c_f0507e48",
       "revId": "ba395a8407b331bee12999b211d903ff46509005",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "21f9cc82_7d234a3b",
+        "filename": "src/meson.build",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2022-03-21T12:49:14Z",
+      "side": 1,
+      "message": "Yes, definitely not something that\u0027s required now :)",
+      "parentUuid": "b697cdfe_cd17b14d",
+      "revId": "ba395a8407b331bee12999b211d903ff46509005",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
