@@ -6,6 +6,7 @@
 
 install_headers(
     'actions.h',
+    'backend.h',
     'filters.h',
     'parser.h',
     'rbh-find.h',
