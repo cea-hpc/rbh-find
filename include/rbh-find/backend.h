@@ -9,9 +9,13 @@
 #define RBH_FIND_CONTEXT_H
 
 #include <error.h>
+#include <stdio.h>
 #include <stdlib.h>
 
 #include <robinhood.h>
+
+#include "rbh-find/actions.h"
+#include "rbh-find/parser.h"
 
 /**
  * Find's library context
@@ -25,6 +29,11 @@ struct find_context {
     char **argv;
     /** If an action was already executed in this specific execution */
     bool action_done;
+};
+
+union action_arguments {
+    /* ACT_FLS, ACT_FPRINT, ACT_FPRINT0, ACT_FPRINTF */
+    FILE *file;
 };
 
 void
@@ -43,5 +52,13 @@ do {                                                                           \
     error_at_line((_exit_code), (_error_code), (_filename), (_fileline),       \
                   (_fmt), ##__VA_ARGS__);                                      \
 } while (0)
+
+size_t
+_find(struct find_context *ctx, int backend_index, enum action action,
+      const struct rbh_filter *filter, const struct rbh_filter_sort *sorts,
+      size_t sorts_count, const union action_arguments *args,
+      int (*action_callback)(struct find_context*, enum action,
+                             struct rbh_fsentry*,
+                             const union action_arguments*));
 
 #endif
