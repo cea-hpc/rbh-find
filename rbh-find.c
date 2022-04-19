@@ -26,89 +26,45 @@
 #include "rbh-find/filters.h"
 #include "rbh-find/parser.h"
 
-union action_arguments {
-    /* ACT_FLS, ACT_FPRINT, ACT_FPRINT0, ACT_FPRINTF */
-    FILE *file;
-};
-
-static size_t
-_find(struct find_context *ctx, int backend_index, enum action action,
-      const struct rbh_filter *filter, const struct rbh_filter_sort *sorts,
-      size_t sorts_count, const union action_arguments *args)
+static int
+exec_action(struct find_context *ctx, enum action action,
+            struct rbh_fsentry *fsentry)
 {
-    const struct rbh_filter_options OPTIONS = {
-        .projection = {
-            .fsentry_mask = RBH_FP_ALL,
-            .statx_mask = RBH_STATX_ALL,
-        },
-        .sort = {
-            .items = sorts,
-            .count = sorts_count
-        },
-    };
-    struct rbh_mut_iterator *fsentries;
-    size_t count = 0;
+    switch (action) {
+    case ACT_PRINT:
+        /* XXX: glibc's printf() handles printf("%s", NULL) pretty well, but
+         *      I do not think this is part of any standard.
+         */
+        printf("%s\n", fsentry_path(fsentry));
+        break;
+    case ACT_PRINT0:
+        printf("%s%c", fsentry_path(fsentry), '\0');
+        break;
+    case ACT_FLS:
+        fsentry_print_ls_dils(ctx->action_file, fsentry);
+        break;
+    case ACT_FPRINT:
+        fprintf(ctx->action_file, "%s\n", fsentry_path(fsentry));
+        break;
+    case ACT_FPRINT0:
+        fprintf(ctx->action_file, "%s%c", fsentry_path(fsentry), '\0');
+        break;
+    case ACT_LS:
+        fsentry_print_ls_dils(stdout, fsentry);
+        break;
+    case ACT_COUNT:
+        return 1;
+        break;
+    case ACT_QUIT:
+        ctx_finish(ctx);
+        exit(0);
+        break;
+    default:
+        ERROR(ctx, EXIT_FAILURE, ENOSYS, "%s", action2str(action));
+        break;
+    }
 
-    fsentries = rbh_backend_filter(ctx->backends[backend_index], filter,
-                                   &OPTIONS);
-    if (fsentries == NULL)
-        ERROR_AT_LINE(ctx, EXIT_FAILURE, errno, __FILE__, __LINE__,
-                      "filter_fsentries");
-
-    do {
-        struct rbh_fsentry *fsentry;
-
-        do {
-            errno = 0;
-            fsentry = rbh_mut_iter_next(fsentries);
-        } while (fsentry == NULL && errno == EAGAIN);
-
-        if (fsentry == NULL)
-            break;
-
-        switch (action) {
-        case ACT_PRINT:
-            /* XXX: glibc's printf() handles printf("%s", NULL) pretty well, but
-             *      I do not think this is part of any standard.
-             */
-            printf("%s\n", fsentry_path(fsentry));
-            break;
-        case ACT_PRINT0:
-            printf("%s%c", fsentry_path(fsentry), '\0');
-            break;
-        case ACT_FLS:
-            fsentry_print_ls_dils(args->file, fsentry);
-            break;
-        case ACT_FPRINT:
-            fprintf(args->file, "%s\n", fsentry_path(fsentry));
-            break;
-        case ACT_FPRINT0:
-            fprintf(args->file, "%s%c", fsentry_path(fsentry), '\0');
-            break;
-        case ACT_LS:
-            fsentry_print_ls_dils(stdout, fsentry);
-            break;
-        case ACT_COUNT:
-            count++;
-            break;
-        case ACT_QUIT:
-            ctx_finish(ctx);
-            exit(0);
-            break;
-        default:
-            ERROR(ctx, EXIT_FAILURE, ENOSYS, "%s", action2str(action));
-            break;
-        }
-        free(fsentry);
-    } while (true);
-
-    if (errno != ENODATA)
-        ERROR_AT_LINE(ctx, EXIT_FAILURE, errno, __FILE__, __LINE__,
-                      "rbh_mut_iter_next");
-
-    rbh_mut_iter_destroy(fsentries);
-
-    return count;
+    return 0;
 }
 
 static void
@@ -116,7 +72,6 @@ find(struct find_context *ctx, enum action action, int *arg_idx,
      const struct rbh_filter *filter, const struct rbh_filter_sort *sorts,
      size_t sorts_count)
 {
-    union action_arguments args;
     const char *filename;
     int i = *arg_idx;
     size_t count = 0;
@@ -132,8 +87,8 @@ find(struct find_context *ctx, enum action action, int *arg_idx,
                   action2str(action));
 
         filename = ctx->argv[i++];
-        args.file = fopen(filename, "w");
-        if (args.file == NULL)
+        ctx->action_file = fopen(filename, "w");
+        if (ctx->action_file == NULL)
             ERROR(ctx, EXIT_FAILURE, errno, "fopen: %s", filename);
         break;
     default:
@@ -141,7 +96,7 @@ find(struct find_context *ctx, enum action action, int *arg_idx,
     }
 
     for (size_t i = 0; i < ctx->backend_count; i++)
-        count += _find(ctx, i, action, filter, sorts, sorts_count, &args);
+        count += _find(ctx, i, action, filter, sorts, sorts_count);
 
     switch (action) {
     case ACT_COUNT:
@@ -150,7 +105,7 @@ find(struct find_context *ctx, enum action action, int *arg_idx,
     case ACT_FLS:
     case ACT_FPRINT:
     case ACT_FPRINT0:
-        if (fclose(args.file))
+        if (fclose(ctx->action_file))
             ERROR(ctx, EXIT_FAILURE, errno, "fclose: %s", filename);
         break;
     default:
@@ -400,6 +355,7 @@ main(int _argc, char *_argv[])
     /* Discard the program's name */
     ctx.argc = _argc - 1;
     ctx.argv = &_argv[1];
+    ctx.action_callback = &exec_action;
 
     /* Parse the command line */
     for (index = 0; index < ctx.argc; index++) {
