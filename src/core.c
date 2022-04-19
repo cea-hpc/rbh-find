@@ -110,3 +110,49 @@ core_post_action(struct find_context *ctx, const int index,
         break;
     }
 }
+
+size_t
+_find(struct find_context *ctx, int backend_index, enum action action,
+      const struct rbh_filter *filter, const struct rbh_filter_sort *sorts,
+      size_t sorts_count)
+{
+    const struct rbh_filter_options OPTIONS = {
+        .projection = {
+            .fsentry_mask = RBH_FP_ALL,
+            .statx_mask = RBH_STATX_ALL,
+        },
+        .sort = {
+            .items = sorts,
+            .count = sorts_count
+        },
+    };
+    struct rbh_mut_iterator *fsentries;
+    size_t count = 0;
+
+    fsentries = rbh_backend_filter(ctx->backends[backend_index], filter,
+                                   &OPTIONS);
+    if (fsentries == NULL)
+        ERROR_AT_LINE(ctx, EXIT_FAILURE, errno, "filter_fsentries");
+
+    do {
+        struct rbh_fsentry *fsentry;
+
+        do {
+            errno = 0;
+            fsentry = rbh_mut_iter_next(fsentries);
+        } while (fsentry == NULL && errno == EAGAIN);
+
+        if (fsentry == NULL)
+            break;
+
+        count += ctx->exec_action_callback(ctx, action, fsentry);
+        free(fsentry);
+    } while (true);
+
+    if (errno != ENODATA)
+        ERROR_AT_LINE(ctx, EXIT_FAILURE, errno, "rbh_mut_iter_next");
+
+    rbh_mut_iter_destroy(fsentries);
+
+    return count;
+}
