@@ -141,7 +141,7 @@ find(enum action action, int *arg_idx, const struct rbh_filter *filter,
         if (i >= argc)
             error(EX_USAGE, 0, "missing argument to `%s'", action2str(action));
 
-        filename = argv[i++];
+        filename = argv[++i];
         args.file = fopen(filename, "w");
         if (args.file == NULL)
             error(EXIT_FAILURE, errno, "fopen: %s", filename);
@@ -383,8 +383,7 @@ parse_expression(int *arg_idx, const struct rbh_filter *_filter,
             break;
         case CLT_ACTION:
             /* Consume the action token */
-            i++;
-            find(str2action(argv[i - 1]), &i, &left_filter, *sorts,
+            find(str2action(argv[i]), &i, &left_filter, *sorts,
                  *sorts_count);
             break;
         }
