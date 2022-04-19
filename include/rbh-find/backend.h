@@ -11,10 +11,13 @@
 #include <error.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <sysexits.h>
 
 #include <robinhood.h>
+#include <robinhood/utils.h>
 
 #include "rbh-find/actions.h"
+#include "rbh-find/filters.h"
 #include "rbh-find/parser.h"
 
 /**
@@ -60,5 +63,16 @@ _find(struct find_context *ctx, int backend_index, enum action action,
       int (*action_callback)(struct find_context*, enum action,
                              struct rbh_fsentry*,
                              const union action_arguments*));
+
+struct rbh_filter *
+parse_expression(struct find_context *ctx, int *arg_idx,
+                 const struct rbh_filter *_filter,
+                 struct rbh_filter_sort **sorts, size_t *sorts_count,
+                 struct rbh_filter* (*predicate_callback)(struct find_context*,
+                                                          int *),
+                 void (*find_callback)(struct find_context*, enum action, int*,
+                                       const struct rbh_filter*,
+                                       const struct rbh_filter_sort*,
+                                       size_t ));
 
 #endif
