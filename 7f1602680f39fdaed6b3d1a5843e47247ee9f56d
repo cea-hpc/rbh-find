@@ -16,6 +16,24 @@
       "message": "(nitpick) having too many arguments make this hard to keep track of what is what, perhaps some of these could be passed in the ctx by name now there\u0027s one? (I didn\u0027t really think it through)\n\n(also note that it\u0027s also generally bad for performance, especially arguments \u003e\u003d 7 are passed on the stack so extra memory manipulations -- but in this case _find isn\u0027t called so much it matters)",
       "revId": "7f1602680f39fdaed6b3d1a5843e47247ee9f56d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4a05adf8_0aa67734",
+        "filename": "rbh-find.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-04-20T14:39:25Z",
+      "side": 1,
+      "message": "I was thinking about putting those functions specific to an overload in the context, but since I didn\u0027t have much preference between what\u0027s in this patch and this idea, I went with the first.\n\nBut your argument is very good, so I\u0027ll change it and keep them in the context structure. This also makes more sense with what\u0027s in the next patch...\n\nThanks :)",
+      "parentUuid": "db3ee39d_1c17d1fd",
+      "revId": "7f1602680f39fdaed6b3d1a5843e47247ee9f56d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
