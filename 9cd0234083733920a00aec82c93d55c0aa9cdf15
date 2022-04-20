@@ -16,6 +16,24 @@
       "message": "__attribute__((destructor)) works as a lib too, and can be put in its own file if you want to extend on it.\nI don\u0027t understand the point of removing that with the ERROR* macros -- it feels like you\u0027re just creating exit codes where we won\u0027t call the destructor?\n\n(that might get clearer as I read the next commits)",
       "revId": "9cd0234083733920a00aec82c93d55c0aa9cdf15",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0a8eee57_498f3af7",
+        "filename": "rbh-find.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-04-20T14:36:32Z",
+      "side": 0,
+      "message": "The problem here is that the backends are now stored in a context structure passed around the library, and since the __attribute__((destructor)) requires a function with no argument, I can\u0027t give it the context we carry around. \n\nSo I need a way to call \"exit_backends\" with the context as an argument, and between calling it manually before each \"error\", \"error_at_line\" and \"exit\" would be annoying, I decided to swap those for a macro that will do the exact same job as the __attribute__((destructor)).\n\nIf you have a better way, don\u0027t hesitate to tell me, I do agree my solution isn\u0027t exactly pretty.",
+      "parentUuid": "02e99f07_95992248",
+      "revId": "9cd0234083733920a00aec82c93d55c0aa9cdf15",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }

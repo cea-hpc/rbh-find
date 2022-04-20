@@ -22,6 +22,30 @@
       },
       "revId": "ef068f1141367aff69d1e64934643ccef29ba52f",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "98d42e88_326b624f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-04-20T14:36:32Z",
+      "side": 1,
+      "message": "Yes my bad, \"the overloads without having to maintain twice the code base\".\n\nThe overloads we are building (for Lustre and another project) will use this library for everything \"backend\" related. However, the main files will be very similar to rbh-find.c. So we figured it would be a good idea to also modify it to make it more generic.\n\nThe goal of this patch and the next two are to leave only the functions that may be changed by the overloads (namely what to do for each action, what to before executing an action, and the predicate parsing), and keep the generic stuff in another file, backend.c .\n\nI\u0027ll modify the commit, I agree it\u0027s unclear what we want to achieve.",
+      "parentUuid": "42eeabea_a1a97f8d",
+      "range": {
+        "startLine": 11,
+        "startChar": 56,
+        "endLine": 12,
+        "endChar": 27
+      },
+      "revId": "ef068f1141367aff69d1e64934643ccef29ba52f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
