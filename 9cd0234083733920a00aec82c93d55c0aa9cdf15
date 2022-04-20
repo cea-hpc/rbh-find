@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "02e99f07_95992248",
+        "filename": "rbh-find.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2022-04-20T12:43:42Z",
+      "side": 0,
+      "message": "__attribute__((destructor)) works as a lib too, and can be put in its own file if you want to extend on it.\nI don\u0027t understand the point of removing that with the ERROR* macros -- it feels like you\u0027re just creating exit codes where we won\u0027t call the destructor?\n\n(that might get clearer as I read the next commits)",
+      "revId": "9cd0234083733920a00aec82c93d55c0aa9cdf15",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

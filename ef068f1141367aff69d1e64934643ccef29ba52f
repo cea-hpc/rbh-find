@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "42eeabea_a1a97f8d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2022-04-20T12:43:42Z",
+      "side": 1,
+      "message": "Does not parse. To maintain the code base twice?\n\nAvoiding global variables makes the function easier to use as a lib (no risk of having partially initialized things left behind, and eventually allow calling independant finders from different threads), but I don\u0027t see what this have to do with overloads.",
+      "range": {
+        "startLine": 11,
+        "startChar": 56,
+        "endLine": 12,
+        "endChar": 27
+      },
+      "revId": "ef068f1141367aff69d1e64934643ccef29ba52f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
