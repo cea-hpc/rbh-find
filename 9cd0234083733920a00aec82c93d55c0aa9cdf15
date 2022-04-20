@@ -34,6 +34,24 @@
       "parentUuid": "02e99f07_95992248",
       "revId": "9cd0234083733920a00aec82c93d55c0aa9cdf15",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "04c06030_2d9aa0d9",
+        "filename": "rbh-find.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2022-04-20T20:27:31Z",
+      "side": 0,
+      "message": "ah, I didn\u0027t think it through, that makes sense... Without global this cannot work...\nIf there isn\u0027t going to be multithreading, having a global list of ctx (or single global extern ctx) would work; what\u0027s needed for reusability here isn\u0027t the removal of globals but exposing them as an interface to the rbh-find for external use (library or overloaded version).\n\nThat said thinking of it from a library point of view most libraries don\u0027t call exit and just leave it to the caller, so it might be better like this ultimately. Would need to add a ctx_finish() generic function or something for backends to hook into though.",
+      "parentUuid": "0a8eee57_498f3af7",
+      "revId": "9cd0234083733920a00aec82c93d55c0aa9cdf15",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }

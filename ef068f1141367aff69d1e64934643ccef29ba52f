@@ -46,6 +46,23 @@
       },
       "revId": "ef068f1141367aff69d1e64934643ccef29ba52f",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3cd38dd4_07f34fcb",
+        "filename": "rbh-find.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 428,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2022-04-20T20:27:31Z",
+      "side": 1,
+      "message": "this is missing an exit_backends(\u0026ctx) call here",
+      "revId": "ef068f1141367aff69d1e64934643ccef29ba52f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
