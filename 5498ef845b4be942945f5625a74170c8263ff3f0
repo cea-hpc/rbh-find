@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b5120861_7856bead",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-04-21T09:12:04Z",
+      "side": 1,
+      "message": "It\u0027s not exactly about the loop increasing the index, it\u0027s about the fact we consume the action token by increasing the index by one, and then a second time to consume the file parameter of the action.\n\nAs such, a command line ending like \"rbh-find rbh:mongo:blob -fls blob\" would have an effective (removing the command name) argc of 3, but before this patch, the index would be 4:\n - 1 for the URI\n - 2 for \"-fls\"\n - consume the token so the index becomes 3\n - parse the file and the increase the index to 4\n - end -\u003e argc is 3, index is 4\n \nIf the action and its file parameter are the last tokens of the command line, it would trigger an error (line 426 of rbh-find.c in this patch), or worse, if there are other tokens in the line, the for loop would increase the index by one once more, making it 5, meaning we would skip the token just after the file.\n\nI tried to explain it the commit message, tell me if it\u0027s more clear.",
+      "parentUuid": "bfb15edd_69d5a255",
+      "revId": "5498ef845b4be942945f5625a74170c8263ff3f0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c1e75530_344bfbc6",
@@ -35,6 +53,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9142d4ab_f99941f4",
+        "filename": "rbh-find.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-04-21T09:12:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c1e75530_344bfbc6",
+      "revId": "5498ef845b4be942945f5625a74170c8263ff3f0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "508c3691_d52b0340",
@@ -48,6 +84,24 @@
       "writtenOn": "2022-04-20T12:27:34Z",
       "side": 1,
       "message": "that comment became obsolete, we no longer consume the action token here.",
+      "revId": "5498ef845b4be942945f5625a74170c8263ff3f0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "754d9949_5dcf234f",
+        "filename": "rbh-find.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-04-21T09:12:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "508c3691_d52b0340",
       "revId": "5498ef845b4be942945f5625a74170c8263ff3f0",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
