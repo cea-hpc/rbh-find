@@ -38,6 +38,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d95b5015_1c6e2699",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2022-04-21T09:52:24Z",
+      "side": 1,
+      "message": "That\u0027s not correct. The option parsing for actions was incorrect whether it was -fls or -fprint (filename in argument) or -count:\n\n $ rbh-find rbh:mongo:test -count\n 194 matching entries\n /opt/rbh_asan/bin/rbh-find: you have too many \u0027)\u0027\n\nThe problem was that i is incremented in the case CLT_ACTION (before find call) and once again in the big loop \u0027for (i \u003d *arg_idx; i \u003c argc; i++)\u0027 before checking i \u003c argc.\n\nNevertheless, the fix is the same and now LGTM: I don\u0027t really care :p",
+      "parentUuid": "b5120861_7856bead",
+      "revId": "5498ef845b4be942945f5625a74170c8263ff3f0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c1e75530_344bfbc6",
         "filename": "rbh-find.c",
         "patchSetId": 1
