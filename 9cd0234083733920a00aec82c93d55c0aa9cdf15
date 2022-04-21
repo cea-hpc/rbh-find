@@ -52,6 +52,24 @@
       "parentUuid": "0a8eee57_498f3af7",
       "revId": "9cd0234083733920a00aec82c93d55c0aa9cdf15",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "21753747_0f211fbf",
+        "filename": "rbh-find.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-04-21T08:55:56Z",
+      "side": 0,
+      "message": "Renamed \"exit_backends\" to \"ctx_finish\", since it currently does the required job.",
+      "parentUuid": "04c06030_2d9aa0d9",
+      "revId": "9cd0234083733920a00aec82c93d55c0aa9cdf15",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
