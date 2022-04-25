@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "76e47376_0fa6bcba",
+        "filename": "include/rbh-find/backend.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-04-25T10:01:38Z",
+      "side": 1,
+      "message": "minor: As this is part of the API, I think it deserves some documentation. We should specify the meaning of the return value and possibly the arguments as well although their type may be enough to understand them.",
+      "range": {
+        "startLine": 33,
+        "startChar": 10,
+        "endLine": 33,
+        "endChar": 25
+      },
+      "revId": "327e2d9001281e89ff5d4004f228b83df7e9022c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7a8437c9_c656e57d",
+        "filename": "rbh-find.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-04-25T10:01:38Z",
+      "side": 1,
+      "message": "minor: I find it a bit odd to have a special case for count. Especialy since this is now part of the API of rbh-find\u0027s library. Wouldn\u0027t it be simpler to have the basic actions part of the backend instead of asking each overload to reimplement them?",
+      "range": {
+        "startLine": 56,
+        "startChar": 8,
+        "endLine": 57,
+        "endChar": 14
+      },
+      "revId": "327e2d9001281e89ff5d4004f228b83df7e9022c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b7d3f24b_03f6f513",
+        "filename": "rbh-find.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-04-25T10:01:38Z",
+      "side": 1,
+      "message": "minor: the break is useless",
+      "range": {
+        "startLine": 57,
+        "startChar": 7,
+        "endLine": 57,
+        "endChar": 14
+      },
+      "revId": "327e2d9001281e89ff5d4004f228b83df7e9022c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
