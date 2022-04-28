@@ -82,6 +82,16 @@ struct find_context {
      */
     struct rbh_filter* (*parse_predicate_callback)(struct find_context *ctx,
                                                    int *arg_idx);
+
+    /**
+     * Callback to convert a string to a commend_line_token
+     *
+     * @param string    the string to convert
+     *
+     * @return          the command line token that represents \p string
+     */
+    enum command_line_token
+    (*str2command_line_token_callback)(const char *string);
 };
 
 /**
