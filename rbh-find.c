@@ -43,6 +43,7 @@ main(int _argc, char *_argv[])
     ctx.exec_action_callback = &core_exec_action;
     ctx.post_action_callback = &core_post_action;
     ctx.parse_predicate_callback = &core_parse_predicate;
+    ctx.str2command_line_token_callback = &str2command_line_token;
 
     /* Parse the command line */
     for (index = 0; index < ctx.argc; index++) {
