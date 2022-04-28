@@ -267,7 +267,7 @@ parse_expression(struct find_context *ctx, int *arg_idx,
         struct rbh_filter *tmp;
         bool ascending = true;
 
-        token = str2command_line_token(ctx->argv[i]);
+        token = ctx->str2command_line_token_callback(ctx->argv[i]);
         switch (token) {
         case CLT_URI:
             error(EX_USAGE, 0, "paths must preceed expression: %s",
