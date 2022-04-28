@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1d2a2219_d7ff8d3a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-04-28T15:32:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "57f30e57_656f5645",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 8
+      },
+      "revId": "59b020a1d0a8e97422f6eba255f9b72f0ee6e5b3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7c738f3c_aebe0278",
@@ -47,6 +71,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d378a69e_3a204b2b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-04-28T15:32:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7c738f3c_aebe0278",
+      "range": {
+        "startLine": 12,
+        "startChar": 43,
+        "endLine": 12,
+        "endChar": 50
+      },
+      "revId": "59b020a1d0a8e97422f6eba255f9b72f0ee6e5b3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3a281ded_c8f51f33",
@@ -60,6 +108,30 @@
       "writtenOn": "2022-04-25T09:25:42Z",
       "side": 1,
       "message": "style: this should be aligned with the name of the file. Also, as mentionned in the commit message, I think we should find a different name for this file.",
+      "range": {
+        "startLine": 8,
+        "startChar": 17,
+        "endLine": 8,
+        "endChar": 24
+      },
+      "revId": "59b020a1d0a8e97422f6eba255f9b72f0ee6e5b3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8fd3d3ab_06c2fe4d",
+        "filename": "include/rbh-find/backend.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-04-28T15:32:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a281ded_c8f51f33",
       "range": {
         "startLine": 8,
         "startChar": 17,
