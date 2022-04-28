@@ -26,15 +26,10 @@
 #include "rbh-find/filters.h"
 #include "rbh-find/parser.h"
 
-union action_arguments {
-    /* ACT_FLS, ACT_FPRINT, ACT_FPRINT0, ACT_FPRINTF */
-    FILE *file;
-};
-
 static size_t
 _find(struct find_context *ctx, int backend_index, enum action action,
       const struct rbh_filter *filter, const struct rbh_filter_sort *sorts,
-      size_t sorts_count, const union action_arguments *args)
+      size_t sorts_count)
 {
     const struct rbh_filter_options OPTIONS = {
         .projection = {
@@ -65,39 +60,7 @@ _find(struct find_context *ctx, int backend_index, enum action action,
         if (fsentry == NULL)
             break;
 
-        switch (action) {
-        case ACT_PRINT:
-            /* XXX: glibc's printf() handles printf("%s", NULL) pretty well, but
-             *      I do not think this is part of any standard.
-             */
-            printf("%s\n", fsentry_path(fsentry));
-            break;
-        case ACT_PRINT0:
-            printf("%s%c", fsentry_path(fsentry), '\0');
-            break;
-        case ACT_FLS:
-            fsentry_print_ls_dils(args->file, fsentry);
-            break;
-        case ACT_FPRINT:
-            fprintf(args->file, "%s\n", fsentry_path(fsentry));
-            break;
-        case ACT_FPRINT0:
-            fprintf(args->file, "%s%c", fsentry_path(fsentry), '\0');
-            break;
-        case ACT_LS:
-            fsentry_print_ls_dils(stdout, fsentry);
-            break;
-        case ACT_COUNT:
-            count++;
-            break;
-        case ACT_QUIT:
-            ctx_finish(ctx);
-            exit(0);
-            break;
-        default:
-            ERROR(ctx, EXIT_FAILURE, ENOSYS, "%s", action2str(action));
-            break;
-        }
+        count += ctx->exec_action_callback(ctx, action, fsentry);
         free(fsentry);
     } while (true);
 
@@ -114,46 +77,17 @@ find(struct find_context *ctx, enum action action, int *arg_idx,
      const struct rbh_filter *filter, const struct rbh_filter_sort *sorts,
      size_t sorts_count)
 {
-    union action_arguments args;
-    const char *filename;
     int i = *arg_idx;
     size_t count = 0;
 
     ctx->action_done = true;
 
-    switch (action) {
-    case ACT_FLS:
-    case ACT_FPRINT:
-    case ACT_FPRINT0:
-        if (i >= ctx->argc)
-            ERROR(ctx, EX_USAGE, 0, "missing argument to `%s'",
-                  action2str(action));
-
-        filename = ctx->argv[i++];
-        args.file = fopen(filename, "w");
-        if (args.file == NULL)
-            ERROR(ctx, EXIT_FAILURE, errno, "fopen: %s", filename);
-        break;
-    default:
-        break;
-    }
+    i += ctx->pre_action_callback(ctx, i, action);
 
     for (size_t i = 0; i < ctx->backend_count; i++)
-        count += _find(ctx, i, action, filter, sorts, sorts_count, &args);
+        count += _find(ctx, i, action, filter, sorts, sorts_count);
 
-    switch (action) {
-    case ACT_COUNT:
-        printf("%lu matching entries\n", count);
-        break;
-    case ACT_FLS:
-    case ACT_FPRINT:
-    case ACT_FPRINT0:
-        if (fclose(args.file))
-            ERROR(ctx, EXIT_FAILURE, errno, "fclose: %s", filename);
-        break;
-    default:
-        break;
-    }
+    ctx->post_action_callback(ctx, i, action, count);
 
     *arg_idx = i;
 }
@@ -398,6 +332,10 @@ main(int _argc, char *_argv[])
     /* Discard the program's name */
     ctx.argc = _argc - 1;
     ctx.argv = &_argv[1];
+
+    ctx.pre_action_callback = &core_pre_action;
+    ctx.exec_action_callback = &core_exec_action;
+    ctx.post_action_callback = &core_post_action;
 
     /* Parse the command line */
     for (index = 0; index < ctx.argc; index++) {
