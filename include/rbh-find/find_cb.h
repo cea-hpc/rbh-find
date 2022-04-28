@@ -40,4 +40,13 @@ void
 find_post_action(struct find_context *ctx, const int index,
                  const enum action action, const size_t count);
 
+/**
+ * Core parse_predicate function, see `parse_predicate_callback` in `struct
+ * find_context` for more information.
+ *
+ * Called by rbh-find and implement GNU-like behaviour.
+ */
+struct rbh_filter *
+find_parse_predicate(struct find_context *ctx, int *arg_idx);
+
 #endif
