@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5e3b45ad_d7deedf4",
+        "filename": "include/rbh-find/backend.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-04-28T15:32:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eb853625_9812a900",
+      "range": {
+        "startLine": 39,
+        "startChar": 25,
+        "endLine": 39,
+        "endChar": 42
+      },
+      "revId": "dc69d9f63328c22384e742399ae1285c0f3a815a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "622e90e2_64f7e0f5",
@@ -47,6 +71,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6afa880c_dee907a5",
+        "filename": "include/rbh-find/backend.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-04-28T15:32:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "622e90e2_64f7e0f5",
+      "range": {
+        "startLine": 40,
+        "startChar": 4,
+        "endLine": 44,
+        "endChar": 66
+      },
+      "revId": "dc69d9f63328c22384e742399ae1285c0f3a815a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "92b47aad_89c519f2",
@@ -60,6 +108,30 @@
       "writtenOn": "2022-04-25T11:25:14Z",
       "side": 1,
       "message": "minor: I think it is find_callback now",
+      "range": {
+        "startLine": 81,
+        "startChar": 49,
+        "endLine": 81,
+        "endChar": 55
+      },
+      "revId": "dc69d9f63328c22384e742399ae1285c0f3a815a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "84e255dd_96be83a0",
+        "filename": "src/backend.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-04-28T15:32:11Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "92b47aad_89c519f2",
       "range": {
         "startLine": 81,
         "startChar": 49,
