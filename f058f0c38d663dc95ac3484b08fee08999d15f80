@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "852bf4ae_7e10c048",
+        "filename": "include/rbh-find/core.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-04-29T08:04:03Z",
+      "side": 1,
+      "message": "style: alignment issues",
+      "range": {
+        "startLine": 164,
+        "startChar": 24,
+        "endLine": 164,
+        "endChar": 26
+      },
+      "revId": "f058f0c38d663dc95ac3484b08fee08999d15f80",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
