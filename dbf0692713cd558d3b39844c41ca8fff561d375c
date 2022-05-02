@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fa46ba8a_a446ad57",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2022-05-02T15:05:14Z",
+      "side": 1,
+      "message": "question: where are the additions?",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 41
+      },
+      "revId": "dbf0692713cd558d3b39844c41ca8fff561d375c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
