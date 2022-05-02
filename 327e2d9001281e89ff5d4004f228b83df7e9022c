@@ -164,6 +164,30 @@
       },
       "revId": "327e2d9001281e89ff5d4004f228b83df7e9022c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "425880ad_a76b6528",
+        "filename": "rbh-find.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-05-02T14:39:51Z",
+      "side": 1,
+      "message": "No, since the core function like \"pre_action\" or \"exec_action\" are in the library and core.h, they will be available for overloads that want to use those. So if an overload doesn\u0027t require modifying how ACT_FLS works, it will just call \"core_exec_action\".",
+      "parentUuid": "b04b247a_eb44bfac",
+      "range": {
+        "startLine": 56,
+        "startChar": 8,
+        "endLine": 57,
+        "endChar": 14
+      },
+      "revId": "327e2d9001281e89ff5d4004f228b83df7e9022c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
