@@ -16,6 +16,24 @@
       "message": "question: why remove this line?",
       "revId": "79eed822095e6c838c11b69a09f0b1aca5e7e5cb",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "83a3be30_4f6337bb",
+        "filename": "rbh-find.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 399,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-05-02T14:39:43Z",
+      "side": 0,
+      "message": "Mistake on my part, done.",
+      "parentUuid": "c372bb05_c02129f3",
+      "revId": "79eed822095e6c838c11b69a09f0b1aca5e7e5cb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
