@@ -22,6 +22,52 @@
       },
       "revId": "e6c557856c6d2294dda07422e0a8b2fd1eab1bbb",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "714aa3bd_efaa4c53",
+        "filename": "include/rbh-find/core.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-05-03T08:56:54Z",
+      "side": 1,
+      "message": "minor: I think you should mention that these functions are called by the regular rbh-find and implement the GNU-find behavior.",
+      "range": {
+        "startLine": 95,
+        "startChar": 3,
+        "endLine": 96,
+        "endChar": 37
+      },
+      "revId": "e6c557856c6d2294dda07422e0a8b2fd1eab1bbb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7ea769e0_07db46dc",
+        "filename": "src/core.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-05-03T08:56:54Z",
+      "side": 1,
+      "message": "minor: I think gnu_pre_action or posix_pre_action or rbh_find_pre_action (and for the other of the functions as well) would be much clearer than the generic \"core\".",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 4
+      },
+      "revId": "e6c557856c6d2294dda07422e0a8b2fd1eab1bbb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
