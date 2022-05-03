@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "508729bc_addd5b35",
+        "filename": "include/rbh-find/core.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-05-03T14:50:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7196e168_eb2770b8",
+      "range": {
+        "startLine": 43,
+        "startChar": 66,
+        "endLine": 43,
+        "endChar": 71
+      },
+      "revId": "e6c557856c6d2294dda07422e0a8b2fd1eab1bbb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "714aa3bd_efaa4c53",
@@ -47,6 +71,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4b3d76bf_fc550400",
+        "filename": "include/rbh-find/core.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-05-03T14:50:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "714aa3bd_efaa4c53",
+      "range": {
+        "startLine": 95,
+        "startChar": 3,
+        "endLine": 96,
+        "endChar": 37
+      },
+      "revId": "e6c557856c6d2294dda07422e0a8b2fd1eab1bbb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7ea769e0_07db46dc",
@@ -60,6 +108,30 @@
       "writtenOn": "2022-05-03T08:56:54Z",
       "side": 1,
       "message": "minor: I think gnu_pre_action or posix_pre_action or rbh_find_pre_action (and for the other of the functions as well) would be much clearer than the generic \"core\".",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 4
+      },
+      "revId": "e6c557856c6d2294dda07422e0a8b2fd1eab1bbb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "01fbf69b_07da64e8",
+        "filename": "src/core.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-05-03T14:50:06Z",
+      "side": 1,
+      "message": "The problem is that they\u0027re all used for both mongo and posix URIs, so they\u0027re technically not specific to GNU or POSIX. And I find \"rbh_find_pre_action\" to be too unnecessarily complex.",
+      "parentUuid": "7ea769e0_07db46dc",
       "range": {
         "startLine": 25,
         "startChar": 0,
