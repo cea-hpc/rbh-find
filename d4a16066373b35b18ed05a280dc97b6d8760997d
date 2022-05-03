@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b6e8f461_010e51a3",
+        "filename": "include/rbh-find/core.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-05-03T14:51:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f0317c0_d15af47c",
+      "range": {
+        "startLine": 91,
+        "startChar": 28,
+        "endLine": 91,
+        "endChar": 46
+      },
+      "revId": "d4a16066373b35b18ed05a280dc97b6d8760997d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6aefb450_04438203",
@@ -37,6 +61,30 @@
       "writtenOn": "2022-05-03T09:06:11Z",
       "side": 1,
       "message": "style: does this work:\n\nenum command_line_token\n(*str2command_line_token_callback)(const char *string);\n\nI find it more readable.",
+      "range": {
+        "startLine": 93,
+        "startChar": 4,
+        "endLine": 94,
+        "endChar": 29
+      },
+      "revId": "d4a16066373b35b18ed05a280dc97b6d8760997d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "463ff6de_609d194e",
+        "filename": "include/rbh-find/core.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-05-03T14:51:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6aefb450_04438203",
       "range": {
         "startLine": 93,
         "startChar": 4,
