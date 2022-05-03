@@ -22,6 +22,30 @@
       },
       "revId": "e6c557856c6d2294dda07422e0a8b2fd1eab1bbb",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "df814cb7_9beb49af",
+        "filename": "rbh-find.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-05-03T14:50:33Z",
+      "side": 0,
+      "message": "Because the file is added to the context structure, but in a previous patch. I just forgot to delete those 4 lines in that specific patch.",
+      "parentUuid": "80f612c6_4a21c2d4",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 2
+      },
+      "revId": "e6c557856c6d2294dda07422e0a8b2fd1eab1bbb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
