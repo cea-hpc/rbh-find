@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "706610ad_f675b1fc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2022-05-05T10:30:45Z",
+      "side": 1,
+      "message": "Not really ok with having this call as a callback, as this behavior will not change. I may prefer having the functions which chose if the token is a predicate or an action as callbacks.",
+      "revId": "429a03341a9d6fef9127ddc9ee6c8f87044cc318",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "288d0b6a_204ae440",
+        "filename": "include/rbh-find/core.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2022-05-05T10:30:45Z",
+      "side": 1,
+      "message": "typo: command_line_token",
+      "range": {
+        "startLine": 87,
+        "startChar": 41,
+        "endLine": 87,
+        "endChar": 59
+      },
+      "revId": "429a03341a9d6fef9127ddc9ee6c8f87044cc318",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
