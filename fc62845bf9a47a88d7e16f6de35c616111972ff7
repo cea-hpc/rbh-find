@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "200bf968_3e1ac467",
+        "filename": "include/rbh-find/core.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-05-10T14:18:36Z",
+      "side": 1,
+      "message": "question: already parsed?",
+      "range": {
+        "startLine": 172,
+        "startChar": 54,
+        "endLine": 172,
+        "endChar": 74
+      },
+      "revId": "fc62845bf9a47a88d7e16f6de35c616111972ff7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "903f3f0d_2de543aa",
+        "filename": "include/rbh-find/core.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-05-10T14:18:36Z",
+      "side": 1,
+      "message": "question: this function was added in core so that the overload can call it to parse the command line arguments such as -or, -not, etc?",
+      "range": {
+        "startLine": 182,
+        "startChar": 0,
+        "endLine": 182,
+        "endChar": 16
+      },
+      "revId": "fc62845bf9a47a88d7e16f6de35c616111972ff7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
