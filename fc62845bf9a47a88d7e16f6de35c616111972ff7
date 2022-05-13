@@ -50,6 +50,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "dd2d636a_bc6c40d3",
+        "filename": "include/rbh-find/core.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-05-13T08:49:02Z",
+      "side": 1,
+      "message": "I wasn\u0027t clear, my question was more of a suggestion.",
+      "parentUuid": "c3c9e579_2d392653",
+      "range": {
+        "startLine": 172,
+        "startChar": 54,
+        "endLine": 172,
+        "endChar": 74
+      },
+      "revId": "fc62845bf9a47a88d7e16f6de35c616111972ff7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "903f3f0d_2de543aa",
         "filename": "include/rbh-find/core.h",
         "patchSetId": 6
