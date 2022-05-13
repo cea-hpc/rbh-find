@@ -72,6 +72,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c7d6c418_891de2f1",
+        "filename": "include/rbh-find/core.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-05-13T14:23:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dd2d636a_bc6c40d3",
+      "range": {
+        "startLine": 172,
+        "startChar": 54,
+        "endLine": 172,
+        "endChar": 74
+      },
+      "revId": "fc62845bf9a47a88d7e16f6de35c616111972ff7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "903f3f0d_2de543aa",
