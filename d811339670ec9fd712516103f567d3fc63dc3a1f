@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7dd5faf3_1156b48d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2022-05-17T06:41:20Z",
+      "side": 1,
+      "message": "major? core?",
+      "range": {
+        "startLine": 7,
+        "startChar": 47,
+        "endLine": 7,
+        "endChar": 54
+      },
+      "revId": "d811339670ec9fd712516103f567d3fc63dc3a1f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3d1d5118_6d2778b5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2022-05-17T06:41:20Z",
+      "side": 1,
+      "message": "major: to remove",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 30
+      },
+      "revId": "d811339670ec9fd712516103f567d3fc63dc3a1f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
