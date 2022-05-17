@@ -105,6 +105,24 @@
       "parentUuid": "3846dfb7_20f5998b",
       "revId": "f30d43c900268c538d95b991eb67bd2d691cb358",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "18bcefde_dfa9c009",
+        "filename": "src/find_cb.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-05-17T15:05:46Z",
+      "side": 1,
+      "message": "After remembering how we implemented the Lustre rbh-find, we decided not to overload str2predicate because we overload the function just above (which calls it AND calls the appropriate filter creation function), and for str2action, we don\u0027t have another action yet. So we decided that we\u0027ll cross that bridge when necessary, which it isn\u0027t for now.\n\nAlso, there are issues with the fact that both str2action and str2predicate use a specific enum, meaning we have to use an int on our side, or change rbh-find to only use ints, and keep the enum just for \"information\" sake. But it\u0027s not decided yet.\n\nSorry for not being clear in my other responses :(",
+      "parentUuid": "4b505409_9421d783",
+      "revId": "f30d43c900268c538d95b991eb67bd2d691cb358",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
