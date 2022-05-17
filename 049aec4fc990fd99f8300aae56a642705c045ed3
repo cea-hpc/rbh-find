@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "faa87855_e44bca0a",
+        "filename": "include/rbh-find/core.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2022-05-17T12:10:04Z",
+      "side": 1,
+      "message": "(nitpick) others have a comment but not this one, action arguments or something?",
+      "revId": "049aec4fc990fd99f8300aae56a642705c045ed3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
