@@ -16,6 +16,24 @@
       "message": "if this moves str2predicate/str2action should also move? I assume the point is that you\u0027ll be adding actions for lustre?\n\nIt\u0027s a bit ugly but I\u0027m tempted to say adding actions globally and just saying ENOTSUPP when it\u0027s not handled in action switch is probably just as good...\n\n\n\nas a side note, I really dislike having this code duplicated, having str2predicate return PRED_INVALID or something and calling it preemptively might be ever so slightly less efficient but would avoid lots of potential confusion if we get this wrong when updating...",
       "revId": "f30d43c900268c538d95b991eb67bd2d691cb358",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "34087942_067c2ad1",
+        "filename": "src/find_cb.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-05-17T13:17:43Z",
+      "side": 1,
+      "message": "Indeed we plan on adding actions for Lustre. So yes, I should just move str2action and str2predicate here directly. \n\nHowever, I do not understand what you mean by \"adding actions globally\" ? You mean that the actions we want to add for Lustre should be added to rbh-find directly ?\n\n\nFor the side note, I also agree, but it\u0027s also a larger issue because of the other functions in rbh-find that exit the program, forcing rbh-find functions to be the last called in the overload chain.",
+      "parentUuid": "41a30f6c_06b898ba",
+      "revId": "f30d43c900268c538d95b991eb67bd2d691cb358",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
