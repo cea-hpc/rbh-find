@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9e4f6520_edae30c5",
+        "filename": "include/rbh-find/core.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2022-05-17T12:16:50Z",
+      "side": 1,
+      "message": "(nitpick) the pointer mark for return value is usually attached to the function name, so \u0027struct rbh_filter *(*...)` makes more sense",
+      "revId": "a1fd3158bd636006c58d674c5dcd3c8f66efb4b9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
