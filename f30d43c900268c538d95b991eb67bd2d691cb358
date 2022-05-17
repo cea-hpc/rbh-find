@@ -69,6 +69,42 @@
       "parentUuid": "34087942_067c2ad1",
       "revId": "f30d43c900268c538d95b991eb67bd2d691cb358",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ac42c49b_4688fc06",
+        "filename": "src/find_cb.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-05-17T13:46:47Z",
+      "side": 1,
+      "message": "We are thinking of other approaches to this (for instance, having Lustre/SE Linux/others as modules that can be added to rbh-find, and dissociating the tool rbh-find from the module rbh-find). However, we went and chose to implement overloads like this, with multiple callbacks specified.",
+      "parentUuid": "3a0c2072_0a2f5a37",
+      "revId": "f30d43c900268c538d95b991eb67bd2d691cb358",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4b505409_9421d783",
+        "filename": "src/find_cb.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-05-17T13:46:47Z",
+      "side": 1,
+      "message": "Yes I\u0027m not saying it\u0027s hard, I\u0027m saying it\u0027s not the initial philosophy of the tool, so while we could just change it for the parsing part, why not also change it for the other parts (like the action management for instance).\n\nCurrently, for the Lustre overload, we have an overload of \"find_parse_predicate\" that will just check for Lustre specific predicates, and if not found, will call the base \"find_parse_predicate\" function. So yes, we do have 2 parsing, but since we\u0027re currently dealing with just a few predicates, it\u0027s not that much overall.",
+      "parentUuid": "3846dfb7_20f5998b",
+      "revId": "f30d43c900268c538d95b991eb67bd2d691cb358",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
