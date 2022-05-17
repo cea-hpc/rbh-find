@@ -34,6 +34,41 @@
       "parentUuid": "41a30f6c_06b898ba",
       "revId": "f30d43c900268c538d95b991eb67bd2d691cb358",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3846dfb7_20f5998b",
+        "filename": "src/find_cb.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2022-05-17T13:38:02Z",
+      "side": 1,
+      "message": "\u003e For the side note, I also agree, but it\u0027s also a larger issue because of the other functions in rbh-find that exit the program, forcing rbh-find functions to be the last called in the overload chain.\n\nI don\u0027t think it\u0027d be that big of a change to have these not exit on error if we want to use them that way?\nstr2action and str2predicate in particular are called exactly once, so there\u0027s only one place that would need to check abort if they returned XYZ_INVAL -- or if that sounds painful adding a parameter \"bool abort\" to decide what to do on error could also work.\n\nFor a simple program exit-as-soon-as-error makes sense, but if it\u0027s going to be \"lib-ified\" then I think other problematic functions could also be updated... but would need to look at these on a case by case basis when changing one feels useful.",
+      "revId": "f30d43c900268c538d95b991eb67bd2d691cb358",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3a0c2072_0a2f5a37",
+        "filename": "src/find_cb.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2022-05-17T13:38:02Z",
+      "side": 1,
+      "message": "(splitting notes)\n\u003e However, I do not understand what you mean by \"adding actions globally\" ? You mean that the actions we want to add for Lustre should be added to rbh-find directly ?\n\nYes, we could just not move this (keep CLI parsing in common code) and add lustre actions directly there; non-lustre find would just fail if the options were given there because it\u0027s not listed in the various switches.\n\nThat being said, I\u0027m not seriously believing we\u0027d do this...",
+      "parentUuid": "34087942_067c2ad1",
+      "revId": "f30d43c900268c538d95b991eb67bd2d691cb358",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
