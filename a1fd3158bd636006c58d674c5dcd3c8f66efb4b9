@@ -16,6 +16,24 @@
       "message": "(nitpick) the pointer mark for return value is usually attached to the function name, so \u0027struct rbh_filter *(*...)` makes more sense",
       "revId": "a1fd3158bd636006c58d674c5dcd3c8f66efb4b9",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f89d8561_059e8cf2",
+        "filename": "include/rbh-find/core.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-05-17T15:11:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9e4f6520_edae30c5",
+      "revId": "a1fd3158bd636006c58d674c5dcd3c8f66efb4b9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
