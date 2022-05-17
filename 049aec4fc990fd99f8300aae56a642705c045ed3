@@ -16,6 +16,24 @@
       "message": "(nitpick) others have a comment but not this one, action arguments or something?",
       "revId": "049aec4fc990fd99f8300aae56a642705c045ed3",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "17a38e4e_3bf45ce5",
+        "filename": "include/rbh-find/core.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-05-17T15:11:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "faa87855_e44bca0a",
+      "revId": "049aec4fc990fd99f8300aae56a642705c045ed3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
