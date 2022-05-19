@@ -33,6 +33,24 @@
       "message": "Hi, sorry for the delay.\n\nJust a comment on the method: it looks to me like this patch series is meant to ease the implementation of features in rbh-find-lustre. Is this correct?\n\nIf so, can you explain what is to be gained from merging these changes in rbh-find and not just in rbh-find-lustre?\n\nAlso, could you point to a couple of commits in rbh-find-lustre that were made possible thanks to this refactor?",
       "revId": "9b3fffa03057b580793f51ce3a958b3908475e27",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "68b1b83d_9060bf09",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003556
+      },
+      "writtenOn": "2022-05-19T21:35:11Z",
+      "side": 1,
+      "message": "rbh-find-lustre isn\u0027t an rbh-find fork, but they use the new `librbh-find` added in I376dc4acec2dafb9144278cccebc1fd94ff71ab7 back in March -- everything in rbh-find can\u0027t be reused while core stuff is shared (installed in the lib) so it kind of makes sense if that is to be shared.\n\nhttps://review.gerrithub.io/c/cea-hpc/rbh-find-lustre/+/537619 uses it an cleans up a lot of code\n\nI\u0027m sorry, I also didn\u0027t notice rbh-find-lustre was built in a different repo until recently, I was imagining it as a backend... Not sure I like exposing all of this as external API as it\u0027s not versioned/cleanly versionable ; but I guess it\u0027s the same problem as with librbh itself (no ABI stability/guarantees right now so everything needs to be upgraded in lockstep) and it might improve in the future...\n\nBTW @Yoann: when cloning from gerrit the default branch isn\u0027t main so clone fails, I missed the first few commits already having been merged. github\u0027s code doesn\u0027t look up to date with gerrit either...",
+      "parentUuid": "80bbc033_5147080c",
+      "revId": "9b3fffa03057b580793f51ce3a958b3908475e27",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
