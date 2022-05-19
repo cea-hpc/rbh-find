@@ -16,6 +16,23 @@
       "message": "a",
       "revId": "9b3fffa03057b580793f51ce3a958b3908475e27",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "80bbc033_5147080c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2022-05-19T19:41:41Z",
+      "side": 1,
+      "message": "Hi, sorry for the delay.\n\nJust a comment on the method: it looks to me like this patch series is meant to ease the implementation of features in rbh-find-lustre. Is this correct?\n\nIf so, can you explain what is to be gained from merging these changes in rbh-find and not just in rbh-find-lustre?\n\nAlso, could you point to a couple of commits in rbh-find-lustre that were made possible thanks to this refactor?",
+      "revId": "9b3fffa03057b580793f51ce3a958b3908475e27",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
