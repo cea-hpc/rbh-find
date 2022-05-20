@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "70ab367e_a097c39c",
+        "filename": "include/rbh-find/core.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-05-20T07:59:46Z",
+      "side": 1,
+      "message": "typo: most likely (but I think you can simply say: that represents \\p string)",
+      "range": {
+        "startLine": 111,
+        "startChar": 48,
+        "endLine": 111,
+        "endChar": 57
+      },
+      "revId": "bddfb9a48337be216597079bc813e2251ec27fd2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "40605851_acd807e5",
+        "filename": "include/rbh-find/find_cb.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-05-20T07:59:46Z",
+      "side": 1,
+      "message": "minor: maybe we should say Find now?",
+      "range": {
+        "startLine": 53,
+        "startChar": 3,
+        "endLine": 53,
+        "endChar": 7
+      },
+      "revId": "bddfb9a48337be216597079bc813e2251ec27fd2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
