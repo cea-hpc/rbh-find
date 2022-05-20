@@ -51,6 +51,24 @@
       "parentUuid": "80bbc033_5147080c",
       "revId": "9b3fffa03057b580793f51ce3a958b3908475e27",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dde18d37_553f65f5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-05-20T07:04:18Z",
+      "side": 1,
+      "message": "Yes, as stated by Dominique, rbh-find-lustre currently is a separate tool with its own repository. We have ideas of actually having it as a module to rbh-find, but this idea requires much further thinking and large modifications to how rbh-find works.\n\nRegarding the branch issue, thanks for notifying me, I had no idea gerrithub\u0027s main branch would be \"master\" and not \"main\". I\u0027ll solve the issue shortly",
+      "parentUuid": "68b1b83d_9060bf09",
+      "revId": "9b3fffa03057b580793f51ce3a958b3908475e27",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
