@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "78025779_31ec9176",
+        "filename": "include/rbh-find/find_cb.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-05-20T07:43:10Z",
+      "side": 1,
+      "message": "nit: it should be GNU-find like or POSIX like but not just GNU",
+      "range": {
+        "startLine": 37,
+        "startChar": 36,
+        "endLine": 37,
+        "endChar": 39
+      },
+      "revId": "82c72598b586dd97a26d26a5830377de2ca47cd8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
