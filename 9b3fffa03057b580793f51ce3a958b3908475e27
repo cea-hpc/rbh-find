@@ -87,6 +87,24 @@
       "parentUuid": "dde18d37_553f65f5",
       "revId": "9b3fffa03057b580793f51ce3a958b3908475e27",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ac7f28cd_b83306a8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1018755
+      },
+      "writtenOn": "2022-05-22T22:30:27Z",
+      "side": 1,
+      "message": "OK, I guess it\u0027s my fault for merging the `librbh-find` patch without questioning it more at the time.\n\nIt\u0027s not clear to me which feature you need that can\u0027t be built into `rhb-find` directly. On gerrithub, I see patches for a `-ost` option, a `-fid` option, and a `-hsm-state` option. I haven\u0027t reviewed those in detail, but I suspect that the code for those could be included directly into `rbh-find` without any significant drawback. Could you explain why you decided to create a separate tool instead?\n\n-----\n\nI\u0027m also realising that I missed a series of patches on librobinhood. Sorry about that.\n\nI have been quite busy in the past couple of months and it\u0027s probably going to last for a couple more weeks. In the meantime feel free to merge what you want/need.",
+      "parentUuid": "e14f633c_fbd12257",
+      "revId": "9b3fffa03057b580793f51ce3a958b3908475e27",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
