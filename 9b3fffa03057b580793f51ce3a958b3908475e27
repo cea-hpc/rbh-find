@@ -105,6 +105,24 @@
       "parentUuid": "e14f633c_fbd12257",
       "revId": "9b3fffa03057b580793f51ce3a958b3908475e27",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "50d88dcd_da69cb5b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-05-23T07:14:36Z",
+      "side": 1,
+      "message": "The problem is that if we want to re-define the ways some options or actions are managed, how can we specify that the base version of this action is to be used ? Or the Lustre one, or the SE Linux one, ... ?\n\nWe will most likely modify how \"-fls\" works, so how can we specify that \"rbh-find rbh:mongo:test -fls test.txt\" should use the Lustre-defined \"-fls\" option and not rbh-find\u0027s native one ?\n\nWe could technically add a \"-lustre\" to the command line, but is that not unnecessarily annoying (\"rbh-find rbh:mongo:test -lustre -fls test.txt\" VS \"rbh-lfind rbh:mongo:test -fls test.txt\") ?\n\n\nMoreover, with Posix and Lustre, we stay in a filesystem territory, but we plan on using rbh-find with the European project IO-SEA, that rely on objects rather than a filesystem. So it is easier to export rbh-find\u0027s base functionalities and modify the predicates and actions for our needs.\n\n\nFinally, when we talked about the xattrs issue regarding their typing, you hinted that we could create specific tools to interpret those xattrs and typings. We found that to be a pretty good solution for our needs - as it is more modular, and within librobinhood\u0027s philosophy - so we went ahead with it.\n\n----\n\nNo worries, we merged the librobinhood patches because they were up for a while, and needed them to be landed to actually progress on this rbh-find modifications.",
+      "parentUuid": "ac7f28cd_b83306a8",
+      "revId": "9b3fffa03057b580793f51ce3a958b3908475e27",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
