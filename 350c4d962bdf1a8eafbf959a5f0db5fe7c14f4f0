@@ -16,6 +16,24 @@
       "message": "nitpick: it\u0027s good to say in commit message why you add something when you add something that isn\u0027t used immediately",
       "revId": "350c4d962bdf1a8eafbf959a5f0db5fe7c14f4f0",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "31eb4e12_b0d775e4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-06-13T12:42:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2aa8a173_50f924c1",
+      "revId": "350c4d962bdf1a8eafbf959a5f0db5fe7c14f4f0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
