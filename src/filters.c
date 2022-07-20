@@ -139,8 +139,8 @@ timedelta2filter(enum predicate predicate, enum time_unit unit,
                           "rbh_filter_compare_time_new");
         break;
     default:
-        filter = filter_uint64_range_new(field, then - TIME_UNIT2SECONDS[unit],
-                                         then);
+        filter = filter_uint64_range_new(field, then - 1,
+                                         then + TIME_UNIT2SECONDS[unit]);
         if (filter == NULL)
             error_at_line(EXIT_FAILURE, errno, __FILE__, __LINE__,
                           "filter_time_range_new");

@@ -236,15 +236,6 @@ actions and exclude them from the next queries. But remembering those entries
 could prove prohibitively expensive in terms of memory consumption. Moreover the
 time to build the queries would increase as we exclude more and more entries.
 
--amin, -cmin, and -mmin
------------------------
-
-find's ``-[acm]min`` predicates do not work quite like ``-[acm]time`` in terms
-of how the time boundaries are computed. There is no apparent reason for this.
-
-rbh-find uses the same method for all 6 predicates which it borrows from find's
-``-[acm]time``.
-
 -size
 -----------------------
 
