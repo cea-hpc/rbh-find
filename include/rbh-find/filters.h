@@ -34,6 +34,7 @@ shell_regex2filter(enum predicate predicate, const char *shell_regex,
  *
  * @param field         a field to filter
  * @param unit          a time unit
+ * @param past_filter   true if the filter operates on past times
  * @param _timedelta    a string representing a number of unit of time,
  *                      optionnally prefixed with either a '+' or '-' sign
  *
@@ -42,7 +43,7 @@ shell_regex2filter(enum predicate predicate, const char *shell_regex,
  */
 struct rbh_filter *
 timedelta2filter(const struct rbh_filter_field *field, enum time_unit unit,
-                 const char *_timedelta);
+                 const bool past_filter, const char *_timedelta);
 
 /**
  * Build a filter for the -[acm]min predicate
