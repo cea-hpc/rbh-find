@@ -92,7 +92,7 @@ filter_uint64_range_new(const struct rbh_filter_field *field, uint64_t start,
 
 struct rbh_filter *
 timedelta2filter(const struct rbh_filter_field *field, enum time_unit unit,
-                 const char *_timedelta)
+                 const bool past_filter, const char *_timedelta)
 {
     const char *timedelta = _timedelta;
     char operator = *timedelta;
@@ -119,26 +119,29 @@ timedelta2filter(const struct rbh_filter_field *field, enum time_unit unit,
     now = time(NULL);
     if (now < 0)
         error_at_line(EXIT_FAILURE, errno, __FILE__, __LINE__, "time");
-    then = now - delta;
+    then = now + (past_filter ? - delta : delta);
 
     switch (operator) {
     case '-':
-        filter = rbh_filter_compare_uint64_new(RBH_FOP_STRICTLY_GREATER, field,
-                                              then);
+        filter = rbh_filter_compare_uint64_new(
+                past_filter ? RBH_FOP_STRICTLY_GREATER : RBH_FOP_STRICTLY_LOWER,
+                field, then);
         if (filter == NULL)
             error_at_line(EXIT_FAILURE, errno, __FILE__, __LINE__,
                           "rbh_filter_compare_time_new");
         break;
     case '+':
-        filter = rbh_filter_compare_uint64_new(RBH_FOP_STRICTLY_LOWER, field,
-                                               then);
+        filter = rbh_filter_compare_uint64_new(
+                past_filter ? RBH_FOP_STRICTLY_LOWER : RBH_FOP_STRICTLY_GREATER,
+                field, then);
         if (filter == NULL)
             error_at_line(EXIT_FAILURE, errno, __FILE__, __LINE__,
                           "rbh_filter_compare_time_new");
         break;
     default:
-        filter = filter_uint64_range_new(field, then - TIME_UNIT2SECONDS[unit],
-                                         then);
+        filter = filter_uint64_range_new(
+                field, then - (past_filter * TIME_UNIT2SECONDS[unit]),
+                then + (!past_filter * TIME_UNIT2SECONDS[unit]));
         if (filter == NULL)
             error_at_line(EXIT_FAILURE, errno, __FILE__, __LINE__,
                           "filter_time_range_new");
@@ -152,13 +155,14 @@ struct rbh_filter *
 xmin2filter(enum predicate predicate, const char *minutes)
 {
     return timedelta2filter(&predicate2filter_field[predicate], TU_MINUTE,
-                            minutes);
+                            true, minutes);
 }
 
 struct rbh_filter *
 xtime2filter(enum predicate predicate, const char *days)
 {
-    return timedelta2filter(&predicate2filter_field[predicate], TU_DAY, days);
+    return timedelta2filter(&predicate2filter_field[predicate], TU_DAY,
+                            true, days);
 }
 
 struct rbh_filter *
