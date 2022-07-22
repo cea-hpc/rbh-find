@@ -46,4 +46,7 @@ extern const unsigned long TIME_UNIT2SECONDS[];
 unsigned long
 str2seconds(enum time_unit unit, const char *string);
 
+int
+str2uint64_t(const char *input, uint64_t *result);
+
 #endif

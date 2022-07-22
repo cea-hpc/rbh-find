@@ -10,6 +10,7 @@
 #endif
 
 #include <errno.h>
+#include <inttypes.h>
 #include <limits.h>
 #include <stdbool.h>
 #include <stdlib.h>
@@ -162,4 +163,17 @@ str2seconds(enum time_unit unit, const char *string)
     }
 
     return delta * TIME_UNIT2SECONDS[unit];
+}
+
+int
+str2uint64_t(const char *input, uint64_t *result)
+{
+    char *end;
+
+    errno = 0;
+    *result = strtoull(input, &end, 0);
+    if (errno || (!*result && input == end) || *end != '\0')
+        return -1;
+
+    return 0;
 }
