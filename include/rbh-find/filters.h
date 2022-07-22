@@ -9,6 +9,7 @@
 #define RBH_FIND_FILTERS_H
 
 #include "parser.h"
+#include "utils.h"
 
 #include <robinhood/filter.h>
 
@@ -25,6 +26,23 @@
 struct rbh_filter *
 shell_regex2filter(enum predicate predicate, const char *shell_regex,
                    unsigned int regex_options);
+
+/**
+ * timedelta2filter - build a filter from a string representing a time as an
+ * integer. If given integer without '+' or '-', will filter on
+ * ]now - (delta + 1) * unit; now - delta * unit[.
+ *
+ * @param field         a field to filter
+ * @param unit          a time unit
+ * @param _timedelta    a string representing a number of unit of time,
+ *                      optionnally prefixed with either a '+' or '-' sign
+ *
+ * @return              a pointer to a newly allocated struct filter, or NULL on
+ *                      error
+ */
+struct rbh_filter *
+timedelta2filter(const struct rbh_filter_field *field, enum time_unit unit,
+                 const char *_timedelta);
 
 /**
  * Build a filter for the -[acm]min predicate

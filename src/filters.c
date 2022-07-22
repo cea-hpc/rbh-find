@@ -90,11 +90,10 @@ filter_uint64_range_new(const struct rbh_filter_field *field, uint64_t start,
     return filter_and(low, high);
 }
 
-static struct rbh_filter *
-timedelta2filter(enum predicate predicate, enum time_unit unit,
+struct rbh_filter *
+timedelta2filter(const struct rbh_filter_field *field, enum time_unit unit,
                  const char *_timedelta)
 {
-    const struct rbh_filter_field *field = &predicate2filter_field[predicate];
     const char *timedelta = _timedelta;
     char operator = *timedelta;
     struct rbh_filter *filter;
@@ -113,8 +112,7 @@ timedelta2filter(enum predicate predicate, enum time_unit unit,
     errno = 0;
     delta = str2seconds(unit, timedelta);
     if ((errno == ERANGE && delta == ULONG_MAX) || (errno != 0 && delta == 0))
-        error(EXIT_FAILURE, 0, "invalid argument `%s' to `%s'", _timedelta,
-              predicate2str(predicate));
+        return NULL;
     errno = save_errno;
 
     /* Compute `then' */
@@ -153,13 +151,27 @@ timedelta2filter(enum predicate predicate, enum time_unit unit,
 struct rbh_filter *
 xmin2filter(enum predicate predicate, const char *minutes)
 {
-    return timedelta2filter(predicate, TU_MINUTE, minutes);
+    struct rbh_filter *result = timedelta2filter(
+        &predicate2filter_field[predicate], TU_MINUTE, minutes);
+
+    if (!result)
+        error(EXIT_FAILURE, 0, "invalid argument `%s' to `%s'", minutes,
+              predicate2str(predicate));
+
+    return result;
 }
 
 struct rbh_filter *
 xtime2filter(enum predicate predicate, const char *days)
 {
-    return timedelta2filter(predicate, TU_DAY, days);
+    struct rbh_filter *result = timedelta2filter(
+        &predicate2filter_field[predicate], TU_DAY, days);
+
+    if (!result)
+        error(EXIT_FAILURE, 0, "invalid argument `%s' to `%s'", days,
+              predicate2str(predicate));
+
+    return result;
 }
 
 struct rbh_filter *
