@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c7dd80dc_1400e351",
+        "filename": "include/rbh-find/filters.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-07-25T14:15:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f708d192_6ba661a9",
+      "range": {
+        "startLine": 31,
+        "startChar": 44,
+        "endLine": 31,
+        "endChar": 68
+      },
+      "revId": "ffa8d6dbd467cd25cc215581d5044a628ab52dd2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "537caa1b_5186df5a",
@@ -47,6 +71,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3cccd6af_61c39d79",
+        "filename": "include/rbh-find/utils.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-07-25T14:15:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "537caa1b_5186df5a",
+      "range": {
+        "startLine": 53,
+        "startChar": 31,
+        "endLine": 53,
+        "endChar": 62
+      },
+      "revId": "ffa8d6dbd467cd25cc215581d5044a628ab52dd2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "75d4d337_8fcca9ec",
@@ -60,6 +108,30 @@
       "writtenOn": "2022-07-25T13:11:59Z",
       "side": 1,
       "message": "major: I think the function does not set errno consistently on error.",
+      "range": {
+        "startLine": 55,
+        "startChar": 34,
+        "endLine": 55,
+        "endChar": 45
+      },
+      "revId": "ffa8d6dbd467cd25cc215581d5044a628ab52dd2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "60c50463_1e1296ff",
+        "filename": "include/rbh-find/utils.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2022-07-25T14:15:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "75d4d337_8fcca9ec",
       "range": {
         "startLine": 55,
         "startChar": 34,
