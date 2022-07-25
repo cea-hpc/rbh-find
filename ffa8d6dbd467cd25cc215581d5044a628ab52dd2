@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f708d192_6ba661a9",
+        "filename": "include/rbh-find/filters.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-07-25T13:11:59Z",
+      "side": 1,
+      "message": "suggest: string representing a time\n\nAlso, you should mention the format supported (which is only integers currently) and what the filter actually does (which range is computed).",
+      "range": {
+        "startLine": 31,
+        "startChar": 44,
+        "endLine": 31,
+        "endChar": 68
+      },
+      "revId": "ffa8d6dbd467cd25cc215581d5044a628ab52dd2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "537caa1b_5186df5a",
+        "filename": "include/rbh-find/utils.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-07-25T13:11:59Z",
+      "side": 1,
+      "message": "typo: I don\u0027t understand this. Did you mean \u0027a uint64_t represented by \\p string\u0027?",
+      "range": {
+        "startLine": 53,
+        "startChar": 31,
+        "endLine": 53,
+        "endChar": 62
+      },
+      "revId": "ffa8d6dbd467cd25cc215581d5044a628ab52dd2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "75d4d337_8fcca9ec",
+        "filename": "include/rbh-find/utils.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-07-25T13:11:59Z",
+      "side": 1,
+      "message": "major: I think the function does not set errno consistently on error.",
+      "range": {
+        "startLine": 55,
+        "startChar": 34,
+        "endLine": 55,
+        "endChar": 45
+      },
+      "revId": "ffa8d6dbd467cd25cc215581d5044a628ab52dd2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

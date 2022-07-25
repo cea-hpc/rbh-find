@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5f046021_74361301",
+        "filename": "src/filters.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-07-25T13:11:59Z",
+      "side": 0,
+      "message": "major: you should return NULL here and let the caller exit here. Otherwise, we don\u0027t know the name of the filter that was wrong.",
+      "range": {
+        "startLine": 117,
+        "startChar": 0,
+        "endLine": 117,
+        "endChar": 37
+      },
+      "revId": "5565af9426624dc3adcd41e34fd4b7d831b1a77e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
