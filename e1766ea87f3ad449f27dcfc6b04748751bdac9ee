@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "17ab858b_750c9143",
+        "filename": "include/rbh-find/filters.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-07-25T13:21:47Z",
+      "side": 1,
+      "message": "suggest: true if the filter operates on past times",
+      "range": {
+        "startLine": 35,
+        "startChar": 24,
+        "endLine": 36,
+        "endChar": 30
+      },
+      "revId": "e1766ea87f3ad449f27dcfc6b04748751bdac9ee",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
