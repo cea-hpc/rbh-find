@@ -168,7 +168,7 @@ str2seconds(enum time_unit unit, const char *string)
 int
 str2uint64_t(const char *input, uint64_t *result)
 {
-    char *end;
+    char *end = NULL;
 
     errno = 0;
     *result = strtoull(input, &end, 0);
