@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "466f59b4_771ccc76",
+        "filename": "src/utils.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2022-11-29T08:28:11Z",
+      "side": 1,
+      "message": "nit: I donnot think this is mandatory, `strtoull()` will set it",
+      "range": {
+        "startLine": 171,
+        "startChar": 13,
+        "endLine": 171,
+        "endChar": 20
+      },
+      "revId": "faccca6e3d2c38d0daca8d64d3ec285e22175079",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
