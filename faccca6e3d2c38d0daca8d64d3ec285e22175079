@@ -3,6 +3,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "9c0cf9b7_3e21529b",
+        "filename": "src/filters.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2022-11-29T12:24:53Z",
+      "side": 1,
+      "message": "As I said in the other patch, you should add a function that does the conversion from a time_t to a filter.",
+      "range": {
+        "startLine": 124,
+        "startChar": 0,
+        "endLine": 124,
+        "endChar": 12
+      },
+      "revId": "faccca6e3d2c38d0daca8d64d3ec285e22175079",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "466f59b4_771ccc76",
         "filename": "src/utils.c",
         "patchSetId": 1
