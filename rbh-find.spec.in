@@ -1,0 +1,48 @@
+Name:    rbh-find
+Version: @version@
+Release: 1%{?dist}
+Summary: Query tool for RobinHood V4
+
+Group:   Applications/System
+License: LGPLv3
+URL:     https://github.com/cea-hpc/rbh-find.git
+Source0: %{name}-%{version}.tar.xz
+
+Requires: librobinhood
+
+BuildRequires: meson
+BuildRequires: gcc
+BuildRequires: gcc-c++
+BuildRequires: check-devel
+BuildRequires: librobinhood
+
+%description
+The query tool for the RobinHood project. It queries a backend metadata and can
+filter through entries.
+
+%prep
+%autosetup
+
+%build
+%meson
+%meson_build
+
+%install
+%meson_install
+
+%files
+%{_bindir}/rbh-find
+%{_libdir}/librbh-find.so*
+%{_libdir}/pkgconfig/rbh-find.pc
+%{_includedir}/rbh-find/actions.h
+%{_includedir}/rbh-find/core.h
+%{_includedir}/rbh-find/filters.h
+%{_includedir}/rbh-find/find_cb.h
+%{_includedir}/rbh-find/parser.h
+%{_includedir}/rbh-find/rbh-find.h
+%{_includedir}/rbh-find/utils.h
+
+%changelog
+
+* Tue Apr 11 2023 - Yoann Valeri <yoann.valeri@cea.fr> - 0.1-1
+- First version
