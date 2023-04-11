@@ -7,7 +7,7 @@
 project(
 	'rbh-find',
 	'c',
-	version: '0.0.0',
+	version: '0.1.0',
 	license: 'LGPL3.0-or-later',
 	default_options: [
 		'warning_level=3',
@@ -33,7 +33,7 @@ configure_file(input: 'config.h.in', output: 'config.h',
 	       configuration: conf_data)
 add_project_arguments(['-DHAVE_CONFIG_H',], language: 'c')
 
-librobinhood = dependency('robinhood', version: '>=0.0.0')
+librobinhood = dependency('robinhood', version: '>=0.1.0')
 
 # "." is necessary for config.h
 include_dirs = include_directories('.', 'include')
@@ -67,4 +67,21 @@ pkg_mod.generate(
         filebase: 'rbh-find',
         description: 'C-API to librobinhood find-like mechanism'
 )
+
 subdir('tests')
+
+specfile = configuration_data()
+specfile.set('version', meson.project_version())
+configure_file(
+    input: 'rbh-find.spec.in',
+    output: 'rbh-find.spec',
+    configuration: specfile,
+)
+
+meson.add_dist_script('utils/add_specfile_to_dist.sh')
+custom_target('rpm',
+    output: 'rbh-find-' + meson.project_version() + '.rpm',
+    command: [
+        '../utils/make_rpm.sh', meson.current_build_dir(), meson.project_version()
+    ],
+)
