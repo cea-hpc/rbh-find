@@ -311,6 +311,7 @@ fsentry_printf_format(FILE *file, const struct rbh_fsentry *fsentry,
     size_t output_length = 0;
 
     for (size_t i = 0; i < length; i++) {
+        int sublength = 0;
         int tmp_length;
 
         switch (format_string[i]) {
@@ -329,7 +330,14 @@ fsentry_printf_format(FILE *file, const struct rbh_fsentry *fsentry,
             i++;
             break;
         default:
-            error(EXIT_FAILURE, ENOTSUP, "char in format string not supported");
+            while (format_string[i + sublength] != '%' &&
+                   format_string[i + sublength] != '\\' &&
+                   format_string[i + sublength] != 0)
+                sublength++;
+
+            tmp_length = snprintf(&output[output_length], max_length,
+                                  "%.*s", sublength, &format_string[i]);
+            i += sublength - 1;
         }
 
         max_length -= tmp_length;
