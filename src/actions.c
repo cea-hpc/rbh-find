@@ -285,6 +285,23 @@ fsentry_print_directive(char *output, int max_length,
     __builtin_unreachable();
 }
 
+static int
+fsentry_print_escape(char *output, int max_length, const char *escape)
+{
+    assert(escape != NULL);
+    assert(*escape != '\0');
+
+    /* For now, consider the escape to be a single character */
+    switch (*escape) {
+    case 'n':
+        return snprintf(output, max_length, "\n");
+    default:
+        error(EXIT_FAILURE, ENOTSUP, "format escape not supported");
+    }
+
+    __builtin_unreachable();
+}
+
 void
 fsentry_printf_format(FILE *file, const struct rbh_fsentry *fsentry,
                       const char *format_string)
@@ -303,6 +320,13 @@ fsentry_printf_format(FILE *file, const struct rbh_fsentry *fsentry,
                                                  max_length, fsentry,
                                                  format_string + i + 1);
             /* Go over the directive that was just printed */
+            i++;
+            break;
+        case '\\':
+            tmp_length = fsentry_print_escape(&output[output_length],
+                                              max_length,
+                                              format_string + i + 1);
+            /* Go over the escape that was just printed */
             i++;
             break;
         default:
