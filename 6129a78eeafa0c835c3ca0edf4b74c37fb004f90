@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ea8e7b3a_21ccd743",
+        "filename": "src/actions.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2023-06-02T08:36:32Z",
+      "side": 1,
+      "message": "minor: you can simply write the character into the buffer. No need to count then write:\n\n```\nwhile (...)\n    output[output_length++] \u003d format_string[sublength++];\n```\n\nAlso, this could be in a subfunction:\n\ni +\u003d printf_copy_regular_char(...);",
+      "range": {
+        "startLine": 336,
+        "startChar": 16,
+        "endLine": 336,
+        "endChar": 28
+      },
+      "revId": "6129a78eeafa0c835c3ca0edf4b74c37fb004f90",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
