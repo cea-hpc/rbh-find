@@ -26,6 +26,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "118a17cb_52081179",
+        "filename": "src/actions.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2023-06-02T10:10:39Z",
+      "side": 1,
+      "message": "question: does this mean the parsing will be done for each valid entry?",
+      "range": {
+        "startLine": 288,
+        "startChar": 34,
+        "endLine": 288,
+        "endChar": 68
+      },
+      "revId": "fd731eba87f60c807f50df1f01d1a89c75eab449",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3fd2971e_28c38b6b",
         "filename": "src/find_cb.c",
         "patchSetId": 1
