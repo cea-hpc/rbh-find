@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "396646ad_2002bff7",
+        "filename": "src/actions.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2023-06-02T08:36:26Z",
+      "side": 1,
+      "message": "minor: this should probably be PATH_MAX + something",
+      "range": {
+        "startLine": 266,
+        "startChar": 24,
+        "endLine": 266,
+        "endChar": 28
+      },
+      "revId": "fd731eba87f60c807f50df1f01d1a89c75eab449",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
