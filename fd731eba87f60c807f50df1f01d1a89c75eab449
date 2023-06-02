@@ -22,6 +22,29 @@
       },
       "revId": "fd731eba87f60c807f50df1f01d1a89c75eab449",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3fd2971e_28c38b6b",
+        "filename": "src/find_cb.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1017196
+      },
+      "writtenOn": "2023-06-02T10:07:45Z",
+      "side": 1,
+      "message": "question: what will be the purpose of this function?",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 22
+      },
+      "revId": "fd731eba87f60c807f50df1f01d1a89c75eab449",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
