@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "16b82e14_0ef3bf6e",
+        "filename": "src/actions.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2023-06-02T12:36:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "396646ad_2002bff7",
+      "range": {
+        "startLine": 266,
+        "startChar": 24,
+        "endLine": 266,
+        "endChar": 28
+      },
+      "revId": "fd731eba87f60c807f50df1f01d1a89c75eab449",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "118a17cb_52081179",
@@ -49,6 +73,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b5936297_ab7d7abb",
+        "filename": "src/actions.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2023-06-02T12:36:58Z",
+      "side": 1,
+      "message": "Yes, since the output buffer depends on the fsentry being read, I don\u0027t see another way of doing this while only parsing the format string once.\nDo you have an idea ?",
+      "parentUuid": "118a17cb_52081179",
+      "range": {
+        "startLine": 288,
+        "startChar": 34,
+        "endLine": 288,
+        "endChar": 68
+      },
+      "revId": "fd731eba87f60c807f50df1f01d1a89c75eab449",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3fd2971e_28c38b6b",
         "filename": "src/find_cb.c",
         "patchSetId": 1
@@ -60,6 +108,30 @@
       "writtenOn": "2023-06-02T10:07:45Z",
       "side": 1,
       "message": "question: what will be the purpose of this function?",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 22
+      },
+      "revId": "fd731eba87f60c807f50df1f01d1a89c75eab449",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "863a48ec_ec27b4cb",
+        "filename": "src/find_cb.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1019048
+      },
+      "writtenOn": "2023-06-02T12:36:58Z",
+      "side": 1,
+      "message": "It is to prevalidate the format string and ensure it isn\u0027t wrong.\nIf we don\u0027t do this, we may have a wrong format string that will be detected after the entries are retrieved, so we would run the whole request just to error out before printing the entries.",
+      "parentUuid": "3fd2971e_28c38b6b",
       "range": {
         "startLine": 27,
         "startChar": 0,
