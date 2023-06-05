@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4a24bbe0_c6b16fda",
+        "filename": "src/actions.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2023-06-05T12:54:05Z",
+      "side": 1,
+      "message": "nit: you can use strncpy",
+      "range": {
+        "startLine": 280,
+        "startChar": 15,
+        "endLine": 280,
+        "endChar": 23
+      },
+      "revId": "9032cc3e5ae1367be2d9d156a72f20b37639d028",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
