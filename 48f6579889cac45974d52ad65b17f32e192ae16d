@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c8886a88_d7281125",
+        "filename": "src/actions.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 1019142
+      },
+      "writtenOn": "2023-06-05T12:56:33Z",
+      "side": 1,
+      "message": "nit:\n\n```\nif (max_length \u003c 2)\n    return -1;\n    \nswitch (...) {\ncase \u0027n\u0027:\n    *output \u003d \u0027\\n\u0027;\n    return 1;\ndefault:\n    error(...);\n}\n\n\n```",
+      "range": {
+        "startLine": 297,
+        "startChar": 15,
+        "endLine": 297,
+        "endChar": 50
+      },
+      "revId": "48f6579889cac45974d52ad65b17f32e192ae16d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
